@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>When should we use functions as values? &#8212; Introduction to Computer Science I</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction to Computer Science, part 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Getting a Start
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-01-Prospectus.html">
+   A Course in Computational Thinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-02-Install.html">
+   Installing Python and IDLE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
+   Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F07_Functional/07_1_Functional.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/07_Functional/07_1_Functional.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   When should we use functions as values?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functional-programming-in-python">
+   Functional Programming in Python
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lambda-is-just-shorthand">
+     Lambda is just shorthand
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beyond-sum-reduce">
+     Beyond sum:  Reduce
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#walking-a-tree-with-a-function-value">
+     Walking a tree with a function value
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-as-needed-don-t-get-carried-away">
+     Use as needed; Don’t get carried away
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#there-s-more">
+     There’s more
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-code">
+   Source Code
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>When should we use functions as values?</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   When should we use functions as values?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functional-programming-in-python">
+   Functional Programming in Python
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lambda-is-just-shorthand">
+     Lambda is just shorthand
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beyond-sum-reduce">
+     Beyond sum:  Reduce
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#walking-a-tree-with-a-function-value">
+     Walking a tree with a function value
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-as-needed-don-t-get-carried-away">
+     Use as needed; Don’t get carried away
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#there-s-more">
+     There’s more
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-code">
+   Source Code
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>Our project for week 7 largely builds on
+concepts introduced earlier in the term,
+especially bitfield packing and unpacking but
+also objects with other objects as fields
+(e.g., the ALU and registers are part of the CPU,
+and the
+Memory is attached (“wired”) to the CPU in the
+main program), the Model-View-Controller pattern
+attaching a graphical display to the CPU and memory
+state, some careful sequential logic to
+update the program counter register at the right
+point in the execution cycle.</p>
+<p>One small part that may seem unfamiliar is the
+way the ALU executes operations by looking them
+up in a table.  We have actually seen similar
+techniques a couple times before:</p>
+<ul class="simple">
+<li><p>In the Agenda project, we passed a function to the
+built-in <code class="docutils literal notranslate"><span class="pre">sort</span></code> method to order appointments by
+start time:
+<code class="docutils literal notranslate"><span class="pre">self.elements.sort(key=lambda</span> <span class="pre">appt:</span> <span class="pre">appt.start)</span></code></p></li>
+<li><p>In the Calculator project, we used a table of classes to avoid
+repetitive code while parsing the postfix expressions:
+<code class="docutils literal notranslate"><span class="pre">stack.append(BINOPS[tok.kind](left,</span> <span class="pre">right))</span></code>
+We called the classes in the
+<code class="docutils literal notranslate"><span class="pre">BINOPS</span></code> and <code class="docutils literal notranslate"><span class="pre">UNOPS</span></code> tables to create
+objects of the classes corresponding to each symbol like
+<code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p></li>
+</ul>
+<p>In our simulation of the arithmetic logic unit (ALU) of the
+Duck Machine, we will use a table in which the keys are
+numeric operation codes and the values are functions indicated
+by those codes.  This is very analogous to the circuitry
+called a “multiplexer” that selects connections based on the
+values (1 or 0, positive voltage or no voltage) on some of its
+input wires.</p>
+<section id="when-should-we-use-functions-as-values">
+<h1>When should we use functions as values?<a class="headerlink" href="#when-should-we-use-functions-as-values" title="Permalink to this headline">#</a></h1>
+<p>Some programming languages allow us to treat functions as
+values.  We can store functions in variables, pass functions to other
+functions, return functions from functions, etc.  When we can
+do this, we say that functions are <em>first class values</em> in
+the programming language.  Python is such a language.</p>
+<p>In some other programming languages you will learn, functions may
+not be first class values.  Java, for example, has methods but
+not functions, and methods are not first class values (although
+recently a limited kind of first class function value,
+called a <em>lambda expression</em>, was added to Java).<br />
+In C you will encounter
+<em>function pointers</em>, which are first class values, although they
+are a little trickier to define and
+use than function objects in Python.  Each language you learn may be
+a little different in terms of whether and how you can treat
+functions as values.</p>
+<p>We use functions as values for some of the same reasons we use
+classes and subclasses in object oriented languages:  To simplify
+and generalize code, avoiding redundancy by factoring out
+the parts that are repetitive. Classes and subclasses may be
+more useful in some situations, and functions as values may be
+more useful in others:</p>
+<ul class="simple">
+<li><p>Classes and subclasses are especially useful when there is a
+natural subtype hierarchy to organize variation, such as
+organizing our calculator expression classes as binary and
+unary operations.   The object-oriented style is also useful
+when we maintain complex state, such as the fields of
+appointment objects in our agenda project.</p></li>
+<li><p>Functions as values are sometimes more useful than classes
+when functions are natural building blocks, especially when
+we don’t have as much need to maintain complex state.
+Functions also make good building blocks even if state is complex
+but more uniform than the functions we want to apply.</p></li>
+</ul>
+<p>Sometimes either approach would be about equally applicable.<br />
+For example, in our calculator project, instead of creating
+several subclasses of the <code class="docutils literal notranslate"><span class="pre">BinOp</span></code> class, we could have created
+a single class with an instance variable holding the function
+to be applied.  The code would have been a little shorter,
+but whether it would have been simpler is arguable.</p>
+</section>
+<section id="functional-programming-in-python">
+<h1>Functional Programming in Python<a class="headerlink" href="#functional-programming-in-python" title="Permalink to this headline">#</a></h1>
+<p>Python supports both an object-oriented style of programming
+and a functional style of programming.  The object-oriented
+style is more common in large projects, but sometimes
+the functional style is just the tool we need to
+greatly simplify some code.  Two particularly useful
+tricks of the trade are storing functions in tables
+(dicts) and passing functions to functions or methods.</p>
+<section id="lambda-is-just-shorthand">
+<h2>Lambda is just shorthand<a class="headerlink" href="#lambda-is-just-shorthand" title="Permalink to this headline">#</a></h2>
+<p>Often when you encounter functions as values, they are
+written as lambda expressions, e.g., <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>.
+There is nothing complex or mysterious about lambda.  It
+is just shorthand for the familiar function function
+definition, e.g.,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>The lambda expression doesn’t have a name, but it is easy
+enough to give it one:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>The two definitions of <code class="docutils literal notranslate"><span class="pre">f</span></code> above, with a conventional function definition
+and with a lambda expression assigned to variable <code class="docutils literal notranslate"><span class="pre">f</span></code>, do
+precisely the same thing.  We simply use the lambda expression
+to avoid writing out the longer function definition, when
+it fits on one line, and especially
+when it doesn’t need a name.</p>
+</section>
+<section id="beyond-sum-reduce">
+<h2>Beyond sum:  Reduce<a class="headerlink" href="#beyond-sum-reduce" title="Permalink to this headline">#</a></h2>
+<p>You may know that you can add up the elements of a list with the
+<code class="docutils literal notranslate"><span class="pre">sum</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="go">15</span>
+</pre></div>
+</div>
+<p>What if we wanted to instead multiply all the elements,
+or count them?   We can write a single function for all
+of these, passing in the function by which the elements
+are all combined to obtain a single summary value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="n">l</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">initial</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Reduce l by f, i.e., f(el, f(el, f(el, ...))) for el in l&quot;&quot;&quot;</span>
+    <span class="n">reduction</span> <span class="o">=</span> <span class="n">initial</span>
+    <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+        <span class="n">reduction</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">reduction</span><span class="p">,</span> <span class="n">el</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">reduction</span>
+</pre></div>
+</div>
+<p>The type hints are unwieldy (and would have been even more
+unwieldy if I had written a version that works for all kinds
+of lists, not just lists of <code class="docutils literal notranslate"><span class="pre">int</span></code>), but the code is simple:
+It just keeps applying a function over and over to distill the
+list to a single value.   To get a sum, I pass in a function
+(which I can write compactly using<code class="docutils literal notranslate"><span class="pre">lambda</span></code>) to add elements:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">li</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Reduce with + is same as sum</span>
+<span class="k">assert</span> <span class="n">reduce</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
+</pre></div>
+</div>
+<p>If instead I want the product of all the elements,
+I pass in a function that multiplies:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reduce with * is product of all elements</span>
+<span class="k">assert</span> <span class="n">reduce</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">120</span>
+</pre></div>
+</div>
+<p>If I want to just count the elements, I can ignore the
+values and just add one at each step:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trickier!  We can also get a &#39;count&#39; function</span>
+<span class="k">assert</span> <span class="n">reduce</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>Of course I am not limited to short nameless functions
+written with lambda.  I can find a maximum or minimum
+if I a careful about what to use as an initial value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Max, min, or some other selection</span>
+<span class="k">def</span> <span class="nf">larger</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;For demo purposes only; built-in max is preferable&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span> <span class="k">return</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">assert</span> <span class="n">reduce</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="n">li</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">larger</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</section>
+<section id="walking-a-tree-with-a-function-value">
+<h2>Walking a tree with a function value<a class="headerlink" href="#walking-a-tree-with-a-function-value" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">reduce</span></code> function described above was intriguing, but
+not really very useful since Python already gives us many
+reductions on lists including <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, etc.  However,
+we can use the same basic technique with other data structures,
+where the built-in Python functions are not applicable.<br />
+Let’s consider a simple tree of integers with a <code class="docutils literal notranslate"><span class="pre">reduce</span></code>
+method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tree</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;The abstract base class&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">],</span>
+               <span class="n">leaf_val</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;f is a function for combining values of subtrees.</span>
+<span class="sd">        Leaves will return their own value unless leaf_val</span>
+<span class="sd">        is specified.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Each subclass must implement reduce&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Leaf</span><span class="p">(</span><span class="n">Tree</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">],</span>
+               <span class="n">leaf_val</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">leaf_val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">val</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">leaf_val</span>
+
+<span class="k">class</span> <span class="nc">Inner</span><span class="p">(</span><span class="n">Tree</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">:</span> <span class="n">Tree</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="n">Tree</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+
+    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">],</span>
+               <span class="n">leaf_val</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">leaf_val</span><span class="p">),</span>
+                 <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">leaf_val</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method with a function argument
+to implement different ways of summarizing values of the
+leaves, just as we did for a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Inner</span><span class="p">(</span><span class="n">Inner</span><span class="p">(</span><span class="n">Leaf</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Leaf</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span>
+          <span class="n">Inner</span><span class="p">(</span><span class="n">Leaf</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">Inner</span><span class="p">(</span><span class="n">Leaf</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">Leaf</span><span class="p">(</span><span class="mi">5</span><span class="p">))))</span>
+
+<span class="c1"># Sum leaves of tree</span>
+<span class="k">assert</span> <span class="n">t</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">:</span> <span class="n">v</span><span class="o">+</span><span class="n">w</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
+<span class="c1"># Product of leaves of tree</span>
+<span class="k">assert</span> <span class="n">t</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">:</span> <span class="n">v</span><span class="o">*</span><span class="n">w</span><span class="p">)</span> <span class="o">==</span> <span class="mi">120</span>
+<span class="c1"># Max/Min leaf of tree using built-in max and min</span>
+<span class="k">assert</span> <span class="n">t</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+<span class="k">assert</span> <span class="n">t</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="nb">min</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="c1"># Count leaves</span>
+<span class="k">assert</span> <span class="n">t</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span> <span class="n">leaf_val</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</section>
+<section id="use-as-needed-don-t-get-carried-away">
+<h2>Use as needed; Don’t get carried away<a class="headerlink" href="#use-as-needed-don-t-get-carried-away" title="Permalink to this headline">#</a></h2>
+<p>Function values are powerful, and sometimes they are just
+the right tool for the job.  Other times, you can accomplish
+the same thing with simpler approaches.  Many programmers
+find it difficult to read code that uses function values
+extensively.</p>
+<p>Functions or methods that take functions as arguments can be
+most useful when one such function can be used in place of
+several.  For example, if I only needed a method to sum
+the leaves of a tree, I would write a (recursive) <code class="docutils literal notranslate"><span class="pre">sum</span></code> method,
+and not a general <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method.  But if I need <code class="docutils literal notranslate"><span class="pre">sum</span></code> and
+<code class="docutils literal notranslate"><span class="pre">product</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> and <code class="docutils literal notranslate"><span class="pre">min</span></code>, then a single <code class="docutils literal notranslate"><span class="pre">reduce</span></code> method
+becomes an attractive option.</p>
+<p>We have seen this in our prior projects that used function
+arguments and tables of functions or classes.  The table of
+classes in our calculator project replaced a chain of
+redundant <code class="docutils literal notranslate"><span class="pre">elif</span></code> …
+<code class="docutils literal notranslate"><span class="pre">elif</span></code> … <code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses in our parser, so it was worthwhile.
+The table of operation functions in the ALU class for the
+Duck Machine simulator likewise allows us to avoid a chain
+of largely repetitive code.<br />
+The <code class="docutils literal notranslate"><span class="pre">key=</span></code> function argument to <code class="docutils literal notranslate"><span class="pre">sort</span></code> saves us from more
+complex ways of controlling the sort function.  Using functions
+as values (in tables, and as arguments to methods or functions)
+is worthwhile in these contexts.</p>
+</section>
+<section id="there-s-more">
+<h2>There’s more<a class="headerlink" href="#there-s-more" title="Permalink to this headline">#</a></h2>
+<p>There is much more you can do with functions as values
+in Python.  For example, frameworks for web applications, like
+Django and Flask, create a table of functions for handling
+different URLs.  Both Django and Flask use Python <em>decorators</em>,
+which are functions that operate on other Python functions.
+Don’t worry if that sounds confusing … it’s not something we’re
+going to do in CIS 211.  But they are there for you sometime
+in the future when you need them.</p>
+<p>You can program for years in Python only occasionally encountering
+functions as values, and maybe managing to use them without
+really understanding them.  In some other languages, functions as
+values play a much more central role.  If you write web application
+code that executes in the browser, you are likely to encounter
+JavaScript code that uses functions as values.  You may also
+encounter some programming languages, like ML or Haskell, that
+are called “functional languages” because functions that
+combine other functions are as central to them as classes and
+objects are to Python.</p>
+</section>
+</section>
+<section id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h1>
+<p>Sometimes using a function as a value, in a table or passed
+as an argument to another function, can greatly simplify your
+code and remove redundancy.  Python is primarily an object-oriented
+language, not a functional language, and most of the time
+classes and objects give us the tools we need to solve problems.
+But sometimes a little bit of functional programming is a
+powerful addition.</p>
+</section>
+<section id="source-code">
+<h1>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">#</a></h1>
+<p><span class="xref myst">Sample code for this chapter</span></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UO-CS-OER/CS210-text",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./07_Functional"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Michal Young, Boyana Norris, and Ram Durairajan<br/>
+  
+      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

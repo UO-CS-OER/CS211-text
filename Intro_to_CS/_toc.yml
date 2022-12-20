@@ -1,0 +1,18 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: 01 Getting a Start
+    chapters:
+      - file: 01-Intro/01-01-Prospectus.md
+      - file: 01-Intro/01-02-Install.md
+      - file: 01-Intro/01-03-Kickstart.md
+  - caption: 01 Objects
+    chapters:
+      - file: 01-Objects/01-1-Objects.md
+  - caption: 02 Inheritance
+    chapters:
+      - file: 02_In
+

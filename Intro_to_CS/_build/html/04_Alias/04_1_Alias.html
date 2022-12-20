@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>When Aliasing Doesn’t Matter &#8212; Introduction to Computer Science I</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction to Computer Science, part 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Getting a Start
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-01-Prospectus.html">
+   A Course in Computational Thinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-02-Install.html">
+   Installing Python and IDLE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
+   Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Objects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Objects/01_1_Objects.html">
+   Example: Points
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F04_Alias/04_1_Alias.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/04_Alias/04_1_Alias.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   When Aliasing Doesn’t Matter
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-aliasing-is-a-mistake">
+   When Aliasing is a Mistake
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-aliasing-is-helpful">
+   When Aliasing is Helpful
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternatives">
+   Alternatives
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-code">
+   Sample code
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>When Aliasing Doesn’t Matter</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   When Aliasing Doesn’t Matter
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-aliasing-is-a-mistake">
+   When Aliasing is a Mistake
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-aliasing-is-helpful">
+   When Aliasing is Helpful
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternatives">
+   Alternatives
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-code">
+   Sample code
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>We say something is <em>aliased</em> when it has more
+than one name.  Mark Twain is an <em>alias</em> of
+Samuel Clemens.  Banksy is an <em>alias</em> of someone,
+but at the time of this writing I don’t know
+who.  In software, we interpret “name” in a
+broad way to mean any way of designating some
+object.  If <code class="docutils literal notranslate"><span class="pre">x</span></code> names the same object as
+<code class="docutils literal notranslate"><span class="pre">elements[3]</span></code>, then we say that object is
+<em>aliased</em> and that <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">elements[3]</span></code> are
+<em>aliases</em>.</p>
+<section id="when-aliasing-doesn-t-matter">
+<h1>When Aliasing Doesn’t Matter<a class="headerlink" href="#when-aliasing-doesn-t-matter" title="Permalink to this headline">#</a></h1>
+<p>One reason for making <em>immutable</em> objects
+is so that we can alias those objects without
+worry.  This is why <code class="docutils literal notranslate"><span class="pre">str</span></code> objects in Python
+are immutable.   If <code class="docutils literal notranslate"><span class="pre">x</span></code> refers to a string
+object, I can set <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code> without any worry
+about the consequence of aliasing the string,
+because there is nothing I can do to <code class="docutils literal notranslate"><span class="pre">x</span></code>
+that will affect <code class="docutils literal notranslate"><span class="pre">y</span></code>.  All the operations on
+strings, like <code class="docutils literal notranslate"><span class="pre">strip</span></code> and <code class="docutils literal notranslate"><span class="pre">split</span></code>, return
+new objects rather than changing the strings.</p>
+<p>There is at least one way that we can observe
+aliasing with immutable objects:  The
+comparison <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">y</span></code> checks whether <code class="docutils literal notranslate"><span class="pre">x</span></code> is
+an alias of <code class="docutils literal notranslate"><span class="pre">y</span></code>.  It can yield some surprises.
+For example, Python sometimes aliases
+<code class="docutils literal notranslate"><span class="pre">int</span></code> values that are equal, and sometimes
+doesn’t:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PyDev</span> <span class="n">console</span><span class="p">:</span> <span class="n">starting</span><span class="o">.</span>
+<span class="n">Python</span> <span class="mf">3.8.0</span> <span class="p">(</span><span class="n">v3</span><span class="mf">.8.0</span><span class="p">:</span><span class="n">fa919fdf25</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">w</span> <span class="ow">is</span> <span class="n">x</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">w</span> <span class="ow">is</span> <span class="n">x</span>
+<span class="kc">False</span>
+</pre></div>
+</div>
+<p>As long as we use <code class="docutils literal notranslate"><span class="pre">==</span></code> instead of <code class="docutils literal notranslate"><span class="pre">is</span></code>, we need
+not be concerned about whether <code class="docutils literal notranslate"><span class="pre">int</span></code> values or
+<code class="docutils literal notranslate"><span class="pre">str</span></code> values are aliased.  When we define our
+own immutable classes, we aim for similar
+behavior:  The <code class="docutils literal notranslate"><span class="pre">==</span></code> (that is <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>) operation
+should define what we mean by “same”, and
+aliasing (<code class="docutils literal notranslate"><span class="pre">is</span></code>) should be irrelevant.</p>
+</section>
+<section id="when-aliasing-is-a-mistake">
+<h1>When Aliasing is a Mistake<a class="headerlink" href="#when-aliasing-is-a-mistake" title="Permalink to this headline">#</a></h1>
+<p>While immutable objects are often convenient,
+sometimes they are impractical.  For example,
+the <code class="docutils literal notranslate"><span class="pre">list</span></code> class in Python is mutable because
+the <code class="docutils literal notranslate"><span class="pre">append</span></code> operation would be too expensive
+if it returned a new <code class="docutils literal notranslate"><span class="pre">list</span></code> object; it is much
+more efficient to modify (<em>mutate</em>) an
+existing list object.  But this means we must
+be careful:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="n">m</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4]</span>
+</pre></div>
+</div>
+<p>This behavior, in which the value designated
+by one alias of an object is changed by
+an operation through another alias of the
+object, may be fine or even useful, but it
+may also lead to bugs that are difficult to
+find and correct.  This is one reason that
+our coding style guidelines require us to
+make it very clear and apparent when a
+method is a <em>mutator</em>.</p>
+<p>We have already seen examples where aliasing
+a mutable object is a mistake.  For example,
+if <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects are mutable (if they have
+a <code class="docutils literal notranslate"><span class="pre">move</span></code> operation that changes a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object,
+instead of returning a new <code class="docutils literal notranslate"><span class="pre">Point</span></code> object), then
+aliasing <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects from different <code class="docutils literal notranslate"><span class="pre">Rect</span></code>
+rectangle objects is probably a mistake.  At the
+very least it requires great care to do it
+correctly, without unanticipated side effects.</p>
+</section>
+<section id="when-aliasing-is-helpful">
+<h1>When Aliasing is Helpful<a class="headerlink" href="#when-aliasing-is-helpful" title="Permalink to this headline">#</a></h1>
+<p>While unanticipated side effects can make
+aliasing a problem, occasionally we alias
+objects intentionally because we want to
+access the same objects in more than one way.</p>
+<p>Suppose, for example, that we have a list of
+complex objects storing information about
+students.  Each object representing a student
+might include a given name, a family name,
+and a student identification number, among
+other pieces of information like favorite ice
+cream flavor.  We might want to find
+student records quickly using binary search
+for given name, family name, or student number.
+But binary search only works if the objects
+are in sorted order, and each of these
+search keys requires a different order!</p>
+<p>Database systems have a simple solution
+to the problem of searching for the same
+objects by multiple keys:  They keep multiple
+<em>indexes</em> with aliased references to the
+records.</p>
+<p><img alt="Multiple indexes to student records" src="../_images/indexes.svg" /></p>
+<p>While search structures are the most common
+intentional use of aliasing, it is also
+useful sometimes for refactoring program logic.</p>
+<p>Consider the simple game known as
+<em>noughts and crosses</em>
+or <a class="reference external" href="https://en.wikipedia.org/wiki/Tic-tac-toe"><em>tic tac toe</em></a>.
+Suppose the game board is represented by a
+list of lists of <code class="docutils literal notranslate"><span class="pre">Tile</span></code> objects, using letters
+<em>a</em> through <em>i</em> as position labels.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Board</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Simple 3x3 Tic Tac Toe board&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)],</span>
+                      <span class="p">[</span><span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)],</span>
+                      <span class="p">[</span><span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)]]</span>
+
+</pre></div>
+</div>
+<p>A game of noughts and crosses is won when
+there are three <code class="docutils literal notranslate"><span class="pre">X</span></code> or three <code class="docutils literal notranslate"><span class="pre">O</span></code> on tiles
+in any row, column, or diagonal.  We might
+use an <code class="docutils literal notranslate"><span class="pre">Enum</span></code> to represent the <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">O</span></code>
+marks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Mark</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">xmark</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span>
+    <span class="n">omark</span> <span class="o">=</span> <span class="s2">&quot;O&quot;</span>
+    <span class="n">unmarked</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span>
+</pre></div>
+</div>
+<p>The logic
+for checking for a win in a row might
+look something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">row_is_winner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row_index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="n">mark_0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="n">row_index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mark</span>
+    <span class="n">mark_1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="n">row_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">mark</span>
+    <span class="n">mark_2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="n">row_index</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">mark</span>
+    <span class="k">if</span> <span class="n">mark_0</span> <span class="o">==</span> <span class="n">Mark</span><span class="o">.</span><span class="n">unmarked</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">mark_0</span> <span class="o">==</span> <span class="n">mark_1</span> <span class="ow">and</span> <span class="n">mark_1</span> <span class="o">==</span> <span class="n">mark_2</span>
+</pre></div>
+</div>
+<p>The logic for checking for a win in a
+column might look very similar:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">row_is_winner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col_index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="n">mark_0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">col_index</span><span class="p">]</span><span class="o">.</span><span class="n">mark</span>
+    <span class="n">mark_1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">col_index</span><span class="p">]</span><span class="o">.</span><span class="n">mark</span>
+    <span class="n">mark_2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">col_index</span><span class="p">]</span><span class="o">.</span><span class="n">mark</span>
+    <span class="k">if</span> <span class="n">mark_0</span> <span class="o">==</span> <span class="n">Mark</span><span class="o">.</span><span class="n">unmarked</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">mark_0</span> <span class="o">==</span> <span class="n">mark_1</span> <span class="ow">and</span> <span class="n">mark_1</span> <span class="o">==</span> <span class="n">mark_2</span>
+</pre></div>
+</div>
+<p>Checking a diagonal would be yet again almost
+the same logic on different sets of tiles.</p>
+<p>Similar as these functions are, it is difficult
+to combine them if the <code class="docutils literal notranslate"><span class="pre">Tile</span></code> objects are arranged
+only in the single list-of-lists structure by
+row and column.   The logic can be factored easily,
+though, if we alias the same set of tiles from
+groups for rows, columns, and diagonals.</p>
+<p><img alt="Grouping Tic-Tac-Toe Tiles" src="04_Alias/img_04_1/TicTac%20Groups.svg" /></p>
+<p>Now it is simple to write a single function to
+check whether a group is a winner:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_winner</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tile</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;True if a win for *either* X or O&quot;&quot;&quot;</span>
+    <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">group</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">mark</span> <span class="o">!=</span> <span class="n">Mark</span><span class="o">.</span><span class="n">unmarked</span>
+            <span class="ow">and</span> <span class="n">q</span><span class="o">.</span><span class="n">mark</span> <span class="o">==</span> <span class="n">r</span><span class="o">.</span><span class="n">mark</span>
+            <span class="ow">and</span> <span class="n">r</span><span class="o">.</span><span class="n">mark</span> <span class="o">==</span> <span class="n">s</span><span class="o">.</span><span class="n">mark</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is easy to check all the rows, columns,
+and diagonals with a single loop:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">has_winner</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;There is some winning row or column (for either X or O)&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">is_winner</span><span class="p">(</span><span class="n">group</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>We have not really removed the
+complexity of traversing the board in three
+different orders, because we must traverse it
+to build the tile groups that represent those
+different orders.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)],</span>
+                      <span class="p">[</span><span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)],</span>
+                      <span class="p">[</span><span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">),</span> <span class="n">Tile</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)]]</span>
+        <span class="c1"># 3-in-a-row can be horizontal, vertical, or diagonal</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">groups</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># horizontal</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="c1"># vertical</span>
+        <span class="k">for</span> <span class="n">col_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">row_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                <span class="n">group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="n">row_i</span><span class="p">][</span><span class="n">col_i</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+        <span class="c1"># diagonal left-to-right</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+        <span class="c1"># diagonal right-to-left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p>However, we need do that
+only once, as we do here in the constructor.
+We can separate that logic from
+the logic of checking for a winner.  The
+advantage becomes much larger if we use the
+groups in additional ways involving different
+logic.  For example, we might write another
+function to choose a tile to mark with an <code class="docutils literal notranslate"><span class="pre">X</span></code>
+or <code class="docutils literal notranslate"><span class="pre">O</span></code>, selecting the best move by using the
+same groups.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">choose_for</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mark</span><span class="p">:</span> <span class="n">Mark</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns the most worthwhile position for</span>
+<span class="sd">        mark to take, assuming it is the turn for</span>
+<span class="sd">        mark and that there are open positions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># We use the &#39;worth&#39; field of the tiles to tally</span>
+        <span class="c1"># how valuable each position is.</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+                <span class="n">col</span><span class="o">.</span><span class="n">worth</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">:</span>
+            <span class="n">worth</span> <span class="o">=</span> <span class="n">calc_worth</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">mark</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">tile</span> <span class="ow">in</span> <span class="n">group</span><span class="p">:</span>
+                <span class="c1"># No harm in granting worth to marked tiles</span>
+                <span class="n">tile</span><span class="o">.</span><span class="n">worth</span> <span class="o">+=</span> <span class="n">worth</span>
+        <span class="c1"># Pick open tile with max worth</span>
+        <span class="n">all_tiles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tiles</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">open_tiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">tile</span> <span class="k">for</span> <span class="n">tile</span> <span class="ow">in</span> <span class="n">all_tiles</span> <span class="k">if</span> <span class="n">tile</span><span class="o">.</span><span class="n">mark</span> <span class="o">==</span> <span class="n">Mark</span><span class="o">.</span><span class="n">unmarked</span><span class="p">]</span>
+        <span class="n">open_tiles</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">tile</span><span class="p">:</span> <span class="n">tile</span><span class="o">.</span><span class="n">worth</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">open_tiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+<p>Notice that in the above method, we are looping
+through the same set of tiles in different ways.
+We first loop through by row and column to
+initialize the <code class="docutils literal notranslate"><span class="pre">worth</span></code> fields.  Then we loop
+through them in multiple orders using the
+<code class="docutils literal notranslate"><span class="pre">groups</span></code>, which refer to the very same <code class="docutils literal notranslate"><span class="pre">Tile</span></code>
+objects ordered by row, column, and diagonal.</p>
+<p>Note also that a single tile will be accessed
+multiple times in different groups,
+potentially accumulating
+<code class="docutils literal notranslate"><span class="pre">worth</span></code> each time it is accessed.  On the initially
+empty board, a middle tile along one side
+will be accessed once in a row group and once
+in a column group, accumulating a total
+<code class="docutils literal notranslate"><span class="pre">worth</span></code> of 2.</p>
+<p><img alt="The D tile appears in one row and one column" src="../_images/D-Worth.svg" /></p>
+<p>A corner tile accumulates worth from a row
+group, a column group, and a diagonal group,
+because it can be used to form winning combinations
+in each of those groupings:</p>
+<p><img alt="The G tile appears in a row, column, and diagonal" src="../_images/G-Worth.svg" /></p>
+</section>
+<section id="alternatives">
+<h1>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">#</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">groups</span></code> structure for aliasing groups
+of tiles in different orders
+is not the only way we could arrange
+different access orders for the tiles.<br />
+We could have written methods or
+functions to return lists of tiles in the
+desired order each time we needed them.  Python
+also provides <em>generators</em>, which are identical
+to functions except they may return several
+results, one at a time.  (The <code class="docutils literal notranslate"><span class="pre">range</span></code>
+function is actually a generator; it returns
+elements of the range one by one, not all
+together in a list.)</p>
+<p>The main advantage of building the <code class="docutils literal notranslate"><span class="pre">groups</span></code>
+structure is that we only build it once, and
+then use it several times.</p>
+</section>
+<section id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h1>
+<p>If there is more than one way of designating
+(“naming”) the same object, we say the object
+is “aliased”.   Aliasing immutable objects usually
+has no observable effect, and often
+we design objects to be immutable so that we
+can alias them freely.  We must be careful when
+aliasing mutable objects, because a change to
+the object through one “name” will be observable
+as a change to the object through any other
+“names” it may have.</p>
+<p>While aliasing can dangerous, it can also be useful.
+Sometimes we need different ways to designate
+the same set of objects, as when we traverse a
+collection repeatedly in different orders. And
+sometimes making a change to an object accessed
+through one name visible when the same object is
+accessed through other names is exactly what we
+want.  We illustrated this by accumulating the
+“worth” of game tiles accessed in different
+orders.</p>
+</section>
+<section id="sample-code">
+<h1>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">#</a></h1>
+<p><span class="xref myst">Sample code for this chapter</span></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UO-CS-OER/CS210-text",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./04_Alias"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Michal Young, Boyana Norris, and Ram Durairajan<br/>
+  
+      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

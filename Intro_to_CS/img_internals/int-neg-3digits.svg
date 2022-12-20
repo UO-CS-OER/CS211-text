@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1"
+     xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="497 95 324 63.104004" width="324" height="63.104004">
+  <defs>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000"
+               underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714"
+               ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata>Produced by OmniGraffle 7.17.2\n2020-08-12 19:40:47 +0000</metadata>
+  <g id="Int" fill="none" stroke="none" stroke-dasharray="none" fill-opacity="1" stroke-opacity="1">
+    <title>Int</title>
+    <g id="Int_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_10">
+        <g id="Graphic_15">
+          <rect x="762" y="95.5" width="58.5" height="62.104004" fill="white"/>
+          <rect x="762" y="95.5" width="58.5" height="62.104004" stroke="gray" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(767 100.5)" fill="#7f7f7f">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="#7f7f7f" x="0" y="15">30 bit
+            </tspan>
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="#7f7f7f" x="0" y="33.448">&quot;digit&quot;</tspan>
+          </text>
+        </g>
+        <g id="Graphic_14">
+          <rect x="703.5" y="95.5" width="58.5" height="62.104004" fill="white"/>
+          <rect x="703.5" y="95.5" width="58.5" height="62.104004" stroke="gray" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(708.5 100.5)" fill="#7f7f7f">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="#7f7f7f" x="0" y="15">30 bit
+            </tspan>
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="#7f7f7f" x="0" y="33.448">&quot;digit&quot;</tspan>
+          </text>
+        </g>
+        <g id="Graphic_13">
+          <rect x="645" y="95.5" width="58.5" height="62.104004" fill="white"/>
+          <rect x="645" y="95.5" width="58.5" height="62.104004" stroke="gray" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(650 100.5)" fill="#7f7f7f">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="#7f7f7f" x="0" y="15">30 bit
+            </tspan>
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="#7f7f7f" x="0" y="33.448">&quot;digit&quot;</tspan>
+          </text>
+        </g>
+        <g id="Graphic_12">
+          <rect x="497.5" y="95.5" width="81" height="62.104004" fill="#ebebeb"/>
+          <rect x="497.5" y="95.5" width="81" height="62.104004" stroke="gray" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(502.5 100.5)" fill="#7f7f7f">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="#7f7f7f" x="13.716" y="15">
+              PyObj
+            </tspan>
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="#7f7f7f" x="10.756" y="33.448">
+              header
+            </tspan>
+          </text>
+        </g>
+        <g id="Graphic_11">
+          <rect x="578.5" y="95.5" width="66.5" height="62.104004" fill="white"/>
+          <rect x="578.5" y="95.5" width="66.5" height="62.104004" stroke="gray" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(583.5 100.5)" fill="#7f7f7f">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="#7f7f7f" x="0" y="15">size: -3
+            </tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

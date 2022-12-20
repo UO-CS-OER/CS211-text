@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink"
+     xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="244.5 77 493 184" width="493" height="184">
+  <defs>
+    <font-face font-family="Avenir" font-size="13" panose-1="2 11 7 3 2 2 3 2 2 4" units-per-em="1000"
+               underline-position="-75" underline-thickness="50" slope="0" x-height="480" cap-height="708" ascent="1e3"
+               descent="-365.9973" font-weight="800">
+      <font-face-src>
+        <font-face-name name="Avenir-Heavy"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica" font-size="13" units-per-em="1000" underline-position="-75.68359"
+               underline-thickness="49.316406" slope="0" x-height="522.9492" cap-height="717.28516" ascent="770.0195"
+               descent="-229.98047" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Helvetica"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica" font-size="13" units-per-em="1000" underline-position="-75.68359"
+               underline-thickness="49.316406" slope="0" x-height="532.22656" cap-height="719.7266" ascent="770.0195"
+               descent="-229.98047" font-weight="700">
+      <font-face-src>
+        <font-face-name name="Helvetica-Bold"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="UMLInheritance_Marker"
+            stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -6 10 12" markerWidth="10" markerHeight="12"
+            color="black">
+      <g>
+        <path d="M 7.2 0 L 0 -4.2 L 0 4.2 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata>Produced by OmniGraffle 7.12.1
+    <dc:date>2020-01-20 01:57:02 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" stroke="none" fill="none" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1">
+    <title>Canvas 1</title>
+    <rect fill="white" x="244.5" y="77" width="493" height="184"/>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Group_2">
+        <title>Class with Attributes</title>
+        <g id="Graphic_4">
+          <title>Attributes</title>
+          <rect x="430" y="104" width="130" height="24" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2"/>
+        </g>
+        <g id="Graphic_3">
+          <title>Class Name</title>
+          <rect x="430" y="78" width="130" height="26" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2"/>
+          <text transform="translate(436 82)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" font-weight="800" fill="#515556" x="41.671" y="13">Class</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Group_5">
+        <title>Class with Attributes</title>
+        <g id="Graphic_7">
+          <title>Attributes</title>
+          <rect x="245.5" y="216" width="138.5" height="44" fill="white"/>
+          <rect x="245.5" y="216" width="138.5" height="44" stroke="#b9c0c1" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(251.5 222)" fill="black">
+            <tspan font-family="Helvetica" font-size="13" font-weight="400" fill="black" x="0" y="13">def foo():</tspan>
+            <tspan font-family="Helvetica" font-size="13" font-weight="400" fill="black" x="28" y="29">blah blah</tspan>
+            <tspan font-family="Helvetica" font-size="13" font-weight="700" fill="#ff40ff" y="29">x</tspan>
+            <tspan font-family="Helvetica" font-size="13" font-weight="400" fill="black" y="29">blah</tspan>
+          </text>
+        </g>
+        <g id="Graphic_6">
+          <title>Class Name</title>
+          <rect x="245.5" y="190" width="138.5" height="26" fill="white"/>
+          <rect x="245.5" y="190" width="138.5" height="26" stroke="#b9c0c1" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(251.5 194)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" font-weight="800" fill="#515556" x="32.44" y="13">SubClass1
+            </tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Group_8">
+        <title>Class with Attributes</title>
+        <g id="Graphic_10">
+          <title>Attributes</title>
+          <rect x="425.75" y="216" width="138.5" height="44" fill="white"/>
+          <rect x="425.75" y="216" width="138.5" height="44" stroke="#b9c0c1" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(431.75 222)" fill="black">
+            <tspan font-family="Helvetica" font-size="13" font-weight="400" fill="black" x="0" y="13">def foo():</tspan>
+            <tspan font-family="Helvetica" font-size="13" font-weight="400" fill="black" x="28" y="29">blah blah</tspan>
+            <tspan font-family="Helvetica" font-size="13" font-weight="700" fill="#ff40ff" y="29">y</tspan>
+            <tspan font-family="Helvetica" font-size="13" font-weight="400" fill="black" y="29">blah</tspan>
+          </text>
+        </g>
+        <g id="Graphic_9">
+          <title>Class Name</title>
+          <rect x="425.75" y="190" width="138.5" height="26" fill="white"/>
+          <rect x="425.75" y="190" width="138.5" height="26" stroke="#b9c0c1" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(431.75 194)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" font-weight="800" fill="#515556" x="32.44" y="13">SubClass2
+            </tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Group_11">
+        <title>Class with Attributes</title>
+        <g id="Graphic_13">
+          <title>Attributes</title>
+          <rect x="598" y="216" width="138.5" height="44" fill="white"/>
+          <rect x="598" y="216" width="138.5" height="44" stroke="#b9c0c1" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(604 222)" fill="black">
+            <tspan font-family="Helvetica" font-size="13" font-weight="400" fill="black" x="0" y="13">def foo():</tspan>
+            <tspan font-family="Helvetica" font-size="13" font-weight="400" fill="black" x="28" y="29">blah blah</tspan>
+            <tspan font-family="Helvetica" font-size="13" font-weight="700" fill="#ff40ff" y="29">z</tspan>
+            <tspan font-family="Helvetica" font-size="13" font-weight="400" fill="black" y="29">blah</tspan>
+          </text>
+        </g>
+        <g id="Graphic_12">
+          <title>Class Name</title>
+          <rect x="598" y="190" width="138.5" height="26" fill="white"/>
+          <rect x="598" y="190" width="138.5" height="26" stroke="#b9c0c1" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(604 194)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" font-weight="800" fill="#515556" x="32.44" y="13">SubClass3
+            </tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_18">
+        <line x1="495" y1="189" x2="495" y2="145.9" marker-end="url(#UMLInheritance_Marker)" stroke="black"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_20">
+        <path d="M 314.75 189 L 314.75 159 L 495 159 L 495 145.9" marker-end="url(#UMLInheritance_Marker)"
+              stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Line_21">
+        <path d="M 667.25 189 L 667.25 159 L 495 159 L 495 145.9" marker-end="url(#UMLInheritance_Marker)"
+              stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

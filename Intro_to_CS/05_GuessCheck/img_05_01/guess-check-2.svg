@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink"
+     xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="221.132 188.5 299.792 173.5" width="299.792" height="173.5">
+    <defs>
+        <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000"
+                   underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714"
+                   ascent="951.9958" descent="-212.99744" font-weight="400">
+            <font-face-src>
+                <font-face-name name="HelveticaNeue"/>
+            </font-face-src>
+        </font-face>
+    </defs>
+    <metadata>Produced by OmniGraffle 7.12.1
+        <dc:date>2020-02-03 02:05:36 +0000</dc:date>
+    </metadata>
+    <g id="Canvas_1" stroke="none" fill="none" stroke-dasharray="none" stroke-opacity="1" fill-opacity="1">
+        <title>Canvas 1</title>
+        <g id="Canvas_1: Layer 1">
+            <title>Layer 1</title>
+            <g id="Graphic_2">
+                <circle cx="409.75" cy="220.75" r="32.2500515323362" fill="#80ff80"/>
+            </g>
+            <g id="Graphic_3">
+                <text transform="translate(452.5 202.302)" fill="black">
+                    <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="13.344" y="15">
+                        initial
+                    </tspan>
+                    <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="33.448">
+                        structure
+                    </tspan>
+                </text>
+            </g>
+            <g id="Graphic_4">
+                <circle cx="327.25" cy="329.75" r="32.2500515323362" fill="#ccc"/>
+            </g>
+            <g id="Graphic_5">
+                <text transform="translate(226.132 311.302)" fill="black">
+                    <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="5968559e-19"
+                           y="15">rejected
+                    </tspan>
+                    <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="11.112"
+                           y="33.448">state
+                    </tspan>
+                </text>
+            </g>
+            <g id="Line_6">
+                <line x1="390.2846" y1="246.46792" x2="346.7154" y2="304.0321" stroke="black" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-width="1"/>
+            </g>
+            <g id="Graphic_7">
+                <circle cx="413.75" cy="329.75" r="32.2500515323362" fill="#80ff80"/>
+            </g>
+            <g id="Graphic_8">
+                <text transform="translate(455.172 311.302)" fill="black">
+                    <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="2060574e-19"
+                           y="15">guessed
+                    </tspan>
+                    <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="10.664"
+                           y="33.448">move
+                    </tspan>
+                </text>
+            </g>
+            <g id="Line_9">
+                <line x1="410.9327" y1="252.97846" x2="412.5673" y2="297.52154" stroke="black" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-width="1"/>
+            </g>
+        </g>
+    </g>
+</svg>

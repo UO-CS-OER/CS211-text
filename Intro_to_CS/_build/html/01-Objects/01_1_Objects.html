@@ -1,0 +1,1207 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Example: Points &#8212; Introduction to Computer Science I</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Python Programming Kickstart" href="../01-Intro/01-03-Kickstart.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction to Computer Science, part 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Getting a Start
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-01-Prospectus.html">
+   A Course in Computational Thinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-02-Install.html">
+   Installing Python and IDLE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
+   Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Objects
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Example: Points
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F01-Objects/01_1_Objects.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/01-Objects/01_1_Objects.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Example: Points
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-we-do-better">
+     Can we do better?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-new-representation">
+   A new representation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instance-variables">
+   Instance variables
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods">
+   Methods
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-calls">
+   Method calls
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-your-understanding">
+     <em>
+      Check your understanding
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-little-magic">
+   A little magic
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magic-for-printing">
+   Magic for printing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#str-d-not-shaken">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str()
+      </span>
+     </code>
+     d, not shaken
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-repr-for-debugging">
+     A
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       repr()
+      </span>
+     </code>
+     for debugging
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       <em>
+        Check your understanding
+       </em>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-refer-to-objects">
+   Variables
+   <em>
+    refer
+   </em>
+   to objects
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#combining-objects-composing">
+   Combining Objects: Composing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     <em>
+      Check your understanding
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapping-and-delegation">
+   Wrapping and delegation
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Example: Points</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Example: Points
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-we-do-better">
+     Can we do better?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-new-representation">
+   A new representation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instance-variables">
+   Instance variables
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods">
+   Methods
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-calls">
+   Method calls
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-your-understanding">
+     <em>
+      Check your understanding
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-little-magic">
+   A little magic
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magic-for-printing">
+   Magic for printing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#str-d-not-shaken">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str()
+      </span>
+     </code>
+     d, not shaken
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-repr-for-debugging">
+     A
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       repr()
+      </span>
+     </code>
+     for debugging
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       <em>
+        Check your understanding
+       </em>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-refer-to-objects">
+   Variables
+   <em>
+    refer
+   </em>
+   to objects
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#combining-objects-composing">
+   Combining Objects: Composing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     <em>
+      Check your understanding
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapping-and-delegation">
+   Wrapping and delegation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>In Python, objects are used to represent
+information.  Every variable you use in a Python
+program is a reference to an object.
+The values you have been using so far –
+numbers, strings, dicts, lists, etc – are objects.
+They are among the built-in classes of Python,
+i.e., kinds of value that are already defined
+when you start the Python interpreter.</p>
+<p>You are not limited to those built-in classes.
+You can use them as a foundation to build your
+own.</p>
+<section id="example-points">
+<h1>Example: Points<a class="headerlink" href="#example-points" title="Permalink to this headline">#</a></h1>
+<p>What if we wanted to define a new kind of value?
+For example, if we wanted to write a program
+to draw a graph, we might want to work with
+cartesian coordinates, representing each
+point as an (x,y) pair.  We might represent the
+point as a tuple like <code class="docutils literal notranslate"><span class="pre">(5,7)</span></code>, or we could represent
+it as the list <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">7]</span></code>, or we could represent
+it as a dict <code class="docutils literal notranslate"><span class="pre">{&quot;x&quot;:</span> <span class="pre">5,</span> <span class="pre">&quot;y&quot;:</span> <span class="pre">7}</span></code>, and that
+might be satisfactory.   If we wanted to represent moving a point (x,y) by some distance (dx, dy), we could define a a function like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span>
+    <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">d</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">dy</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But if we are making a graphics program, we’ll need to <em>move</em> functions for other graphical objects like rectangles and ovals,
+so instead of naming it <code class="docutils literal notranslate"><span class="pre">move</span></code> we’ll need a more descriptive name
+like <code class="docutils literal notranslate"><span class="pre">move_point</span></code>.  Also we should give the type contract for
+the function, which we can do with Python type hints.  With these
+changes, we get something like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
+
+<span class="k">def</span> <span class="nf">move_point</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
+               <span class="n">d</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">])</span> \
+        <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">]:</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span>
+    <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">d</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">dy</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A simple test case increases our confidence that this works:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">move_point</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="o">==</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="can-we-do-better">
+<h2>Can we do better?<a class="headerlink" href="#can-we-do-better" title="Permalink to this headline">#</a></h2>
+<p>We aren’t really satisfied with using tuples to
+represent points.  What we’d really
+like is to express the concept of adding two points
+more concisely, as <code class="docutils literal notranslate"><span class="pre">(3,4)</span> <span class="pre">+</span> <span class="pre">(5,6)</span></code>.  What would happen if we
+tried this?</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; (3,4) + (5,6)
+(3, 4, 5, 6) 
+</pre></div>
+</div>
+<p>That’s not what we wanted!  Would it be better if we represented
+points as lists?</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; [3,4] + [5,6]
+[3, 4, 5, 6]
+</pre></div>
+</div>
+<p>No better.  Maybe as dicts?</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; {&quot;x&quot;: 3, &quot;y&quot;: 4} + {&quot;x&quot;: 5, &quot;y&quot;: 6}
+Traceback (most recent call last):
+  File &quot;&lt;input&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: unsupported operand type(s) for +: &#39;dict&#39; and &#39;dict&#39;
+</pre></div>
+</div>
+<p>That is not much of an improvement, although
+an error message is usually better than silently
+producing a bad result.<br />
+What we really want is not to use one of the
+existing representations like lists or tuples or dicts,
+but to define a new representation for points.</p>
+</section>
+</section>
+<section id="a-new-representation">
+<h1>A new representation<a class="headerlink" href="#a-new-representation" title="Permalink to this headline">#</a></h1>
+<p>Each data type in Python, including list, tuple,
+and dict, is defined as a <em>class</em> from which
+<em>objects</em> can be constructed.  We can also define
+our own classes, to construct new kinds of objects.<br />
+For example, we can make a new class <code class="docutils literal notranslate"><span class="pre">Point</span></code> to
+represent points.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Inside the class we can define <em>methods</em>, which are like functions
+that are specialized for the new representation.   The first
+method we should define is a <em>constructor</em> with the name <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.
+The constructor describes how to create a new <code class="docutils literal notranslate"><span class="pre">Point</span></code> object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+</section>
+<section id="instance-variables">
+<h1>Instance variables<a class="headerlink" href="#instance-variables" title="Permalink to this headline">#</a></h1>
+<p>Notice that the first argument to the constructor method is
+<code class="docutils literal notranslate"><span class="pre">self</span></code>, and within the method we refer to <code class="docutils literal notranslate"><span class="pre">self.x</span></code> and <code class="docutils literal notranslate"><span class="pre">self.y</span></code>.<br />
+In a method that operates on some object <em>o</em>, the first argument
+to the method will always be <code class="docutils literal notranslate"><span class="pre">self</span></code>, which refers to the whole
+object <em>o</em>.   Within the <code class="docutils literal notranslate"><span class="pre">self</span></code> object we can store <em>instance
+variables</em>, like <code class="docutils literal notranslate"><span class="pre">self.x</span></code> and <code class="docutils literal notranslate"><span class="pre">self.y</span></code>
+for the <em>x</em> and <em>y</em> coordinates of a point.</p>
+</section>
+<section id="methods">
+<h1>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h1>
+<p>What about defining an operation for moving a point?  Instead of
+adding <code class="docutils literal notranslate"><span class="pre">_point</span></code> to the name of a <code class="docutils literal notranslate"><span class="pre">move</span></code> function, we can just
+put the function (now called a <em>method</em>) <em>inside</em> the <code class="docutils literal notranslate"><span class="pre">Point</span></code>
+class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice that the <em>instance variables</em>
+<code class="docutils literal notranslate"><span class="pre">self.x</span></code> and <code class="docutils literal notranslate"><span class="pre">self.y</span></code> we created in the constructor
+can be used in the <code class="docutils literal notranslate"><span class="pre">move</span></code> method.  They are part of
+the object, and can be used by any method in the class.<br />
+The instance variables of the other <code class="docutils literal notranslate"><span class="pre">Point</span></code> object <code class="docutils literal notranslate"><span class="pre">d</span></code>
+are also available
+in the <code class="docutils literal notranslate"><span class="pre">move</span></code> method.  Let’s look at how these objects
+are passed to the <code class="docutils literal notranslate"><span class="pre">move</span></code> method.</p>
+</section>
+<section id="method-calls">
+<h1>Method calls<a class="headerlink" href="#method-calls" title="Permalink to this headline">#</a></h1>
+<p>Next we’ll create two <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects and call the <code class="docutils literal notranslate"><span class="pre">move</span></code> method
+to create a third <code class="docutils literal notranslate"><span class="pre">Point</span></code> object with the sums of their <em>x</em> and
+<em>y</em> coordinates:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">m</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">m</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>At first it may seem confusing that we defined the <code class="docutils literal notranslate"><span class="pre">move</span></code> method with two arguments, <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code>, but
+it looks like we passed it only one argument, <code class="docutils literal notranslate"><span class="pre">v</span></code>.  In fact
+we passed it both points:  <code class="docutils literal notranslate"><span class="pre">p.move(v)</span></code> passes <code class="docutils literal notranslate"><span class="pre">p</span></code> as the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument and <code class="docutils literal notranslate"><span class="pre">v</span></code> as the <code class="docutils literal notranslate"><span class="pre">d</span></code> argument.  We use the variable
+before the <code class="docutils literal notranslate"><span class="pre">.</span></code>, like <code class="docutils literal notranslate"><span class="pre">p</span></code> in this case, in two different ways: To find the right method (function) to call, by looking inside the <em>class</em> to
+which <code class="docutils literal notranslate"><span class="pre">p</span></code> belongs, and to pass as the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument to the method.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">move</span></code> method above returns a new <code class="docutils literal notranslate"><span class="pre">Point</span></code> object at the
+computed coordinates.  A method can also change the values of
+instance variables.   For example, suppose we add a <code class="docutils literal notranslate"><span class="pre">move_to</span></code>
+method to <code class="docutils literal notranslate"><span class="pre">Point</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">new_x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">new_y</span>
+</pre></div>
+</div>
+<p>This method does not return a new point (it returns <code class="docutils literal notranslate"><span class="pre">none</span></code>), but
+it changes an existing point.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span><span class="mi">23</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">m</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">19</span> <span class="ow">and</span> <span class="n">m</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">23</span>
+</pre></div>
+</div>
+<section id="check-your-understanding">
+<h2><em>Check your understanding</em><a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h2>
+<p>Consider class <code class="docutils literal notranslate"><span class="pre">Pet</span></code> and object <code class="docutils literal notranslate"><span class="pre">my_pet</span></code>.<br />
+What are the <em>instance variables</em> of <code class="docutils literal notranslate"><span class="pre">my_pet</span></code>?
+What are the values of those instance variables
+after executing the code below?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pet</span><span class="p">:</span> 
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">kind</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">called</span> <span class="o">=</span> <span class="n">name</span>
+    
+    <span class="k">def</span> <span class="nf">rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">called</span> <span class="o">=</span> <span class="n">new_name</span>
+
+<span class="n">my_pet</span> <span class="o">=</span> <span class="n">Pet</span><span class="p">(</span><span class="s2">&quot;canis familiaris&quot;</span><span class="p">,</span> <span class="s2">&quot;fido&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="a-little-magic">
+<h1>A little magic<a class="headerlink" href="#a-little-magic" title="Permalink to this headline">#</a></h1>
+<p>We said above that what we really wanted was to express
+movement of points very compactly, as addition.  We
+saw that addition of tuples or lists did not act as we
+wanted;  instead of <code class="docutils literal notranslate"><span class="pre">(3,4)</span> <span class="pre">+</span> <span class="pre">(5,6)</span></code> giving us <code class="docutils literal notranslate"><span class="pre">(8,10)</span></code>, it
+gave us <code class="docutils literal notranslate"><span class="pre">(3,4,5,6)</span></code>.  We can almost get what we want by describing
+how we want <code class="docutils literal notranslate"><span class="pre">+</span></code> to act on <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects.  We do this by
+defining a <em>special method</em> <code class="docutils literal notranslate"><span class="pre">__add__</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Special methods are more commonly known as <em>magic methods</em>.
+They allow us to define how arithmetic operations like <code class="docutils literal notranslate"><span class="pre">+</span></code>
+and <code class="docutils literal notranslate"><span class="pre">-</span></code> work for each class of object, as well as
+comparisons like <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code>, and some other operations.<br />
+If <code class="docutils literal notranslate"><span class="pre">p</span></code> is a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object, then <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">+</span> <span class="pre">q</span></code> is interpreted as
+<code class="docutils literal notranslate"><span class="pre">p.__add__(q)</span></code>.  So finally we get a very compact and
+readable notation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">m</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">m</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>More: <span class="xref myst">Appendix on magic methods</span></p>
+</section>
+<section id="magic-for-printing">
+<h1>Magic for printing<a class="headerlink" href="#magic-for-printing" title="Permalink to this headline">#</a></h1>
+<p>Suppose we wanted to print a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object.  We
+could do it this way:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p is (</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That would give us a reasonable printed representation,
+like “p is (3, 4)”, but it is tedious, verbose,  and easy to
+get wrong.  What if we just wrote</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p is </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That would be simpler, but the result is not very
+useful:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="ow">is</span> <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Point</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x10b4a22e0</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<section id="str-d-not-shaken">
+<h2><code class="docutils literal notranslate"><span class="pre">str()</span></code>d, not shaken<a class="headerlink" href="#str-d-not-shaken" title="Permalink to this headline">#</a></h2>
+<p>If we want to print <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects as simply
+as we print strings and numbers, but we want the
+printed representation to be readable, we will need
+to write additional methods to describe how a
+<code class="docutils literal notranslate"><span class="pre">Point</span></code> object should be converted to a string.</p>
+<p>In fact, in Python we normally write two magic
+methods for this:  <code class="docutils literal notranslate"><span class="pre">__str__</span></code> describes how it
+should be represented by the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function,
+which is the representation used in <code class="docutils literal notranslate"><span class="pre">print</span></code>
+or in an f-string like <code class="docutils literal notranslate"><span class="pre">f&quot;it</span> <span class="pre">is</span> <span class="pre">{p}&quot;</span></code>. We might
+decide that we want the object created by <code class="docutils literal notranslate"><span class="pre">Point(3,2)</span></code>
+to print as “(3, 2)”. We would then write a
+<code class="docutils literal notranslate"><span class="pre">__str__</span></code> method in the <code class="docutils literal notranslate"><span class="pre">Point</span></code> class like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+</pre></div>
+</div>
+<p>Now if we again execute</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p is </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>we get a more useful result:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="ow">is</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="a-repr-for-debugging">
+<h2>A <code class="docutils literal notranslate"><span class="pre">repr()</span></code> for debugging<a class="headerlink" href="#a-repr-for-debugging" title="Permalink to this headline">#</a></h2>
+<p>Usually we will also want to provide a different
+string representation that is useful in debugging
+and at the Python command line interface.  The
+string representation above may be fine for end users,
+but for the software developer it does not differentiate
+between a tuple <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">4)</span></code> and a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">4)</span></code>.
+We can define a <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method to give a string
+representation more useful in debugging.  The function
+<code class="docutils literal notranslate"><span class="pre">repr(x)</span></code> is actually a call on the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method
+of <code class="docutils literal notranslate"><span class="pre">x</span></code>, i.e., <code class="docutils literal notranslate"><span class="pre">x.__repr__()</span></code>.</p>
+<p>Although
+Python will permit us to write whatever <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>
+method we choose, by accepted convention is to make
+it look like a call on the constructor, i.e., like
+Python code to create an identical object. Thus, for
+the <code class="docutils literal notranslate"><span class="pre">Point</span></code> class we might write:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Point(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+</pre></div>
+</div>
+<p>Now if we write</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;repr(p) is </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>we will get</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="ow">is</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> function automatically applies the <code class="docutils literal notranslate"><span class="pre">str</span></code> function to its
+arguments, so defining a good <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method will ensure it
+is printed as you like in most cases.  Oddly, though,
+the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for <code class="docutils literal notranslate"><span class="pre">list</span></code> applies the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method
+to each of its arguments, so if we write</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>we get</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+</pre></div>
+</div>
+<section id="id1">
+<h3><em>Check your understanding</em><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Which of the following are legal, and what
+values do they return?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str(5)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(5).str()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(5).__str__()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__str__(5)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repr([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3].repr()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3].__repr__()</span></code></p></li>
+</ul>
+<p>What does the following little program print?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Wrap</span><span class="p">:</span> 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Wrap(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">Wrap</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Wrap</span><span class="p">(</span><span class="s2">&quot;beta&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="variables-refer-to-objects">
+<h1>Variables <em>refer</em> to objects<a class="headerlink" href="#variables-refer-to-objects" title="Permalink to this headline">#</a></h1>
+<p>Before reading on, try to predict what the following
+little program will print.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now execute that program.  Did you get the result you
+expected?  If it surprised you, try visualizing it in
+PythonTutor (<a class="reference external" href="http://pythontutor.com/">http://pythontutor.com/</a>).  You should get a
+diagram that looks like this:</p>
+<p><img alt="" src="01-Objects/img/pythontutor-list-alias.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are distinct variables, but they are both references to the same list.   When we change <code class="docutils literal notranslate"><span class="pre">y</span></code> by appending 4, we are changing the same object
+that <code class="docutils literal notranslate"><span class="pre">x</span></code> refers to.   We say that <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are <em>aliases</em>, two names for the same object.</p>
+<p>Note this is very different from the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Each time we create a list like <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, we are creating a distinct
+list.  In this seocond version of the program, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are not
+aliases.</p>
+<p><img alt="" src="01-Objects/img/pythontutor-list-noalias.png" /></p>
+<p>It is essential to remember that variables hold <em>references</em> to objects, and
+there may be more than one reference to the same object.  We can observe the
+same phenomenon with classes we add to Python.  Consider this program:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dy</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">dy</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once again we have created two variables that are <em>aliases</em>, i.e., they
+refer to the same object.   PythonTutor illustrates:</p>
+<p><img alt="" src="01-Objects/img/pythontutor-aliased-point.png" /></p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">Point</span></code> is a reference to the <em>class</em>, while <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> are references to the Point <em>object</em> we created from the Point class.  When we call <code class="docutils literal notranslate"><span class="pre">p1.move</span></code>, the <code class="docutils literal notranslate"><span class="pre">move</span></code> method of class <code class="docutils literal notranslate"><span class="pre">Point</span></code> makes a change to
+the object that is referenced by both <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>.  We often say that
+a method like <code class="docutils literal notranslate"><span class="pre">move</span></code> <em>mutates</em> an object.</p>
+<p>There is another way we could have written a method like <code class="docutils literal notranslate"><span class="pre">move</span></code>.<br />
+Instead of <em>mutating</em> the object (changing the values of its <em>fields</em>
+<code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>), we could have created a new Point object at the
+modified coordinates:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">moved</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dy</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice that method <code class="docutils literal notranslate"><span class="pre">moved</span></code>, unlike method <code class="docutils literal notranslate"><span class="pre">move</span></code> in the prior example,
+return a new Point object that is distinct from the Point object that was aliased.  Initially <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> may be aliases, after <code class="docutils literal notranslate"><span class="pre">p2</span> <span class="pre">=</span> <span class="pre">p1</span></code>:</p>
+<p><img alt="" src="01-Objects/img/pythontutor-point-unaliased-step1.png" /></p>
+<p>But after <code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">=</span> <span class="pre">p1.moved(4,4)</span></code>, <code class="docutils literal notranslate"><span class="pre">p1</span></code> refers to a new, distinct object:</p>
+<p><img alt="" src="01-Objects/img/pythontutor-point-unaliased-step2.png" /></p>
+<p>As we saw with the <code class="docutils literal notranslate"><span class="pre">list</span></code> example, aiasing applies to objects
+from the built-in Python classes as well as to objects
+from the classes that you will write.  It just hasn’t been
+apparent until now, because many of the built-in classes
+are <em>immutable</em>:  They do not have any methods that
+change the values stored in an object.  For example, when
+we write <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">5</span></code>, we are actually calling <code class="docutils literal notranslate"><span class="pre">(3).__add__(5)</span></code>;
+The <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method does not change the value of <code class="docutils literal notranslate"><span class="pre">3</span></code> (that
+would be confusing!) but instead returns a new object <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+<p>We will write both <em>immutable</em> and <em>mutable</em> classes.<br />
+Aliasing of mutable objects is often a mistake, but not always.
+Later we will intentionally created aliases to access
+mutable objects.  The important thing is to be aware of it.</p>
+</section>
+<section id="combining-objects-composing">
+<h1>Combining Objects: Composing<a class="headerlink" href="#combining-objects-composing" title="Permalink to this headline">#</a></h1>
+<p>The <em>instance variables</em> defined in a class and stored
+in the objects of that class can themselves be objects.
+We can make lists of objects, tuples of objects, etc.</p>
+<p>Often we will want to create a new class with instance
+variables that are objects created from classes that
+we have previously created.  For example, if we create a
+new class <code class="docutils literal notranslate"><span class="pre">Rect</span></code> to represent rectangles, we might want
+to use <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects to represent two corners of
+the rectangle:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rect</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;A rectangle is represented by a pair of points</span>
+<span class="sd">    (x_min, y_min), (x_max, y_max) at opposite corners.</span>
+<span class="sd">    Whether (x_min, y_min) is lower left or upper left</span>
+<span class="sd">    depends on the coordinate system.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy_min</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">xy_max</span><span class="p">:</span> <span class="n">Point</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">=</span> <span class="n">xy_min</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">=</span> <span class="n">xy_max</span>
+    
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Area is height * width&quot;&quot;&quot;</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">return</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span>
+
+    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Rect&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;New rectangle offset from this one by delta as movement vector&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rect(</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rect(</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
+<span class="n">mvmt</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r1</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">mvmt</span><span class="p">)</span>  <span class="c1"># Treat Point(4,5) as (dx, dy)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r1</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">mvmt</span><span class="si">}</span><span class="s2"> =&gt; </span><span class="si">{</span><span class="n">r2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Area of </span><span class="si">{</span><span class="n">r1</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">r1</span><span class="o">.</span><span class="n">area</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">height</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code> are local variables
+that exist only while method <code class="docutils literal notranslate"><span class="pre">area</span></code> is executing.
+<code class="docutils literal notranslate"><span class="pre">min_pt</span></code> and <code class="docutils literal notranslate"><span class="pre">max_pt</span></code>, on the other hand, are
+<em>instance variables</em> that are stored within the
+<code class="docutils literal notranslate"><span class="pre">Rect</span></code> object.</p>
+<section id="id2">
+<h2><em>Check your understanding</em><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>Suppose we ran the above code in PythonTutor.
+(PythonTutor
+cannot import <code class="docutils literal notranslate"><span class="pre">Number</span></code>, but for the examples we could
+replace it with <code class="docutils literal notranslate"><span class="pre">int</span></code>.)  What picture would it draw
+of <code class="docutils literal notranslate"><span class="pre">r1</span></code>?   Would <code class="docutils literal notranslate"><span class="pre">height</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code> in method
+<code class="docutils literal notranslate"><span class="pre">area</span></code> be included as instance variables?  Why or
+why not?</p>
+</section>
+</section>
+<section id="wrapping-and-delegation">
+<h1>Wrapping and delegation<a class="headerlink" href="#wrapping-and-delegation" title="Permalink to this headline">#</a></h1>
+<p>Sometimes we want a class of objects that is almost
+like an existing class, but with a little extra
+information or a few new methods.  One way to do this
+is to build a new class that <em>wraps</em> an existing class,
+often a built-in class like <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code>.  (In
+<span class="xref myst">the next chapter</span> we will
+see another approach.)</p>
+<p>Suppose we wanted objects that provide some of the same
+functionality as <code class="docutils literal notranslate"><span class="pre">list</span></code> objects, and also some new
+functionality or some restrictions.  For example, we
+might want a method <code class="docutils literal notranslate"><span class="pre">area</span></code> that returns the sum of
+the areas of all the <code class="docutils literal notranslate"><span class="pre">Rect</span></code> objects in the <code class="docutils literal notranslate"><span class="pre">RectList</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RectList</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;A collection of Rects.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">el</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+</div>
+<p>That seems reasonable, but how do we add <code class="docutils literal notranslate"><span class="pre">Rect</span></code> objects to the
+<code class="docutils literal notranslate"><span class="pre">Rectlist</span></code>?</p>
+<p>We do <em>not</em> want to do it this way:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">li</span> <span class="o">=</span> <span class="n">RectList</span><span class="p">()</span>
+<span class="c1"># DON&#39;T DO THIS</span>
+<span class="n">li</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">)))</span>
+<span class="n">li</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>As a general rule, we should be cautious about accessing the instance
+variables of an object outside of methods of the object’s class,
+and we should especially avoid modifying instance variables anywhere
+except in methods.  Code that “breaks the abstraction”, like the example
+above calling the <code class="docutils literal notranslate"><span class="pre">append</span></code> method of the <code class="docutils literal notranslate"><span class="pre">elements</span></code> instance variable, is
+difficult to read and maintain. So we want instead to give <code class="docutils literal notranslate"><span class="pre">RectList</span></code>
+it’s own <code class="docutils literal notranslate"><span class="pre">append</span></code> method, so that we can write</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">li</span> <span class="o">=</span> <span class="n">RectList</span><span class="p">()</span>
+<span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">)))</span>
+<span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Combined area is </span><span class="si">{</span><span class="n">li</span><span class="o">.</span><span class="n">area</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">append</span></code> method can be very simple!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">Rect</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Delegate to elements&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We call this <em>delegation</em> because <code class="docutils literal notranslate"><span class="pre">append</span></code> method of <code class="docutils literal notranslate"><span class="pre">RectList</span></code> method<br />
+just hands off the work to the <code class="docutils literal notranslate"><span class="pre">append</span></code> method of class <code class="docutils literal notranslate"><span class="pre">list</span></code>.  When we
+write a <em>wrapper</em> class, we typically write several such
+trivial <em>delegation</em> methods.</p>
+<p>Wrapping and delegation work well when we want the wrapper class
+(like <code class="docutils literal notranslate"><span class="pre">RectList</span></code> in this example) to
+have a few of the same methods as the wrapped class (<code class="docutils literal notranslate"><span class="pre">list</span></code>).  When
+we want the new collection class to have all or nearly all the methods
+of an existing collection, the <em>inheritance</em> approach introduced in the
+next chapter is more appropriate.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UO-CS-OER/CS210-text",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./01-Objects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../01-Intro/01-03-Kickstart.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python Programming Kickstart</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Michal Young, Boyana Norris, and Ram Durairajan<br/>
+  
+      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
