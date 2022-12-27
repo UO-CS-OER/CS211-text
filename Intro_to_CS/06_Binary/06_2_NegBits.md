@@ -1,8 +1,18 @@
 ---
-layout: page
-mathjax: true
-title:  Negative Binary Numbers
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
+
+# Negative Binary Numbers
 
 In [the prior section](06_1_Bits) 
 on binary representation and manipulation we 

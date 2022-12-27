@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Motivating Example &#8212; Introduction to Computer Science I</title>
+    <title>Regular expressions &#8212; Introduction to Computer Science I</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -88,11 +88,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
@@ -130,6 +125,127 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
    Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Objects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
+   Objects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  02 Inheritance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">
+   Class Hierarchies and Inheritance
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  03 Recursion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
+   Recursion in Object-Oriented Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
+   Refactoring Repetitive Code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  04 Aliasing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
+   Aliasing on Purpose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  05 Guess and Check
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
+   Recursive Guess and Check
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  06 Binary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
+   Bit Twiddling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
+   What the Hex?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  07 Functional
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
+   Sometimes Functions are Values
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_looploop.html">
+   Appendix – What for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_Special.html">
+   Appendix – Magic Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_style.html">
+   Style Guide for Python Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_internals.html">
+   How Python Works
   </a>
  </li>
 </ul>
@@ -183,6 +299,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/08_Assembler/08_2_Regexp.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -250,6 +413,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="../_sources/08_Assembler/08_2_Regexp.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="../_sources/08_Assembler/08_2_Regexp.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -309,39 +489,39 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivating-example">
    Motivating Example
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-more-realistic-example">
    A More Realistic Example
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#but-that-s-so-unreadable">
    But that’s so unreadable!
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#patterns-are-like-programs">
    Patterns are Like Programs
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#white-space-and-comments-in-regular-expressions">
      White space and comments in regular expressions
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#composing-patterns">
    Composing Patterns
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#or">
      Or (
      <code class="docutils literal notranslate">
@@ -352,7 +532,7 @@ title="Print to PDF"
      )
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#repetition-and">
      Repetition (
      <code class="docutils literal notranslate">
@@ -369,12 +549,12 @@ title="Print to PDF"
      )
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#concatenation">
      Concatenation
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#character-sets">
      Character sets (
      <code class="docutils literal notranslate">
@@ -387,7 +567,7 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#wild-card">
    Wild card (
    <code class="docutils literal notranslate">
@@ -398,22 +578,22 @@ title="Print to PDF"
    )
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#search-match-and-fullmatch">
    Search, Match, and Fullmatch
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#capturing">
    Capturing
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#perspective">
    Perspective
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sample-code">
      Sample code
     </a>
@@ -429,7 +609,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Motivating Example</h1>
+                <h1>Regular expressions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -439,39 +619,39 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivating-example">
    Motivating Example
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-more-realistic-example">
    A More Realistic Example
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#but-that-s-so-unreadable">
    But that’s so unreadable!
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#patterns-are-like-programs">
    Patterns are Like Programs
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#white-space-and-comments-in-regular-expressions">
      White space and comments in regular expressions
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#composing-patterns">
    Composing Patterns
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#or">
      Or (
      <code class="docutils literal notranslate">
@@ -482,7 +662,7 @@ title="Print to PDF"
      )
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#repetition-and">
      Repetition (
      <code class="docutils literal notranslate">
@@ -499,12 +679,12 @@ title="Print to PDF"
      )
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#concatenation">
      Concatenation
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#character-sets">
      Character sets (
      <code class="docutils literal notranslate">
@@ -517,7 +697,7 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#wild-card">
    Wild card (
    <code class="docutils literal notranslate">
@@ -528,22 +708,22 @@ title="Print to PDF"
    )
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#search-match-and-fullmatch">
    Search, Match, and Fullmatch
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#capturing">
    Capturing
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#perspective">
    Perspective
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sample-code">
      Sample code
     </a>
@@ -560,15 +740,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>We often need to extract information from text by
+  <section class="tex2jax_ignore mathjax_ignore" id="regular-expressions">
+<h1>Regular expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">#</a></h1>
+<p>We often need to extract information from text by
 matching patterns.  Regular expressions are a powerful
 tool for defining patterns.</p>
 <section id="motivating-example">
-<h1>Motivating Example<a class="headerlink" href="#motivating-example" title="Permalink to this headline">#</a></h1>
+<h2>Motivating Example<a class="headerlink" href="#motivating-example" title="Permalink to this headline">#</a></h2>
 <p><img alt="https://xkcd.com/208/" src="https://imgs.xkcd.com/comics/regular_expressions.png" /></p>
 </section>
 <section id="a-more-realistic-example">
-<h1>A More Realistic Example<a class="headerlink" href="#a-more-realistic-example" title="Permalink to this headline">#</a></h1>
+<h2>A More Realistic Example<a class="headerlink" href="#a-more-realistic-example" title="Permalink to this headline">#</a></h2>
 <p>California bill 1793, passed in 2018,
 provides for resentencing of people
 convicted of low-level marijuana crimes
@@ -597,7 +779,7 @@ regular expressions in Python, e.g.,</p>
 </div>
 </section>
 <section id="but-that-s-so-unreadable">
-<h1>But that’s so unreadable!<a class="headerlink" href="#but-that-s-so-unreadable" title="Permalink to this headline">#</a></h1>
+<h2>But that’s so unreadable!<a class="headerlink" href="#but-that-s-so-unreadable" title="Permalink to this headline">#</a></h2>
 <p>Regular expressions are notoriously difficult
 to read.  If I encountered the regular expression
 above (<code class="docutils literal notranslate"><span class="pre">/COM:\s*ADR-[\d]{6,8}\s*\([^)]*\)/m</span></code>)
@@ -625,7 +807,7 @@ what you need to solve your immediate problem.</p></li>
 </ul>
 </section>
 <section id="patterns-are-like-programs">
-<h1>Patterns are Like Programs<a class="headerlink" href="#patterns-are-like-programs" title="Permalink to this headline">#</a></h1>
+<h2>Patterns are Like Programs<a class="headerlink" href="#patterns-are-like-programs" title="Permalink to this headline">#</a></h2>
 <p>Regular expressions are like a little
 programming language designed just for
 matching patterns in text.  In Python we
@@ -663,7 +845,7 @@ whole string matches the pattern.  Thus</p>
 </div>
 <p>prints <code class="docutils literal notranslate"><span class="pre">***</span> <span class="pre">No</span> <span class="pre">Match</span> <span class="pre">***</span></code>.</p>
 <section id="white-space-and-comments-in-regular-expressions">
-<h2>White space and comments in regular expressions<a class="headerlink" href="#white-space-and-comments-in-regular-expressions" title="Permalink to this headline">#</a></h2>
+<h3>White space and comments in regular expressions<a class="headerlink" href="#white-space-and-comments-in-regular-expressions" title="Permalink to this headline">#</a></h3>
 <p>By default, a space in a regular expression
 matches a space in a string.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="s2">&quot; is &quot;</span>
@@ -710,7 +892,7 @@ these readability aids:</p>
 </section>
 </section>
 <section id="composing-patterns">
-<h1>Composing Patterns<a class="headerlink" href="#composing-patterns" title="Permalink to this headline">#</a></h1>
+<h2>Composing Patterns<a class="headerlink" href="#composing-patterns" title="Permalink to this headline">#</a></h2>
 <p>Regular expressions wouldn’t be very
 powerful if we could only search for
 fixed strings.   Fortunately we can build up
@@ -721,7 +903,7 @@ we combine simple arithmetic expressions into
 more complex expressions with arithmetic operators
 like <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
 <section id="or">
-<h2>Or (<code class="docutils literal notranslate"><span class="pre">|</span></code>)<a class="headerlink" href="#or" title="Permalink to this headline">#</a></h2>
+<h3>Or (<code class="docutils literal notranslate"><span class="pre">|</span></code>)<a class="headerlink" href="#or" title="Permalink to this headline">#</a></h3>
 <p>Suppose <em>e1</em> and <em>e2</em> are regular expressions,
 and that they match <em>m1</em> and <em>m2</em>, respectively.<br />
 We can write a pattern <em>e1</em> | <em>e2</em> to match
@@ -740,7 +922,7 @@ with parentheses to avoid ambiguity.</p>
 </div>
 </section>
 <section id="repetition-and">
-<h2>Repetition (<code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span></code>)<a class="headerlink" href="#repetition-and" title="Permalink to this headline">#</a></h2>
+<h3>Repetition (<code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span></code>)<a class="headerlink" href="#repetition-and" title="Permalink to this headline">#</a></h3>
 <p>We can write <em>e1</em>* to match any number of
 repetitions of what <em>e1</em> matches, including
 zero, or we can write <em>e1</em>+ to match
@@ -761,7 +943,7 @@ one or more repetitions.</p>
 </div>
 </section>
 <section id="concatenation">
-<h2>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">#</a></h2>
+<h3>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">#</a></h3>
 <p>The examples above are actually using another “operator”
 for regular expressions.  The pattern <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code> is actually
 three patterns (<code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>, and <code class="docutils literal notranslate"><span class="pre">t</span></code>) that are concatenated
@@ -775,7 +957,7 @@ clear that the whole string “ch-” must be repeated, and
 not just the hyphen.</p>
 </section>
 <section id="character-sets">
-<h2>Character sets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)<a class="headerlink" href="#character-sets" title="Permalink to this headline">#</a></h2>
+<h3>Character sets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)<a class="headerlink" href="#character-sets" title="Permalink to this headline">#</a></h3>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">&quot;(ch-)*(changes)&quot;</span></code> did not match the
 beginning “Ch” of “Ch-ch-ch-ch-changes”.  We could
 use <code class="docutils literal notranslate"><span class="pre">|</span></code> allow the “c” to be matched in lower case or
@@ -809,7 +991,7 @@ any of “c”, “d”, “e”, or “f”.</p>
 </section>
 </section>
 <section id="wild-card">
-<h1>Wild card (<code class="docutils literal notranslate"><span class="pre">.</span></code>)<a class="headerlink" href="#wild-card" title="Permalink to this headline">#</a></h1>
+<h2>Wild card (<code class="docutils literal notranslate"><span class="pre">.</span></code>)<a class="headerlink" href="#wild-card" title="Permalink to this headline">#</a></h2>
 <p>The symbol <code class="docutils literal notranslate"><span class="pre">.</span></code> (pronounced “dot”) is a wild card that matches
 any single character.  We can use <code class="docutils literal notranslate"><span class="pre">.*</span></code> to match a substring
 of any length (including length zero), containing
@@ -830,7 +1012,7 @@ text between delimiters, but we must be careful because it is
 </div>
 </section>
 <section id="search-match-and-fullmatch">
-<h1>Search, Match, and Fullmatch<a class="headerlink" href="#search-match-and-fullmatch" title="Permalink to this headline">#</a></h1>
+<h2>Search, Match, and Fullmatch<a class="headerlink" href="#search-match-and-fullmatch" title="Permalink to this headline">#</a></h2>
 <p>In the examples above, we have used the <code class="docutils literal notranslate"><span class="pre">search</span></code> function from
 <code class="docutils literal notranslate"><span class="pre">re</span></code> to find a substring matching the pattern anywhere in the
 string.   That is often the right choice if we are searching
@@ -889,7 +1071,7 @@ then we get the following results:</p>
 </table>
 </section>
 <section id="capturing">
-<h1>Capturing<a class="headerlink" href="#capturing" title="Permalink to this headline">#</a></h1>
+<h2>Capturing<a class="headerlink" href="#capturing" title="Permalink to this headline">#</a></h2>
 <p>Often it is not enough to know the position of the whole match.<br />
 Particularly when we are using <code class="docutils literal notranslate"><span class="pre">re.fullmatch</span></code>, we typically want
 to know which parts of the pattern matched which parts of the string.
@@ -955,7 +1137,7 @@ last repetition, and groups can be nested:</p>
 </div>
 </section>
 <section id="perspective">
-<h1>Perspective<a class="headerlink" href="#perspective" title="Permalink to this headline">#</a></h1>
+<h2>Perspective<a class="headerlink" href="#perspective" title="Permalink to this headline">#</a></h2>
 <p>One could write
 <a class="reference external" href="http://shop.oreilly.com/product/9780596528126.do">a whole book</a>
 on regular expressions.
@@ -976,8 +1158,9 @@ prepared to learn what you need from books and online
 tutorials and references.</p></li>
 </ul>
 <section id="sample-code">
-<h2>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">#</a></h2>
+<h3>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">#</a></h3>
 <p><span class="xref myst">Sample code for this chapter</span></p>
+</section>
 </section>
 </section>
 

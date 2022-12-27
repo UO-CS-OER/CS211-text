@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Untangling GUIs with Model-View-Controller &#8212; Introduction to Computer Science I</title>
+    <title>Notifiers &#8212; Introduction to Computer Science I</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -88,11 +88,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
@@ -140,8 +135,117 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../01-Objects/01_1_Objects.html">
-   Example: Points
+  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
+   Objects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  02 Inheritance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_1_Inheritance.html">
+   Class Hierarchies and Inheritance
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  03 Recursion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
+   Recursion in Object-Oriented Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
+   Refactoring Repetitive Code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  04 Aliasing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
+   Aliasing on Purpose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  05 Guess and Check
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
+   Recursive Guess and Check
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  06 Binary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
+   Bit Twiddling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
+   What the Hex?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  07 Functional
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
+   Sometimes Functions are Values
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_looploop.html">
+   Appendix – What for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_Special.html">
+   Appendix – Magic Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_style.html">
+   Style Guide for Python Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_internals.html">
+   How Python Works
   </a>
  </li>
 </ul>
@@ -195,6 +299,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/02_Inheritance/02_2_Notifiers.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -262,6 +413,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="../_sources/02_Inheritance/02_2_Notifiers.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="../_sources/02_Inheritance/02_2_Notifiers.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -321,27 +489,27 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#untangling-guis-with-model-view-controller">
    Untangling GUIs with Model-View-Controller
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notifiers">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
    Notifiers
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#model-view-controller-mvc">
    Model-View-Controller (MVC)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
    Summary
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sample-code">
    Sample Code
   </a>
@@ -355,7 +523,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Untangling GUIs with Model-View-Controller</h1>
+                <h1>Notifiers</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -365,27 +533,27 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#untangling-guis-with-model-view-controller">
    Untangling GUIs with Model-View-Controller
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notifiers">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
    Notifiers
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#model-view-controller-mvc">
    Model-View-Controller (MVC)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
    Summary
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sample-code">
    Sample Code
   </a>
@@ -400,8 +568,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="untangling-guis-with-model-view-controller">
-<h1>Untangling GUIs with Model-View-Controller<a class="headerlink" href="#untangling-guis-with-model-view-controller" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="notifiers">
+<h1>Notifiers<a class="headerlink" href="#notifiers" title="Permalink to this headline">#</a></h1>
+<section id="untangling-guis-with-model-view-controller">
+<h2>Untangling GUIs with Model-View-Controller<a class="headerlink" href="#untangling-guis-with-model-view-controller" title="Permalink to this headline">#</a></h2>
 <p>As we build larger projects, it becomes more
 and more important to divide them into parts,
 and to control the ways in which one part
@@ -476,8 +646,8 @@ model and view.  There is a common, fairly
 standard way to break it, called the model-view-controller
 design pattern.</p>
 </section>
-<section id="notifiers">
-<h1>Notifiers<a class="headerlink" href="#notifiers" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>Notifiers<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Functions or methods in the view component
 need to call methods or functions in the
 model component when the user interacts, e.g.,
@@ -488,7 +658,7 @@ call methods or functions in the view component
 to indicate that some parts of screen representation
 should be updated.  Thus parts of each module
 call parts in the other module.</p>
-<p><img alt="model and view call each other" src="02_Inheritance/img/model-view-calls.svg" /></p>
+<p><img alt="model and view call each other" src="../_images/model-view-calls.svg" /></p>
 <p>Calls between the two components is
 not a problem in itself, unless there
 is an infinite recursive loop.  We can
@@ -537,7 +707,7 @@ the objects but not among the methods.</p>
 </div>
 <p>If we place <code class="docutils literal notranslate"><span class="pre">M</span></code> and <code class="docutils literal notranslate"><span class="pre">V</span></code> in different modules,
 each module will have to <code class="docutils literal notranslate"><span class="pre">import</span></code> the other.</p>
-<p><img alt="V and M call each others methods" src="02_Inheritance/img/M-V-cycle.svg" /></p>
+<p><img alt="V and M call each others methods" src="../_images/M-V-cycle.svg" /></p>
 <p>We can’t break the cycle in calls (and we
 don’t want to), but we can break the cycle
 in <code class="docutils literal notranslate"><span class="pre">import</span></code> by interposing a third module
@@ -615,10 +785,10 @@ though, the behavior is the same:</p>
 calling arrangement is the ability to
 divide the code into three modules,
 with no cycles in the <code class="docutils literal notranslate"><span class="pre">import</span></code> relation:</p>
-<p><img alt="Three modules for Model-View-Controller" src="02_Inheritance/img/MVC-classes.svg" /></p>
+<p><img alt="Three modules for Model-View-Controller" src="../_images/MVC-classes.svg" /></p>
 </section>
 <section id="model-view-controller-mvc">
-<h1>Model-View-Controller (MVC)<a class="headerlink" href="#model-view-controller-mvc" title="Permalink to this headline">#</a></h1>
+<h2>Model-View-Controller (MVC)<a class="headerlink" href="#model-view-controller-mvc" title="Permalink to this headline">#</a></h2>
 <p>Structures like that described above,
 with “event notification” taking the place
 of some direct method calls, are common
@@ -662,7 +832,7 @@ to read the code fairly carefully to
 understand all the details.</p>
 </section>
 <section id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h1>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>Large programs must be broken into parts
 (modules)
 that we can work on separately.  When
@@ -692,8 +862,9 @@ breaking what would otherwise be a cycle
 in the <code class="docutils literal notranslate"><span class="pre">import</span></code> relation.</p>
 </section>
 <section id="sample-code">
-<h1>Sample Code<a class="headerlink" href="#sample-code" title="Permalink to this headline">#</a></h1>
+<h2>Sample Code<a class="headerlink" href="#sample-code" title="Permalink to this headline">#</a></h2>
 <p><span class="xref myst">Sample code for this chapter</span></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

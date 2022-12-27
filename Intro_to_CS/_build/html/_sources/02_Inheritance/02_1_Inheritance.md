@@ -1,7 +1,18 @@
 ---
-layout: page
-title: Class Hierarchies and Inheritance
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
+
+# Class Hierarchies and Inheritance
 
 ## Subclasses
 
@@ -453,7 +464,7 @@ ShapeList [Rect(Point(3, 3), Point(5, 7)), Square(Point(2, 2), 2), Triangle(Poin
 Combined area is 13.0, expecting 13
 ```
 
-### Test your understanding
+## Test your understanding
 
 We might choose to extend a built-in class like 
 `list` or `dict` because 

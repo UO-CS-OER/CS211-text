@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Representing a negative integer &#8212; Introduction to Computer Science I</title>
+    <title>Negative Binary Numbers &#8212; Introduction to Computer Science I</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -90,11 +90,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
@@ -132,6 +127,127 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
    Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Objects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
+   Objects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  02 Inheritance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">
+   Class Hierarchies and Inheritance
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  03 Recursion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
+   Recursion in Object-Oriented Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
+   Refactoring Repetitive Code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  04 Aliasing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
+   Aliasing on Purpose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  05 Guess and Check
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
+   Recursive Guess and Check
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  06 Binary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_1_Bits.html">
+   Bit Twiddling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_3_Hex.html">
+   What the Hex?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  07 Functional
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
+   Sometimes Functions are Values
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_looploop.html">
+   Appendix – What for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_Special.html">
+   Appendix – Magic Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_style.html">
+   Style Guide for Python Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_internals.html">
+   How Python Works
   </a>
  </li>
 </ul>
@@ -185,6 +301,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/06_Binary/06_2_NegBits.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -252,6 +415,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="../_sources/06_Binary/06_2_NegBits.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="../_sources/06_Binary/06_2_NegBits.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -311,46 +491,46 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representing-a-negative-integer">
    Representing a negative integer
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time">
      Sign and magnitude: Seemed like a good idea at the time
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#two-s-complement-a-better-way">
    Two’s complement: A better way
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#check-your-understanding">
      Check your understanding
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#python-bin-lies-about-negative-numbers">
      Python ‘bin’ lies about negative numbers
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sign-extension">
    Sign extension
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packing-and-extracting-bit-fields">
    Packing and extracting bit fields
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
    Summary
   </a>
@@ -364,7 +544,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Representing a negative integer</h1>
+                <h1>Negative Binary Numbers</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -374,46 +554,46 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representing-a-negative-integer">
    Representing a negative integer
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time">
      Sign and magnitude: Seemed like a good idea at the time
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#two-s-complement-a-better-way">
    Two’s complement: A better way
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#check-your-understanding">
      Check your understanding
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#python-bin-lies-about-negative-numbers">
      Python ‘bin’ lies about negative numbers
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sign-extension">
    Sign extension
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packing-and-extracting-bit-fields">
    Packing and extracting bit fields
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
    Summary
   </a>
@@ -428,16 +608,18 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>In <a class="reference internal" href="06_1_Bits.html"><span class="doc std std-doc">the prior section</span></a>
+  <section class="tex2jax_ignore mathjax_ignore" id="negative-binary-numbers">
+<h1>Negative Binary Numbers<a class="headerlink" href="#negative-binary-numbers" title="Permalink to this headline">#</a></h1>
+<p>In <a class="reference internal" href="06_1_Bits.html"><span class="doc std std-doc">the prior section</span></a>
 on binary representation and manipulation we
 discussed only positive integers and zero.
 Negative numbers complicate things slightly.</p>
 <section id="representing-a-negative-integer">
-<h1>Representing a negative integer<a class="headerlink" href="#representing-a-negative-integer" title="Permalink to this headline">#</a></h1>
+<h2>Representing a negative integer<a class="headerlink" href="#representing-a-negative-integer" title="Permalink to this headline">#</a></h2>
 <p>How should we represent -1 in binary?
 How about -42?</p>
 <section id="sign-and-magnitude-seemed-like-a-good-idea-at-the-time">
-<h2>Sign and magnitude: Seemed like a good idea at the time<a class="headerlink" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time" title="Permalink to this headline">#</a></h2>
+<h3>Sign and magnitude: Seemed like a good idea at the time<a class="headerlink" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time" title="Permalink to this headline">#</a></h3>
 <p>A simple approach would be to reserve one binary
 digit as a <em>sign bit</em>.  For example, in an 8-bit integer,
 10000001 could represent -1, and 10000101 could represent -5.<br />
@@ -464,7 +646,7 @@ notation.</p>
 </section>
 </section>
 <section id="two-s-complement-a-better-way">
-<h1>Two’s complement: A better way<a class="headerlink" href="#two-s-complement-a-better-way" title="Permalink to this headline">#</a></h1>
+<h2>Two’s complement: A better way<a class="headerlink" href="#two-s-complement-a-better-way" title="Permalink to this headline">#</a></h2>
 <p>The representation for negative numbers actually used in virtually all modern
 digital computers is
 <a class="reference external" href="https://en.wikipedia.org/wiki/Two%27s_complement">two’s complement</a>.   In this notation, the 8-bit representation of
@@ -486,13 +668,13 @@ bit (still called the <em>sign bit</em>) represents -128, and the
 remaining bits represent 127, so that together they represent
 -1.</p>
 <section id="check-your-understanding">
-<h2>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h2>
+<h3>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h3>
 <p>If 11111111 is -1, what is the representation of -2?</p>
 <p>What range of values can be represented by by an 8-bit
 integer using the two’s complement notation?</p>
 </section>
 <section id="python-bin-lies-about-negative-numbers">
-<h2>Python ‘bin’ lies about negative numbers<a class="headerlink" href="#python-bin-lies-about-negative-numbers" title="Permalink to this headline">#</a></h2>
+<h3>Python ‘bin’ lies about negative numbers<a class="headerlink" href="#python-bin-lies-about-negative-numbers" title="Permalink to this headline">#</a></h3>
 <p>If you count on the Python <code class="docutils literal notranslate"><span class="pre">bin</span></code> function to check
 the binary representation of integers, you will
 encounter a problem:  Python’s <code class="docutils literal notranslate"><span class="pre">bin</span></code> function uses
@@ -518,7 +700,7 @@ the actual representation of negative numbers.</p>
 </section>
 </section>
 <section id="sign-extension">
-<h1>Sign extension<a class="headerlink" href="#sign-extension" title="Permalink to this headline">#</a></h1>
+<h2>Sign extension<a class="headerlink" href="#sign-extension" title="Permalink to this headline">#</a></h2>
 <p>Note that when we describe the representation of a negative
 binary number, we need to say how many bits are in the
 representation.  The representation of -1 as an
@@ -550,7 +732,7 @@ are not all the same, and the same as the remaining sign
 bit, then the number does not fit in the smaller field!</p>
 </section>
 <section id="packing-and-extracting-bit-fields">
-<h1>Packing and extracting bit fields<a class="headerlink" href="#packing-and-extracting-bit-fields" title="Permalink to this headline">#</a></h1>
+<h2>Packing and extracting bit fields<a class="headerlink" href="#packing-and-extracting-bit-fields" title="Permalink to this headline">#</a></h2>
 <p>When we pack multiple values
 into an integer, we must be careful to
 determine whether that value should
@@ -596,7 +778,7 @@ when to perform sign extension, but I will provide a
 sign extension function that you can call.</p>
 </section>
 <section id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h1>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>In all modern digital computers, negative integers are
 represented with the <em>two’s complement</em> system.  In this
 system, the <em>sign bit</em> represents a negative power of two,
@@ -625,6 +807,7 @@ the sign bit of the smaller field with duplicates of the sign bit.</p>
 representation based on sign and magnitude notation,
 and not an accurate representation of the actual
 internal two’s-complement representation.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

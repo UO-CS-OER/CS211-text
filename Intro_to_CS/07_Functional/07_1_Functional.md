@@ -1,7 +1,17 @@
 ---
-layout: page
-title:  Sometimes Functions are Values
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
+# Sometimes Functions are Values
 
 Our project for week 7 largely builds on 
 concepts introduced earlier in the term,
@@ -42,7 +52,7 @@ called a "multiplexer" that selects connections based on the
 values (1 or 0, positive voltage or no voltage) on some of its 
 input wires. 
 
-### When should we use functions as values? 
+## When should we use functions as values? 
 
 Some programming languages allow us to treat functions as 
 values.  We can store functions in variables, pass functions to other 

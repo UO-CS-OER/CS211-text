@@ -1,10 +1,21 @@
 ---
-layout: page
-mathjax: true
-title:  How Python Works
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
 
-## Or: Seven things they never told you about Python.  Number 5 will blow your mind.
+# How Python Works
+
+## Or: Seven things they never told you about Python.
+   Number 5 will blow your mind.
 
 You write programs in Python to run with the Python interpreter, 
 but the Python interpreter itself is a computer program. 

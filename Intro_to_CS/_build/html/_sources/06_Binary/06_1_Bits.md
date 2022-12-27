@@ -1,10 +1,20 @@
 ---
-layout: page
-mathjax: true
-title:  Bit Twiddling
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
 
-As you have undoubtably heard, the data and instructions
+# Bit Twiddling
+
+As you have undoubtedly heard, the data and instructions
   manipulated by a modern digital computer are all in the
   form of binary numbers.  Often we think of them in 
   other ways:  As characters, as strings, as (decimal) integers, as 

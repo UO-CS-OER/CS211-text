@@ -1,7 +1,17 @@
 ---
-layout: page
-title: Appendix -- Magic Methods
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
+# Appendix -- Magic Methods
 
 Python's *special* methods are also 
 known as *dunder* methods, but most

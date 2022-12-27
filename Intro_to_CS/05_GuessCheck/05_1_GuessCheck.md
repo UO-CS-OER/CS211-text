@@ -1,7 +1,17 @@
 ---
-layout: page
-title: Recursive Guess and Check 
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
+# Recursive Guess and Check 
 
 While recursion in object-oriented programs is often coupled with 
 recursive (tree-like) data structures, it is not the only 

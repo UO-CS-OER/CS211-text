@@ -14,5 +14,33 @@ parts:
       - file: 01-Objects/01-1-Objects.md
   - caption: 02 Inheritance
     chapters:
-      - file: 02_In
+      - file: 02_Inheritance/02_1_Inheritance.md
+  - caption: 03 Recursion
+    chapters:
+      - file: 03_Recursion/03_1_Recursion.md
+      - file: 03_Recursion/03_2_Refactor.md
+  - caption: 04 Aliasing
+    chapters:
+      - file: 04_Alias/04_1_Alias.md
+  - caption: 05 Guess and Check
+    chapters:
+      - file: 05_GuessCheck/05_1_GuessCheck.md
+  - caption:  06 Binary
+    chapters:
+      - file: 06_Binary/06_1_Bits.md
+      - file: 06_Binary/06_2_Negbits.md
+      - file: 06_Binary/06_3_Hex.md
+  - caption: 07 Functional
+    chapters:
+      - file: 07_Functional/07_1_Functional.md
+  - caption: 08 Assembler
+    chapters:
+      - file: 08_1_Twopass.md
+      - file: 08_2_Regexp.md
+  - caption: Appendices
+    chapters:
+      - file: Appendices/appendix_looploop.md
+      - file: Appendices/appendix_Special.md
+      - file: Appendices/appendix_style.md
+      - file: Appendices/appendix_internals.md
 

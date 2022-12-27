@@ -1,8 +1,17 @@
 ---
-layout: page
-mathjax: true
-title:  Two Pass Algorithms
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
+# Two Pass Algorithms
 
 Sometimes as you are working through one step 
 in a loop, you find that you need information 

@@ -1,7 +1,17 @@
 ---
-layout: page
-title: Style Guide for Python Programs
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
+# Style Guide for Python Programs
 
 Most software development organizations have coding guidelines that
 constitute a _house style_. These may be based on some more widely used

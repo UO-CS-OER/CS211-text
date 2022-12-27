@@ -1,7 +1,18 @@
 ---
-layout: page
-title: Objects
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .myst
+    format_name: myst
+    format_version: 1.1
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
+
+# Objects 
 
 In Python, objects are used to represent 
 information.  Every variable you use in a Python 
@@ -28,20 +39,25 @@ it as the list `[5, 7]`, or we could represent
 it as a dict `{"x": 5, "y": 7}`, and that 
 might be satisfactory.   If we wanted to represent moving a point (x,y) by some distance (dx, dy), we could define a a function like 
 
-```python
+```{code-cell} python3
 def move(p, d):
     x,y = p
     dx, dy = d
     return (x+dx, y+dy)
+    
+pt_1 = (5,8)
+pt_2 = move(pt_1, (3,7))
+print(pt_2)
 ```
 
-But if we are making a graphics program, we'll need to *move* functions for other graphical objects like rectangles and ovals, 
+But if we are making a graphics program, we'll need to *move*
+functions for other graphical objects like rectangles and ovals, 
 so instead of naming it `move` we'll need a more descriptive name 
 like `move_point`.  Also we should give the type contract for 
 the function, which we can do with Python type hints.  With these 
 changes, we get something like this
 
-```python
+```{code-cell} python3
 from typing import Tuple
 from numbers import Number
 
@@ -51,11 +67,7 @@ def move_point(p: Tuple[Number, Number],
     x, y = p
     dx, dy = d
     return (x+dx, y+dy)
-```
-
-A simple test case increases our confidence that this works: 
-
-```python
+    
 assert move_point((3,4),(5,6)) == (8,10)
 ```
 
@@ -67,9 +79,8 @@ like is to express the concept of adding two points
 more concisely, as `(3,4) + (5,6)`.  What would happen if we 
 tried this? 
 
-```cli 
->>> (3,4) + (5,6)
-(3, 4, 5, 6) 
+```{code-cell} python3
+(3,4) + (5,6)
 ```
 
 That's not what we wanted!  Would it be better if we represented 
@@ -204,7 +215,7 @@ m.move_to(19,23)
 assert m.x == 19 and m.y == 23
 ```
 
-#### *Check your understanding*
+### *Check your understanding*
 
 Consider class `Pet` and object `my_pet`.  
 What are the *instance variables* of `my_pet`? 
@@ -571,7 +582,7 @@ that exist only while method `area` is executing.
 *instance variables* that are stored within the 
 `Rect` object.  
 
-#### *Check your understanding*
+### *Check your understanding*
 
 Suppose we ran the above code in PythonTutor. 
 (PythonTutor

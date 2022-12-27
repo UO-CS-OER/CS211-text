@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Subclasses &#8212; Introduction to Computer Science I</title>
+    <title>Class Hierarchies and Inheritance &#8212; Introduction to Computer Science I</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Recursion in Object-Oriented Programs" href="../03_Recursion/03_1_Recursion.html" />
+    <link rel="prev" title="Objects" href="../01-Objects/01-1-Objects.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -88,11 +90,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
@@ -140,8 +137,117 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../01-Objects/01_1_Objects.html">
-   Example: Points
+  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
+   Objects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  02 Inheritance
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Class Hierarchies and Inheritance
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  03 Recursion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
+   Recursion in Object-Oriented Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
+   Refactoring Repetitive Code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  04 Aliasing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
+   Aliasing on Purpose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  05 Guess and Check
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
+   Recursive Guess and Check
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  06 Binary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
+   Bit Twiddling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
+   What the Hex?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  07 Functional
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
+   Sometimes Functions are Values
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_looploop.html">
+   Appendix – What for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_Special.html">
+   Appendix – Magic Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_style.html">
+   Style Guide for Python Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_internals.html">
+   How Python Works
   </a>
  </li>
 </ul>
@@ -195,6 +301,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/02_Inheritance/02_1_Inheritance.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -262,6 +415,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="../_sources/02_Inheritance/02_1_Inheritance.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="../_sources/02_Inheritance/02_1_Inheritance.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -323,33 +493,40 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Subclasses
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overriding">
-   Overriding
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-liskov-substitution-principle">
-   The Liskov Substitution Principle
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#abstract-classes">
-   Abstract classes
+   Class Hierarchies and Inheritance
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#check-your-understanding">
-     Check your understanding
+    <a class="reference internal nav-link" href="#subclasses">
+     Subclasses
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#class-diagrams">
-     Class Diagrams
+    <a class="reference internal nav-link" href="#overriding">
+     Overriding
     </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-liskov-substitution-principle">
+     The Liskov Substitution Principle
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstract-classes">
+     Abstract classes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#check-your-understanding">
+       Check your understanding
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#class-diagrams">
+       Class Diagrams
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -379,7 +556,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Subclasses</h1>
+                <h1>Class Hierarchies and Inheritance</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -391,33 +568,40 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Subclasses
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overriding">
-   Overriding
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-liskov-substitution-principle">
-   The Liskov Substitution Principle
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#abstract-classes">
-   Abstract classes
+   Class Hierarchies and Inheritance
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#check-your-understanding">
-     Check your understanding
+    <a class="reference internal nav-link" href="#subclasses">
+     Subclasses
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#class-diagrams">
-     Class Diagrams
+    <a class="reference internal nav-link" href="#overriding">
+     Overriding
     </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-liskov-substitution-principle">
+     The Liskov Substitution Principle
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstract-classes">
+     Abstract classes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#check-your-understanding">
+       Check your understanding
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#class-diagrams">
+       Class Diagrams
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -448,8 +632,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="subclasses">
-<h1>Subclasses<a class="headerlink" href="#subclasses" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="class-hierarchies-and-inheritance">
+<h1>Class Hierarchies and Inheritance<a class="headerlink" href="#class-hierarchies-and-inheritance" title="Permalink to this headline">#</a></h1>
+<section id="subclasses">
+<h2>Subclasses<a class="headerlink" href="#subclasses" title="Permalink to this headline">#</a></h2>
 <p>Sometimes we need a specialized version of
 a class, or multiple variations on a class.
 Rather than modifying the existing class,
@@ -483,7 +669,7 @@ All the methods of <code class="docutils literal notranslate"><span class="pre">
 </div>
 </section>
 <section id="overriding">
-<h1>Overriding<a class="headerlink" href="#overriding" title="Permalink to this headline">#</a></h1>
+<h2>Overriding<a class="headerlink" href="#overriding" title="Permalink to this headline">#</a></h2>
 <p>Maybe we don’t want <code class="docutils literal notranslate"><span class="pre">print(sq)</span></code> to print a
 string beginning with <code class="docutils literal notranslate"><span class="pre">Rect</span></code>.  Maybe we want
 <code class="docutils literal notranslate"><span class="pre">Square</span></code> to have it’s own <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method.</p>
@@ -569,7 +755,7 @@ inherited method with a more specialized version:</p>
 </div>
 </section>
 <section id="the-liskov-substitution-principle">
-<h1>The Liskov Substitution Principle<a class="headerlink" href="#the-liskov-substitution-principle" title="Permalink to this headline">#</a></h1>
+<h2>The Liskov Substitution Principle<a class="headerlink" href="#the-liskov-substitution-principle" title="Permalink to this headline">#</a></h2>
 <p>Can we override methods any way
 we like?  For example, could we have have written
 the following definition of <code class="docutils literal notranslate"><span class="pre">translate</span></code> for
@@ -607,10 +793,10 @@ equal or a supertype of the argument type of the inherited
 method.  The result type should be what we would expect
 from the inherited method, so it should be equal or a
 subtype of the return type of the inherited method.</p>
-<p><img alt="Compatible argument and return types" src="02_Inheritance/img/covariance-contravariance.png" /></p>
+<p><img alt="Compatible argument and return types" src="../_images/covariance-contravariance.png" /></p>
 </section>
 <section id="abstract-classes">
-<h1>Abstract classes<a class="headerlink" href="#abstract-classes" title="Permalink to this headline">#</a></h1>
+<h2>Abstract classes<a class="headerlink" href="#abstract-classes" title="Permalink to this headline">#</a></h2>
 <p>So far we have used inheritance as a way to avoid
 repetitive code by reusing (inheriting) methods
 in subclasses.  Considering the Liskov substitution
@@ -726,7 +912,7 @@ it was easy to reuse code for dropping a perpendicular that
 I developed for a different project.  You can view the
 <span class="xref myst">complete code</span> if you are interested.</p>
 <section id="check-your-understanding">
-<h2>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h2>
+<h3>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h3>
 <p>One of these relations is not like the others:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Square</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">Rect</span></code></p></li>
@@ -735,18 +921,18 @@ I developed for a different project.  You can view the
 </ul>
 </section>
 <section id="class-diagrams">
-<h2>Class Diagrams<a class="headerlink" href="#class-diagrams" title="Permalink to this headline">#</a></h2>
+<h3>Class Diagrams<a class="headerlink" href="#class-diagrams" title="Permalink to this headline">#</a></h3>
 <p>If we want to communicate the relation between
 the <em>superclass</em> <code class="docutils literal notranslate"><span class="pre">Rect</span></code> and <em>subclass</em> <code class="docutils literal notranslate"><span class="pre">Square</span></code>,
 there is a more-or-less standard diagrammatic
 notation called a <em>class diagram</em> that indicates
 the relation with an arrow:</p>
-<p><img alt="Class diagram: Square is a subclass of Rect" src="02_Inheritance/img/class_diagram_square.svg" /></p>
+<p><img alt="Class diagram: Square is a subclass of Rect" src="../_images/class_diagram_square.svg" /></p>
 <p>The arrow expresses the “is-a” relation (a square <em>is-a</em> rectangle).
 Sometimes it is also useful to express the “has-a” relation,
 for example showing that one or more <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects are
 instance variables of a <code class="docutils literal notranslate"><span class="pre">Rect</span></code> object.</p>
-<p><img alt="Class diagram with has-a: Rect has-a Point" src="02_Inheritance/img/class_diagram_square_point.svg" /></p>
+<p><img alt="Class diagram with has-a: Rect has-a Point" src="../_images/class_diagram_square_point.svg" /></p>
 <p>A class diagram to express the relation
 among <code class="docutils literal notranslate"><span class="pre">Rect</span></code>, <code class="docutils literal notranslate"><span class="pre">Square</span></code>, and <code class="docutils literal notranslate"><span class="pre">Point</span></code> may
 not be very useful, as the structure is
@@ -758,7 +944,8 @@ concisely, and clearly in prose.  A diagram
 expressing showing relations among <code class="docutils literal notranslate"><span class="pre">Shape</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Rect</span></code>, and <code class="docutils literal notranslate"><span class="pre">Square</span></code> is slightly more
 useful:</p>
-<p><img alt="Class diagram with an abstract base class" src="02_Inheritance/img/class_diagram_triangle.svg" /></p>
+<p><img alt="Class diagram with an abstract base class" src="../_images/class_diagram_triangle.svg" /></p>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="inheriting-from-built-ins">
@@ -881,6 +1068,20 @@ built-in classes</p></li>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../01-Objects/01-1-Objects.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Objects</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../03_Recursion/03_1_Recursion.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Recursion in Object-Oriented Programs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

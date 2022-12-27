@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Living Document &#8212; Introduction to Computer Science I</title>
+    <title>Style Guide for Python Programs &#8212; Introduction to Computer Science I</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How Python Works" href="appendix_internals.html" />
+    <link rel="prev" title="Appendix – Magic Methods" href="appendix_Special.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -88,11 +90,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
@@ -130,6 +127,127 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
    Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Objects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
+   Objects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  02 Inheritance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">
+   Class Hierarchies and Inheritance
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  03 Recursion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
+   Recursion in Object-Oriented Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
+   Refactoring Repetitive Code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  04 Aliasing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
+   Aliasing on Purpose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  05 Guess and Check
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
+   Recursive Guess and Check
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  06 Binary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
+   Bit Twiddling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
+   What the Hex?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  07 Functional
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
+   Sometimes Functions are Values
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendix_looploop.html">
+   Appendix – What for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendix_Special.html">
+   Appendix – Magic Methods
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Style Guide for Python Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendix_internals.html">
+   How Python Works
   </a>
  </li>
 </ul>
@@ -183,6 +301,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/Appendices/appendix_style.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -250,6 +415,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="../_sources/Appendices/appendix_style.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="../_sources/Appendices/appendix_style.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -309,49 +491,49 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#living-document">
    Living Document
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basics-when-in-doubt-follow-pep-8">
    Basics: When in doubt, follow PEP 8
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#function-and-method-headers">
    Function and method headers
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mutation">
      Mutation
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#forward-type-annotations">
      Forward type annotations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#composite-type-annotations">
      Composite type annotations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#docstrings-for-functions-and-methods">
      Docstrings for functions and methods
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#classes-public-and-quasi-private-attributes">
    Classes: Public and quasi-private attributes
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#avoid-type-and-isinstance">
    Avoid
    <em>
@@ -362,8 +544,8 @@ title="Print to PDF"
     isinstance
    </em>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exception-type-comparison-in-eq">
      Exception:
      <em>
@@ -379,12 +561,12 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#symbolic-constants-vs-magic-values">
    Symbolic Constants vs Magic Values
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tests">
    Tests
   </a>
@@ -398,7 +580,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Living Document</h1>
+                <h1>Style Guide for Python Programs</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -408,49 +590,49 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#living-document">
    Living Document
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basics-when-in-doubt-follow-pep-8">
    Basics: When in doubt, follow PEP 8
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#function-and-method-headers">
    Function and method headers
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mutation">
      Mutation
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#forward-type-annotations">
      Forward type annotations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#composite-type-annotations">
      Composite type annotations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#docstrings-for-functions-and-methods">
      Docstrings for functions and methods
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#classes-public-and-quasi-private-attributes">
    Classes: Public and quasi-private attributes
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#avoid-type-and-isinstance">
    Avoid
    <em>
@@ -461,8 +643,8 @@ title="Print to PDF"
     isinstance
    </em>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exception-type-comparison-in-eq">
      Exception:
      <em>
@@ -478,12 +660,12 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#symbolic-constants-vs-magic-values">
    Symbolic Constants vs Magic Values
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tests">
    Tests
   </a>
@@ -498,7 +680,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>Most software development organizations have coding guidelines that
+  <section class="tex2jax_ignore mathjax_ignore" id="style-guide-for-python-programs">
+<h1>Style Guide for Python Programs<a class="headerlink" href="#style-guide-for-python-programs" title="Permalink to this headline">#</a></h1>
+<p>Most software development organizations have coding guidelines that
 constitute a <em>house style</em>. These may be based on some more widely used
 standard, but often they will also incorporate norms and preferences
 developed by a particular organization. Students who took CIS 210 at UO
@@ -510,7 +694,7 @@ some additional rules suited to an introductory course.</p>
 some ways from those used in CIS 210. The key differences are that CIS
 211 style is designed to be more concise.</p>
 <section id="living-document">
-<h1>Living Document<a class="headerlink" href="#living-document" title="Permalink to this headline">#</a></h1>
+<h2>Living Document<a class="headerlink" href="#living-document" title="Permalink to this headline">#</a></h2>
 <p>This document represents my best effort at defining style guidelines for
 CIS 211, but like many software documents it requires regular revision.
 We may find that we need some additional rules, or that some existing
@@ -524,7 +708,7 @@ and to the extent possible I will avoid making you revise projects that
 have already been started.</p>
 </section>
 <section id="basics-when-in-doubt-follow-pep-8">
-<h1>Basics: When in doubt, follow PEP 8<a class="headerlink" href="#basics-when-in-doubt-follow-pep-8" title="Permalink to this headline">#</a></h1>
+<h2>Basics: When in doubt, follow PEP 8<a class="headerlink" href="#basics-when-in-doubt-follow-pep-8" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>
 is a widely used standard for Python code. It provides guidelines for
 all variety of matters from indentation to spacing in expressions.</p>
@@ -546,7 +730,7 @@ the alternative), but when appropriate we may use docstring comments to
 say more about arguments and return values.</p>
 </section>
 <section id="function-and-method-headers">
-<h1>Function and method headers<a class="headerlink" href="#function-and-method-headers" title="Permalink to this headline">#</a></h1>
+<h2>Function and method headers<a class="headerlink" href="#function-and-method-headers" title="Permalink to this headline">#</a></h2>
 <p>We will use Python
 <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">type annotations</a>
 (also known as <em>type hints</em>) to specify the signature (argument and
@@ -592,7 +776,7 @@ mutators*, i.e., it may be assumed that they modify the value of
 the <code class="docutils literal notranslate"><span class="pre">self</span></code> object, like the
 <code class="docutils literal notranslate"><span class="pre">move_to</span></code> method above.</p>
 <section id="mutation">
-<h2>Mutation<a class="headerlink" href="#mutation" title="Permalink to this headline">#</a></h2>
+<h3>Mutation<a class="headerlink" href="#mutation" title="Permalink to this headline">#</a></h3>
 <p>Methods that return a value other than <code class="docutils literal notranslate"><span class="pre">None</span></code> (and which therefore have
 the <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">T</span></code>
 annotation for some type <code class="docutils literal notranslate"><span class="pre">T</span></code>) should typically <em>not</em> modify the value of
@@ -618,7 +802,7 @@ look like this:</p>
 </div>
 </section>
 <section id="forward-type-annotations">
-<h2>Forward type annotations<a class="headerlink" href="#forward-type-annotations" title="Permalink to this headline">#</a></h2>
+<h3>Forward type annotations<a class="headerlink" href="#forward-type-annotations" title="Permalink to this headline">#</a></h3>
 <p>The second case in which we cannot simply write the type of an argument
 or return value is when that type is the class we are defining.<br />
 The type is considered undefined until the class is complete.<br />
@@ -639,7 +823,7 @@ though it does not exist quite yet.</p>
 </div>
 </section>
 <section id="composite-type-annotations">
-<h2>Composite type annotations<a class="headerlink" href="#composite-type-annotations" title="Permalink to this headline">#</a></h2>
+<h3>Composite type annotations<a class="headerlink" href="#composite-type-annotations" title="Permalink to this headline">#</a></h3>
 <p>Types like <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">str</span></code> can be used directly in type annotations.
 Types like <code class="docutils literal notranslate"><span class="pre">tuple</span></code> and <code class="docutils literal notranslate"><span class="pre">list</span></code> can also be used in type annotations, but
 typically we will prefer to be more specific, e.g., not just a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>
@@ -664,7 +848,7 @@ constructors from the <code class="docutils literal notranslate"><span class="pr
 </div>
 </section>
 <section id="docstrings-for-functions-and-methods">
-<h2>Docstrings for functions and methods<a class="headerlink" href="#docstrings-for-functions-and-methods" title="Permalink to this headline">#</a></h2>
+<h3>Docstrings for functions and methods<a class="headerlink" href="#docstrings-for-functions-and-methods" title="Permalink to this headline">#</a></h3>
 <p>A docstring should provide information that is <em>useful to a developer</em>.
 In particular, consider a developer who is building a new module that
 uses the functions or classes in your module, or who has been asked to
@@ -693,7 +877,7 @@ constructor.</p></li>
 </section>
 </section>
 <section id="classes-public-and-quasi-private-attributes">
-<h1>Classes: Public and quasi-private attributes<a class="headerlink" href="#classes-public-and-quasi-private-attributes" title="Permalink to this headline">#</a></h1>
+<h2>Classes: Public and quasi-private attributes<a class="headerlink" href="#classes-public-and-quasi-private-attributes" title="Permalink to this headline">#</a></h2>
 <p>In accordance with PEP 8, object fields and methods that are meant to be
 public (that is, accessed from code outside the class or its subclasses)
 should begin with a lowercase letter. Names of fields and methods that
@@ -713,7 +897,7 @@ directly change them.</p></li>
 </ul>
 </section>
 <section id="avoid-type-and-isinstance">
-<h1>Avoid <em>type</em> and <em>isinstance</em><a class="headerlink" href="#avoid-type-and-isinstance" title="Permalink to this headline">#</a></h1>
+<h2>Avoid <em>type</em> and <em>isinstance</em><a class="headerlink" href="#avoid-type-and-isinstance" title="Permalink to this headline">#</a></h2>
 <p>CIS 211 is a course in <em>object-oriented</em> programming. It emphasizes
 making use of <em>dynamic dispatch</em>. Students who are not yet comfortable
 with dynamic dispatch (method calls that may have different behavior
@@ -725,7 +909,7 @@ question specifically allow
 Inappropriate uses of <em>isinstance</em>
 or <em>type</em> will be marked as errors.</p>
 <section id="exception-type-comparison-in-eq">
-<h2>Exception: <em>type</em> comparison in <code class="docutils literal notranslate"><span class="pre">__eq__</span></code><a class="headerlink" href="#exception-type-comparison-in-eq" title="Permalink to this headline">#</a></h2>
+<h3>Exception: <em>type</em> comparison in <code class="docutils literal notranslate"><span class="pre">__eq__</span></code><a class="headerlink" href="#exception-type-comparison-in-eq" title="Permalink to this headline">#</a></h3>
 <p>There is one blanket exception to the above rule about avoiding
 <code class="docutils literal notranslate"><span class="pre">type</span></code>:  It is allowed and often a good idea to make an object
 equivalence test (the <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> magic method) include a type equality
@@ -750,7 +934,7 @@ equal.</p>
 </section>
 </section>
 <section id="symbolic-constants-vs-magic-values">
-<h1>Symbolic Constants vs Magic Values<a class="headerlink" href="#symbolic-constants-vs-magic-values" title="Permalink to this headline">#</a></h1>
+<h2>Symbolic Constants vs Magic Values<a class="headerlink" href="#symbolic-constants-vs-magic-values" title="Permalink to this headline">#</a></h2>
 <p>A <em>magic number</em> is a constant other than 0, 1, <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, or
 <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">[]</span></code> that appears literally in code. For example, this snippet
 contains a magic number:</p>
@@ -798,7 +982,7 @@ constructing a board game with multiple source files, the size of the
 game board probably belongs in a separate source file.</p>
 </section>
 <section id="tests">
-<h1>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">#</a></h1>
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">#</a></h2>
 <p>We will not use doctests in CIS 211, and in most cases our docstrings
 will not include examples of use. Instead, we will use unit tests
 separate from the module code.</p>
@@ -818,6 +1002,7 @@ cases is <em>not</em> a guarantee that a project is correct. Students are
 strongly encouraged to add their own test cases, and may sometimes be
 required to do so (that is, designing and implementing good test cases
 may be part of the project requirements).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -847,6 +1032,20 @@ may be part of the project requirements).</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="appendix_Special.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Appendix – Magic Methods</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="appendix_internals.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How Python Works</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

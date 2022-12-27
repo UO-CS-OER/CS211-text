@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>It’s already binary &#8212; Introduction to Computer Science I</title>
+    <title>Bit Twiddling &#8212; Introduction to Computer Science I</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,6 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="What the Hex?" href="06_3_Hex.html" />
+    <link rel="prev" title="Recursive Guess and Check" href="../05_GuessCheck/05_1_GuessCheck.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -90,11 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
@@ -132,6 +129,127 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
    Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Objects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
+   Objects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  02 Inheritance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">
+   Class Hierarchies and Inheritance
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  03 Recursion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
+   Recursion in Object-Oriented Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
+   Refactoring Repetitive Code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  04 Aliasing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
+   Aliasing on Purpose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  05 Guess and Check
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
+   Recursive Guess and Check
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  06 Binary
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Bit Twiddling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_3_Hex.html">
+   What the Hex?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  07 Functional
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
+   Sometimes Functions are Values
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_looploop.html">
+   Appendix – What for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_Special.html">
+   Appendix – Magic Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_style.html">
+   Style Guide for Python Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_internals.html">
+   How Python Works
   </a>
  </li>
 </ul>
@@ -185,6 +303,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/06_Binary/06_1_Bits.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -252,6 +417,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="../_sources/06_Binary/06_1_Bits.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="../_sources/06_Binary/06_1_Bits.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -311,66 +493,66 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#it-s-already-binary">
    It’s already binary
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#so-when-and-how-was-it-converted-to-binary">
      So when and how was it converted to binary?
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#but-when-i-print-it-i-see-42">
      But when I print it, I see ‘42’
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-binary-representation-of-an-integer">
    The binary representation of an integer
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#treating-bits-as-booleans">
    Treating bits as booleans
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#check-your-understanding">
      Check your understanding
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#shifting">
    Shifting
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#masking">
    Masking
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packing">
    Packing
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-rgb-color-codes">
    Example: RGB color codes
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
    Summary
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#source-code">
    Source Code
   </a>
@@ -384,7 +566,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>It’s already binary</h1>
+                <h1>Bit Twiddling</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -394,66 +576,66 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#it-s-already-binary">
    It’s already binary
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#so-when-and-how-was-it-converted-to-binary">
      So when and how was it converted to binary?
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#but-when-i-print-it-i-see-42">
      But when I print it, I see ‘42’
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-binary-representation-of-an-integer">
    The binary representation of an integer
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#treating-bits-as-booleans">
    Treating bits as booleans
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#check-your-understanding">
      Check your understanding
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#shifting">
    Shifting
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#masking">
    Masking
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#packing">
    Packing
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-rgb-color-codes">
    Example: RGB color codes
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
    Summary
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#source-code">
    Source Code
   </a>
@@ -468,7 +650,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>As you have undoubtably heard, the data and instructions
+  <section class="tex2jax_ignore mathjax_ignore" id="bit-twiddling">
+<h1>Bit Twiddling<a class="headerlink" href="#bit-twiddling" title="Permalink to this headline">#</a></h1>
+<p>As you have undoubtedly heard, the data and instructions
 manipulated by a modern digital computer are all in the
 form of binary numbers.  Often we think of them in
 other ways:  As characters, as strings, as (decimal) integers, as
@@ -486,7 +670,7 @@ binary number, and how to extract the small integers
 from the packed representation.  Python provides several
 <em>bitwise</em> operations to make this relatively simple.</p>
 <section id="it-s-already-binary">
-<h1>It’s already binary<a class="headerlink" href="#it-s-already-binary" title="Permalink to this headline">#</a></h1>
+<h2>It’s already binary<a class="headerlink" href="#it-s-already-binary" title="Permalink to this headline">#</a></h2>
 <p>What’s already binary?  Everything.  Everything in the computer is already
 binary. We will <em>not</em> convert anything to binary.  If it is in computer
 memory, it is already binary, because that is the <em>only</em> kind of information
@@ -514,7 +698,7 @@ all strings are also represented in binary, so in that sense $<span class="math 
 write in Python as <code class="docutils literal notranslate"><span class="pre">0b101010</span></code>) is
 binary, but no more so than <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">World&quot;</span></code>.</p>
 <section id="so-when-and-how-was-it-converted-to-binary">
-<h2>So when and how was it converted to binary?<a class="headerlink" href="#so-when-and-how-was-it-converted-to-binary" title="Permalink to this headline">#</a></h2>
+<h3>So when and how was it converted to binary?<a class="headerlink" href="#so-when-and-how-was-it-converted-to-binary" title="Permalink to this headline">#</a></h3>
 <p>When any kind of data, including your program source code, is read by the computer,
 it is converted to binary as part of the reading process.  When you strike the ‘k’
 key on the keyboard, a binary code for the letter ‘k’ is transmitted to the computer.
@@ -524,7 +708,7 @@ the Python compiler converted those character codes to the internal representati
 $<span class="math notranslate nohighlight">\(101010_2\)</span>$.</p>
 </section>
 <section id="but-when-i-print-it-i-see-42">
-<h2>But when I print it, I see ‘42’<a class="headerlink" href="#but-when-i-print-it-i-see-42" title="Permalink to this headline">#</a></h2>
+<h3>But when I print it, I see ‘42’<a class="headerlink" href="#but-when-i-print-it-i-see-42" title="Permalink to this headline">#</a></h3>
 <p>When you print x, the internal representation 0b101010 is converted into the
 character codes for ‘4’ and ‘2’.  At no time was the decimal integer 42
 ever present.  It’s a pleasant illusion brought to you by Python.</p>
@@ -540,7 +724,7 @@ integer was initially written.</p>
 </section>
 </section>
 <section id="the-binary-representation-of-an-integer">
-<h1>The binary representation of an integer<a class="headerlink" href="#the-binary-representation-of-an-integer" title="Permalink to this headline">#</a></h1>
+<h2>The binary representation of an integer<a class="headerlink" href="#the-binary-representation-of-an-integer" title="Permalink to this headline">#</a></h2>
 <p>Although <em>everything</em> is represented in binary, in this chapter we will deal only with
 integers, because their representation in binary is simplest.</p>
 <p>When we write a decimal number on paper, we use a place value system:  The
@@ -553,7 +737,7 @@ means
 1\times 2^1 + 0\times 2^0\)</span>$, or 32+8+2 = 42.</p>
 </section>
 <section id="treating-bits-as-booleans">
-<h1>Treating bits as booleans<a class="headerlink" href="#treating-bits-as-booleans" title="Permalink to this headline">#</a></h1>
+<h2>Treating bits as booleans<a class="headerlink" href="#treating-bits-as-booleans" title="Permalink to this headline">#</a></h2>
 <p>Although we’re used to using the binary values for ordinary
 arithmetic (addition, subtraction, multiplication, etc.), we can also
 treat the individual binary digits as boolean values: 1 for True, 0
@@ -585,7 +769,7 @@ when we enter integers in decimal notation:</p>
 </pre></div>
 </div>
 <section id="check-your-understanding">
-<h2>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h2>
+<h3>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h3>
 <p>Before going on, make sure you understand why <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&amp;</span> <span class="pre">5</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">|</span> <span class="pre">5</span> <span class="pre">==</span> <span class="pre">7</span></code>.<br />
 Then predict the value of <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&amp;</span> <span class="pre">4</span></code>, and check it in the Python console.
 Also predict and then check the value of <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">|</span> <span class="pre">4</span></code>.</p>
@@ -596,7 +780,7 @@ Why wouldn’t that make sense?</p>
 </section>
 </section>
 <section id="shifting">
-<h1>Shifting<a class="headerlink" href="#shifting" title="Permalink to this headline">#</a></h1>
+<h2>Shifting<a class="headerlink" href="#shifting" title="Permalink to this headline">#</a></h2>
 <p>In addition to ordinary arithmetic (addition, subtraction, etc.) and
 bitwise operations (<em>and</em>, <em>or</em>, <em>not</em>), digital computers provide <em>shift</em>
 operations that move binary digits within a memory word.  These
@@ -624,7 +808,7 @@ to indicate that those bits have been discarded.</p>
 </div>
 </section>
 <section id="masking">
-<h1>Masking<a class="headerlink" href="#masking" title="Permalink to this headline">#</a></h1>
+<h2>Masking<a class="headerlink" href="#masking" title="Permalink to this headline">#</a></h2>
 <p>You might well wonder what use shifting could be.  It becomes more useful
 when we combine it with the bitwise boolean operations <em>and</em> (&amp;) and <em>or</em> ( | ).</p>
 <p>For what follows, and whenever we refer to the positions of bits, we will
@@ -655,7 +839,7 @@ number, we can then shift them from bits 4..6 to bits 0..2.</p>
 </div>
 </section>
 <section id="packing">
-<h1>Packing<a class="headerlink" href="#packing" title="Permalink to this headline">#</a></h1>
+<h2>Packing<a class="headerlink" href="#packing" title="Permalink to this headline">#</a></h2>
 <p>Suppose we had two natural numbers between 0 and 15, inclusive.
 Since $<span class="math notranslate nohighlight">\(15_{10}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(1111_2\)</span>$, each of these numbers
 can be represented with 4 binary digits.  Suppose we wanted
@@ -700,7 +884,7 @@ the instructions interpreted by a computer central processing unit
 of several different fields packed into a memory word.</p>
 </section>
 <section id="example-rgb-color-codes">
-<h1>Example: RGB color codes<a class="headerlink" href="#example-rgb-color-codes" title="Permalink to this headline">#</a></h1>
+<h2>Example: RGB color codes<a class="headerlink" href="#example-rgb-color-codes" title="Permalink to this headline">#</a></h2>
 <p>Another place where you may have encountered values packed in
 this manner is the red-green-blue (RGB) color values used
 in web pages.  Such a color is encoded as a 24-bit number,
@@ -738,7 +922,7 @@ and no green component (\)</span><span class="math notranslate nohighlight">\(00
 </div>
 </section>
 <section id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h1>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>Everything in computer memory is encoded in binary. Although we
 typically write Python programs using decimal number notation,
 they are translated into binary when the program is read,
@@ -761,8 +945,9 @@ one integer, and unpack them again.</p>
 Negative numbers will be treated in a separate chapter.</p>
 </section>
 <section id="source-code">
-<h1>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">#</a></h1>
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">#</a></h2>
 <p><span class="xref myst">Sample code for this chapter</span></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -792,6 +977,20 @@ Negative numbers will be treated in a separate chapter.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../05_GuessCheck/05_1_GuessCheck.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Recursive Guess and Check</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06_3_Hex.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">What the Hex?</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
