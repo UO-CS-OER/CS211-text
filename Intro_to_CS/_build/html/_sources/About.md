@@ -1,7 +1,7 @@
----
-title: About this document
-layout: page
----
+
+# About this document 
+
+_Notes from 2020; needs revision for 2022/23 text project_
 
 CIS 211 uses the same primary textbook as CIS 210, but we don't use much of it &mdash; we use the chapter
     that introduces objects and classes in Python and then quickly run off the end. These materials supplement

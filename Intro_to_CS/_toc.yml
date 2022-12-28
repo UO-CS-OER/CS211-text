@@ -15,6 +15,7 @@ parts:
   - caption: 02 Inheritance
     chapters:
       - file: 02_Inheritance/02_1_Inheritance.md
+      - file: 02_Inheritance/02_2_Notifiers.md
   - caption: 03 Recursion
     chapters:
       - file: 03_Recursion/03_1_Recursion.md
@@ -28,15 +29,15 @@ parts:
   - caption:  06 Binary
     chapters:
       - file: 06_Binary/06_1_Bits.md
-      - file: 06_Binary/06_2_Negbits.md
+      - file: 06_Binary/06_2_NegBits.md
       - file: 06_Binary/06_3_Hex.md
   - caption: 07 Functional
     chapters:
       - file: 07_Functional/07_1_Functional.md
   - caption: 08 Assembler
     chapters:
-      - file: 08_1_Twopass.md
-      - file: 08_2_Regexp.md
+      - file: 08_Assembler/08_1_Twopass.md
+      - file: 08_Assembler/08_2_Regexp.md
   - caption: Appendices
     chapters:
       - file: Appendices/appendix_looploop.md

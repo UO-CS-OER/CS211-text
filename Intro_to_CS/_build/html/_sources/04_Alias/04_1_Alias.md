@@ -131,7 +131,7 @@ objects by multiple keys:  They keep multiple
 *indexes* with aliased references to the 
 records.  
 
-![Multiple indexes to student records](img_04_1/indexes.svg)
+![Multiple indexes to student records](img_04_1/indexes.*)
 
 While search structures are the most common 
 intentional use of aliasing, it is also 
@@ -205,7 +205,7 @@ row and column.   The logic can be factored easily,
 though, if we alias the same set of tiles from 
 groups for rows, columns, and diagonals. 
 
-![Grouping Tic-Tac-Toe Tiles](img_04_1/TicTac%20Groups.svg)
+![Grouping Tic-Tac-Toe Tiles](img_04_1/TicTac%20Groups.*)
 
 Now it is simple to write a single function to 
 check whether a group is a winner: 
@@ -310,14 +310,14 @@ will be accessed once in a row group and once
 in a column group, accumulating a total 
 `worth` of 2. 
 
-![The D tile appears in one row and one column](img_04_1/D-Worth.svg)
+![The D tile appears in one row and one column](img_04_1/D-Worth.*)
 
 A corner tile accumulates worth from a row
 group, a column group, and a diagonal group, 
 because it can be used to form winning combinations 
 in each of those groupings: 
 
-![The G tile appears in a row, column, and diagonal](img_04_1/G-Worth.svg)
+![The G tile appears in a row, column, and diagonal](img_04_1/G-Worth.*)
 
 ## Alternatives
 

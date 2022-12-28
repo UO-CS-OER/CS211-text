@@ -14,8 +14,7 @@ kernelspec:
 
 #  Appendix – What for?
 
-
-#### _Contributed by Audra McNamee_ 
+ _Contributed by Audra McNamee_ 
 
 Python offers convenient and concise ways to write loops, but 
 similarity between different patterns of `for` loops often 

@@ -26,7 +26,7 @@ Guidelines for CIS 211 projects are also based on
 some ways from those used in CIS 210. The key differences are that CIS
 211 style is designed to be more concise.
 
-#### Living Document
+## Living Document
 
 This document represents my best effort at defining style guidelines for
 CIS 211, but like many software documents it requires regular revision.

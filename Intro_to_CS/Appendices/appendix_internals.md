@@ -184,19 +184,19 @@ it a *flexible* array because the list has a capacity that may be
 greater than the number of elements currently in the list.  For
  example, if we had a list with two elements  
 
-![List object](img_internals/list-concept-2elem.svg)
+![List object](img_internals/list-concept-2elem.*)
 
 the `append` method would use the next available space in the array
 and update information in the list headers part of the structure.  
 
-![Appending one more](img_internals/list-concept-3elem.svg)
+![Appending one more](img_internals/list-concept-3elem.*)
 
 This makes the `append` and `pop` methods very efficient if you always
 append and pop at the end of the list.  If the capacity of the list 
 is exhausted, appending a new element requires allocating a larger 
 flexible array. 
 
-![Grow the array](img_internals/list-concept-4elem.svg)
+![Grow the array](img_internals/list-concept-4elem.*)
 
 The details are a little more complicated.  First, a `list` object, 
 like all Python objects, starts with a header that identifies the 
@@ -209,7 +209,7 @@ contains a pointer to the variable part.  When we expand the capacity
 of the flexible array, we discard the old area (allowing the garbage 
 collector to recycle it) and allocate a new one. 
 
-![Expanding the flexible array representation](img_internals/list-object-append.svg)
+![Expanding the flexible array representation](img_internals/list-object-append.*)
 
 Python never moves object headers.  This is so that an object reference 
 in Python can be represented simply as a memory address.  If object
@@ -264,7 +264,7 @@ of $-3$, indicating that it requires three 30-bit digits (each
 of which is represented as a non-negative integer) and that the value
 is negative. 
 
-![A negative integer with 3 30-bit digits](img_internals/int-neg-3digits.svg)
+![A negative integer with 3 30-bit digits](img_internals/int-neg-3digits.*)
 
 The sign and magnitude representation and variable length
 complicate every arithmetic operation,
@@ -305,7 +305,7 @@ Hash tables (called "hashmaps" in Java) are a form of "scatter
  and assume the `dict` structure initially has room for 5 (key, value)
  pairs.
  
- ![`{"dog": 22, "cat": 13}`](img_internals/dict-2elem.svg)
+ ![`{"dog": 22, "cat": 13}`](img_internals/dict-2elem.*)
  
  The _items_ part of the structure
  holds the (key, value) pairs (which are 
@@ -346,7 +346,7 @@ Python uses a
  indicate that slot 2 in the items part is where ("lizard", 18)
  can be found.
  
-![Adding a lizard](img_internals/dict-3elem.svg)
+![Adding a lizard](img_internals/dict-3elem.*)
  
  If we write `x = d["lizard"]`, the same set of _probes_ occurs:
  We hash "lizard" and get 36 % 8, and looking in slot 4 of

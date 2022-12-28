@@ -86,14 +86,14 @@ tried this?
 That's not what we wanted!  Would it be better if we represented 
 points as lists? 
 
-```cli
+```
 >>> [3,4] + [5,6]
 [3, 4, 5, 6]
 ```
 
 No better.  Maybe as dicts? 
 
-```cli
+```
 >>> {"x": 3, "y": 4} + {"x": 5, "y": 6}
 Traceback (most recent call last):
   File "<input>", line 1, in <module>
@@ -266,7 +266,7 @@ m = p.move(v)
 assert m.x == 8 and m.y == 10
 ```
 
-More: [Appendix on magic methods](appendix_Special)
+More: [Appendix on magic methods](../Appendices/appendix_Special.md)
 
 ## Magic for printing
 

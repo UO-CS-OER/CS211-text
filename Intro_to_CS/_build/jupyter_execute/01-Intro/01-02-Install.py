@@ -65,7 +65,7 @@
 # will explore additional ways to edit and execute Python programs.)
 # 
 # Once you have 
-# [installed Python 3 on your computer](./01-0-Ready.md), you 
+# [installed Python 3 on your computer](01-0-Ready.md), you 
 # should be able to start _IDLE_ from the command line.  It should look 
 # something like this: 
 # 
