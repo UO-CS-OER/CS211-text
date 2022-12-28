@@ -1,0 +1,908 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Negative Binary Numbers &#8212; Introduction to Computer Science I</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="What the Hex?" href="06_3_Hex.html" />
+    <link rel="prev" title="Bit Twiddling" href="06_1_Bits.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction to Computer Science, part 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Getting a Start
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-01-Prospectus.html">
+   A Course in Computational Thinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-02-Install.html">
+   Installing Python and IDLE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
+   Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Objects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
+   Objects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  02 Inheritance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">
+   Class Hierarchies and Inheritance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">
+   Notifiers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  03 Recursion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
+   Recursion in Object-Oriented Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
+   Refactoring Repetitive Code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  04 Aliasing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
+   Aliasing on Purpose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  05 Guess and Check
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
+   Recursive Guess and Check
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  06 Binary
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_1_Bits.html">
+   Bit Twiddling
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Negative Binary Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_3_Hex.html">
+   What the Hex?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  07 Functional
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
+   Sometimes Functions are Values
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  08 Assembler
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08_Assembler/08_1_Twopass.html">
+   Two Pass Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08_Assembler/08_2_Regexp.html">
+   Regular expressions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_looploop.html">
+   Appendix – What for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_Special.html">
+   Appendix – Magic Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_style.html">
+   Style Guide for Python Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_internals.html">
+   How Python Works
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/06_Binary/06_2_NegBits.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F06_Binary/06_2_NegBits.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/06_Binary/06_2_NegBits.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/06_Binary/06_2_NegBits.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representing-a-negative-integer">
+   Representing a negative integer
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time">
+     Sign and magnitude: Seemed like a good idea at the time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-s-complement-a-better-way">
+   Two’s complement: A better way
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-your-understanding">
+     Check your understanding
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-bin-lies-about-negative-numbers">
+     Python ‘bin’ lies about negative numbers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sign-extension">
+   Sign extension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packing-and-extracting-bit-fields">
+   Packing and extracting bit fields
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Negative Binary Numbers</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representing-a-negative-integer">
+   Representing a negative integer
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time">
+     Sign and magnitude: Seemed like a good idea at the time
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-s-complement-a-better-way">
+   Two’s complement: A better way
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-your-understanding">
+     Check your understanding
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-bin-lies-about-negative-numbers">
+     Python ‘bin’ lies about negative numbers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sign-extension">
+   Sign extension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packing-and-extracting-bit-fields">
+   Packing and extracting bit fields
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="negative-binary-numbers">
+<h1>Negative Binary Numbers<a class="headerlink" href="#negative-binary-numbers" title="Permalink to this headline">#</a></h1>
+<p>In <a class="reference internal" href="06_1_Bits.html"><span class="doc std std-doc">the prior section</span></a>
+on binary representation and manipulation we
+discussed only positive integers and zero.
+Negative numbers complicate things slightly.</p>
+<section id="representing-a-negative-integer">
+<h2>Representing a negative integer<a class="headerlink" href="#representing-a-negative-integer" title="Permalink to this headline">#</a></h2>
+<p>How should we represent -1 in binary?
+How about -42?</p>
+<section id="sign-and-magnitude-seemed-like-a-good-idea-at-the-time">
+<h3>Sign and magnitude: Seemed like a good idea at the time<a class="headerlink" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time" title="Permalink to this headline">#</a></h3>
+<p>A simple approach would be to reserve one binary
+digit as a <em>sign bit</em>.  For example, in an 8-bit integer,
+10000001 could represent -1, and 10000101 could represent -5.<br />
+That is called <em>sign and magnitude</em> representation.  It is
+simple, but it has some problems.</p>
+<p>In sign and magnitude representation we end up with 00000000
+for positive zero and 10000000 for negative zero.  But … really,
+negative zero? This is a pretty clear indication that sign and magnitude
+representation is going to have other problems.  And it does.</p>
+<p>From the perspective of a computer designer, sign and magnitude
+representation adds a lot of
+complication to the circuitry needed for arithmetic.  Consider
+that somehow when we add $<span class="math notranslate nohighlight">\(00000001_2\)</span><span class="math notranslate nohighlight">\( (1)  and \)</span><span class="math notranslate nohighlight">\(10000001_2\)</span><span class="math notranslate nohighlight">\( (-1) 
+we should get \)</span><span class="math notranslate nohighlight">\(00000000_2\)</span>$ (0).  The circuitry that adds
+positive integers is not going to do that, so special purpose
+circuitry for arithmetic on negative numbers would be required.
+Chip designers hate that.</p>
+<p>A representation that chip designers can be happy with should
+add as little complication as possible to CPU circuitry. Adding
+a negative number to a positive number, or a negative number
+to a negative number, should work exactly the same as adding
+two positive numbers.  Which brings us to two’s complement
+notation.</p>
+</section>
+</section>
+<section id="two-s-complement-a-better-way">
+<h2>Two’s complement: A better way<a class="headerlink" href="#two-s-complement-a-better-way" title="Permalink to this headline">#</a></h2>
+<p>The representation for negative numbers actually used in virtually all modern
+digital computers is
+<a class="reference external" href="https://en.wikipedia.org/wiki/Two%27s_complement">two’s complement</a>.   In this notation, the 8-bit representation of
+-1 is 11111111 and the 8-bit representation of 1 is,
+of course, 00000001.  If we add them, we “carry the one” all the way
+into the 9th (non-existant) digit, where it is lost,
+and we get 00000000.  Addition and subtraction can work in the ordinary way, with
+no special cases for negative numbers.</p>
+<p>The essence of two’s complement representation is that, while the
+value of digit $<span class="math notranslate nohighlight">\(p\)</span><span class="math notranslate nohighlight">\( is normally \)</span><span class="math notranslate nohighlight">\(2^p\)</span><span class="math notranslate nohighlight">\(, the value of the
+very leftmost digit is \)</span><span class="math notranslate nohighlight">\(-2^p\)</span>$.</p>
+<p>In an 8-bit signed integer, bit 7 represents $<span class="math notranslate nohighlight">\(-(2^7)\)</span><span class="math notranslate nohighlight">\(, or -128. 
+The signed 8-bit number 10000110, therefore, is 
+\)</span><span class="math notranslate nohighlight">\(-(2^7) + 2^2 + 2^1\)</span>$ = -128 + 4 + 2 = -122.</p>
+<p><img alt="-122 = -128 + 4 + 2" src="../_images/twos_comp.svg" /></p>
+<p>We said above that an 8-bit representation of -1 would
+be 11111111.  We can see that this is because the leftmost
+bit (still called the <em>sign bit</em>) represents -128, and the
+remaining bits represent 127, so that together they represent
+-1.</p>
+<section id="check-your-understanding">
+<h3>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h3>
+<p>If 11111111 is -1, what is the representation of -2?</p>
+<p>What range of values can be represented by by an 8-bit
+integer using the two’s complement notation?</p>
+</section>
+<section id="python-bin-lies-about-negative-numbers">
+<h3>Python ‘bin’ lies about negative numbers<a class="headerlink" href="#python-bin-lies-about-negative-numbers" title="Permalink to this headline">#</a></h3>
+<p>If you count on the Python <code class="docutils literal notranslate"><span class="pre">bin</span></code> function to check
+the binary representation of integers, you will
+encounter a problem:  Python’s <code class="docutils literal notranslate"><span class="pre">bin</span></code> function uses
+sign and magnitude notation, not two’s complement,
+to represent a negative integer as a string of
+<code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> characters.  In this way the Python
+<code class="docutils literal notranslate"><span class="pre">bin</span></code> function can always produce a string that starts
+with the character <code class="docutils literal notranslate"><span class="pre">1</span></code>, except for the binary value 0.
+It does not need to show the leading zeros on a positive
+integer, and it does not need to show a long string of <code class="docutils literal notranslate"><span class="pre">1</span></code>
+characters for a small negative integer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">bin</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;-0b1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bin</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;-0b10&#39;</span>
+</pre></div>
+</div>
+<p>This is usually convenient, especially considering the real internal
+representation of negative one in Python is likely to
+start with at least 31 1 bits. It can be misleading,
+however, when you are trying to reason carefully about
+the actual representation of negative numbers.</p>
+</section>
+</section>
+<section id="sign-extension">
+<h2>Sign extension<a class="headerlink" href="#sign-extension" title="Permalink to this headline">#</a></h2>
+<p>Note that when we describe the representation of a negative
+binary number, we need to say how many bits are in the
+representation.  The representation of -1 as an
+8-bit signed integer is 11111111, but the representation
+of -1 as a 16-bit signed integer
+is 1111111111111111.  I do not want to type the representation
+of -1 as a 32-bit signed integer, or as a 64-bit signed integer,
+but you can probably guess what it looks like.</p>
+<p>Suppose we have 3-bit signed integers. Then 101
+represents $<span class="math notranslate nohighlight">\(-2^2 + 2^0\)</span>$ = -4 + 1 = -3.  Suppose I want to store
+this same value in a 5-bit signed integer. The
+new value will become 11101, that is,
+-16 + 8 + 4 + 1 = -3.</p>
+<p><img alt="Sign extending 3-bit negative integer to 5 bits" src="../_images/sign-extend-neg.svg" /></p>
+<p>You can likely see the pattern:  If we want to store a
+signed n-bit value in a larger m-bit field, we must
+pad with 1 digits on the left.
+More generally, what we pad with is the sign bit.
+Thus the 3-bit negative number 101 is padded out
+to the 5-bit negative 11101, while the 3-bit
+positive number 011 is padded out to the
+5-bit positive number 00011.</p>
+<p><img alt="Sign-extending 3-bit positive integer to 5 bits" src="../_images/sign-extend-pos.svg" /></p>
+<p>This is called
+<em>sign extension</em>.</p>
+<p>If we go the other way, we simply chop off bits on the
+left, whether they are 0 or 1.  If the bits we chop off
+are not all the same, and the same as the remaining sign
+bit, then the number does not fit in the smaller field!</p>
+</section>
+<section id="packing-and-extracting-bit-fields">
+<h2>Packing and extracting bit fields<a class="headerlink" href="#packing-and-extracting-bit-fields" title="Permalink to this headline">#</a></h2>
+<p>When we pack multiple values
+into an integer, we must be careful to
+determine whether that value should
+be interpreted as a <em>signed</em> integer
+in which the leftmost bit is the sign bit,
+representing a negative power of 2, or
+an <em>unsigned</em> integer in which all the bits
+represent positive powers of two.</p>
+<p>Suppose we use four bits, bits 0..3, to
+represent an integer.  We might treat that field as an
+<em>unsigned</em> integer that can range from 0 to 15, or we might
+treat it as a <em>signed</em> integer that can range from -8 to 7.
+If we treat it as an unsigned integer, the masking and shifting
+can work exactly as described in the
+<a class="reference internal" href="06_1_Bits.html"><span class="doc std std-doc">the prior chapter</span></a>, but we cannot represent
+negative values.  If we treat it as a signed
+integer, then we must add a sign extension step when we
+extract it.</p>
+<p>To pack a signed value into a field, we don’t need to do
+anything special except be sure to mask the value to
+chop off any extra 1 bits on the left. For example, if we
+want to store a signed 3-bit value <code class="docutils literal notranslate"><span class="pre">x</span></code> in bits 3..5 of
+<code class="docutils literal notranslate"><span class="pre">w</span></code>, assuming those bits of <code class="docutils literal notranslate"><span class="pre">w</span></code> are initially zero,
+we would need to mask off any high bits, like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x_masked</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="mb">0b111</span>
+<span class="n">x_shifted</span> <span class="o">=</span> <span class="n">x_masked</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">|</span> <span class="n">x_shifted</span>
+</pre></div>
+</div>
+<p>It is only on extraction that we must perform
+sign extension.  For example, if <code class="docutils literal notranslate"><span class="pre">x</span></code> in the
+preceding line was -1, and <code class="docutils literal notranslate"><span class="pre">w</span></code> is an 8-bit
+value 0, then <code class="docutils literal notranslate"><span class="pre">w</span></code> after the code
+above will contain <code class="docutils literal notranslate"><span class="pre">00111000</span></code>.  We want to extract
+the field in bits 3..5, holding value <code class="docutils literal notranslate"><span class="pre">111</span></code>,
+interpret it again as -1.  To do that, we must
+extend the sign bit (the initial 1) however
+far it takes to fill the word into which we are
+extracting that field.</p>
+<p>Implementing sign extension in Python is slightly odd.
+You must understand why and
+when to perform sign extension, but I will provide a
+sign extension function that you can call.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In all modern digital computers, negative integers are
+represented with the <em>two’s complement</em> system.  In this
+system, the <em>sign bit</em> represents a negative power of two,
+and all other bits represent positive powers of two.</p>
+<p>Two’s complement notation is very convenient and efficient
+for chip designers, because arithmetic with negative and
+positive numbers work exactly the same, with no extra
+circuitry.</p>
+<p>When we pack multiple small integers into an integer value,
+we must be careful about whether we intend a field to
+represent a signed value or an unsigned value.  If the
+field represents an unsigned value, then each bit $<span class="math notranslate nohighlight">\(p\)</span><span class="math notranslate nohighlight">\( 
+represents \)</span><span class="math notranslate nohighlight">\(2^p\)</span><span class="math notranslate nohighlight">\(.  An unsigned value with \)</span><span class="math notranslate nohighlight">\(k\)</span><span class="math notranslate nohighlight">\( bits 
+ranges from \)</span><span class="math notranslate nohighlight">\(0\)</span><span class="math notranslate nohighlight">\( to \)</span><span class="math notranslate nohighlight">\(2^k-1\)</span><span class="math notranslate nohighlight">\(.  
+ If the field represents a signed 
+value, then the _sign bit_ represents \)</span><span class="math notranslate nohighlight">\(-2^p\)</span><span class="math notranslate nohighlight">\(
+and all other bits \)</span><span class="math notranslate nohighlight">\(p\)</span><span class="math notranslate nohighlight">\( represent \)</span><span class="math notranslate nohighlight">\(2^p\)</span>$.</p>
+<p>When
+we pack a signed value into a smaller field,
+we mask off any extra 1 bits on the left.
+When we
+extract a signed value into a larger memory word,
+we must <em>sign extend</em> it, filling all bits to the left of
+the sign bit of the smaller field with duplicates of the sign bit.</p>
+<p>When we use the Python <code class="docutils literal notranslate"><span class="pre">bin</span></code> function, we get a string
+representation based on sign and magnitude notation,
+and not an accurate representation of the actual
+internal two’s-complement representation.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UO-CS-OER/CS210-text",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./06_Binary"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="06_1_Bits.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Bit Twiddling</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06_3_Hex.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">What the Hex?</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Michal Young, Boyana Norris, and Ram Durairajan<br/>
+  
+      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

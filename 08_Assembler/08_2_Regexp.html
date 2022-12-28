@@ -1,0 +1,1262 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Regular expressions &#8212; Introduction to Computer Science I</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appendix – What for?" href="../Appendices/appendix_looploop.html" />
+    <link rel="prev" title="Two Pass Algorithms" href="08_1_Twopass.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction to Computer Science, part 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Getting a Start
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-01-Prospectus.html">
+   A Course in Computational Thinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-02-Install.html">
+   Installing Python and IDLE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
+   Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Objects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
+   Objects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  02 Inheritance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">
+   Class Hierarchies and Inheritance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">
+   Notifiers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  03 Recursion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
+   Recursion in Object-Oriented Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
+   Refactoring Repetitive Code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  04 Aliasing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
+   Aliasing on Purpose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  05 Guess and Check
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
+   Recursive Guess and Check
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  06 Binary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
+   Bit Twiddling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_2_NegBits.html">
+   Negative Binary Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
+   What the Hex?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  07 Functional
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
+   Sometimes Functions are Values
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  08 Assembler
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_1_Twopass.html">
+   Two Pass Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Regular expressions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_looploop.html">
+   Appendix – What for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_Special.html">
+   Appendix – Magic Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_style.html">
+   Style Guide for Python Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_internals.html">
+   How Python Works
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/08_Assembler/08_2_Regexp.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F08_Assembler/08_2_Regexp.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/08_Assembler/08_2_Regexp.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/08_Assembler/08_2_Regexp.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivating-example">
+   Motivating Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-more-realistic-example">
+   A More Realistic Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-that-s-so-unreadable">
+   But that’s so unreadable!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#patterns-are-like-programs">
+   Patterns are Like Programs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#white-space-and-comments-in-regular-expressions">
+     White space and comments in regular expressions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composing-patterns">
+   Composing Patterns
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#or">
+     Or (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       |
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repetition-and">
+     Repetition (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       +
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concatenation">
+     Concatenation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#character-sets">
+     Character sets (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       []
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wild-card">
+   Wild card (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-match-and-fullmatch">
+   Search, Match, and Fullmatch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#capturing">
+   Capturing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perspective">
+   Perspective
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-code">
+     Sample code
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Regular expressions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivating-example">
+   Motivating Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-more-realistic-example">
+   A More Realistic Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#but-that-s-so-unreadable">
+   But that’s so unreadable!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#patterns-are-like-programs">
+   Patterns are Like Programs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#white-space-and-comments-in-regular-expressions">
+     White space and comments in regular expressions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composing-patterns">
+   Composing Patterns
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#or">
+     Or (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       |
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repetition-and">
+     Repetition (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       +
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concatenation">
+     Concatenation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#character-sets">
+     Character sets (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       []
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wild-card">
+   Wild card (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-match-and-fullmatch">
+   Search, Match, and Fullmatch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#capturing">
+   Capturing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perspective">
+   Perspective
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-code">
+     Sample code
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="regular-expressions">
+<h1>Regular expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">#</a></h1>
+<p>We often need to extract information from text by
+matching patterns.  Regular expressions are a powerful
+tool for defining patterns.</p>
+<section id="motivating-example">
+<h2>Motivating Example<a class="headerlink" href="#motivating-example" title="Permalink to this headline">#</a></h2>
+<p><img alt="https://xkcd.com/208/" src="https://imgs.xkcd.com/comics/regular_expressions.png" /></p>
+</section>
+<section id="a-more-realistic-example">
+<h2>A More Realistic Example<a class="headerlink" href="#a-more-realistic-example" title="Permalink to this headline">#</a></h2>
+<p>California bill 1793, passed in 2018,
+provides for resentencing of people
+convicted of low-level marijuana crimes
+before decriminalization.  Only a tiny
+fraction of those eligible for expungement
+could afford the time and attorney fees to
+go through the process.  San Francisco
+<a class="reference external" href="https://www.codeforamerica.org/programs/clear-my-record">teamed with Code for America</a>
+to automatically
+search legal records to identify tens of
+thousands eligible people from criminal records.</p>
+<p>Source code for identifying and summarizing
+convictions to be expunged is at
+<a class="reference external" href="https://github.com/codeforamerica/autoclearance">https://github.com/codeforamerica/autoclearance</a>.
+Several uses of regular expressions
+can be found in
+<a class="reference external" href="https://github.com/codeforamerica/autoclearance/blob/master/app/helpers/rap_sheet_deidentifier.rb">https://github.com/codeforamerica/autoclearance/blob/master/app/helpers/rap_sheet_deidentifier.rb</a>.
+This code is in the Ruby language, but the
+regular expression code is fairly similar to
+regular expressions in Python, e.g.,</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strip_addresses</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">address_regex</span> <span class="o">=</span> <span class="sr">/COM:\s*ADR-[\d]{6,8}\s*\([^)]*\)/m</span>
+    <span class="n">text</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="n">address_regex</span><span class="p">,</span> <span class="s1">&#39;COM: [ADDRESS REDACTED]&#39;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</section>
+<section id="but-that-s-so-unreadable">
+<h2>But that’s so unreadable!<a class="headerlink" href="#but-that-s-so-unreadable" title="Permalink to this headline">#</a></h2>
+<p>Regular expressions are notoriously difficult
+to read.  If I encountered the regular expression
+above (<code class="docutils literal notranslate"><span class="pre">/COM:\s*ADR-[\d]{6,8}\s*\([^)]*\)/m</span></code>)
+in code without other contextual cues, I could
+not easily guess that it is a pattern that
+matches street addresses in criminal records.
+Python makes it possible to write <em>somewhat</em>
+more readable patterns.</p>
+<p>In this chapter and in our project, I do not
+expect that you will become expert in reading
+and writing complex regular expressions.  My goals for
+this introduction and pattern are:</p>
+<ul class="simple">
+<li><p>I want you to be able to read very
+basic regular expressions for text that
+has a restricted, very predictable format.</p></li>
+<li><p>I want you to be familiar enough with
+regular expressions that sometime in the
+future, when you encounter a problem for
+which more complex regular expressions are
+the right tool, you will be ready to
+open up one of the many, many tutorials or
+reference guides available online and learn
+what you need to solve your immediate problem.</p></li>
+</ul>
+</section>
+<section id="patterns-are-like-programs">
+<h2>Patterns are Like Programs<a class="headerlink" href="#patterns-are-like-programs" title="Permalink to this headline">#</a></h2>
+<p>Regular expressions are like a little
+programming language designed just for
+matching patterns in text.  In Python we
+write these little pattern programs as
+quoted strings which are interpreted by the
+<code class="docutils literal notranslate"><span class="pre">re</span></code> module.</p>
+<p>The most basic regular expression is a
+string to be matched.  For example, if we
+wanted to find the word <code class="docutils literal notranslate"><span class="pre">cat</span></code> in string <code class="docutils literal notranslate"><span class="pre">s</span></code>,
+we can write</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat_pat</span> <span class="o">=</span> <span class="s2">&quot;cat&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;My cat&#39;s name is Nora&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">cat_pat</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">re.search</span></code> will either return a <em>match object</em>
+or <code class="docutils literal notranslate"><span class="pre">None</span></code>.  Since “cat” does appear in
+string <code class="docutils literal notranslate"><span class="pre">s</span></code>,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">()</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** No Match ***&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will print <code class="docutils literal notranslate"><span class="pre">Matched</span> <span class="pre">3..6</span></code>.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">re.search</span></code> looks for any occurrence of
+the pattern, <code class="docutils literal notranslate"><span class="pre">re.match</span></code> checks whether the
+whole string matches the pattern.  Thus</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">cat_pat</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">()</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** No Match ***&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>prints <code class="docutils literal notranslate"><span class="pre">***</span> <span class="pre">No</span> <span class="pre">Match</span> <span class="pre">***</span></code>.</p>
+<section id="white-space-and-comments-in-regular-expressions">
+<h3>White space and comments in regular expressions<a class="headerlink" href="#white-space-and-comments-in-regular-expressions" title="Permalink to this headline">#</a></h3>
+<p>By default, a space in a regular expression
+matches a space in a string.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="s2">&quot; is &quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;My cat&#39;s name is Nora&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** No Match ***&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>prints</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Matched</span> <span class="mf">13..17</span>
+<span class="n">Matched</span> <span class="n">substring</span> <span class="ow">is</span> <span class="s1">&#39; is &#39;</span>
+</pre></div>
+</div>
+<p>Imagine if the only spaces permitted in a Python
+program were those required by Python syntax,
+and there was no way to include comments.
+Our Python programs would be nearly as
+unreadable as many regular expressions.
+The Python <code class="docutils literal notranslate"><span class="pre">re</span></code> module, however, gives us
+the option of adding white space, comments,
+and newlines.  Adding the <code class="docutils literal notranslate"><span class="pre">re.X</span></code> flag
+argument to <code class="docutils literal notranslate"><span class="pre">re.search</span></code> or <code class="docutils literal notranslate"><span class="pre">re.match</span></code> enables
+these readability aids:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">c    # C is for cat</span>
+<span class="s2">a    # an a in the middle</span>
+<span class="s2">t    # This pattern really didn&#39;t need comments, but others do</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;My cat&#39;s name is Nora&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>     <span class="c1">## re.X allows commented patterns</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** No Match ***&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="composing-patterns">
+<h2>Composing Patterns<a class="headerlink" href="#composing-patterns" title="Permalink to this headline">#</a></h2>
+<p>Regular expressions wouldn’t be very
+powerful if we could only search for
+fixed strings.   Fortunately we can build up
+complex patterns with operators.  This why
+they are called “expressions”; we combine simple
+patterns into more complex expressions just as
+we combine simple arithmetic expressions into
+more complex expressions with arithmetic operators
+like <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
+<section id="or">
+<h3>Or (<code class="docutils literal notranslate"><span class="pre">|</span></code>)<a class="headerlink" href="#or" title="Permalink to this headline">#</a></h3>
+<p>Suppose <em>e1</em> and <em>e2</em> are regular expressions,
+and that they match <em>m1</em> and <em>m2</em>, respectively.<br />
+We can write a pattern <em>e1</em> | <em>e2</em> to match
+either what <em>e1</em> matches or what <em>e2</em> matches,
+with parentheses to avoid ambiguity.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="s2">&quot;(cat)|(dog)|(ferret)&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;My cat&#39;s name is Nora&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>     <span class="c1">## re.X allows commented patterns</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*** No Match ***&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="repetition-and">
+<h3>Repetition (<code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span></code>)<a class="headerlink" href="#repetition-and" title="Permalink to this headline">#</a></h3>
+<p>We can write <em>e1</em>* to match any number of
+repetitions of what <em>e1</em> matches, including
+zero, or we can write <em>e1</em>+ to match
+one or more repetitions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="s2">&quot;(ch-)*(changes)&quot;</span>
+<span class="n">bowie</span> <span class="o">=</span> <span class="s2">&quot;Ch-ch-ch-ch-changes  # Turn and face the strange&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">bowie</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>     <span class="c1">## re.X allows commented patterns</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">bowie</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Prints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Matched</span> <span class="mf">3..19</span>
+<span class="n">Matched</span> <span class="n">substring</span> <span class="ow">is</span> <span class="s1">&#39;ch-ch-ch-changes&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="concatenation">
+<h3>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">#</a></h3>
+<p>The examples above are actually using another “operator”
+for regular expressions.  The pattern <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code> is actually
+three patterns (<code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>, and <code class="docutils literal notranslate"><span class="pre">t</span></code>) that are concatenated
+to form one longer pattern to match the concatenation of
+what each of the individual letter patterns matches.<br />
+A more interesting application of concatenation appears
+in <code class="docutils literal notranslate"><span class="pre">&quot;(ch-)*(changes)&quot;</span></code>.  Here <code class="docutils literal notranslate"><span class="pre">ch-</span></code> pattern may be
+repeated, but it must be followed by something that
+matches <code class="docutils literal notranslate"><span class="pre">changes</span></code>.  We have used parentheses to be
+clear that the whole string “ch-” must be repeated, and
+not just the hyphen.</p>
+</section>
+<section id="character-sets">
+<h3>Character sets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>)<a class="headerlink" href="#character-sets" title="Permalink to this headline">#</a></h3>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">&quot;(ch-)*(changes)&quot;</span></code> did not match the
+beginning “Ch” of “Ch-ch-ch-ch-changes”.  We could
+use <code class="docutils literal notranslate"><span class="pre">|</span></code> allow the “c” to be matched in lower case or
+capitalized:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="s2">&quot;((c|C)h-)*(changes)&quot;</span>
+<span class="n">bowie</span> <span class="o">=</span> <span class="s2">&quot;Ch-ch-ch-ch-changes  # Turn and face the strange&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">bowie</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>     <span class="c1">## re.X allows commented patterns</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">bowie</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Often it is simpler to give a set or range of characters.
+<code class="docutils literal notranslate"><span class="pre">[axe]</span></code> matches any of “a”, “x”, or “e”.  <code class="docutils literal notranslate"><span class="pre">[c-f]</span></code> matches
+any of “c”, “d”, “e”, or “f”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="s2">&quot;([Cc]h-)*([a-z]+)  # Turn and face the strange&quot;</span>
+<span class="n">bowie</span> <span class="o">=</span> <span class="s2">&quot;Ch-ch-ch-ch-changes &quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">bowie</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>     <span class="c1">## re.X allows commented patterns</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">bowie</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Prints</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Matched</span> <span class="mf">0..19</span>
+<span class="n">Matched</span> <span class="n">substring</span> <span class="ow">is</span> <span class="s1">&#39;Ch-ch-ch-ch-changes&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="wild-card">
+<h2>Wild card (<code class="docutils literal notranslate"><span class="pre">.</span></code>)<a class="headerlink" href="#wild-card" title="Permalink to this headline">#</a></h2>
+<p>The symbol <code class="docutils literal notranslate"><span class="pre">.</span></code> (pronounced “dot”) is a wild card that matches
+any single character.  We can use <code class="docutils literal notranslate"><span class="pre">.*</span></code> to match a substring
+of any length (including length zero), containing
+anything.  The wild card is particularly useful for matching
+text between delimiters, but we must be careful because it is
+“greedy” and will prefer the longest possible match.  For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">bowie</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>     <span class="c1">## re.X allows commented patterns</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">bowie</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Prints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Matched</span> <span class="mf">2..12</span>
+<span class="n">Matched</span> <span class="n">substring</span> <span class="ow">is</span> <span class="s1">&#39;-ch-ch-ch-&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="search-match-and-fullmatch">
+<h2>Search, Match, and Fullmatch<a class="headerlink" href="#search-match-and-fullmatch" title="Permalink to this headline">#</a></h2>
+<p>In the examples above, we have used the <code class="docutils literal notranslate"><span class="pre">search</span></code> function from
+<code class="docutils literal notranslate"><span class="pre">re</span></code> to find a substring matching the pattern anywhere in the
+string.   That is often the right choice if we are searching
+in unstructured text, most of which we skip over.  When we process
+structured text (like a spreadsheet, or assembly language source code)
+or semi-structured text (like html or markdown documents),
+we may not want skip over everything that doesn’t match
+the pattern.  If we want the matched substring to start at the
+beginning of the string, we can use <code class="docutils literal notranslate"><span class="pre">match</span></code> instead of <code class="docutils literal notranslate"><span class="pre">search</span></code>.
+If the whole string should match, we can use <code class="docutils literal notranslate"><span class="pre">fullmatch</span></code>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">re</span></code> function</p></th>
+<th class="head"><p>matches</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">re.search</span></code></p></td>
+<td><p>pattern anywhere in string (ignore the rest)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">re.match</span></code></p></td>
+<td><p>pattern must match beginning of string</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">re.fullmatch</span></code></p></td>
+<td><p>pattern must match the whole string</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example, if the string is “Ch-ch-ch-ch-changes”,
+then we get the following results:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>pattern</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">re.search</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">re.match</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">re.fullmatch</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">changes</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;changes&quot;</span></code></p></td>
+<td><p>(no match)</p></td>
+<td><p>(no match)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">([Cc]h-)*</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Ch-ch-ch-ch-&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Ch-ch-ch-ch-&quot;</span></code></p></td>
+<td><p>(no match)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">([Cc]h-)*([a-z]+)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Ch-ch-ch-ch-changes&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Ch-ch-ch-ch-changes&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Ch-ch-ch-ch-changes&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="capturing">
+<h2>Capturing<a class="headerlink" href="#capturing" title="Permalink to this headline">#</a></h2>
+<p>Often it is not enough to know the position of the whole match.<br />
+Particularly when we are using <code class="docutils literal notranslate"><span class="pre">re.fullmatch</span></code>, we typically want
+to know which parts of the pattern matched which parts of the string.
+These are called “captures”.  Each parenthesized part of the
+pattern creates a “capture group”, which can be extracted from
+the match object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="s2">&quot;((c|C)h-)*(changes)  # Turn and face the strange&quot;</span>
+<span class="n">bowie</span> <span class="o">=</span> <span class="s2">&quot;Ch-ch-ch-ch-changes&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">bowie</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>    
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">bowie</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Groups </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Prints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Matched</span> <span class="mf">0..19</span>
+<span class="n">Matched</span> <span class="n">substring</span> <span class="ow">is</span> <span class="s1">&#39;Ch-ch-ch-ch-changes&#39;</span>
+<span class="n">Groups</span> <span class="p">(</span><span class="s1">&#39;ch-&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;changes&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can improve on this by giving the capture group names.
+We assign a name to a group by enclosing it in parentheses
+and prepending <code class="docutils literal notranslate"><span class="pre">?P&lt;name&gt;</span></code>. We can then obtain the named
+groups in the form of a Python dict
+using the <code class="docutils literal notranslate"><span class="pre">groupdict</span></code> method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="s2">&quot;(?P&lt;prefix&gt; ((c|C)h-)*) (?P&lt;suffix&gt; changes)&quot;</span>
+<span class="n">bowie</span> <span class="o">=</span> <span class="s2">&quot;Ch-ch-ch-ch-changes&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">bowie</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">bowie</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Groups </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Prints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Matched</span> <span class="mf">0..19</span>
+<span class="n">Matched</span> <span class="n">substring</span> <span class="ow">is</span> <span class="s1">&#39;Ch-ch-ch-ch-changes&#39;</span>
+<span class="n">Groups</span> <span class="p">{</span><span class="s1">&#39;prefix&#39;</span><span class="p">:</span> <span class="s1">&#39;Ch-ch-ch-ch-&#39;</span><span class="p">,</span> <span class="s1">&#39;suffix&#39;</span><span class="p">:</span> <span class="s1">&#39;changes&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>In the example above, we have made the “prefix”
+group contain all repetitions of “Ch-” or “ch-“.<br />
+We can also make a group that captures just the
+last repetition, and groups can be nested:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pat</span> <span class="o">=</span> <span class="s2">&quot;(?P&lt;prefix&gt;(?P&lt;lastch&gt; (c|C)h-)*) (?P&lt;suffix&gt; changes)&quot;</span>
+<span class="n">bowie</span> <span class="o">=</span> <span class="s2">&quot;Ch-ch-ch-ch-changes&quot;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">bowie</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">m</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">..</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched substring is &#39;</span><span class="si">{</span><span class="n">bowie</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Groups </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This prints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Matched</span> <span class="mf">0..19</span>
+<span class="n">Matched</span> <span class="n">substring</span> <span class="ow">is</span> <span class="s1">&#39;Ch-ch-ch-ch-changes&#39;</span>
+<span class="n">Groups</span> <span class="p">{</span><span class="s1">&#39;prefix&#39;</span><span class="p">:</span> <span class="s1">&#39;Ch-ch-ch-ch-&#39;</span><span class="p">,</span> <span class="s1">&#39;lastch&#39;</span><span class="p">:</span> <span class="s1">&#39;ch-&#39;</span><span class="p">,</span> <span class="s1">&#39;suffix&#39;</span><span class="p">:</span> <span class="s1">&#39;changes&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="perspective">
+<h2>Perspective<a class="headerlink" href="#perspective" title="Permalink to this headline">#</a></h2>
+<p>One could write
+<a class="reference external" href="http://shop.oreilly.com/product/9780596528126.do">a whole book</a>
+on regular expressions.
+Or <a class="reference external" href="http://shop.oreilly.com/product/0636920023630.do">another</a>.
+Or many others.   At some time it may be worthwhile to
+extensively study regular expressions, but this is probably
+not that time.  The selection of examples above is designed to
+be <em>just enough</em> to get through the project.<br />
+My goals in this chapter, and in the
+accompanying project, are two:</p>
+<ul class="simple">
+<li><p>You should be able to read a fairly simple regular expression
+and make sense of it.</p></li>
+<li><p>You should understand <em>why</em> we use regular expressions well
+enough that in the future, when you are faced with a task
+for which regular expressions are the best tool, you will be
+prepared to learn what you need from books and online
+tutorials and references.</p></li>
+</ul>
+<section id="sample-code">
+<h3>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">#</a></h3>
+<p><span class="xref myst">Sample code for this chapter</span></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UO-CS-OER/CS210-text",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./08_Assembler"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="08_1_Twopass.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Two Pass Algorithms</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Appendices/appendix_looploop.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appendix – What for?</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Michal Young, Boyana Norris, and Ram Durairajan<br/>
+  
+      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

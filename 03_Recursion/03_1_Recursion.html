@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Recursion in Object-Oriented Programs &#8212; Introduction to Computer Science I</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Refactoring Repetitive Code" href="03_2_Refactor.html" />
+    <link rel="prev" title="Notifiers" href="../02_Inheritance/02_2_Notifiers.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction to Computer Science, part 1
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Getting a Start
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-01-Prospectus.html">
+   A Course in Computational Thinking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-02-Install.html">
+   Installing Python and IDLE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
+   Python Programming Kickstart
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  01 Objects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
+   Objects
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  02 Inheritance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">
+   Class Hierarchies and Inheritance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">
+   Notifiers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  03 Recursion
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Recursion in Object-Oriented Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_2_Refactor.html">
+   Refactoring Repetitive Code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  04 Aliasing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
+   Aliasing on Purpose
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  05 Guess and Check
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
+   Recursive Guess and Check
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  06 Binary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
+   Bit Twiddling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_2_NegBits.html">
+   Negative Binary Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
+   What the Hex?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  07 Functional
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
+   Sometimes Functions are Values
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  08 Assembler
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08_Assembler/08_1_Twopass.html">
+   Two Pass Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08_Assembler/08_2_Regexp.html">
+   Regular expressions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_looploop.html">
+   Appendix – What for?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_Special.html">
+   Appendix – Magic Methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_style.html">
+   Style Guide for Python Programs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_internals.html">
+   How Python Works
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/03_Recursion/03_1_Recursion.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F03_Recursion/03_1_Recursion.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/03_Recursion/03_1_Recursion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/03_Recursion/03_1_Recursion.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-of-recursion">
+   Review of Recursion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recursive-data-structures">
+   Recursive Data Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchical-structure-as-classes">
+   Hierarchical Structure as Classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-recursive-structures-and-methods">
+   Other Recursive Structures and Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-code">
+   Source Code
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Recursion in Object-Oriented Programs</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-of-recursion">
+   Review of Recursion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recursive-data-structures">
+   Recursive Data Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchical-structure-as-classes">
+   Hierarchical Structure as Classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-recursive-structures-and-methods">
+   Other Recursive Structures and Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-code">
+   Source Code
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="recursion-in-object-oriented-programs">
+<h1>Recursion in Object-Oriented Programs<a class="headerlink" href="#recursion-in-object-oriented-programs" title="Permalink to this headline">#</a></h1>
+<p>You’ve seen and written recursive functions before.  The same
+basic concepts apply in object-oriented programs with classes
+and objects, but with a twist:  The data structure often
+has the same “shape” as the recursive function, and the
+parts of the recursive function are often divided between
+methods in different subclasses.</p>
+<section id="review-of-recursion">
+<h2>Review of Recursion<a class="headerlink" href="#review-of-recursion" title="Permalink to this headline">#</a></h2>
+<p>Recall that a recursive function is divided into one or
+more <em>base cases</em> and one or more <em>recursive</em> or <em>inductive</em> cases.
+Together these have a fairly standard structure.  In pseudocode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recursive_function</span><span class="p">(</span><span class="n">value</span><span class="p">):</span> 
+    <span class="sd">&quot;&quot;&quot;We always check base cases first&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">base</span> <span class="n">case</span> <span class="n">applies</span><span class="p">:</span> 
+       <span class="n">do</span> <span class="n">the</span> <span class="n">base</span> <span class="n">case</span> <span class="ow">and</span> <span class="k">return</span>
+    <span class="k">elif</span> <span class="n">another</span> <span class="n">base</span> <span class="n">case</span> <span class="n">applies</span><span class="p">:</span> 
+       <span class="n">do</span> <span class="n">the</span> <span class="n">base</span> <span class="n">case</span> <span class="ow">and</span> <span class="k">return</span>
+    <span class="k">else</span> 
+       <span class="sd">&quot;&quot;&quot;Recursive case(s) follow&quot;&quot;&quot;</span>
+       <span class="k">break</span> <span class="n">value</span> <span class="n">into</span> <span class="n">pieces</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="o">...</span>
+       <span class="n">r1</span> <span class="o">=</span> <span class="n">recursive_function</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+       <span class="n">r2</span> <span class="o">=</span> <span class="n">recursive_function</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+       <span class="o">...</span>
+       <span class="k">return</span> <span class="n">combination</span> <span class="n">of</span> <span class="n">value</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>For example, the classic <em>factorial</em> example can be written as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">classic_factorial</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;We always check base cases first&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+       <span class="sd">&quot;&quot;&quot;Recursive case(s) follow&quot;&quot;&quot;</span>
+       <span class="n">p1</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="mi">1</span>
+       <span class="n">r1</span> <span class="o">=</span> <span class="n">classic_factorial</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+       <span class="k">return</span> <span class="n">value</span> <span class="o">*</span> <span class="n">r1</span>
+</pre></div>
+</div>
+<p>which we would typically simplify to</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can see the same basic structure in a
+binary search.   Suppose we have a sorted table of (key, value)
+pairs that looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;beta&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;gamma&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;delta&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;epsilon&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>The table is sorted by key.  We can search it like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bin_search</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">bin_search_range</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">bin_search_range</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+                    <span class="n">low</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">high</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Recursive binary search in range low..high inclusive&quot;&quot;&quot;</span>
+
+    <span class="sd">&quot;&quot;&quot;Base case 1: Key is not in table&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">low</span> <span class="o">&gt;</span> <span class="n">high</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;No such value&quot;</span>
+
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">high</span> <span class="o">+</span> <span class="n">low</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">entry_key</span><span class="p">,</span> <span class="n">entry_value</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span>
+
+    <span class="sd">&quot;&quot;&quot;Base case 2: Key found at midpoint in table&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">entry_key</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">entry_value</span>
+
+    <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">entry_key</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Recursive case 1: Key must be before midpoint, or absent&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">bin_search_range</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Recursive case 2: Key must be after midpoint, or absent&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">bin_search_range</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="recursive-data-structures">
+<h2>Recursive Data Structures<a class="headerlink" href="#recursive-data-structures" title="Permalink to this headline">#</a></h2>
+<p>A data structure can also have a recursive structure: Tuples can contain tuples, lists can
+contain lists, dicts can contain dicts, etc.   Instead of a simple list, we could make
+the table have four elements:</p>
+<p><img alt="Schema of nested list search structure" src="../_images/greek-search-schema.svg" /></p>
+<p>where <em>smaller keys</em> and <em>larger keys</em> are themselves tables with the
+same form, lists within lists, so that we get</p>
+<p><img alt="Nested list form of search structure" src="../_images/greek-search-example.svg" /></p>
+<p>In Python, the table could be represented as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alpha_tree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;gamma&quot;</span><span class="p">,</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span>
+               <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]],</span>
+               <span class="p">[]],</span>
+              <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;epsilon&quot;</span><span class="p">,</span>
+               <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;delta&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]],</span>
+               <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;zeta&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]]]</span>
+              <span class="p">]</span>
+</pre></div>
+</div>
+<p>We would typically visualize this structure not by
+drawing list cells within list cells, but by drawing the “nested in”
+relation as lines.  We call such a structure a <em>tree</em>, with the
+<em>root</em> of the tree at the top.
+Each entry in the tree is called a <em>node</em>.
+Every node except the
+root is connected to a single <em>parent</em> above it.
+A node may be connected to one or more <em>children</em>
+below it.  A node without children is called a
+<em>leaf</em>, and other nodes are called <em>internal nodes</em>.</p>
+<p><img alt="Table drawn as a tree" src="../_images/greek-search-tree.svg" /></p>
+<p>In this diagram key 4 is at the root.  Keys 1, 9, and 15 are in leaves,
+and 4, 3, and 12 are internal nodes.</p>
+<p>Now we can rewrite our binary search as a search in the nested list structure, or tree:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nested_list_search</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Table is [key, value, smaller keys, larger keys]&quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Search for </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;Base case 1: There are no keys&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">table</span> <span class="o">==</span> <span class="p">[]:</span>
+        <span class="k">return</span> <span class="s2">&quot;No such value&quot;</span>
+
+    <span class="n">entry_key</span><span class="p">,</span> <span class="n">entry_value</span><span class="p">,</span> <span class="n">smaller</span><span class="p">,</span> <span class="n">larger</span> <span class="o">=</span> <span class="n">table</span>
+    <span class="sd">&quot;&quot;&quot;Base case 2: Key is found&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">entry_key</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">entry_value</span>
+
+    <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">entry_key</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Recursive case 1: Must be in the smaller keys&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">nested_list_search</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">smaller</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Recursive case 2: Must be in the larger keys&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">nested_list_search</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">larger</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notice that this is almost the same logic as our binary search in a list.
+The differences are that now the data is “shaped like the algorithm”.<br />
+When we searched a sorted list, we divided the list into a middle element,
+a sublist of smaller elements, and a sublist of larger elements.  The nested
+list has already been divided up into a middle element (which appears in the
+first key and value), a sublist of smaller elements, and a sublist of larger
+elements.  Instead of calculating a midpoint, our <code class="docutils literal notranslate"><span class="pre">nested_search_list</span></code> just
+follows the data structure.</p>
+</section>
+<section id="hierarchical-structure-as-classes">
+<h2>Hierarchical Structure as Classes<a class="headerlink" href="#hierarchical-structure-as-classes" title="Permalink to this headline">#</a></h2>
+<p>We can implement the same logical structure using classes and objects.  Note that when
+we represented the tree using nested lists, we used empty lists to represent empty
+sets of entries with larger or smaller keys.  Using classes, we can instead
+create a distinct subclass for an empty table.</p>
+<p>We’ll create an abstract base class for the tree structure, with a
+concrete subclass for a non-empty node and a concrete subclass for
+an empty node:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GreekSearchTree</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;An abstract base class for the table of Greek letters&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Nope, can&#39;t do that&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="n">GreekSearchTree</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">smaller</span><span class="p">:</span> <span class="n">GreekSearchTree</span><span class="p">,</span> <span class="n">larger</span><span class="p">:</span> <span class="n">GreekSearchTree</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">smaller</span> <span class="o">=</span> <span class="n">smaller</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">larger</span> <span class="o">=</span> <span class="n">larger</span>
+
+<span class="k">class</span> <span class="nc">Empty</span><span class="p">(</span><span class="n">GreekSearchTree</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p>With these classes we can build up the tree structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The leaves</span>
+<span class="n">empty</span> <span class="o">=</span> <span class="n">Empty</span><span class="p">()</span>  <span class="c1"># I really only need one of these</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="n">empty</span><span class="p">,</span> <span class="n">empty</span><span class="p">)</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;delta&quot;</span><span class="p">,</span> <span class="n">empty</span><span class="p">,</span> <span class="n">empty</span><span class="p">)</span>
+<span class="n">zeta</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;zeta&quot;</span><span class="p">,</span> <span class="n">empty</span><span class="p">,</span> <span class="n">empty</span><span class="p">)</span>
+<span class="c1"># The internal nodes</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">empty</span><span class="p">)</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;epsilon&quot;</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">zeta</span><span class="p">)</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">)</span>
+<span class="c1"># (4, gamma) is at the root</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">gamma</span>
+</pre></div>
+</div>
+<p>What about a search method?  In the abstract
+base class, we will give a method definition with
+the header for the search method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GreekSearchTree</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;An abstract base class for the table of Greek letters&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Nope, can&#39;t do that&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return associated string or &#39;No such value&#39;&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Concrete classes must override the search method&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We’ll override that search method for the
+non-empty node class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="n">GreekSearchTree</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">smaller</span><span class="p">:</span> <span class="n">GreekSearchTree</span><span class="p">,</span> <span class="n">larger</span><span class="p">:</span> <span class="n">GreekSearchTree</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">smaller</span> <span class="o">=</span> <span class="n">smaller</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">larger</span> <span class="o">=</span> <span class="n">larger</span>
+
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">smaller</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">larger</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this <code class="docutils literal notranslate"><span class="pre">search</span></code> method we see one of the base cases
+(when the key is found) and the recursive cases
+for searching in the subtree of smaller keys
+or the subtree of larger keys.  But where is the
+other base case?</p>
+<p>The other case is not in this class at all, but is
+rather in the <code class="docutils literal notranslate"><span class="pre">search</span></code> method of the other concrete
+class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Empty</span><span class="p">(</span><span class="n">GreekSearchTree</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;No such value&quot;</span>
+</pre></div>
+</div>
+<p>Here we see the one big difference between recursive
+functions and recursion in methods in a recursive
+structure of objects.   In the function, we always
+used some kind of decision (typically an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement)
+to distinguish the base cases and recursive cases.<br />
+Typically the cases are distributed among
+different subclasses, and part or all of the choice
+of which cases to execute are controlled by
+which kind of object the method is called in.</p>
+<p>Let’s consider an example search for key 10.<br />
+Initially we call the ‘search’ method on the
+root object, with key 4.</p>
+<p><img alt="Start the search at the root" src="../_images/greek-search-step1.svg" /></p>
+<p>The key 10 is greater than the key in that node,
+so the recursive part of the <code class="docutils literal notranslate"><span class="pre">search</span></code> method is
+invoked on <code class="docutils literal notranslate"><span class="pre">self.larger</span></code>, which is the subtree
+with key 12 at its root.</p>
+<p><img alt="Recursive search on subtree rooted at 12" src="../_images/greek-search-step2.svg" /></p>
+<p>Now key 10 is smaller than the key in the node,
+so it makes a recursive call to
+<code class="docutils literal notranslate"><span class="pre">self.smaller.search(key)</span></code>.</p>
+<p><img alt="Recursive search on subtree rooted at 9" src="../_images/greek-search-step3.svg" /></p>
+<p>Now key 10 is larger than the key in the node,
+so once again it makes a recursive call on
+<code class="docutils literal notranslate"><span class="pre">self.larger.search(key)</span></code>.</p>
+<p><img alt="Recursive search on empty subtree" src="../_images/greek-search-step4.svg" /></p>
+<p>This time we get the method <code class="docutils literal notranslate"><span class="pre">search</span></code> with
+class <code class="docutils literal notranslate"><span class="pre">Empty</span></code>.  We don’t have to use an <code class="docutils literal notranslate"><span class="pre">if</span></code>
+statement to determine that this is a base case.
+We know it is a base case because that is the only
+case that this <code class="docutils literal notranslate"><span class="pre">Empty</span></code> node could be asked to handle!</p>
+</section>
+<section id="other-recursive-structures-and-methods">
+<h2>Other Recursive Structures and Methods<a class="headerlink" href="#other-recursive-structures-and-methods" title="Permalink to this headline">#</a></h2>
+<p><em>Search trees</em> like the table illustrated above are
+one important group of tree structures in software,
+but far from the only one.  Often trees represent
+hierarchical “part-of” structures.  Examples
+include geographic areas (country comprised of
+states or provinces, states made up of counties,
+counties further divided into precincts),
+graphics (a scene made up of shapes, with
+composite shapes and made up of simpler shapes,
+and simple line segments, points, and polygons
+as leaf nodes), documents (a book made up of chapters,
+chapters made up of sections, sections made up
+of paragraphs, paragraphs made up of lines) and so on.
+There is hardly an application domain in which
+tree structures do not find some use in software.</p>
+<p>Wherever we find trees, we are likely to find some
+methods that <em>walk</em> or <em>traverse</em> the trees
+recursively.  Sometimes these are some form of search, but
+not always.  Many of the functions we might write
+for a list are also needed for a trees.  With a list,
+we might have a choice between recursion and a simple
+loop.  For example, the recursive binary search
+of a list could also be written without recursion,
+using a loop.  The loop version of binary search is
+hardly more complex than the recursive version, and
+apt to execute a little faster.  With tree structures,
+on the other hand, recursion is usually the better
+choice.</p>
+<p>One widely used tree structure that you may
+have encountered already, and certainly will in the
+future, is the Document Object Model (DOM) of HTML.
+This is the data structure that a web browser
+constructs from the HTML source code of a web page,
+and it is the structure that style sheets and
+scripts consume and manipulate to support all the
+interactive effects of modern web applications.</p>
+<p>Consider a very simplified version of the DOM
+structure.  Each “<tag>…</tag>” segment
+would be represented by a node in the tree.
+Content that is plain text, with no tags,
+might be leaf nodes.  We would begin with an
+abstract base class for DOM tree nodes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DOMNode</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Abstract base class, defines the interface</span>
+<span class="sd">    that concrete DOM node classes must conform to.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Abstract constructor of DOMNode&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We might define several other methods that all
+DOM nodes should implement, but for the example we’ll
+consider only the simple magic methods like
+<code class="docutils literal notranslate"><span class="pre">__str__</span></code>, which have default definitions already
+inherited from class <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<p>The internal nodes of the DOM have tags (like
+<code class="docutils literal notranslate"><span class="pre">h1</span></code>, <code class="docutils literal notranslate"><span class="pre">h2</span></code> etc. for “header” elements and
+<code class="docutils literal notranslate"><span class="pre">p</span></code> for paragraphs).  These tagged sections
+may be nested.  This is represented by giving
+each node a <em>list</em> of children.  (Contrast this
+to our search tree, in which each internal node
+had exactly two children.)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tagged</span><span class="p">(</span><span class="n">DOMNode</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">children</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DOMNode</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">tag</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="n">children</span>
+
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span><span class="n">DOMNode</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>How shall we define the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method for a
+tagged node?  Let’s make it look like html,
+in which begin-tags like <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> are paired with
+end-tags like <code class="docutils literal notranslate"><span class="pre">&lt;/p&gt;</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Text form is like HTML source code&quot;&quot;&quot;</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">part</span><span class="p">)</span> <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">]</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s2">&gt; </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span><span class="si">}</span><span class="s2"> &lt;/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Notice that the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method uses f-strings
+that implicitly make calls on the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> methods
+of the children of a <code class="docutils literal notranslate"><span class="pre">Tagged</span></code> node.  Thus producing
+the text for a DOM tree is recursive.</p>
+<p>Plain text nodes, which will always be leaves of
+the DOM, will be simple:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Plain</span><span class="p">(</span><span class="n">DOMNode</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plain text content is essentially just a string&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">+=</span> <span class="n">text</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+<p>Where we have a recursive tree traversal,
+leaf node classes usually handle a base case.
+For creating a string representation, the
+<code class="docutils literal notranslate"><span class="pre">__str__</span></code> methods implement a recursive walk
+over the tree, and we can see that the simple
+<code class="docutils literal notranslate"><span class="pre">__str__</span></code> method of <code class="docutils literal notranslate"><span class="pre">Plain</span></code> is a base case.</p>
+<p>Now we can build a DOM tree with calls to
+the constructors of <code class="docutils literal notranslate"><span class="pre">Tagged</span></code> and <code class="docutils literal notranslate"><span class="pre">Plain</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">page</span> <span class="o">=</span> <span class="n">Tagged</span><span class="p">(</span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
+              <span class="p">[</span><span class="n">Tagged</span><span class="p">(</span><span class="s2">&quot;head&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Tagged</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Plain</span><span class="p">(</span><span class="s2">&quot;My Tremendous Novel&quot;</span><span class="p">)])]),</span>
+               <span class="n">Tagged</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Tagged</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Plain</span><span class="p">(</span><span class="s2">&quot;A Tail of Two Mice&quot;</span><span class="p">)]),</span>
+                               <span class="n">Tagged</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Plain</span><span class="p">(</span><span class="s2">&quot;By Little Charley Dickie&quot;</span><span class="p">)]),</span>
+                               <span class="n">Tagged</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Plain</span><span class="p">(</span><span class="s2">&quot;It was the worst of cats.&quot;</span><span class="p">),</span>
+                                            <span class="n">Plain</span><span class="p">(</span><span class="s2">&quot;Like, really bad.  Unbelievably bad.&quot;</span><span class="p">)]),</span>
+                               <span class="n">Tagged</span><span class="p">(</span><span class="s2">&quot;h3&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">Plain</span><span class="p">(</span><span class="s2">&quot;Copyright 2020 by L.C.D.&quot;</span><span class="p">)])</span>
+                               <span class="p">])</span>  <span class="c1"># End of body</span>
+                <span class="p">])</span> <span class="c1"># End of document</span>
+</pre></div>
+</div>
+<p>If we print <code class="docutils literal notranslate"><span class="pre">page</span></code>, its <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method will be
+called, and the recursive <code class="docutils literal notranslate"><span class="pre">__str__</span></code> calls will
+produce the following output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span> <span class="n">My</span> <span class="n">Tremendous</span> <span class="n">Novel</span> <span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span> <span class="n">A</span> <span class="n">Tail</span> <span class="n">of</span> <span class="n">Two</span> <span class="n">Mice</span> <span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span> <span class="n">By</span> <span class="n">Little</span> <span class="n">Charley</span> <span class="n">Dickie</span> <span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span> <span class="n">It</span> <span class="n">was</span> <span class="n">the</span> <span class="n">worst</span> <span class="n">of</span> <span class="n">cats</span><span class="o">.</span> <span class="n">Like</span><span class="p">,</span> <span class="n">really</span> <span class="n">bad</span><span class="o">.</span>  <span class="n">Unbelievably</span> <span class="n">bad</span> <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span> <span class="n">Copyright</span> <span class="mi">2020</span> <span class="n">by</span> <span class="n">L</span><span class="o">.</span><span class="n">C</span><span class="o">.</span><span class="n">D</span><span class="o">.</span> <span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>The basic logic of recursion is the same for
+object-oriented programs as for recursive
+functions that do not involve classes and objects.
+Just as before, we must identify one or more
+base cases and one or more recursive cases that
+build up complete results from simpler cases.</p>
+<p>The key difference is that with classes and objects,
+the recursive structure of the algorithms is often
+the same as the recursive structure of the objects.
+Often we will have the base case in one subclass
+and the recursive case in another subclass.  Instead
+of writing an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to control which case
+applies, we simply let each class take care of the
+part of the logic that belongs to it.   When a leaf
+node and an internal node both have a method <code class="docutils literal notranslate"><span class="pre">m</span></code>,
+usually the method <code class="docutils literal notranslate"><span class="pre">m</span></code> in the leaf node class will
+handle only the base case, and the method <code class="docutils literal notranslate"><span class="pre">m</span></code> in the
+internal node class will handle only the recursive
+case.</p>
+</section>
+<section id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">#</a></h2>
+<p>Source code for this chapter is in two files,
+<span class="xref myst">03_recursion.py</span>
+and
+<span class="xref myst">03_simpledom.py</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UO-CS-OER/CS210-text",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03_Recursion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../02_Inheritance/02_2_Notifiers.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Notifiers</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_2_Refactor.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Refactoring Repetitive Code</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Michal Young, Boyana Norris, and Ram Durairajan<br/>
+  
+      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
