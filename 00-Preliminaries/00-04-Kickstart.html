@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Objects" href="../01-Objects/01-1-Objects.html" />
-    <link rel="prev" title="Installing Python and IDLE" href="01-02-Install.html" />
+    <link rel="prev" title="Installing PyCharm" href="00-03-Install_PyCharm.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -90,6 +90,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Introduction to Computer Science II</h1>
@@ -110,18 +115,23 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  01 Getting a Start
+  00 Preliminaries
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="01-01-Prospectus.html">
+  <a class="reference internal" href="00-01-Prospectus.html">
    A Course in Computational Thinking
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01-02-Install.html">
+  <a class="reference internal" href="00-02-Install.html">
    Installing Python and IDLE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-03-Install_PyCharm.html">
+   Installing PyCharm
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -336,7 +346,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/01-Intro/01-03-Kickstart.md"
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/00-Preliminaries/00-04-Kickstart.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -414,7 +424,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F01-Intro/01-03-Kickstart.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F00-Preliminaries/00-04-Kickstart.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -442,7 +452,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01-Intro/01-03-Kickstart.ipynb"
+        <a href="../_sources/00-Preliminaries/00-04-Kickstart.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -459,7 +469,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="../_sources/01-Intro/01-03-Kickstart.md"
+        <a href="../_sources/00-Preliminaries/00-04-Kickstart.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -673,7 +683,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="python-programming-kickstart">
 <h1>Python Programming Kickstart<a class="headerlink" href="#python-programming-kickstart" title="Permalink to this headline">#</a></h1>
-<p><a class="reference internal" href="01-02-Install.html"><span class="doc std std-doc">Install Python</span></a> before working through this
+<p><span class="xref myst">Install Python</span> before working through this
 section, which will review some basics of Python if you have
 programmed in Python before, or introduce them if you are not
 already familiar with Python.</p>
@@ -688,7 +698,7 @@ execution later.  In this course we will use <em>IDLE</em> both to execute
 statements directly and to edit and execute program files. (Later we
 will explore additional ways to edit and execute Python programs.)</p>
 <p>Once you have
-<a class="reference internal" href="01-02-Install.html"><span class="doc std std-doc">installed Python 3 on your computer</span></a>, you
+<span class="xref myst">installed Python 3 on your computer</span>, you
 should be able to start <em>IDLE</em> from the command line.  It should look
 something like this:</p>
 <p><img alt="IDLE shell at start-up" src="../_images/IDLE.png" /></p>
@@ -1207,7 +1217,7 @@ through on <code class="docutils literal notranslate"><span class="pre">docs</sp
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./01-Intro"
+            path: "./00-Preliminaries"
         },
         predefinedOutput: true
     }
@@ -1221,11 +1231,11 @@ through on <code class="docutils literal notranslate"><span class="pre">docs</sp
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01-02-Install.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="00-03-Install_PyCharm.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Installing Python and IDLE</p>
+            <p class="prev-next-title">Installing PyCharm</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../01-Objects/01-1-Objects.html" title="next page">

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What the Hex? &#8212; Introduction to Computer Science II</title>
+    <title>A Course in Computational Thinking &#8212; Introduction to Computer Science II</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sometimes Functions are Values" href="../07_Functional/07_1_Functional.html" />
-    <link rel="prev" title="Negative Binary Numbers" href="06_2_NegBits.html" />
+    <link rel="next" title="Installing Python and IDLE" href="00-02-Install.html" />
+    <link rel="prev" title="Introduction to Computer Science, part 2" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -120,24 +118,24 @@ const thebe_selector_output = ".output, .cell_output"
   00 Preliminaries
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    A Course in Computational Thinking
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-02-Install.html">
+  <a class="reference internal" href="00-02-Install.html">
    Installing Python and IDLE
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-03-Install_PyCharm.html">
+  <a class="reference internal" href="00-03-Install_PyCharm.html">
    Installing PyCharm
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-04-Kickstart.html">
+  <a class="reference internal" href="00-04-Kickstart.html">
    Python Programming Kickstart
   </a>
  </li>
@@ -217,19 +215,19 @@ const thebe_selector_output = ".output, .cell_output"
   06 Binary
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="06_1_Bits.html">
+  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
    Bit Twiddling
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="06_2_NegBits.html">
+  <a class="reference internal" href="../06_Binary/06_2_NegBits.html">
    Negative Binary Numbers
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
    What the Hex?
   </a>
  </li>
@@ -348,7 +346,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/06_Binary/06_3_Hex.md"
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/00-Preliminaries/00-01-Prospectus.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -426,7 +424,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F06_Binary/06_3_Hex.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F00-Preliminaries/00-01-Prospectus.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -454,7 +452,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/06_Binary/06_3_Hex.ipynb"
+        <a href="../_sources/00-Preliminaries/00-01-Prospectus.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -471,7 +469,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="../_sources/06_Binary/06_3_Hex.md"
+        <a href="../_sources/00-Preliminaries/00-01-Prospectus.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -531,33 +529,20 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#casting-a-hex">
-   Casting a Hex
+  <a class="reference internal nav-link" href="#learning-to-program">
+   Learning to Program
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-python">
+     Why Python
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hex-digit-values">
-   Hex Digit Values
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hex-notation-in-python">
-   Hex notation in Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-you-will-see-hex">
-   When you will see hex
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#will-you-ever-see-octal">
-   Will you ever see octal?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
+  <a class="reference internal nav-link" href="#getting-a-start">
+   Getting a Start
   </a>
  </li>
 </ul>
@@ -569,7 +554,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>What the Hex?</h1>
+                <h1>A Course in Computational Thinking</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -580,33 +565,20 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#casting-a-hex">
-   Casting a Hex
+  <a class="reference internal nav-link" href="#learning-to-program">
+   Learning to Program
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-python">
+     Why Python
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hex-digit-values">
-   Hex Digit Values
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hex-notation-in-python">
-   Hex notation in Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-you-will-see-hex">
-   When you will see hex
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#will-you-ever-see-octal">
-   Will you ever see octal?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
+  <a class="reference internal nav-link" href="#getting-a-start">
+   Getting a Start
   </a>
  </li>
 </ul>
@@ -619,136 +591,140 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="what-the-hex">
-<h1>What the Hex?<a class="headerlink" href="#what-the-hex" title="Permalink to this headline">#</a></h1>
-<p>Internally, modern digital computers use binary exclusively.<br />
-Binary is cumbersome for humans.  I can tell at a glance
-that 27 is a little larger than 25, but it’s a little
-harder to see that 11011 is a little larger than 11001.</p>
-<p>Most of the time we can ignore the internal binary representation.
-We mainly use decimal notation in our Python programs,
-for example.  Occasionally, though, we need a good way to
-write, read, and think about the binary representation,
-such as when we are shifting and masking values.</p>
-<p>Binary is cumbersome, because it requires so many digits.<br />
-Decimal allows us to write numbers with fewer digits,
-but we cannot convert between decimal and binary in our
-heads (at least I can’t).  Can we find a number system that
-is both easy to relate to binary and compact?</p>
-<section id="casting-a-hex">
-<h2>Casting a Hex<a class="headerlink" href="#casting-a-hex" title="Permalink to this headline">#</a></h2>
-<p>If we use a number base that is $<span class="math notranslate nohighlight">\(2^k\)</span><span class="math notranslate nohighlight">\(, each digit in 
-that number system will exactly represent \)</span><span class="math notranslate nohighlight">\(k\)</span><span class="math notranslate nohighlight">\( 
-binary digits.  10 is not a power of two, but 8 and 16 
-are.  Two popular bases for representing binary numbers 
-in human-readable form are octal (base 8) and hexadecimal 
-(base 16), often called &quot;hex&quot;.  Octal uses digits 0..7, and hexadecimal 
-uses digits 0..9ABCDEF to represent values from 0 to 15. 
-Hexadecimal, is particularly convenient 
-because each hexadecimal digit represents 4 binary digits.  
-The smallest addressable unit of computer memory is typically 
-the _byte_, which is 8 binary digits, and a byte can 
-be represented by exactly two hexadecimal digits. For 
-example, the binary number \)</span><span class="math notranslate nohighlight">\(01101011_2\)</span><span class="math notranslate nohighlight">\(
-is \)</span><span class="math notranslate nohighlight">\(6B_{16}\)</span>$.</p>
-<p><img alt="0x6b == 0b01101011" src="../_images/hex_6B.svg" /></p>
-</section>
-<section id="hex-digit-values">
-<h2>Hex Digit Values<a class="headerlink" href="#hex-digit-values" title="Permalink to this headline">#</a></h2>
-<p>The following table relates 4-bit binary numbers
-to hex digits and decimal values.  It is <em>not</em>
-necessary to memorize this table, and most
-programmers don’t.  You should, however, remember
-that $<span class="math notranslate nohighlight">\(0_{16}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(0000_2\)</span><span class="math notranslate nohighlight">\( and that \)</span><span class="math notranslate nohighlight">\(\textrm{F}_{16}\)</span><span class="math notranslate nohighlight">\( is 
-\)</span><span class="math notranslate nohighlight">\(1111_2\)</span><span class="math notranslate nohighlight">\(.  Since binary values are often grouped into 
-8-bit _bytes_, it is also useful to remember that 
-\)</span><span class="math notranslate nohighlight">\(\textrm{FF}_{16}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(1111\,1111_2\)</span><span class="math notranslate nohighlight">\( or \)</span><span class="math notranslate nohighlight">\(255_{10}\)</span>$.</p>
-<p><img alt="Hex digits" src="../_images/hex-digits.svg" /></p>
-</section>
-<section id="hex-notation-in-python">
-<h2>Hex notation in Python<a class="headerlink" href="#hex-notation-in-python" title="Permalink to this headline">#</a></h2>
-<p>Just as Python allows a number to be written in binary
-notation by prefixing it with ‘0b’, Python allows a
-number to be written in hexadecimal notation by prefixing
-it with ‘0x’.  (If for some reason you wish to write a
-number in octal, prefix it with ‘0o’.)</p>
-<p>At the risk of repetition, I want to emphasize again that
-writing a number in hexadecimal notation does not mean that
-it is stored as a “hexadecimal number”.  It is stored as a binary
-number, just as a number written in decimal notation is
-stored as a binary number.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mh">0x11</span>
-<span class="go">17</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mh">0x11</span> <span class="o">==</span> <span class="mi">17</span>
-<span class="go">True</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-course-in-computational-thinking">
+<h1>A Course in Computational Thinking<a class="headerlink" href="#a-course-in-computational-thinking" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This chapter repeats the introduction from
+<a class="reference external" href="https://uo-cs-oer.github.io/CS210-text/intro.html"><em>Introduction to Computer Science Part I</em></a>
+for convenience of students who did not use that text.
+Feel free to skim or skip this chapter or parts that
+you are already familiar with.</p>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">hex</span></code> function works like the <code class="docutils literal notranslate"><span class="pre">bin</span></code> function to produce a
-string of characters representing a value in hexadecimal
-notation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
-<span class="go">&#39;0x11&#39;</span>
-</pre></div>
-</div>
+<p><em>Introduction to Computer Science</em> is a foundational course in
+computer science.  It is a course in programming, but more than that,
+it is a course in computational thinking.</p>
+<p>What’s so special about <em>computational</em> thinking and problem solving?
+Is it a branch of engineering, or math, or is it a science?
+Computing certainly draws from all of those fields, and also
+contributes to them, but in some ways it is unique.</p>
+<p>Computing and computer science do not seek to characterize the
+natural world, although many computer programs (e.g., environmental
+models, computer aided design and numerical control) incorporate
+models of the natural world.  Computing is increasingly a core tool
+used in the natural sciences, and computational thinking can be
+useful to scientists, but core concerns of the natural sciences and
+computing are distinct.</p>
+<p>Some areas of computing (particularly usability and user interface
+design, and software engineering) draw heavily from the social
+sciences, especially psychology but also fields as diverse as
+anthropology, linguistics, and economics.  Despite some overlap,
+though (e.g., economic game theory in the design of computer network
+protocols, visual attention in user interface design), the core
+concerns of computing are mostly distinct from the core concerns of
+the social sciences.</p>
+<p>Like mathematics, computing requires
+rigorous reasoning about formal, abstract systems.<br />
+Some areas of computer science produce mathematical proofs, as you
+will be required to do if you continue with computer science through
+courses in data structures and algorithms.<br />
+However, computer scientists are more concerned than mathematicians
+with the <em>things</em> their formal systems represent.</p>
+<p>Like engineers, computer scientists and software developers
+construct abstract
+representations of <em>things</em> to
+reason  effectively about them.
+There is an important difference in the kinds of <em>thing</em> that
+computing produces, relative to conventional engineering.
+The design of a bridge or an automobile is
+complex and expensive, but the main expense of building a bridge is
+in the physical construction, and not the design.
+The cost of building cars at industrial scale is likewise much larger
+than the cost of designing a car.</p>
+<p>The <em>things</em> designed (but not constructed) by
+software developers are <em>computations</em>.
+The computations are
+constructed by computers, following our designs.
+Computations
+are weightless and cheap.<br />
+The designs of those computations, which we call
+<em>programs</em> or <em>software</em> or perhaps <em>software systems</em>, are complex
+and expensive. Any part of the construction that can be fully
+automated becomes cheap, but there always remains some part of the
+design that is necessarily human, complex, and demanding.<br />
+Computing exposes the expense of design by removing the
+limits of engineering physical things.</p>
+<p>All these things that computing is <em>not</em> may shed some light on what
+computing and computer science <em>are</em>.  Computer science is concerned
+with
+<em>design</em> of computations, and like other design disciplines it
+requires creative problem-solving. It requires forming and using
+abstract, often mathematical models, without losing track of their
+relation to concrete artifacts.  It especially requires
+careful control of complexity, decomposing problems into smaller
+sub-problems and organizing them to maintain intellectual control.
+Many disciplines incorporate these concerns to some extent, but they
+are the very core of computing.</p>
+<p>In tackling a core, rigorous course in computing, you should
+certainly become a better programmer.  But if skill in programming
+is the only thing you gain from this course, then we have failed.
+If you as a learner and we as your teachers are successful, a
+rigorous course in computational thinking will make you a better and
+more creative problem solver.</p>
+<section id="learning-to-program">
+<h2>Learning to Program<a class="headerlink" href="#learning-to-program" title="Permalink to this headline">#</a></h2>
+<p>The principles and techniques
+you will learn in <em>Introduction to Computer Science</em>
+are not limited to a single programming
+language, let alone a particular computer or operating system.
+But we have to start somewhere.  That <em>somewhere</em>
+requires us to choose a programming language, and to
+practice using it.</p>
+<section id="why-python">
+<h3>Why Python<a class="headerlink" href="#why-python" title="Permalink to this headline">#</a></h3>
+<p>In this course we will use Python,
+specifically Python version 3.10 or higher.
+Python is widely used in data science and scientific
+computing, in cartography, in web development,
+in machine learning, and in many other domains, but
+that is not why we have chosen it. We have chosen Python 3 because
+we believe it is a good language for <em>learning to program</em>.   Python
+3 is</p>
+<ul class="simple">
+<li><p>Consistent.  There are few “special cases” to remember in Python,
+which makes it easier to remember how things work and to build on
+what you know.</p></li>
+<li><p>Concise.  Python does not require a lot of boilerplate, which
+makes it easier to read example code.</p></li>
+<li><p>Well-provisioned.  Although there are many extras that you <em>could</em>
+add, a standard and straightforward installation of Python is
+enough to build many interesting projects.</p></li>
+</ul>
+<p>That is not to say that Python is a perfect language.  It is
+certainly not the only programming language you will ever want or
+need to learn.   But among the programming langauges available to us
+today, we believe it is an excellent starting point.</p>
 </section>
-<section id="when-you-will-see-hex">
-<h2>When you will see hex<a class="headerlink" href="#when-you-will-see-hex" title="Permalink to this headline">#</a></h2>
-<p>By default, Python normally prints numbers is decimal.
-However, there are a few cases in which Python uses
-hexadecimal notation because it is likely to be useful
-to have a notion of the internal binary value.  One
-you may already be familiar with is the built-in <code class="docutils literal notranslate"><span class="pre">repr</span></code>
-function for objects.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">JustAnExample</span><span class="p">:</span> 
-<span class="gp">... </span>   <span class="k">pass</span>
-<span class="gp">...</span>
-<span class="go">JustAnExample()</span>
-<span class="go">&lt;__main__.JustAnExample object at 0x1077f2f10&gt;</span>
-</pre></div>
-</div>
-<p>This <code class="docutils literal notranslate"><span class="pre">repr</span></code> is telling us that the new object
-is at memory address $<span class="math notranslate nohighlight">\(1077F2F10_{16}\)</span>$.  We
-are unlikely to want to know the decimal value
-of that address.  We might, however, get some
-use of knowing the hexadecimal value.  For example,
-it might help us understand the default <code class="docutils literal notranslate"><span class="pre">hash</span></code>
-function for objects:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ob</span> <span class="o">=</span> <span class="n">JustAnExample</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ob</span>
-<span class="go">&lt;__main__.JustAnExample object at 0x1078030d0&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span><span class="p">(</span><span class="n">ob</span><span class="p">)</span>
-<span class="go">276300557</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="nb">hash</span><span class="p">(</span><span class="n">ob</span><span class="p">))</span>
-<span class="go">&#39;0x1078030d&#39;</span>
-</pre></div>
-</div>
-<p>The decimal value provides us no useful information.
-Even if we had the memory address in decimal
-notation (4420808912), we would have a hard time
-seeing the relation between 4420808912 and 276300557.
-At a glance, though, we can see the relation between
-0x1078030d0 and 0x1078030d.  Clearly the hash value
-is just the memory address shifted right 4 bits!</p>
 </section>
-<section id="will-you-ever-see-octal">
-<h2>Will you ever see octal?<a class="headerlink" href="#will-you-ever-see-octal" title="Permalink to this headline">#</a></h2>
-<p>While octal is much less commonly used than hexadecimal,
-you are likely to encounter it occasionally when using
-Unix or Linux systems.  For example, octal codes can be
-used to set file read and write permissions in Unix
-(but mnemonic alphabetic codes can also be used).  The use
-of octal in Unix is an historical artifact from computers
-of the 1970s.  If Unix were being designed for the first
-time today, I am confident its designers would have chosen
-hex rather than octal for representing bit patterns.</p>
-</section>
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
-<p>It’s all binary inside the computer, but binary is cumbersome
-for humans to read, write, and think about.  Hexadecimal, or
-just ‘hex’, conveniently uses one hex digit to represent four
-binary digits.   It is the most common notation used when we
-care about patterns of binary digits.</p>
+<section id="getting-a-start">
+<h2>Getting a Start<a class="headerlink" href="#getting-a-start" title="Permalink to this headline">#</a></h2>
+<p>The pre-requisites for <em>Introduction to Computer Science</em> include
+a basic familiarity with programming.  That familiarity may
+take many forms (not necessarily programming in Python).  Also,
+student knowledge from a course some time ago or from self study may
+be rusty or incomplete.</p>
+<p>If you have not programmed at all, but want to tackle this very
+demanding course, we can recommend the
+<a class="reference external" href="https://cscircles.cemc.uwaterloo.ca/">Computer Science Circles</a>
+online lessons as a good and thorough introduction.  Even if
+you have programmed in Python before, you may find the CS Circles
+materials valuable as a refresher.</p>
+<p>The remaining sections of this chapter provide brief instructions
+for installing Python 3 on the computer you will use for your
+projects, along with an interactive development environment,
+and then <em>just enough</em>
+introduction to Python programming
+to tackle an initial project.</p>
 </section>
 </section>
 
@@ -765,7 +741,7 @@ care about patterns of binary digits.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./06_Binary"
+            path: "./00-Preliminaries"
         },
         predefinedOutput: true
     }
@@ -779,17 +755,17 @@ care about patterns of binary digits.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="06_2_NegBits.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Negative Binary Numbers</p>
+            <p class="prev-next-title">Introduction to Computer Science, part 2</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../07_Functional/07_1_Functional.html" title="next page">
+    <a class='right-next' id="next-link" href="00-02-Install.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sometimes Functions are Values</p>
+        <p class="prev-next-title">Installing Python and IDLE</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

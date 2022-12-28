@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What the Hex? &#8212; Introduction to Computer Science II</title>
+    <title>Installing Python and IDLE &#8212; Introduction to Computer Science II</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sometimes Functions are Values" href="../07_Functional/07_1_Functional.html" />
-    <link rel="prev" title="Negative Binary Numbers" href="06_2_NegBits.html" />
+    <link rel="next" title="Installing PyCharm" href="00-03-Install_PyCharm.html" />
+    <link rel="prev" title="A Course in Computational Thinking" href="00-01-Prospectus.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -120,24 +118,24 @@ const thebe_selector_output = ".output, .cell_output"
   00 Preliminaries
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">
+  <a class="reference internal" href="00-01-Prospectus.html">
    A Course in Computational Thinking
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-02-Install.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Installing Python and IDLE
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-03-Install_PyCharm.html">
+  <a class="reference internal" href="00-03-Install_PyCharm.html">
    Installing PyCharm
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-04-Kickstart.html">
+  <a class="reference internal" href="00-04-Kickstart.html">
    Python Programming Kickstart
   </a>
  </li>
@@ -217,19 +215,19 @@ const thebe_selector_output = ".output, .cell_output"
   06 Binary
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="06_1_Bits.html">
+  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
    Bit Twiddling
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="06_2_NegBits.html">
+  <a class="reference internal" href="../06_Binary/06_2_NegBits.html">
    Negative Binary Numbers
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
    What the Hex?
   </a>
  </li>
@@ -348,7 +346,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/06_Binary/06_3_Hex.md"
+        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/00-Preliminaries/00-02-Install.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -426,7 +424,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F06_Binary/06_3_Hex.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F00-Preliminaries/00-02-Install.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -454,7 +452,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/06_Binary/06_3_Hex.ipynb"
+        <a href="../_sources/00-Preliminaries/00-02-Install.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -471,7 +469,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="../_sources/06_Binary/06_3_Hex.md"
+        <a href="../_sources/00-Preliminaries/00-02-Install.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -531,34 +529,43 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#casting-a-hex">
-   Casting a Hex
+  <a class="reference internal nav-link" href="#install-python-3-on-your-computer">
+   Install Python 3 on Your Computer
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-and-install">
+     Download and Install
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#macos-install">
+     MacOS Install
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#windows-10-install">
+     Windows 10 Install
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linux-install">
+     Linux Install
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hex-digit-values">
-   Hex Digit Values
+  <a class="reference internal nav-link" href="#execute-python-statements-and-programs">
+   Execute Python statements and programs
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hex-notation-in-python">
-   Hex notation in Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-you-will-see-hex">
-   When you will see hex
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#will-you-ever-see-octal">
-   Will you ever see octal?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-python-commands">
+     Executing Python commands
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -569,7 +576,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>What the Hex?</h1>
+                <h1>Installing Python and IDLE</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -580,34 +587,43 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#casting-a-hex">
-   Casting a Hex
+  <a class="reference internal nav-link" href="#install-python-3-on-your-computer">
+   Install Python 3 on Your Computer
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-and-install">
+     Download and Install
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#macos-install">
+     MacOS Install
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#windows-10-install">
+     Windows 10 Install
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linux-install">
+     Linux Install
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hex-digit-values">
-   Hex Digit Values
+  <a class="reference internal nav-link" href="#execute-python-statements-and-programs">
+   Execute Python statements and programs
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hex-notation-in-python">
-   Hex notation in Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-you-will-see-hex">
-   When you will see hex
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#will-you-ever-see-octal">
-   Will you ever see octal?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executing-python-commands">
+     Executing Python commands
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -619,136 +635,96 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="what-the-hex">
-<h1>What the Hex?<a class="headerlink" href="#what-the-hex" title="Permalink to this headline">#</a></h1>
-<p>Internally, modern digital computers use binary exclusively.<br />
-Binary is cumbersome for humans.  I can tell at a glance
-that 27 is a little larger than 25, but it’s a little
-harder to see that 11011 is a little larger than 11001.</p>
-<p>Most of the time we can ignore the internal binary representation.
-We mainly use decimal notation in our Python programs,
-for example.  Occasionally, though, we need a good way to
-write, read, and think about the binary representation,
-such as when we are shifting and masking values.</p>
-<p>Binary is cumbersome, because it requires so many digits.<br />
-Decimal allows us to write numbers with fewer digits,
-but we cannot convert between decimal and binary in our
-heads (at least I can’t).  Can we find a number system that
-is both easy to relate to binary and compact?</p>
-<section id="casting-a-hex">
-<h2>Casting a Hex<a class="headerlink" href="#casting-a-hex" title="Permalink to this headline">#</a></h2>
-<p>If we use a number base that is $<span class="math notranslate nohighlight">\(2^k\)</span><span class="math notranslate nohighlight">\(, each digit in 
-that number system will exactly represent \)</span><span class="math notranslate nohighlight">\(k\)</span><span class="math notranslate nohighlight">\( 
-binary digits.  10 is not a power of two, but 8 and 16 
-are.  Two popular bases for representing binary numbers 
-in human-readable form are octal (base 8) and hexadecimal 
-(base 16), often called &quot;hex&quot;.  Octal uses digits 0..7, and hexadecimal 
-uses digits 0..9ABCDEF to represent values from 0 to 15. 
-Hexadecimal, is particularly convenient 
-because each hexadecimal digit represents 4 binary digits.  
-The smallest addressable unit of computer memory is typically 
-the _byte_, which is 8 binary digits, and a byte can 
-be represented by exactly two hexadecimal digits. For 
-example, the binary number \)</span><span class="math notranslate nohighlight">\(01101011_2\)</span><span class="math notranslate nohighlight">\(
-is \)</span><span class="math notranslate nohighlight">\(6B_{16}\)</span>$.</p>
-<p><img alt="0x6b == 0b01101011" src="../_images/hex_6B.svg" /></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="installing-python-and-idle">
+<h1>Installing Python and IDLE<a class="headerlink" href="#installing-python-and-idle" title="Permalink to this headline">#</a></h1>
+<p>This is a project-oriented course.  It is important that you have
+Python version 3.10 or later installed on the computer you will most
+often use for your class projects.   For most students that will be
+a laptop computer or desktop computer.</p>
+<section id="install-python-3-on-your-computer">
+<h2>Install Python 3 on Your Computer<a class="headerlink" href="#install-python-3-on-your-computer" title="Permalink to this headline">#</a></h2>
+<p>Python 3 runs well on a wide variety of computers.  You will
+need a laptop or desktop computer; tablets and phones will not be a
+good environment for learning to program in Python.  The precise
+steps for installing Python 3, as well as the precise commands for
+starting Python programming tools, necessarily varies depending on
+whether you are using Linux, MacOS, or Windows.   We will cover
+the basics first in a generic manner, then provide some detailed
+notes for the most common platforms.</p>
+<section id="download-and-install">
+<h3>Download and Install<a class="headerlink" href="#download-and-install" title="Permalink to this headline">#</a></h3>
+<p>Start by visiting <code class="docutils literal notranslate"><span class="pre">python.org</span></code> with your web browser.</p>
+<p><img alt="Visit Python.org" src="../_images/python-org.png" /></p>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Downloads</span></code> and choose the installer or archive for your
+computer.  Typically you will want the download labeled as “Latest
+Python 3 Release” for MacOS or Windows.  If you are a Linux user,
+select “Source code”.  Then follow directions for your particular
+platform.</p>
 </section>
-<section id="hex-digit-values">
-<h2>Hex Digit Values<a class="headerlink" href="#hex-digit-values" title="Permalink to this headline">#</a></h2>
-<p>The following table relates 4-bit binary numbers
-to hex digits and decimal values.  It is <em>not</em>
-necessary to memorize this table, and most
-programmers don’t.  You should, however, remember
-that $<span class="math notranslate nohighlight">\(0_{16}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(0000_2\)</span><span class="math notranslate nohighlight">\( and that \)</span><span class="math notranslate nohighlight">\(\textrm{F}_{16}\)</span><span class="math notranslate nohighlight">\( is 
-\)</span><span class="math notranslate nohighlight">\(1111_2\)</span><span class="math notranslate nohighlight">\(.  Since binary values are often grouped into 
-8-bit _bytes_, it is also useful to remember that 
-\)</span><span class="math notranslate nohighlight">\(\textrm{FF}_{16}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(1111\,1111_2\)</span><span class="math notranslate nohighlight">\( or \)</span><span class="math notranslate nohighlight">\(255_{10}\)</span>$.</p>
-<p><img alt="Hex digits" src="../_images/hex-digits.svg" /></p>
+<section id="macos-install">
+<h3>MacOS Install<a class="headerlink" href="#macos-install" title="Permalink to this headline">#</a></h3>
+<p>The MacOS installer will work like other MacOS application
+installers. You should not have to do anything extra.</p>
 </section>
-<section id="hex-notation-in-python">
-<h2>Hex notation in Python<a class="headerlink" href="#hex-notation-in-python" title="Permalink to this headline">#</a></h2>
-<p>Just as Python allows a number to be written in binary
-notation by prefixing it with ‘0b’, Python allows a
-number to be written in hexadecimal notation by prefixing
-it with ‘0x’.  (If for some reason you wish to write a
-number in octal, prefix it with ‘0o’.)</p>
-<p>At the risk of repetition, I want to emphasize again that
-writing a number in hexadecimal notation does not mean that
-it is stored as a “hexadecimal number”.  It is stored as a binary
-number, just as a number written in decimal notation is
-stored as a binary number.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mh">0x11</span>
-<span class="go">17</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mh">0x11</span> <span class="o">==</span> <span class="mi">17</span>
-<span class="go">True</span>
+<section id="windows-10-install">
+<h3>Windows 10 Install<a class="headerlink" href="#windows-10-install" title="Permalink to this headline">#</a></h3>
+<p>Press the “Download Python 3.x” (currently 3.10.7) button.
+If the <a class="reference external" href="https://www.python.org/downloads/">download page</a> offers
+you “Latest Python 3 Release” or “Latest Python 2 Release”,  Choose
+the Python 3 release.  This will download an installer.<br />
+Run the installer and follow its directions.</p>
+</section>
+<section id="linux-install">
+<h3>Linux Install<a class="headerlink" href="#linux-install" title="Permalink to this headline">#</a></h3>
+<p>You <em>may</em> find it easier to install using <code class="docutils literal notranslate"><span class="pre">apt-get</span></code> or a similar
+package installer for the version of Linux that you use.  You can
+find example instructions in
+<a class="reference external" href="https://docs.python-guide.org/starting/install3/linux/">The Hitchhikers Guide to Linux</a>.<br />
+Alternatively, you can download a “tarball” archive of the sources from
+<a class="reference external" href="http://Python.org">Python.org</a>.   As a Linux user, you are probably familiar with these
+steps, which are similar to installation of many other tools in Linux.</p>
+</section>
+</section>
+<section id="execute-python-statements-and-programs">
+<h2>Execute Python statements and programs<a class="headerlink" href="#execute-python-statements-and-programs" title="Permalink to this headline">#</a></h2>
+<section id="executing-python-commands">
+<h3>Executing Python commands<a class="headerlink" href="#executing-python-commands" title="Permalink to this headline">#</a></h3>
+<p>Python commands (<em>statements</em>) may be executed immediately in a
+<em>console</em>, or stored in a program file (often called a <em>script</em>) for
+execution later.  In this course we will use <em>IDLE</em> both to execute
+statements directly and to edit and execute program files. (Later we
+will explore additional ways to edit and execute Python programs.)</p>
+<p>Once you have
+<span class="xref myst">installed Python 3 on your computer</span>, you
+should be able to start <em>IDLE</em> from the command line.  It should look
+something like this:</p>
+<p><img alt="IDLE shell at start-up" src="../_images/IDLE.png" /></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> symbol is a <em>prompt</em> indicating that
+the Python shell, or console, is ready to
+receive a statement and execute it.</p>
+<p>Try this by typing <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello!&quot;)</span></code> on the
+line with the prompt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">hex</span></code> function works like the <code class="docutils literal notranslate"><span class="pre">bin</span></code> function to produce a
-string of characters representing a value in hexadecimal
-notation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
-<span class="go">&#39;0x11&#39;</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
 </pre></div>
 </div>
-</section>
-<section id="when-you-will-see-hex">
-<h2>When you will see hex<a class="headerlink" href="#when-you-will-see-hex" title="Permalink to this headline">#</a></h2>
-<p>By default, Python normally prints numbers is decimal.
-However, there are a few cases in which Python uses
-hexadecimal notation because it is likely to be useful
-to have a notion of the internal binary value.  One
-you may already be familiar with is the built-in <code class="docutils literal notranslate"><span class="pre">repr</span></code>
-function for objects.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">JustAnExample</span><span class="p">:</span> 
-<span class="gp">... </span>   <span class="k">pass</span>
-<span class="gp">...</span>
-<span class="go">JustAnExample()</span>
-<span class="go">&lt;__main__.JustAnExample object at 0x1077f2f10&gt;</span>
-</pre></div>
 </div>
-<p>This <code class="docutils literal notranslate"><span class="pre">repr</span></code> is telling us that the new object
-is at memory address $<span class="math notranslate nohighlight">\(1077F2F10_{16}\)</span>$.  We
-are unlikely to want to know the decimal value
-of that address.  We might, however, get some
-use of knowing the hexadecimal value.  For example,
-it might help us understand the default <code class="docutils literal notranslate"><span class="pre">hash</span></code>
-function for objects:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ob</span> <span class="o">=</span> <span class="n">JustAnExample</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ob</span>
-<span class="go">&lt;__main__.JustAnExample object at 0x1078030d0&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span><span class="p">(</span><span class="n">ob</span><span class="p">)</span>
-<span class="go">276300557</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="nb">hash</span><span class="p">(</span><span class="n">ob</span><span class="p">))</span>
-<span class="go">&#39;0x1078030d&#39;</span>
-</pre></div>
 </div>
-<p>The decimal value provides us no useful information.
-Even if we had the memory address in decimal
-notation (4420808912), we would have a hard time
-seeing the relation between 4420808912 and 276300557.
-At a glance, though, we can see the relation between
-0x1078030d0 and 0x1078030d.  Clearly the hash value
-is just the memory address shifted right 4 bits!</p>
+<p>If you have trouble with these steps, we can probably help you in
+class help hours, or a classmate may be able to help.</p>
+<p>If you have gotten this far successfully, it is time to dive into
+Python programming, or review Python programming if you have done it
+before.</p>
+<ul class="simple">
+<li><p><span class="xref myst">Python Programming Kickstart</span></p></li>
+</ul>
 </section>
-<section id="will-you-ever-see-octal">
-<h2>Will you ever see octal?<a class="headerlink" href="#will-you-ever-see-octal" title="Permalink to this headline">#</a></h2>
-<p>While octal is much less commonly used than hexadecimal,
-you are likely to encounter it occasionally when using
-Unix or Linux systems.  For example, octal codes can be
-used to set file read and write permissions in Unix
-(but mnemonic alphabetic codes can also be used).  The use
-of octal in Unix is an historical artifact from computers
-of the 1970s.  If Unix were being designed for the first
-time today, I am confident its designers would have chosen
-hex rather than octal for representing bit patterns.</p>
-</section>
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
-<p>It’s all binary inside the computer, but binary is cumbersome
-for humans to read, write, and think about.  Hexadecimal, or
-just ‘hex’, conveniently uses one hex digit to represent four
-binary digits.   It is the most common notation used when we
-care about patterns of binary digits.</p>
 </section>
 </section>
 
@@ -765,7 +741,7 @@ care about patterns of binary digits.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./06_Binary"
+            path: "./00-Preliminaries"
         },
         predefinedOutput: true
     }
@@ -779,17 +755,17 @@ care about patterns of binary digits.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="06_2_NegBits.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="00-01-Prospectus.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Negative Binary Numbers</p>
+            <p class="prev-next-title">A Course in Computational Thinking</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../07_Functional/07_1_Functional.html" title="next page">
+    <a class='right-next' id="next-link" href="00-03-Install_PyCharm.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sometimes Functions are Values</p>
+        <p class="prev-next-title">Installing PyCharm</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
