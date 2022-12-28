@@ -4,11 +4,12 @@
 format: jb-book
 root: intro
 parts:
-  - caption: 01 Getting a Start
+  - caption: 00 Preliminaries
     chapters:
-      - file: 01-Intro/01-01-Prospectus.md
-      - file: 01-Intro/01-02-Install.md
-      - file: 01-Intro/01-03-Kickstart.md
+      - file: 00-Preliminaries/00-01-Prospectus.md
+      - file: 00-Preliminaries/00-02-Install.md
+      - file: 00-Preliminaries/00-03-Install_PyCharm.md
+      - file: 00-Preliminaries/00-04-Kickstart.md
   - caption: 01 Objects
     chapters:
       - file: 01-Objects/01-1-Objects.md

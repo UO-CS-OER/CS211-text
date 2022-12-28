@@ -14,6 +14,15 @@ kernelspec:
 
 # A Course in Computational Thinking
 
+```{note}
+This chapter repeats the introduction from
+[_Introduction to Computer Science Part I_](
+https://uo-cs-oer.github.io/CS210-text/intro.html)
+for convenience of students who did not use that text.
+Feel free to skim or skip this chapter or parts that
+you are already familiar with.
+```
+
 _Introduction to Computer Science_ is a foundational course in 
 computer science.  It is a course in programming, but more than that,
 it is a course in computational thinking.  
@@ -145,8 +154,7 @@ materials valuable as a refresher.
 
 The remaining sections of this chapter provide brief instructions 
 for installing Python 3 on the computer you will use for your 
-projects, and then _just enough_ introduction to Python programming 
+projects, along with an interactive development environment,
+and then _just enough_ 
+introduction to Python programming 
 to tackle an initial project.  
-
-* [Install Python](01-02-Install.md)
-* [Python Programming Kickstart](01-03-Kickstart.md)
