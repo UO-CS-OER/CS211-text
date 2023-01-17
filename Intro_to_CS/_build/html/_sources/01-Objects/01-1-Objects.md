@@ -68,7 +68,7 @@ def move_point(p: Tuple[Number, Number],
     dx, dy = d
     return (x+dx, y+dy)
     
-assert move_point((3,4),(5,6)) == (8,10)
+move_point((3,4),(5,6))
 ```
 
 ### Can we do better? 
@@ -86,28 +86,26 @@ tried this?
 That's not what we wanted!  Would it be better if we represented 
 points as lists? 
 
-```
->>> [3,4] + [5,6]
-[3, 4, 5, 6]
+```{code-cell} python3 
+[3,4] + [5,6]
 ```
 
 No better.  Maybe as dicts? 
 
-```
->>> {"x": 3, "y": 4} + {"x": 5, "y": 6}
-Traceback (most recent call last):
-  File "<input>", line 1, in <module>
-TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
+```{code-cell} python3
+:tags: [raises-exception]
+
+{"x": 3, "y": 4} + {"x": 5, "y": 6}
 ```
 
 That is not much of an improvement, although 
 an error message is usually better than silently 
-producing a bad result.  
-What we really want is not to use one of the 
+producing a bad result. What we really
+want is not to use one of the 
 existing representations like lists or tuples or dicts, 
 but to define a new representation for points.  
 
-## A new representation
+### A new representation
 
 Each data type in Python, including list, tuple, 
 and dict, is defined as a *class* from which 
@@ -126,32 +124,39 @@ that are specialized for the new representation.   The first
 method we should define is a *constructor* with the name `__init__`. 
 The constructor describes how to create a new `Point` object: 
 
-```python
+```{code-cell} python3
 class Point:
     """An (x,y) coordinate pair"""
     def __init__(self, x: Number, y: Number):
         self.x = x
         self.y = y
+        
+p = Point(5,3)
+
+print(f"p has x coordinate {p.x} and y coordinate {p.y}")
 ```
 
-## Instance variables 
+### Instance variables 
 
 Notice that the first argument to the constructor method is 
-`self`, and within the method we refer to `self.x` and `self.y`.  
+`self`, and within the method we refer to `self.x` and `self.y`.
 In a method that operates on some object *o*, the first argument
 to the method will always be `self`, which refers to the whole 
 object *o*.   Within the `self` object we can store *instance 
 variables*, like `self.x` and `self.y` 
-for the *x* and *y* coordinates of a point.  
+for the *x* and *y* coordinates of a point.
+When we use the Point object `p` from outside the class,
+we refer to those elements as `p.x` and `p.y`, as in the
+print statement above. 
 
-## Methods
+### Methods
 
 What about defining an operation for moving a point?  Instead of 
 adding `_point` to the name of a `move` function, we can just 
 put the function (now called a *method*) *inside* the `Point` 
 class:
 
-```python
+```{code-cell} python3
 class Point:
     """An (x,y) coordinate pair"""
     def __init__(self, x: Number, y: Number):
@@ -168,24 +173,24 @@ class Point:
 Notice that the *instance variables* 
 `self.x` and `self.y` we created in the constructor 
 can be used in the `move` method.  They are part of 
-the object, and can be used by any method in the class.  
+the object, and can be used by any method in the class.
 The instance variables of the other `Point` object `d` 
 are also available 
 in the `move` method.  Let's look at how these objects 
 are passed to the `move` method. 
 
-## Method calls
+### Method calls
 
 Next we'll create two `Point` objects and call the `move` method 
 to create a third `Point` object with the sums of their *x* and 
 *y* coordinates: 
 
-```python
+```{code-cell} python3
 p = Point(3,4)
 v = Point(5,6)
 m = p.move(v)
 
-assert m.x == 8 and m.y == 10
+print(f"m has x coordinate {m.x} and y coordinate {m.y}")
 ```
 
 At first it may seem confusing that we defined the ```move``` method with two arguments, `self` and `d`, but 
@@ -199,20 +204,64 @@ computed coordinates.  A method can also change the values of
 instance variables.   For example, suppose we add a `move_to` 
 method to `Point`: 
 
-```python
+```{code-cell} python3
+class Point:
+    """An (x,y) coordinate pair"""
+    def __init__(self, x: Number, y: Number):
+        self.x = x
+        self.y = y
+
+    def move(self, d: "Point") -> "Point":
+        """(x,y).move(dx,dy) = (x+dx, y+dy)"""
+        x = self.x + d.x
+        y = self.y + d.y
+        return Point(x,y)
+        
     def move_to(self, new_x, new_y):
         """Change the coordinates of this Point"""
         self.x = new_x
         self.y = new_y
 ```
 
-This method does not return a new point (it returns `none`), but 
-it changes an existing point.  
 
-```python
+```{code-cell} python3
 m.move_to(19,23)
+print(f"({m.x}, {m.y})")
+```
 
-assert m.x == 19 and m.y == 23
+Note that the `move_to` method does _not_
+return the moved point.  This is a common mistake! 
+
+```{code-cell} python3
+:tags: [raises-exception]
+
+w = m.move_to(19, 23)  # Oops! 
+print(w)
+
+# Attempting to access w.x or w.y will fail: 
+print(f"w has x coordinate {w.x} and y coordinate {w.y}")
+```
+
+### What is `self`?
+
+Many people are confused by the `self` variable.  The name `self` is 
+merely a convention in Python.  Conventions are important for 
+readability and avoiding errors, so you should never write code 
+like the following, but it may help you to see that there is really 
+nothing special about `self` aside from convention. 
+
+```{code-cell} python3
+class BadExample():
+    """An example in which we use other names instead of "self".
+    DON'T DO THIS ... but understand it. 
+    """
+    
+    def __init__(x: int): 
+        self.v = x    # Might as well be consistently inconsistent
+        
+    def change
+    
+    
 ```
 
 ### *Check your understanding*
@@ -224,7 +273,7 @@ after executing the code below?
 
 ```python
 class Pet: 
-   def __init__(self, kind: str, name: str):
+    def __init__(self, kind: str, name: str):
         self.species = kind
         self.called = name
     
@@ -244,10 +293,13 @@ gave us `(3,4,5,6)`.  We can almost get what we want by describing
 how we want `+` to act on `Point` objects.  We do this by 
 defining a *special method* `__add__`: 
 
-```python
-    def __add__(self, other: "Point"):
-        """(x,y) + (dx, dy) = (x+dx, y+dy)"""
-        return Point(self.x + other.x, self.y + other.y)
+```{code-cell} python3
+
+  # This code is inside the Point class
+
+  def __add__(self, other: "Point"):
+    """(x,y) + (dx, dy) = (x+dx, y+dy)"""
+    return Point(self.x + other.x, self.y + other.y)
 ```
 
 Special methods are more commonly known as *magic methods*. 
@@ -258,12 +310,12 @@ If `p` is a `Point` object, then `p + q` is interpreted as
 `p.__add__(q)`.  So finally we get a very compact and 
 readable notation: 
 
-```python
+```{code-cell} python3
 p = Point(3,4)
 v = Point(5,6)
-m = p.move(v)
+m = p + v
 
-assert m.x == 8 and m.y == 10
+print(f"({m.x}, {m.y})")
 ```
 
 More: [Appendix on magic methods](../Appendices/appendix_Special.md)
@@ -271,9 +323,9 @@ More: [Appendix on magic methods](../Appendices/appendix_Special.md)
 ## Magic for printing
 
 Suppose we wanted to print a `Point` object.  We 
-could do it this way: 
+could do it with an f-string, as we have above: 
 
-```python
+```{code-cell} python3
 print(f"p is ({p.x}, {p.y})")
 ```
 
@@ -281,15 +333,11 @@ That would give us a reasonable printed representation,
 like "p is (3, 4)", but it is tedious, verbose,  and easy to 
 get wrong.  What if we just wrote 
 
-```python
+```{code-cell} python3
 print(f"p is {p}")
 ```
-That would be simpler, but the result is not very 
-useful: 
 
-```python
-p is <__main__.Point object at 0x10b4a22e0>
-```
+That isn't a very useful way to print an object!
 
 ### `str()`d, not shaken
 
@@ -308,21 +356,48 @@ decide that we want the object created by `Point(3,2)`
 to print as "(3, 2)". We would then write a 
 `__str__` method in the `Point` class like this: 
 
-```python
+```{code-cell} python3
+class Point:
+    """An (x,y) coordinate pair (as before)"""
+
+    def __init__(self, x: Number, y: Number):
+        self.x = x
+        self.y = y
+
+    def move(self, d: "Point") -> "Point":
+        """(x,y).move(dx,dy) = (x+dx, y+dy)"""
+        x = self.x + d.x
+        y = self.y + d.y
+        return Point(x,y)
+        
+    def move_to(self, new_x, new_y):
+        """Change the coordinates of this Point"""
+        self.x = new_x
+        self.y = new_y
+
+    # Two new methods, used by the "str" and "repr"
+    # functions. 
+  
     def __str__(self) -> str:
+        """Printed representation.
+        str(p) is an implicit call to p.__str__()
+        """
         return f"({self.x}, {self.y})"
+      
+    def __repr__(self) -> str:
+        """Debugging representation.  This is what
+        we see if we type a point name at the console.
+        """
+        return f"Point({self.x}, {self.y})"
 ```  
 
 Now if we again execute 
 
-```python
+```{code-cell} python3
 print(f"p is {p}")
 ```
-we get a more useful result: 
+we get a more useful result. 
 
-```python
-p is (3, 4)
-```
 
 ### A `repr()` for debugging
 
@@ -348,16 +423,16 @@ the `Point` class we might write:
     def __repr__(self) -> str:
         return f"Point({self.x}, {self.y})"
 ```
-Now if we write 
+Now we can write 
 
-```python
+```{code-cell} python3
 print(f"repr(p) is {repr(p)}")
 ```
+More often, the `repr` function is called implicitly
+when we just enter an expression at the console. 
 
-we will get 
-
-```python
-repr(p) is Point(3, 4)
+```{code-cell} python3
+p + m
 ```
 
 The `print` function automatically applies the `str` function to its 
@@ -366,19 +441,12 @@ is printed as you like in most cases.  Oddly, though,
 the `__str__` method for `list` applies the `__repr__` method
 to each of its arguments, so if we write
 
-```python
+```{code-cell} python3
 print(p)
 print(v)
 print([p, v])
 ```
 
-we get 
-
-```
-(3, 4)
-(5, 6)
-[Point(3, 4), Point(5, 6)]
-```
 
 #### *Check your understanding* 
 

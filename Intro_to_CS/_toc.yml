@@ -41,6 +41,7 @@ parts:
       - file: 08_Assembler/08_2_Regexp.md
   - caption: Appendices
     chapters:
+      - file: Appendices/appendix_terms.md
       - file: Appendices/appendix_looploop.md
       - file: Appendices/appendix_Special.md
       - file: Appendices/appendix_style.md

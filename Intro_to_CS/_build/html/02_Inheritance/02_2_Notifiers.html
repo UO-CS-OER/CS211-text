@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Notifiers &#8212; Introduction to Computer Science I</title>
+    <title>Notifiers &#8212; Introduction to Computer Science II</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -90,9 +90,14 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
+      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Computer Science II</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -104,28 +109,33 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Introduction to Computer Science, part 1
+                    Introduction to Computer Science, part 2
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  01 Getting a Start
+  00 Preliminaries
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../01-Intro/01-01-Prospectus.html">
+  <a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">
    A Course in Computational Thinking
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../01-Intro/01-02-Install.html">
+  <a class="reference internal" href="../00-Preliminaries/00-02-Install.html">
    Installing Python and IDLE
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
+  <a class="reference internal" href="../00-Preliminaries/00-03-Install_PyCharm.html">
+   Installing PyCharm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-Preliminaries/00-04-Kickstart.html">
    Python Programming Kickstart
   </a>
  </li>
@@ -257,6 +267,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_terms.html">
+   Glossary of Terms
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Appendices/appendix_looploop.html">
    Appendix – What for?
@@ -539,8 +554,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-code">
-   Sample Code
+  <a class="reference internal nav-link" href="#project">
+   Project
   </a>
  </li>
 </ul>
@@ -583,8 +598,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sample-code">
-   Sample Code
+  <a class="reference internal nav-link" href="#project">
+   Project
   </a>
  </li>
 </ul>
@@ -708,7 +723,9 @@ in class <code class="docutils literal notranslate"><span class="pre">M</span></
 recursive at all:  <code class="docutils literal notranslate"><span class="pre">M.f</span></code> calls <code class="docutils literal notranslate"><span class="pre">V.g</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">V.g</span></code> calls <code class="docutils literal notranslate"><span class="pre">M.h</span></code>; there is a cycle among
 the objects but not among the methods.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">M</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">M</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">the_V</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -734,6 +751,13 @@ the objects but not among the methods.</p>
 <span class="n">m</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>What goes around, comes around
+</pre></div>
+</div>
+</div>
+</div>
 <p>If we place <code class="docutils literal notranslate"><span class="pre">M</span></code> and <code class="docutils literal notranslate"><span class="pre">V</span></code> in different modules,
 each module will have to <code class="docutils literal notranslate"><span class="pre">import</span></code> the other.</p>
 <p><img alt="V and M call each others methods" src="../_images/M-V-cycle.svg" /></p>
@@ -744,7 +768,9 @@ with abstract base classes.  We can
 think of the abstract base classes as
 defining some wires that can be connected
 in the concrete classes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Listener</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Listener</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Abstract base class for classes in View component&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">notify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Notify has not been implemented&quot;</span><span class="p">)</span>
@@ -788,6 +814,8 @@ in the concrete classes.</p>
             <span class="n">an_m</span><span class="o">.</span><span class="n">h</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The revised version is more complex,
 but it essentially duplicates the calling
 relation between methods in <code class="docutils literal notranslate"><span class="pre">M</span></code> and <code class="docutils literal notranslate"><span class="pre">V</span></code> from
@@ -800,15 +828,20 @@ list).  Instead of calling <code class="docutils literal notranslate"><span clas
 (and now the <code class="docutils literal notranslate"><span class="pre">V</span></code> object must interpret the
 event in its <code class="docutils literal notranslate"><span class="pre">notify</span></code> method).  Overall,
 though, the behavior is the same:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">V</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">V</span><span class="p">()</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">M</span><span class="p">()</span>
 <span class="n">m</span><span class="o">.</span><span class="n">add_listener</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>produces the output</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">What</span> <span class="n">goes</span> <span class="n">around</span><span class="p">,</span> <span class="n">comes</span> <span class="n">around</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>What goes around, comes around
 </pre></div>
+</div>
+</div>
 </div>
 <p>What we have gained from this indirect
 calling arrangement is the ability to
@@ -890,9 +923,14 @@ components can be placed in a separate module,
 breaking what would otherwise be a cycle
 in the <code class="docutils literal notranslate"><span class="pre">import</span></code> relation.</p>
 </section>
-<section id="sample-code">
-<h2>Sample Code<a class="headerlink" href="#sample-code" title="Permalink to this headline">#</a></h2>
-<p><span class="xref myst">Sample code for this chapter</span></p>
+<section id="project">
+<h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://github.com/UO-CIS211/FiveTwelve">FiveTwelve game</a>,
+a simplified version of 2048, which was based on 1024, which was
+in turn inspired by the more challenging sliding tile game Threes,
+uses subclasses and inheritance to combine graphical interaction
+coded in a <em>view</em> component with game logic coded in a <em>model</em>
+component.</p>
 </section>
 </section>
 
@@ -946,7 +984,7 @@ in the <code class="docutils literal notranslate"><span class="pre">import</span
   
     By Michal Young, Boyana Norris, and Ram Durairajan<br/>
   
-      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+      &copy; Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
 </p>
         </footer>
     </div>

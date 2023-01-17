@@ -150,7 +150,10 @@ demanding course, we can recommend the
 [Computer Science Circles](https://cscircles.cemc.uwaterloo.ca/)
 online lessons as a good and thorough introduction.  Even if 
 you have programmed in Python before, you may find the CS Circles 
-materials valuable as a refresher. 
+materials valuable as a refresher.
+You may also be interested in
+[part 1 of this series](
+https://uo-cs-oer.github.io/CS210-text/intro.html).
 
 The remaining sections of this chapter provide brief instructions 
 for installing Python 3 on the computer you will use for your 

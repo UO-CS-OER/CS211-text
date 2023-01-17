@@ -121,35 +121,37 @@
 # in class `M`.  Note that this may not be 
 # recursive at all:  `M.f` calls `V.g`, and 
 # `V.g` calls `M.h`; there is a cycle among 
-# the objects but not among the methods. 
-# 
-# ```python
-# class M:
-#     def __init__(self):
-#         self.the_V = None
-# 
-#     def hook_up(self, v: 'V'):
-#         self.the_V = v
-# 
-#     def f(self):
-#         self.the_V.g(self)
-# 
-#     def h(self):
-#         print("What goes around, comes around")
-# 
-# class V:
-#     def __init__(self):
-#         pass
-# 
-#     def g(self, an_m: M):
-#         an_m.h()
-# 
-# v = V()
-# m = M()
-# m.hook_up(v)
-# m.f()
-# ```
-# 
+# the objects but not among the methods.
+
+# In[1]:
+
+
+class M:
+    def __init__(self):
+        self.the_V = None
+
+    def hook_up(self, v: 'V'):
+        self.the_V = v
+
+    def f(self):
+        self.the_V.g(self)
+
+    def h(self):
+        print("What goes around, comes around")
+
+class V:
+    def __init__(self):
+        pass
+
+    def g(self, an_m: M):
+        an_m.h()
+
+v = V()
+m = M()
+m.hook_up(v)
+m.f()
+
+
 # If we place `M` and `V` in different modules, 
 # each module will have to `import` the other. 
 # 
@@ -161,53 +163,55 @@
 # with abstract base classes.  We can 
 # think of the abstract base classes as 
 # defining some wires that can be connected 
-# in the concrete classes. 
-# 
-# ```python
-# class Listener:
-#     """Abstract base class for classes in View component"""
-#     def notify(self, event: str):
-#         raise NotImplementedError("Notify has not been implemented")
-# 
-# class ModelElement:
-#     """Abstract base class for classes in Model component"""
-# 
-#     def __init__(self):
-#         self.listeners = []
-# 
-#     def add_listener(self, listener: Listener):
-#         self.listeners.append(listener)
-# 
-#     def notify_all(self, event: str):
-#         for listener in self.listeners:
-#             listener.notify(self, event)
-# 
-# 
-# class M(ModelElement):
-# 
-#     def __init__(self):
-#         super().__init__()
-#         # Might have more of its own initialization here
-# 
-#     def f(self):
-#         # Instead of self.the_V.g()
-#         self.notify_all("g")
-# 
-#     def h(self):
-#         print("What goes around, comes around")
-# 
-# 
-# class V(Listener):
-#     def __init__(self):
-#         pass
-# 
-#     def notify(self, an_m: M, event: str):
-#         # Instead of a call to method g, we
-#         # might get an event "g"
-#         if event == "g":
-#             an_m.h()
-# ```
-# 
+# in the concrete classes.
+
+# In[2]:
+
+
+class Listener:
+    """Abstract base class for classes in View component"""
+    def notify(self, event: str):
+        raise NotImplementedError("Notify has not been implemented")
+
+class ModelElement:
+    """Abstract base class for classes in Model component"""
+
+    def __init__(self):
+        self.listeners = []
+
+    def add_listener(self, listener: Listener):
+        self.listeners.append(listener)
+
+    def notify_all(self, event: str):
+        for listener in self.listeners:
+            listener.notify(self, event)
+
+
+class M(ModelElement):
+
+    def __init__(self):
+        super().__init__()
+        # Might have more of its own initialization here
+
+    def f(self):
+        # Instead of self.the_V.g()
+        self.notify_all("g")
+
+    def h(self):
+        print("What goes around, comes around")
+
+
+class V(Listener):
+    def __init__(self):
+        pass
+
+    def notify(self, an_m: M, event: str):
+        # Instead of a call to method g, we
+        # might get an event "g"
+        if event == "g":
+            an_m.h()
+
+
 # The revised version is more complex, 
 # but it essentially duplicates the calling 
 # relation between methods in `M` and `V` from 
@@ -219,21 +223,17 @@
 # *notifies* the `V` object of a `g` event 
 # (and now the `V` object must interpret the 
 # event in its `notify` method).  Overall, 
-# though, the behavior is the same: 
-# 
-# ```python
-# v = V()
-# m = M()
-# m.add_listener(v)
-# m.f()
-# ```
-# 
-# produces the output 
-# 
-# ``` 
-# What goes around, comes around
-# ```
-# 
+# though, the behavior is the same:
+
+# In[3]:
+
+
+v = V()
+m = M()
+m.add_listener(v)
+m.f()
+
+
 # What we have gained from this indirect 
 # calling arrangement is the ability to 
 # divide the code into three modules, 
@@ -318,6 +318,11 @@
 # breaking what would otherwise be a cycle 
 # in the `import` relation. 
 # 
-# ## Sample Code 
+# ## Project
 # 
-# [Sample code for this chapter](../sample_code/notifier-example.py)
+# The [FiveTwelve game](https://github.com/UO-CIS211/FiveTwelve), 
+# a simplified version of 2048, which was based on 1024, which was
+# in turn inspired by the more challenging sliding tile game Threes,
+# uses subclasses and inheritance to combine graphical interaction 
+# coded in a _view_ component with game logic coded in a _model_ 
+# component.

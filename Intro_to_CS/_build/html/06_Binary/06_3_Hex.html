@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>What the Hex? &#8212; Introduction to Computer Science I</title>
+    <title>What the Hex? &#8212; Introduction to Computer Science II</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sometimes Functions are Values" href="../07_Functional/07_1_Functional.html" />
@@ -92,9 +90,14 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">Introduction to Computer Science I</h1>
+      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Computer Science II</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -106,28 +109,33 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Introduction to Computer Science, part 1
+                    Introduction to Computer Science, part 2
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  01 Getting a Start
+  00 Preliminaries
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../01-Intro/01-01-Prospectus.html">
+  <a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">
    A Course in Computational Thinking
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../01-Intro/01-02-Install.html">
+  <a class="reference internal" href="../00-Preliminaries/00-02-Install.html">
    Installing Python and IDLE
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../01-Intro/01-03-Kickstart.html">
+  <a class="reference internal" href="../00-Preliminaries/00-03-Install_PyCharm.html">
+   Installing PyCharm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-Preliminaries/00-04-Kickstart.html">
    Python Programming Kickstart
   </a>
  </li>
@@ -259,6 +267,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_terms.html">
+   Glossary of Terms
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Appendices/appendix_looploop.html">
    Appendix – What for?
@@ -627,20 +640,20 @@ heads (at least I can’t).  Can we find a number system that
 is both easy to relate to binary and compact?</p>
 <section id="casting-a-hex">
 <h2>Casting a Hex<a class="headerlink" href="#casting-a-hex" title="Permalink to this headline">#</a></h2>
-<p>If we use a number base that is $<span class="math notranslate nohighlight">\(2^k\)</span><span class="math notranslate nohighlight">\(, each digit in 
-that number system will exactly represent \)</span><span class="math notranslate nohighlight">\(k\)</span><span class="math notranslate nohighlight">\( 
-binary digits.  10 is not a power of two, but 8 and 16 
-are.  Two popular bases for representing binary numbers 
-in human-readable form are octal (base 8) and hexadecimal 
-(base 16), often called &quot;hex&quot;.  Octal uses digits 0..7, and hexadecimal 
-uses digits 0..9ABCDEF to represent values from 0 to 15. 
-Hexadecimal, is particularly convenient 
-because each hexadecimal digit represents 4 binary digits.  
-The smallest addressable unit of computer memory is typically 
-the _byte_, which is 8 binary digits, and a byte can 
-be represented by exactly two hexadecimal digits. For 
-example, the binary number \)</span><span class="math notranslate nohighlight">\(01101011_2\)</span><span class="math notranslate nohighlight">\(
-is \)</span><span class="math notranslate nohighlight">\(6B_{16}\)</span>$.</p>
+<p>If we use a number base that is $$2^k$$, each digit in
+that number system will exactly represent $$k$$
+binary digits.  10 is not a power of two, but 8 and 16
+are.  Two popular bases for representing binary numbers
+in human-readable form are octal (base 8) and hexadecimal
+(base 16), often called “hex”.  Octal uses digits 0..7, and hexadecimal
+uses digits 0..9ABCDEF to represent values from 0 to 15.
+Hexadecimal, is particularly convenient
+because each hexadecimal digit represents 4 binary digits.<br />
+The smallest addressable unit of computer memory is typically
+the <em>byte</em>, which is 8 binary digits, and a byte can
+be represented by exactly two hexadecimal digits. For
+example, the binary number $$01101011_2$$
+is $$6B_{16}$$.</p>
 <p><img alt="0x6b == 0b01101011" src="../_images/hex_6B.svg" /></p>
 </section>
 <section id="hex-digit-values">
@@ -649,10 +662,10 @@ is \)</span><span class="math notranslate nohighlight">\(6B_{16}\)</span>$.</p>
 to hex digits and decimal values.  It is <em>not</em>
 necessary to memorize this table, and most
 programmers don’t.  You should, however, remember
-that $<span class="math notranslate nohighlight">\(0_{16}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(0000_2\)</span><span class="math notranslate nohighlight">\( and that \)</span><span class="math notranslate nohighlight">\(\textrm{F}_{16}\)</span><span class="math notranslate nohighlight">\( is 
-\)</span><span class="math notranslate nohighlight">\(1111_2\)</span><span class="math notranslate nohighlight">\(.  Since binary values are often grouped into 
-8-bit _bytes_, it is also useful to remember that 
-\)</span><span class="math notranslate nohighlight">\(\textrm{FF}_{16}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(1111\,1111_2\)</span><span class="math notranslate nohighlight">\( or \)</span><span class="math notranslate nohighlight">\(255_{10}\)</span>$.</p>
+that $$0_{16}$$ is $$0000_2$$ and that $$\textrm{F}<em>{16}$$ is
+$$1111_2$$.  Since binary values are often grouped into
+8-bit <em>bytes</em>, it is also useful to remember that
+$$\textrm{FF}</em>{16}$$ is $$1111,1111_2$$ or $$255_{10}$$.</p>
 <p><img alt="Hex digits" src="../_images/hex-digits.svg" /></p>
 </section>
 <section id="hex-notation-in-python">
@@ -697,7 +710,7 @@ function for objects.</p>
 </pre></div>
 </div>
 <p>This <code class="docutils literal notranslate"><span class="pre">repr</span></code> is telling us that the new object
-is at memory address $<span class="math notranslate nohighlight">\(1077F2F10_{16}\)</span>$.  We
+is at memory address $$1077F2F10_{16}$$.  We
 are unlikely to want to know the decimal value
 of that address.  We might, however, get some
 use of knowing the hexadecimal value.  For example,
@@ -792,7 +805,7 @@ care about patterns of binary digits.</p>
   
     By Michal Young, Boyana Norris, and Ram Durairajan<br/>
   
-      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+      &copy; Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
 </p>
         </footer>
     </div>

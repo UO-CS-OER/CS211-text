@@ -16,63 +16,133 @@
 # can be created from a single point and a size. 
 # We can specify that a `Square` is a kind of 
 # `Rect`:
-# 
-# ```python
-# class Square(Rect):
-#     def __init__(self, anchor: Point, size: Number):
-#         self.min_pt = anchor
-#         self.max_pt = self.min_pt + Point(size, size)
-#         self.size = size
-# ``` 
-# 
+
+# In[1]:
+
+
+# Classes Point and Rect are repeated 
+# from the previous chapter so we can
+# build on them.  Point has a method 
+# "dist" that we use for area of triangles. 
+
+from numbers import Number
+from math import sqrt
+
+class Point:
+    """An (x,y) coordinate pair"""
+    def __init__(self, x: Number, y: Number):
+        self.x = x
+        self.y = y
+
+    def __add__(self, d: "Point") -> "Point":
+        """Point(x, y) + Point("""
+        x = self.x + d.x
+        y = self.y + d.y
+        return Point(x,y)
+        
+    def move_to(self, new_x, new_y):
+        """Change the coordinates of this Point"""
+        self.x = new_x
+        self.y = new_y
+        
+    def dist(self, other: "Point") -> Number: 
+        """Euclidean distance"""
+        dx = self.x - other.x
+        dy = self.y - other.y
+        return sqrt(dx*dx + dy*dy)       
+        
+    def __str__(self) -> str:
+        """Looks like (x, y)"""
+        return f"({self.x}, {self.y})"
+      
+    def __repr__(self) -> str:
+        """Looks like Point(x, y)"""
+        return f"Point({self.x}, {self.y})"
+
+
+class Rect:
+    """Rectangle from lower left corner to upper right."""
+    def __init__(self, xy_min: Point, xy_max: Point):
+        self.min_pt = xy_min
+        self.max_pt = xy_max
+    
+    def area(self) -> Number:
+        """Area is height * width"""
+        height = self.max_pt.x - self.min_pt.x
+        width = self.max_pt.y - self.min_pt.y
+        return height * width
+
+    def translate(self, delta: Point) -> "Rect":
+        """New rectangle offset from this one by delta as movement vector"""
+        return Rect(self.min_pt + delta, self.max_pt + delta)
+
+    def __repr__(self) -> str:
+        return f"Rect({repr(self.min_pt)}, {repr(self.max_pt)}"
+
+    def __str__(self) -> str:
+        return f"Rect({str(self.min_pt)}, {str(self.max_pt)})"
+
+
+# In[2]:
+
+
+class Square(Rect):
+    """A Rectangle with equal length sides"""
+    
+    def __init__(self, anchor: Point, size: Number):
+        self.min_pt = anchor
+        self.max_pt = self.min_pt + Point(size, size)
+        self.size = size
+
+
 # `Square` objects have the `min_pt` and `max_pt` 
 # *instance variables* of `Rect`, plus a new 
 # instance variable `size`.  
 # All the methods of `Rect` are also available for 
-# `Square`, including the *magic* methods like `__str__`.  
-# 
-# ```python
-# p1 = Point(3, 5)
-# sq = Square(p1, 5)
-# print(sq)
-# ```
-# 
-# 
-# Running this code gives us
-# 
-# ```
-# Rect((3, 5), (8, 10))
-# ```
-# 
+# `Square`, including the *magic* methods like `__str__`.
+
+# In[3]:
+
+
+p1 = Point(3, 5)
+sq = Square(p1, 5)
+print(sq)
+
+
 # ## Overriding
 # 
 # Maybe we don't want `print(sq)` to print a 
 # string beginning with `Rect`.  Maybe we want 
-# `Square` to have it's own `__str__` method. 
-# 
-# ```python
-#     def __str__(self) -> str:
-#         return f"Square({str(self.min_pt)}, {self.size})"
-# ```
-# 
+# `Square` to have its own `__str__` method.
+
+# In[4]:
+
+
+class Square(Rect):
+    """A Rectangle with equal length sides"""
+    
+    def __init__(self, anchor: Point, size: Number):
+        self.min_pt = anchor
+        self.max_pt = self.min_pt + Point(size, size)
+        self.size = size
+
+    def __str__(self) -> str:
+        return f"Square({str(self.min_pt)}, {self.size})"
+
+
 # The new `__str__` method of `Square` *overrides* the 
-# `__str__` method of the `Rect` Now the same code as above 
-# 
-# ```python
-# p1 = Point(3, 5)
-# sq = Square(p1, 5)
-# print(sq)
-# s2 = sq.translate(Point(2,2))
-# print(s2)
-# ```
-# 
-# prints
-# 
-# ```
-# Square((3, 5), 5)
-# Rect((5, 7), (10, 12))
-# ```
-# 
+# `__str__` method of the `Rect` Now the same code as above
+
+# In[5]:
+
+
+p1 = Point(3, 5)
+sq = Square(p1, 5)
+print(sq)
+s2 = sq.translate(Point(2,2))
+print(s2)
+
+
 # The first `print` command uses the new 
 # `__str__` method. 
 # The `translate` method is still inherited from 
@@ -83,76 +153,106 @@
 # We can also add 
 # new methods that are not present in `Rect`.  For example, we 
 # might simply want to add a method that returns the length 
-# of a side: 
-# 
+# of a side:
+
+# In[6]:
+
+
+class Square(Rect):
+    """A Rectangle with equal length sides"""
+    
+    def __init__(self, anchor: Point, size: Number):
+        self.min_pt = anchor
+        self.max_pt = self.min_pt + Point(size, size)
+        self.size = size
+
+    def __str__(self) -> str:
+        return f"Square({str(self.min_pt)}, {self.size})"
+        
+    def side(self) -> Number:
+        return self.size
+
+
 # ```python
+#     ## Within class Square as above
 #     def side(self) -> Number:
 #         return self.size
 # ```
 # 
 # A method that is defined only in the `Square` subclass 
 # can of course use instance variables that are likewise 
-# only in that subclass.   Now we can write 
-# 
-# ```python
-# sq = Square(Point(2,2), 2)
-# sq.side()
-# ```
-# 
-# and we will get the expected result, `2`.  However, if 
-# we type 
-# 
-# ```python
-# r = Rect(Point(2,2), Point(4,4))
-# r.side()
-# ```
-# 
-# we will get an error message: 
-# 
-# ```
-# AttributeError: 'Rect' object has no attribute 'side'
-# ```
-# 
+# only in that subclass.   Now we can write
+
+# In[7]:
+
+
+sq = Square(Point(2,2), 2)
+sq.side()
+
+
+# We get the expected result, `2`.  However, if 
+# we attempt to call `side` on a `Rect` object
+# that is not a `Square` object, we will get an error
+# message.
+
+# In[8]:
+
+
+r = Rect(Point(2,2), Point(4,4))
+r.side()
+
+
 # The Python debugger refers to both instance variables and methods 
 # as *attributes*.  In this case it looked for the 
 # class of `r` and found it was a `Rect`, and it looked 
 # in class `Rect` for method `side` and did not find it. 
 # 
 # 
-# The inherited `translate` method still returns a `Rect`: 
-# 
-# ```python
-#     def translate(self, delta: Point) -> "Rect":
-#         """New rectangle offset from this one by delta as movement vector"""
-#         return Rect(self.min_pt + delta, self.max_pt + delta)
-# ```
-# 
+# The inherited `translate` method still returns a `Rect`.
 #  It seems more reasonable for 
 # translation of a `Square` to give us a `Square`, 
 # so we can again *override* the 
-#  inherited method with a more specialized version: 
-# 
-# ```python
+#  inherited method with a more specialized version:
+
+# In[9]:
+
+
+class Square(Rect):
+    """A Rectangle with equal length sides"""
+    
+    def __init__(self, anchor: Point, size: Number):
+        self.min_pt = anchor
+        self.max_pt = self.min_pt + Point(size, size)
+        self.size = size
+
+    def __str__(self) -> str:
+        return f"Square({str(self.min_pt)}, {self.size})"
+        
+    def side(self) -> Number:
+        return self.size
+    
+    def translate(self, delta: Point) -> "Square":
+        return Square(self.min_pt + delta, self.size)
+
+
+# ```python3
 #     def translate(self, delta: Point) -> "Square":
 #         return Square(self.min_pt + delta, self.size)
 # ```
 # 
-# Now if we again enter 
-# 
-# ```python
-# p1 = Point(3, 5)
-# sq = Square(p1, 5)
-# print(sq)
-# s2 = sq.translate(Point(2,2))
-# print(s2)
-# ```
-# we will get 
-# 
-# ``` 
-# Square((3, 5), 5)
-# Square((5, 7), 5)
-# ```
-# 
+# Now translate produces a `Square` object, with the printed
+# representation we want.
+
+# In[10]:
+
+
+p1 = Point(3, 5)
+sq = Square(p1, 5)
+print(sq)
+s2 = sq.translate(Point(2,2))
+print(s2)
+
+
 # ## The Liskov Substitution Principle
 # 
 # Can we override methods any way 
@@ -160,7 +260,7 @@
 # the following definition of `translate` for 
 # class `Square`?
 # 
-# ```python
+# ```python3
 #     def translate(self, dx: Number, dy: Number) -> "Square":
 #         delta = Point(dx, dy)
 #         return Square(self.min_pt + delta, self.size)
@@ -214,7 +314,7 @@
 # be used where the supertype is expected. 
 # This is not only possible but common. 
 # 
-# So far we have a simple class `Rect` and a subclass 
+# We have a simple class `Rect` and a subclass 
 # `Square`, and although we overrode many of the 
 # `Rect` methods in `Square`, 
 # at least one method (`area`) is inherited.  Suppose 
@@ -234,8 +334,7 @@
 # we do with an object of class `Shape`, if it makes 
 # sense at all to create `Shape` objects?  In fact, even 
 # though we want the *class* `Shape` to describe 
-# what 
-# `Rect`s and `Triangle`s have in common, we probably 
+# what `Rect`s and `Triangle`s have in common, we probably 
 # don't want to even make it possible to create a 
 # `Shape` object directly;  all `Shape` objects should 
 # be `Rect`s (including `Square`s) or `Triangle`s. 
@@ -243,31 +342,33 @@
 # A class like `Shape` that organizes a set of subclasses 
 # but which can never be instantiated to create objects 
 # by itself is called an *abstract base class*.  We 
-# might define shape as an abstract base class like this: 
-# 
-# ```python
-# class Shape:
-#     """An abstract base class that encompasses different concrete
-#     classes with common behavior but different representations.
-#     """
-# 
-#     def __init__(self):
-#         """There are *no* objects of an abstract class.  It's a
-#         concept, not a set of concrete things.
-#         """
-#         raise NotImplementedError("Do not instantiate 'Shape'; it is abstract")
-# 
-#     # Abstract methods are mostly to define signatures
-#     # (headers) of methods for the concrete subclasses
-# 
-#     def area(self) -> Number:
-#         raise NotImplementedError(f"Class {self.__class__} didn't define 'Area'")
-# 
-#     def translate(self, delta: Point) -> "Shape":
-#         """New shape offset from this one by delta as movement vector"""
-#         raise NotImplementedError(f"Class {self.__class__} didn't define 'translate'")
-# ```
-# 
+# might define shape as an abstract base class like this:
+
+# In[11]:
+
+
+class Shape:
+    """An abstract base class that encompasses different concrete
+    classes with common behavior but different representations.
+    """
+
+    def __init__(self):
+        """There are *no* objects of an abstract class.  It's a
+        concept, not a set of concrete things.
+        """
+        raise NotImplementedError("Do not instantiate 'Shape'; it is abstract")
+
+    # Abstract methods are mostly to define signatures
+    # (headers) of methods for the concrete subclasses
+
+    def area(self) -> Number:
+        raise NotImplementedError(f"Class {self.__class__} didn't define 'Area'")
+
+    def translate(self, delta: Point) -> "Shape":
+        """New shape offset from this one by delta as movement vector"""
+        raise NotImplementedError(f"Class {self.__class__} didn't define 'translate'")
+
+
 # Note that this class is booby-trapped to crash if we 
 # make the mistake of trying to create a `Shape` object
 # directly.  In addition, the methods `area` and `translate` 
@@ -282,51 +383,137 @@
 # overriding all the methods, we can simply change 
 # the header of the class: 
 # 
-# ```python
+# 
+# ```python3
 # class Rect(Shape):
 # ```
-# 
+
+# In[12]:
+
+
+class Rect(Shape):
+    """Rectangle from lower left corner to upper right."""
+    def __init__(self, xy_min: Point, xy_max: Point):
+        self.min_pt = xy_min
+        self.max_pt = xy_max
+    
+    def area(self) -> Number:
+        """Area is height * width"""
+        height = self.max_pt.x - self.min_pt.x
+        width = self.max_pt.y - self.min_pt.y
+        return height * width
+
+    def translate(self, delta: Point) -> "Rect":
+        """New rectangle offset from this one by delta as movement vector"""
+        return Rect(self.min_pt + delta, self.max_pt + delta)
+
+    def __repr__(self) -> str:
+        return f"Rect({repr(self.min_pt)}, {repr(self.max_pt)}"
+
+    def __str__(self) -> str:
+        return f"Rect({str(self.min_pt)}, {str(self.max_pt)})"
+
+
 # We will give a similar header to `Triangle`, and again 
 # override all the methods declared in `Shape`:
-# 
-# ```python
-# class Triangle(Shape):
-#     """A triangle is defined by three points."""
-# 
-#     def __init__(self, p1: Point, p2: Point, p3: Point):
-#         self.p1 = p1
-#         self.p2 = p2
-#         self.p3 = p3
-# 
-#     def translate(self, delta: Point) -> "Triangle":
-#         return Triangle(self.p1 + delta, self.p2 + delta, self.p3 + delta)
-# 
-#     def __str__(self) -> str:
-#         return f"Triangle({self.p1}, {self.p2}, {self.p3})"
-# 
-#     def __repr__(self) -> str:
-#         return f"Triangle({repr(self.p1)}, {repr(self.p2)}, {repr(self.p3)})"
-# 
-#     def area(self) -> Number:
-#         """Area of triangle is (1/2) * base * height"""
-#         # To determine height, we drop a perpendicular from one point
-#         # to the opposite side, then measure it.  Any side will do;
-#         # we'll take p1 as the point and (p2,p3) as the side.
-#         ix, iy = normal_intersect(self.p2.x, self.p2.y,
-#                                   self.p3.x, self.p3.y,
-#                                   self.p1.x, self.p1.y)
-#         intercept = Point(ix, iy)
-#         base = self.p2.dist(self.p3)
-#         height = self.p1.dist(intercept)
-#         return 0.5 * base * height
-# ```
-# 
+
+# In[13]:
+
+
+class Triangle(Shape):
+    """A triangle is defined by three points."""
+
+    def __init__(self, p1: Point, p2: Point, p3: Point):
+        self.p1 = p1
+        self.p2 = p2
+        self.p3 = p3
+
+    def translate(self, delta: Point) -> "Triangle":
+        return Triangle(self.p1 + delta, self.p2 + delta, self.p3 + delta)
+
+    def __str__(self) -> str:
+        return f"Triangle({self.p1}, {self.p2}, {self.p3})"
+
+    def __repr__(self) -> str:
+        return f"Triangle({repr(self.p1)}, {repr(self.p2)}, {repr(self.p3)})"
+
+    def area(self) -> Number:
+        """Area of triangle is (1/2) * base * height"""
+        # To determine height, we drop a perpendicular from one point
+        # to the opposite side, then measure it.  Any side will do;
+        # we'll take p1 as the point and (p2,p3) as the side.
+        ix, iy = normal_intersect(self.p2.x, self.p2.y,
+                                  self.p3.x, self.p3.y,
+                                  self.p1.x, self.p1.y)
+        intercept = Point(ix, iy)
+        base = self.p2.dist(self.p3)
+        height = self.p1.dist(intercept)
+        return 0.5 * base * height
+
+
 # The area calculation for a triangle is a bit more involved 
 # than the calculation for a rectangle, but fortunately 
 # it was easy to reuse code for dropping a perpendicular that 
-# I developed for a different project.  You can view the 
-# [complete code](../sample_code/shapes.py) if you are interested.
-# 
+# I developed for a different project, plus a `dist` (distance) method 
+# in the `Point` class.
+
+# In[14]:
+
+
+def normal_intersect(p1_x: Number, p1_y: Number, 
+                     p2_x: Number, p2_y: Number,
+                     px: Number, py: Number
+                     ) -> tuple[Number, Number]:
+    """Intersection of seg from p1 to p2 with normal dropped from p"""
+
+    # Special cases: slope or normal slope is undefined
+    # for vertical or horizontal lines, but the intersections
+    # are trivial for those cases
+    if p2_x == p1_x:
+        return p1_x, py
+    elif p2_y == p1_y:
+        return px, p1_y
+
+    # The slope of the segment, and of a normal ray
+    seg_slope = (p2_y - p1_y) / (p2_x - p1_x)
+    normal_slope = 0 - (1.0 / seg_slope)
+
+    # For y=mx+b form, we need to solve for b (y intercept)
+    seg_b = p1_y - seg_slope * p1_x
+    normal_b = py - normal_slope * px
+
+    # Combining and subtracting the two line equations to solve for intersect
+    x_intersect = (seg_b - normal_b) / (normal_slope - seg_slope)
+    y_intersect = seg_slope * x_intersect + seg_b
+    # Colinear points are ok!
+
+    return (x_intersect, y_intersect)
+
+
+# Although `Rect` and `Triangle` do not share any implementation at 
+# all, they both follow the contract defined by the abstract class 
+# `Shape`.   We can loop through a list of `Shape` objects including
+# both `Rect` and `Triangle` objects and call the `area` method of 
+# each one, letting Python call the `Triangle.area` method for 
+# `Triangle`s and the `Rect.area` method for `Rect`s.
+
+# In[15]:
+
+
+shapes: list[Shape] = [ 
+            Rect(Point(2,2), Point(3,3)), 
+            Square(Point(0,0), 3), 
+            Triangle(Point(0,0), Point(0, 4), Point(4,0)) ]
+           
+for shape in shapes: 
+    print(shape.area())
+
+
+# This is a kind of _polymorphism_, _poly_ meaning "many" 
+# or "multiple" and _morph_ meaning "form".  Our `Shape` objects come 
+# in multiple forms, but we can mix them together in a list and call
+# `shape` on each of them, treating `shape` as a _polymorphic_ 
+# function, provided our classes obey the Liskov substitution principle.
 # 
 # ### Check your understanding
 # 
@@ -379,30 +566,32 @@
 # Suppose we want to build a class to represent lists 
 # of shapes.   One approach would be to *wrap* a list, 
 # i.e., keeping a list of `Shape` as an instance variable in 
-# the new class: 
-# 
-# ```python
-# class ShapeList:
-#     """A collection of Shapes."""
-# 
-#     def __init__(self):
-#         self.elements = []
-# 
-#     def area(self) -> Number:
-#         total = 0
-#         for el in self.elements:
-#             total += el.area()
-#         return total
-# 
-#     def append(self, item: Rect):
-#         """Delegate to elements"""
-#         self.elements.append(item)
-# 
-#     def __str__(self) -> str:
-#         """Delegate to elements"""
-#         return str(self.elements)
-# ```
-# 
+# the new class:
+
+# In[16]:
+
+
+class ShapeList:
+    """A collection of Shapes."""
+
+    def __init__(self):
+        self.elements = []
+
+    def area(self) -> Number:
+        total = 0
+        for el in self.elements:
+            total += el.area()
+        return total
+
+    def append(self, item: Rect):
+        """Delegate to elements"""
+        self.elements.append(item)
+
+    def __str__(self) -> str:
+        """Delegate to elements"""
+        return str(self.elements)
+
+
 # This is ok as far as it goes ... it allows us to append 
 # `Shape` objects to the list, to print the list with the 
 # `str` function, and to get the total area of shapes in the 
@@ -418,41 +607,38 @@
 # especially if we specifically do *not* want some of the 
 # `list` methods to be available for `ShapeList`.  But if we 
 # want all of them, it is simpler (and probably less error prone)
-# to just inherit them from `list`: 
-# 
-# ```python
-# class ShapeList(list):
-#     """A collection of Shapes."""
-# 
-#     def area(self) -> Number:
-#         total = 0
-#         for el in self:
-#             total += el.area()
-#         return total
-# ```
-# 
+# to just inherit them from `list`:
+
+# In[17]:
+
+
+class ShapeList(list):
+    """A collection of Shapes."""
+
+    def area(self) -> Number:
+        total = 0
+        for el in self:
+            total += el.area()
+        return total
+
+
 # We only have to define the added method `area`; all the 
 # rest of the methods `list` can be inherited.  
 # Note especially that we were able to write `for el in self`, 
 # using the looping methods of the built-in `list` class. 
-# Now we can write: 
-# 
-# ```python
-# li = ShapeList()
-# li.append(Rect(Point(3, 3), Point(5, 7)))  # 2x4 = 8
-# li.append(Square(Point(2, 2), 2))           # 2x2 = 4
-# li.append(Triangle(Point(0, 0), Point(0, 1), Point(2, 0)))  # Area 1
-# print(f"ShapeList {li}")
-# print(f"Combined area is {li.area()}, expecting 13")
-# ```
-# 
-# and the output will be 
-# 
-# ``` 
-# ShapeList [Rect(Point(3, 3), Point(5, 7)), Square(Point(2, 2), 2), Triangle(Point(0, 0), Point(0, 1), Point(2, 0))]
-# Combined area is 13.0, expecting 13
-# ```
-# 
+# Now we can write:
+
+# In[18]:
+
+
+li = ShapeList()
+li.append(Rect(Point(3, 3), Point(5, 7)))  # 2x4 = 8
+li.append(Square(Point(2, 2), 2))           # 2x2 = 4
+li.append(Triangle(Point(0, 0), Point(0, 1), Point(2, 0)))  # Area 1
+print(f"ShapeList {li}")
+print(f"Combined area is {li.area()}, expecting 13")
+
+
 # ## Test your understanding
 # 
 # We might choose to extend a built-in class like 
@@ -463,6 +649,3 @@
 #   built-in class, plus one or more added methods 
 # * Instance variables can't hold values from the 
 #   built-in classes
-#   
-# ## Sample code 
-# [Sample code for this chapter](../sample_code/shapes.py)
