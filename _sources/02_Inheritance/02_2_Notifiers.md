@@ -134,7 +134,7 @@ recursive at all:  `M.f` calls `V.g`, and
 `V.g` calls `M.h`; there is a cycle among 
 the objects but not among the methods. 
 
-```python
+```{code-cell} python3
 class M:
     def __init__(self):
         self.the_V = None
@@ -174,7 +174,7 @@ think of the abstract base classes as
 defining some wires that can be connected 
 in the concrete classes. 
 
-```python
+```{code-cell} python3
 class Listener:
     """Abstract base class for classes in View component"""
     def notify(self, event: str):
@@ -232,17 +232,11 @@ list).  Instead of calling `V.g`, it now
 event in its `notify` method).  Overall, 
 though, the behavior is the same: 
 
-```python
+```{code-cell} python3
 v = V()
 m = M()
 m.add_listener(v)
 m.f()
-```
-
-produces the output 
-
-``` 
-What goes around, comes around
 ```
 
 What we have gained from this indirect 
@@ -329,6 +323,11 @@ components can be placed in a separate module,
 breaking what would otherwise be a cycle 
 in the `import` relation. 
 
-## Sample Code 
+## Project
 
-[Sample code for this chapter](../sample_code/notifier-example.py)
+The [FiveTwelve game](https://github.com/UO-CIS211/FiveTwelve), 
+a simplified version of 2048, which was based on 1024, which was
+in turn inspired by the more challenging sliding tile game Threes,
+uses subclasses and inheritance to combine graphical interaction 
+coded in a _view_ component with game logic coded in a _model_ 
+component. 

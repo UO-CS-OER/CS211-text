@@ -635,11 +635,3 @@ We might choose to extend a built-in class like
 * Instance variables can't hold values from the 
   built-in classes
   
-## Project
-
-The [FiveTwelve game](https://github.com/UO-CIS211/FiveTwelve), 
-a simplified version of 2048, which was based on 1024, which was
-in turn inspired by the more challenging sliding tile game Threes,
-uses subclasses and inheritance to combine graphical interaction 
-coded in a _view_ component with game logic coded in a _model_ 
-component. 
