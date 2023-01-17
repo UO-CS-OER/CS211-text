@@ -268,6 +268,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_terms.html">
+   Glossary of Terms
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Appendices/appendix_looploop.html">
    Appendix – What for?
   </a>
@@ -578,8 +583,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sample-code">
-     Sample code
+    <a class="reference internal nav-link" href="#project">
+     Project
     </a>
    </li>
   </ul>
@@ -653,8 +658,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sample-code">
-     Sample code
+    <a class="reference internal nav-link" href="#project">
+     Project
     </a>
    </li>
   </ul>
@@ -683,50 +688,145 @@ class <code class="docutils literal notranslate"><span class="pre">Square</span>
 can be created from a single point and a size.
 We can specify that a <code class="docutils literal notranslate"><span class="pre">Square</span></code> is a kind of
 <code class="docutils literal notranslate"><span class="pre">Rect</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rect</span><span class="p">):</span>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Classes Point and Rect are repeated </span>
+<span class="c1"># from the previous chapter so we can</span>
+<span class="c1"># build on them.  Point has a method </span>
+<span class="c1"># &quot;dist&quot; that we use for area of triangles. </span>
+
+<span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Point(x, y) + Point(&quot;&quot;&quot;</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">new_x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">new_y</span>
+        
+    <span class="k">def</span> <span class="nf">dist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span> 
+        <span class="sd">&quot;&quot;&quot;Euclidean distance&quot;&quot;&quot;</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">dy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="p">)</span>       
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Looks like (x, y)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+      
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Looks like Point(x, y)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Point(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">Rect</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Rectangle from lower left corner to upper right.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy_min</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">xy_max</span><span class="p">:</span> <span class="n">Point</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">=</span> <span class="n">xy_min</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">=</span> <span class="n">xy_max</span>
+    
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Area is height * width&quot;&quot;&quot;</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">return</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span>
+
+    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Rect&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;New rectangle offset from this one by delta as movement vector&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rect(</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rect(</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rect</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A Rectangle with equal length sides&quot;&quot;&quot;</span>
+    
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anchor</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">=</span> <span class="n">anchor</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">Point</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">Square</span></code> objects have the <code class="docutils literal notranslate"><span class="pre">min_pt</span></code> and <code class="docutils literal notranslate"><span class="pre">max_pt</span></code>
 <em>instance variables</em> of <code class="docutils literal notranslate"><span class="pre">Rect</span></code>, plus a new
 instance variable <code class="docutils literal notranslate"><span class="pre">size</span></code>.<br />
 All the methods of <code class="docutils literal notranslate"><span class="pre">Rect</span></code> are also available for
 <code class="docutils literal notranslate"><span class="pre">Square</span></code>, including the <em>magic</em> methods like <code class="docutils literal notranslate"><span class="pre">__str__</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">sq</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sq</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Running this code gives us</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Rect</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rect((3, 5), (8, 10))
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="overriding">
 <h2>Overriding<a class="headerlink" href="#overriding" title="Permalink to this headline">#</a></h2>
 <p>Maybe we don’t want <code class="docutils literal notranslate"><span class="pre">print(sq)</span></code> to print a
 string beginning with <code class="docutils literal notranslate"><span class="pre">Rect</span></code>.  Maybe we want
-<code class="docutils literal notranslate"><span class="pre">Square</span></code> to have it’s own <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<code class="docutils literal notranslate"><span class="pre">Square</span></code> to have its own <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rect</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A Rectangle with equal length sides&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anchor</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">=</span> <span class="n">anchor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">Point</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square(</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">)&quot;</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The new <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method of <code class="docutils literal notranslate"><span class="pre">Square</span></code> <em>overrides</em> the
 <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Rect</span></code> Now the same code as above</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">sq</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sq</span><span class="p">)</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">sq</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>prints</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Square</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">Rect</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Square((3, 5), 5)
+Rect((5, 7), (10, 12))
 </pre></div>
+</div>
+</div>
 </div>
 <p>The first <code class="docutils literal notranslate"><span class="pre">print</span></code> command uses the new
 <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method.
@@ -738,57 +838,122 @@ is printing that <code class="docutils literal notranslate"><span class="pre">Re
 new methods that are not present in <code class="docutils literal notranslate"><span class="pre">Rect</span></code>.  For example, we
 might simply want to add a method that returns the length
 of a side:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">side</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rect</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A Rectangle with equal length sides&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anchor</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">=</span> <span class="n">anchor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">Point</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square(</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">)&quot;</span>
+        
+    <span class="k">def</span> <span class="nf">side</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1">## Within class Square as above</span>
+    <span class="k">def</span> <span class="nf">side</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
 </pre></div>
 </div>
 <p>A method that is defined only in the <code class="docutils literal notranslate"><span class="pre">Square</span></code> subclass
 can of course use instance variables that are likewise
 only in that subclass.   Now we can write</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sq</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sq</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">sq</span><span class="o">.</span><span class="n">side</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>and we will get the expected result, <code class="docutils literal notranslate"><span class="pre">2</span></code>.  However, if
-we type</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>We get the expected result, <code class="docutils literal notranslate"><span class="pre">2</span></code>.  However, if
+we attempt to call <code class="docutils literal notranslate"><span class="pre">side</span></code> on a <code class="docutils literal notranslate"><span class="pre">Rect</span></code> object
+that is not a <code class="docutils literal notranslate"><span class="pre">Square</span></code> object, we will get an error
+message.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">r</span><span class="o">.</span><span class="n">side</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>we will get an error message:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;Rect&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;side&#39;</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">r</span><span class="o">.</span><span class="n">side</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;Rect&#39; object has no attribute &#39;side&#39;
 </pre></div>
+</div>
+</div>
 </div>
 <p>The Python debugger refers to both instance variables and methods
 as <em>attributes</em>.  In this case it looked for the
 class of <code class="docutils literal notranslate"><span class="pre">r</span></code> and found it was a <code class="docutils literal notranslate"><span class="pre">Rect</span></code>, and it looked
 in class <code class="docutils literal notranslate"><span class="pre">Rect</span></code> for method <code class="docutils literal notranslate"><span class="pre">side</span></code> and did not find it.</p>
-<p>The inherited <code class="docutils literal notranslate"><span class="pre">translate</span></code> method still returns a <code class="docutils literal notranslate"><span class="pre">Rect</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Rect&quot;</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;New rectangle offset from this one by delta as movement vector&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>It seems more reasonable for
+<p>The inherited <code class="docutils literal notranslate"><span class="pre">translate</span></code> method still returns a <code class="docutils literal notranslate"><span class="pre">Rect</span></code>.
+It seems more reasonable for
 translation of a <code class="docutils literal notranslate"><span class="pre">Square</span></code> to give us a <code class="docutils literal notranslate"><span class="pre">Square</span></code>,
 so we can again <em>override</em> the
 inherited method with a more specialized version:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Square&quot;</span><span class="p">:</span>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Square</span><span class="p">(</span><span class="n">Rect</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A Rectangle with equal length sides&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anchor</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">=</span> <span class="n">anchor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">Point</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Square(</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">)&quot;</span>
+        
+    <span class="k">def</span> <span class="nf">side</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+    
+    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Square&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">Square</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now if we again enter</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</div>
+</div>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Square&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Square</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now translate produces a <code class="docutils literal notranslate"><span class="pre">Square</span></code> object, with the printed
+representation we want.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">sq</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sq</span><span class="p">)</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">sq</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>we will get</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Square</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">Square</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Square((3, 5), 5)
+Square((5, 7), 5)
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="the-liskov-substitution-principle">
@@ -797,7 +962,7 @@ inherited method with a more specialized version:</p>
 we like?  For example, could we have have written
 the following definition of <code class="docutils literal notranslate"><span class="pre">translate</span></code> for
 class <code class="docutils literal notranslate"><span class="pre">Square</span></code>?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">dy</span><span class="p">:</span> <span class="n">Number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Square&quot;</span><span class="p">:</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">dy</span><span class="p">:</span> <span class="n">Number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Square&quot;</span><span class="p">:</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">Square</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
@@ -845,7 +1010,7 @@ to inherit.  Our purpose might be the subtype relation,
 knowing (and documenting) that any of the subtypes can
 be used where the supertype is expected.
 This is not only possible but common.</p>
-<p>So far we have a simple class <code class="docutils literal notranslate"><span class="pre">Rect</span></code> and a subclass
+<p>We have a simple class <code class="docutils literal notranslate"><span class="pre">Rect</span></code> and a subclass
 <code class="docutils literal notranslate"><span class="pre">Square</span></code>, and although we overrode many of the
 <code class="docutils literal notranslate"><span class="pre">Rect</span></code> methods in <code class="docutils literal notranslate"><span class="pre">Square</span></code>,
 at least one method (<code class="docutils literal notranslate"><span class="pre">area</span></code>) is inherited.  Suppose
@@ -864,8 +1029,7 @@ nothing that <code class="docutils literal notranslate"><span class="pre">Triang
 we do with an object of class <code class="docutils literal notranslate"><span class="pre">Shape</span></code>, if it makes
 sense at all to create <code class="docutils literal notranslate"><span class="pre">Shape</span></code> objects?  In fact, even
 though we want the <em>class</em> <code class="docutils literal notranslate"><span class="pre">Shape</span></code> to describe
-what
-<code class="docutils literal notranslate"><span class="pre">Rect</span></code>s and <code class="docutils literal notranslate"><span class="pre">Triangle</span></code>s have in common, we probably
+what <code class="docutils literal notranslate"><span class="pre">Rect</span></code>s and <code class="docutils literal notranslate"><span class="pre">Triangle</span></code>s have in common, we probably
 don’t want to even make it possible to create a
 <code class="docutils literal notranslate"><span class="pre">Shape</span></code> object directly;  all <code class="docutils literal notranslate"><span class="pre">Shape</span></code> objects should
 be <code class="docutils literal notranslate"><span class="pre">Rect</span></code>s (including <code class="docutils literal notranslate"><span class="pre">Square</span></code>s) or <code class="docutils literal notranslate"><span class="pre">Triangle</span></code>s.</p>
@@ -873,7 +1037,9 @@ be <code class="docutils literal notranslate"><span class="pre">Rect</span></cod
 but which can never be instantiated to create objects
 by itself is called an <em>abstract base class</em>.  We
 might define shape as an abstract base class like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Shape</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Shape</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;An abstract base class that encompasses different concrete</span>
 <span class="sd">    classes with common behavior but different representations.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -895,6 +1061,8 @@ might define shape as an abstract base class like this:</p>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Class </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2"> didn&#39;t define &#39;translate&#39;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Note that this class is booby-trapped to crash if we
 make the mistake of trying to create a <code class="docutils literal notranslate"><span class="pre">Shape</span></code> object
 directly.  In addition, the methods <code class="docutils literal notranslate"><span class="pre">area</span></code> and <code class="docutils literal notranslate"><span class="pre">translate</span></code>
@@ -907,12 +1075,41 @@ message!</p>
 want to make <code class="docutils literal notranslate"><span class="pre">Rect</span></code> a subclass of it.  Since we’re
 overriding all the methods, we can simply change
 the header of the class:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rect</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rect</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
 </pre></div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rect</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Rectangle from lower left corner to upper right.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xy_min</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">xy_max</span><span class="p">:</span> <span class="n">Point</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">=</span> <span class="n">xy_min</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">=</span> <span class="n">xy_max</span>
+    
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Area is height * width&quot;&quot;&quot;</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">return</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span>
+
+    <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Rect&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;New rectangle offset from this one by delta as movement vector&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rect(</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Rect(</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+</pre></div>
+</div>
+</div>
 </div>
 <p>We will give a similar header to <code class="docutils literal notranslate"><span class="pre">Triangle</span></code>, and again
 override all the methods declared in <code class="docutils literal notranslate"><span class="pre">Shape</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Triangle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Triangle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A triangle is defined by three points.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">p2</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">p3</span><span class="p">:</span> <span class="n">Point</span><span class="p">):</span>
@@ -943,11 +1140,78 @@ override all the methods declared in <code class="docutils literal notranslate">
         <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>The area calculation for a triangle is a bit more involved
 than the calculation for a rectangle, but fortunately
 it was easy to reuse code for dropping a perpendicular that
-I developed for a different project.  You can view the
-<span class="xref myst">complete code</span> if you are interested.</p>
+I developed for a different project, plus a <code class="docutils literal notranslate"><span class="pre">dist</span></code> (distance) method
+in the <code class="docutils literal notranslate"><span class="pre">Point</span></code> class.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normal_intersect</span><span class="p">(</span><span class="n">p1_x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">p1_y</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> 
+                     <span class="n">p2_x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">p2_y</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span>
+                     <span class="n">px</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">py</span><span class="p">:</span> <span class="n">Number</span>
+                     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Intersection of seg from p1 to p2 with normal dropped from p&quot;&quot;&quot;</span>
+
+    <span class="c1"># Special cases: slope or normal slope is undefined</span>
+    <span class="c1"># for vertical or horizontal lines, but the intersections</span>
+    <span class="c1"># are trivial for those cases</span>
+    <span class="k">if</span> <span class="n">p2_x</span> <span class="o">==</span> <span class="n">p1_x</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">p1_x</span><span class="p">,</span> <span class="n">py</span>
+    <span class="k">elif</span> <span class="n">p2_y</span> <span class="o">==</span> <span class="n">p1_y</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">px</span><span class="p">,</span> <span class="n">p1_y</span>
+
+    <span class="c1"># The slope of the segment, and of a normal ray</span>
+    <span class="n">seg_slope</span> <span class="o">=</span> <span class="p">(</span><span class="n">p2_y</span> <span class="o">-</span> <span class="n">p1_y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">p2_x</span> <span class="o">-</span> <span class="n">p1_x</span><span class="p">)</span>
+    <span class="n">normal_slope</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">seg_slope</span><span class="p">)</span>
+
+    <span class="c1"># For y=mx+b form, we need to solve for b (y intercept)</span>
+    <span class="n">seg_b</span> <span class="o">=</span> <span class="n">p1_y</span> <span class="o">-</span> <span class="n">seg_slope</span> <span class="o">*</span> <span class="n">p1_x</span>
+    <span class="n">normal_b</span> <span class="o">=</span> <span class="n">py</span> <span class="o">-</span> <span class="n">normal_slope</span> <span class="o">*</span> <span class="n">px</span>
+
+    <span class="c1"># Combining and subtracting the two line equations to solve for intersect</span>
+    <span class="n">x_intersect</span> <span class="o">=</span> <span class="p">(</span><span class="n">seg_b</span> <span class="o">-</span> <span class="n">normal_b</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">normal_slope</span> <span class="o">-</span> <span class="n">seg_slope</span><span class="p">)</span>
+    <span class="n">y_intersect</span> <span class="o">=</span> <span class="n">seg_slope</span> <span class="o">*</span> <span class="n">x_intersect</span> <span class="o">+</span> <span class="n">seg_b</span>
+    <span class="c1"># Colinear points are ok!</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">x_intersect</span><span class="p">,</span> <span class="n">y_intersect</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Although <code class="docutils literal notranslate"><span class="pre">Rect</span></code> and <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> do not share any implementation at
+all, they both follow the contract defined by the abstract class
+<code class="docutils literal notranslate"><span class="pre">Shape</span></code>.   We can loop through a list of <code class="docutils literal notranslate"><span class="pre">Shape</span></code> objects including
+both <code class="docutils literal notranslate"><span class="pre">Rect</span></code> and <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> objects and call the <code class="docutils literal notranslate"><span class="pre">area</span></code> method of
+each one, letting Python call the <code class="docutils literal notranslate"><span class="pre">Triangle.area</span></code> method for
+<code class="docutils literal notranslate"><span class="pre">Triangle</span></code>s and the <code class="docutils literal notranslate"><span class="pre">Rect.area</span></code> method for <code class="docutils literal notranslate"><span class="pre">Rect</span></code>s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shapes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Shape</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span> 
+            <span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span> 
+            <span class="n">Square</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">),</span> 
+            <span class="n">Triangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="p">]</span>
+           
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+9
+8.000000000000002
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a kind of <em>polymorphism</em>, <em>poly</em> meaning “many”
+or “multiple” and <em>morph</em> meaning “form”.  Our <code class="docutils literal notranslate"><span class="pre">Shape</span></code> objects come
+in multiple forms, but we can mix them together in a list and call
+<code class="docutils literal notranslate"><span class="pre">shape</span></code> on each of them, treating <code class="docutils literal notranslate"><span class="pre">shape</span></code> as a <em>polymorphic</em>
+function, provided our classes obey the Liskov substitution principle.</p>
 <section id="check-your-understanding">
 <h3>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h3>
 <p>One of these relations is not like the others:</p>
@@ -996,7 +1260,9 @@ inherit from one of the built-in classes.</p>
 of shapes.   One approach would be to <em>wrap</em> a list,
 i.e., keeping a list of <code class="docutils literal notranslate"><span class="pre">Shape</span></code> as an instance variable in
 the new class:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShapeList</span><span class="p">:</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShapeList</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A collection of Shapes.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1017,6 +1283,8 @@ the new class:</p>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>This is ok as far as it goes … it allows us to append
 <code class="docutils literal notranslate"><span class="pre">Shape</span></code> objects to the list, to print the list with the
 <code class="docutils literal notranslate"><span class="pre">str</span></code> function, and to get the total area of shapes in the
@@ -1032,7 +1300,9 @@ especially if we specifically do <em>not</em> want some of the
 <code class="docutils literal notranslate"><span class="pre">list</span></code> methods to be available for <code class="docutils literal notranslate"><span class="pre">ShapeList</span></code>.  But if we
 want all of them, it is simpler (and probably less error prone)
 to just inherit them from <code class="docutils literal notranslate"><span class="pre">list</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShapeList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ShapeList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A collection of Shapes.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
@@ -1042,12 +1312,16 @@ to just inherit them from <code class="docutils literal notranslate"><span class
         <span class="k">return</span> <span class="n">total</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We only have to define the added method <code class="docutils literal notranslate"><span class="pre">area</span></code>; all the
 rest of the methods <code class="docutils literal notranslate"><span class="pre">list</span></code> can be inherited.<br />
 Note especially that we were able to write <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">el</span> <span class="pre">in</span> <span class="pre">self</span></code>,
 using the looping methods of the built-in <code class="docutils literal notranslate"><span class="pre">list</span></code> class.
 Now we can write:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">li</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">li</span> <span class="o">=</span> <span class="n">ShapeList</span><span class="p">()</span>
 <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)))</span>  <span class="c1"># 2x4 = 8</span>
 <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Square</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>           <span class="c1"># 2x2 = 4</span>
 <span class="n">li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Triangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>  <span class="c1"># Area 1</span>
@@ -1055,10 +1329,13 @@ Now we can write:</p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Combined area is </span><span class="si">{</span><span class="n">li</span><span class="o">.</span><span class="n">area</span><span class="p">()</span><span class="si">}</span><span class="s2">, expecting 13&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>and the output will be</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ShapeList</span> <span class="p">[</span><span class="n">Rect</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span> <span class="n">Square</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))]</span>
-<span class="n">Combined</span> <span class="n">area</span> <span class="ow">is</span> <span class="mf">13.0</span><span class="p">,</span> <span class="n">expecting</span> <span class="mi">13</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ShapeList [Rect(Point(3, 3), Point(5, 7), Rect(Point(2, 2), Point(4, 4), Triangle(Point(0, 0), Point(0, 1), Point(2, 0))]
+Combined area is 13.0, expecting 13
 </pre></div>
+</div>
+</div>
 </div>
 <section id="test-your-understanding">
 <h2>Test your understanding<a class="headerlink" href="#test-your-understanding" title="Permalink to this headline">#</a></h2>
@@ -1072,9 +1349,14 @@ built-in class, plus one or more added methods</p></li>
 built-in classes</p></li>
 </ul>
 </section>
-<section id="sample-code">
-<h2>Sample code<a class="headerlink" href="#sample-code" title="Permalink to this headline">#</a></h2>
-<p><span class="xref myst">Sample code for this chapter</span></p>
+<section id="project">
+<h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://github.com/UO-CIS211/FiveTwelve">FiveTwelve game</a>,
+a simplified version of 2048, which was based on 1024, which was
+in turn inspired by the more challenging sliding tile game Threes,
+uses subclasses and inheritance to combine graphical interaction
+coded in a <em>view</em> component with game logic coded in a <em>model</em>
+component.</p>
 </section>
 </section>
 
@@ -1128,7 +1410,7 @@ built-in classes</p></li>
   
     By Michal Young, Boyana Norris, and Ram Durairajan<br/>
   
-      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+      &copy; Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
 </p>
         </footer>
     </div>

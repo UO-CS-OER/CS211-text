@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Style Guide for Python Programs" href="appendix_style.html" />
@@ -268,6 +266,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendix_terms.html">
+   Glossary of Terms
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="appendix_looploop.html">
    Appendix – What for?
@@ -897,10 +900,10 @@ for negative numbers, Python uses sign and magnitude
 representation.  The magnitude is represented by a sequence
 of 30-bit “digits”. The number of digits is stored in the
 header of the <code class="docutils literal notranslate"><span class="pre">int</span></code> object.  Since the number of digits can
-never be negative, a digit count of <span class="math notranslate nohighlight">\(-k\)</span> is used to indicate
-that there are <span class="math notranslate nohighlight">\(k\)</span> digits and the value is negative.  For
+never be negative, a digit count of $-k$ is used to indicate
+that there are $k$ digits and the value is negative.  For
 example, a very large negative integer might have a size field
-of <span class="math notranslate nohighlight">\(-3\)</span>, indicating that it requires three 30-bit digits (each
+of $-3$, indicating that it requires three 30-bit digits (each
 of which is represented as a non-negative integer) and that the value
 is negative.</p>
 <p><img alt="A negative integer with 3 30-bit digits" src="Appendices/img_internals/int-neg-3digits.*" /></p>
@@ -1054,7 +1057,7 @@ implementation”, 2017.
   
     By Michal Young, Boyana Norris, and Ram Durairajan<br/>
   
-      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+      &copy; Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
 </p>
         </footer>
     </div>

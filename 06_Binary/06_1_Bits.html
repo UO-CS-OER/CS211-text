@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Negative Binary Numbers" href="06_2_NegBits.html" />
@@ -269,6 +267,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Appendices/appendix_terms.html">
+   Glossary of Terms
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Appendices/appendix_looploop.html">
    Appendix – What for?
@@ -731,7 +734,7 @@ Let’s see what the type of the result for the <code class="docutils literal no
 <p>The <code class="docutils literal notranslate"><span class="pre">bin</span></code> function produces a string.  The string is a representation of how
 we might write the binary number … but the number was already binary.</p>
 <p>But isn’t that string also represented in binary?   OK, you’ve got me there …
-all strings are also represented in binary, so in that sense $<span class="math notranslate nohighlight">\(101010_2\)</span>$ (which we
+all strings are also represented in binary, so in that sense $$101010_2$$ (which we
 write in Python as <code class="docutils literal notranslate"><span class="pre">0b101010</span></code>) is
 binary, but no more so than <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">World&quot;</span></code>.</p>
 <section id="so-when-and-how-was-it-converted-to-binary">
@@ -742,7 +745,7 @@ key on the keyboard, a binary code for the letter ‘k’ is transmitted to the 
 When you type the keys ‘4’ and ‘2’,  you are producing the binary codes for the
 character ‘4’ and the character ‘2’.  If you typed <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">42</span></code> in your Python program,
 the Python compiler converted those character codes to the internal representation
-$<span class="math notranslate nohighlight">\(101010_2\)</span>$.</p>
+$$101010_2$$.</p>
 </section>
 <section id="but-when-i-print-it-i-see-42">
 <h3>But when I print it, I see ‘42’<a class="headerlink" href="#but-when-i-print-it-i-see-42" title="Permalink to this headline">#</a></h3>
@@ -765,13 +768,13 @@ integer was initially written.</p>
 <p>Although <em>everything</em> is represented in binary, in this chapter we will deal only with
 integers, because their representation in binary is simplest.</p>
 <p>When we write a decimal number on paper, we use a place value system:  The
-digits ‘42’ mean $<span class="math notranslate nohighlight">\(4\times{10^1} + 2\times{10^0}\)</span><span class="math notranslate nohighlight">\(, and the digits '203' mean 
-\)</span><span class="math notranslate nohighlight">\(2\times{10^2} + 0\times{10^1} + 3\times{10^0}\)</span>$.</p>
+digits ‘42’ mean $$4\times{10^1} + 2\times{10^0}$$, and the digits ‘203’ mean
+$$2\times{10^2} + 0\times{10^1} + 3\times{10^0}$$.</p>
 <p>Positive binary numbers are no different, except that the place value system
-uses powers of 2 instead of powers of 10.  The binary number $<span class="math notranslate nohighlight">\(101010_2\)</span><span class="math notranslate nohighlight">\(
-means 
-\)</span><span class="math notranslate nohighlight">\(1\times 2^5 + 0\times 2^4 + 1\times 2^3 + 0\times 2^2  +
-1\times 2^1 + 0\times 2^0\)</span>$, or 32+8+2 = 42.</p>
+uses powers of 2 instead of powers of 10.  The binary number $$101010_2$$
+means
+$$1\times 2^5 + 0\times 2^4 + 1\times 2^3 + 0\times 2^2  +
+1\times 2^1 + 0\times 2^0$$, or 32+8+2 = 42.</p>
 </section>
 <section id="treating-bits-as-booleans">
 <h2>Treating bits as booleans<a class="headerlink" href="#treating-bits-as-booleans" title="Permalink to this headline">#</a></h2>
@@ -810,9 +813,9 @@ when we enter integers in decimal notation:</p>
 <p>Before going on, make sure you understand why <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&amp;</span> <span class="pre">5</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">|</span> <span class="pre">5</span> <span class="pre">==</span> <span class="pre">7</span></code>.<br />
 Then predict the value of <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&amp;</span> <span class="pre">4</span></code>, and check it in the Python console.
 Also predict and then check the value of <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">|</span> <span class="pre">4</span></code>.</p>
-<p>When I write <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&amp;</span> <span class="pre">5</span></code>, you can be sure I mean $<span class="math notranslate nohighlight">\(3_{10}\)</span><span class="math notranslate nohighlight">\( &amp; \)</span><span class="math notranslate nohighlight">\(5_{10}\)</span><span class="math notranslate nohighlight">\(, not 
-only because I didn't use the `0b` prefix to indicate a binary 
-number, but also because \)</span><span class="math notranslate nohighlight">\(3_2\)</span><span class="math notranslate nohighlight">\( &amp; \)</span><span class="math notranslate nohighlight">\(5_2\)</span>$ doesn’t even make sense.
+<p>When I write <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&amp;</span> <span class="pre">5</span></code>, you can be sure I mean $$3_{10}$$ &amp; $$5_{10}$$, not
+only because I didn’t use the <code class="docutils literal notranslate"><span class="pre">0b</span></code> prefix to indicate a binary
+number, but also because $$3_2$$ &amp; $$5_2$$ doesn’t even make sense.
 Why wouldn’t that make sense?</p>
 </section>
 </section>
@@ -822,8 +825,8 @@ Why wouldn’t that make sense?</p>
 bitwise operations (<em>and</em>, <em>or</em>, <em>not</em>), digital computers provide <em>shift</em>
 operations that move binary digits within a memory word.  These
 are written in Python as <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> (shift left) and <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> (shift right).
-For example, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;&lt;</span> <span class="pre">2</span></code> means that the value $<span class="math notranslate nohighlight">\(3_{10}\)</span><span class="math notranslate nohighlight">\(, which is 
-\)</span><span class="math notranslate nohighlight">\(11_{2}\)</span>$, should be shifted left 2 places, with zeros filling
+For example, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;&lt;</span> <span class="pre">2</span></code> means that the value $$3_{10}$$, which is
+$$11_{2}$$, should be shifted left 2 places, with zeros filling
 in for the last two digits.</p>
 <p><img alt="3 &lt;&lt; 2" src="../_images/shift_left.svg" /></p>
 <p>In Python:</p>
@@ -850,7 +853,7 @@ to indicate that those bits have been discarded.</p>
 when we combine it with the bitwise boolean operations <em>and</em> (&amp;) and <em>or</em> ( | ).</p>
 <p>For what follows, and whenever we refer to the positions of bits, we will
 number each bit according to the power of 2 it represents.  Thus the low-order
-bit is bit 0 (representing $<span class="math notranslate nohighlight">\(2^0\)</span><span class="math notranslate nohighlight">\(, or \)</span><span class="math notranslate nohighlight">\(1\)</span><span class="math notranslate nohighlight">\(), and bit 3 represents \)</span><span class="math notranslate nohighlight">\(2^3\)</span><span class="math notranslate nohighlight">\(, or \)</span><span class="math notranslate nohighlight">\(8\)</span>$).
+bit is bit 0 (representing $$2^0$$, or $$1$$), and bit 3 represents $$2^3$$, or $$8$$).
 A single <em>byte</em> of memory is 8 bits, numbered from 0 to 7:</p>
 <p><img alt="Bit numbering" src="../_images/bit-numbering.svg" /></p>
 <p>Suppose we wanted to extract just the value of bits 4..6.</p>
@@ -878,7 +881,7 @@ number, we can then shift them from bits 4..6 to bits 0..2.</p>
 <section id="packing">
 <h2>Packing<a class="headerlink" href="#packing" title="Permalink to this headline">#</a></h2>
 <p>Suppose we had two natural numbers between 0 and 15, inclusive.
-Since $<span class="math notranslate nohighlight">\(15_{10}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(1111_2\)</span>$, each of these numbers
+Since $$15_{10}$$ is $$1111_2$$, each of these numbers
 can be represented with 4 binary digits.  Suppose we wanted
 to store them together, “packed” into a single 8-bit word.
 We can do this by shifting one of them into bits 4..7, leaving
@@ -930,14 +933,14 @@ its red component, an 8-bit value for its green component, and
 an 8-bit value for its blue component.  Typically you will
 see these expressed in base 16, known as hexadecimal.
 The hexadecimal value
-$<span class="math notranslate nohighlight">\(\textrm{ff}00\textrm{ff}_{16}\)</span><span class="math notranslate nohighlight">\(,
-written as `#ff00ff` in HTML or CSS and written 
-`0xff00ff` in Python, for example, can also be 
-described in CSS as `rgb(255,0,255)`. 
- It is a bright purple  with 
-maximum values of red and blue (\)</span><span class="math notranslate nohighlight">\(255_{10}\)</span><span class="math notranslate nohighlight">\( or 
-\)</span><span class="math notranslate nohighlight">\(\textrm{ff}_{16}\)</span><span class="math notranslate nohighlight">\() 
-and no green component (\)</span><span class="math notranslate nohighlight">\(00_{16}\)</span>$).</p>
+$$\textrm{ff}00\textrm{ff}<em>{16}$$,
+written as <code class="docutils literal notranslate"><span class="pre">#ff00ff</span></code> in HTML or CSS and written
+<code class="docutils literal notranslate"><span class="pre">0xff00ff</span></code> in Python, for example, can also be
+described in CSS as <code class="docutils literal notranslate"><span class="pre">rgb(255,0,255)</span></code>.
+It is a bright purple  with
+maximum values of red and blue ($$255</em>{10}$$ or
+$$\textrm{ff}<em>{16}$$)
+and no green component ($$00</em>{16}$$).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rgb_pack</span><span class="p">(</span><span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Pack the red, green, and blue values into an integer&quot;&quot;&quot;</span>
     <span class="n">rgb</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">g</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">b</span>
@@ -1037,7 +1040,7 @@ Negative numbers will be treated in a separate chapter.</p>
   
     By Michal Young, Boyana Norris, and Ram Durairajan<br/>
   
-      &copy; Copyright 2022 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
+      &copy; Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
 </p>
         </footer>
     </div>
