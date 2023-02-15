@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="What the Hex?" href="06_3_Hex.html" />
@@ -674,8 +676,8 @@ representation is going to have other problems.  And it does.</p>
 <p>From the perspective of a computer designer, sign and magnitude
 representation adds a lot of
 complication to the circuitry needed for arithmetic.  Consider
-that somehow when we add $$00000001_2$$ (1)  and $$10000001_2$$ (-1)
-we should get $$00000000_2$$ (0).  The circuitry that adds
+that somehow when we add $<span class="math notranslate nohighlight">\(00000001_2\)</span><span class="math notranslate nohighlight">\( (1)  and \)</span><span class="math notranslate nohighlight">\(10000001_2\)</span><span class="math notranslate nohighlight">\( (-1) 
+we should get \)</span><span class="math notranslate nohighlight">\(00000000_2\)</span>$ (0).  The circuitry that adds
 positive integers is not going to do that, so special purpose
 circuitry for arithmetic on negative numbers would be required.
 Chip designers hate that.</p>
@@ -698,11 +700,11 @@ into the 9th (non-existant) digit, where it is lost,
 and we get 00000000.  Addition and subtraction can work in the ordinary way, with
 no special cases for negative numbers.</p>
 <p>The essence of two’s complement representation is that, while the
-value of digit $$p$$ is normally $$2^p$$, the value of the
-very leftmost digit is $$-2^p$$.</p>
-<p>In an 8-bit signed integer, bit 7 represents $$-(2^7)$$, or -128.
-The signed 8-bit number 10000110, therefore, is
-$$-(2^7) + 2^2 + 2^1$$ = -128 + 4 + 2 = -122.</p>
+value of digit $<span class="math notranslate nohighlight">\(p\)</span><span class="math notranslate nohighlight">\( is normally \)</span><span class="math notranslate nohighlight">\(2^p\)</span><span class="math notranslate nohighlight">\(, the value of the
+very leftmost digit is \)</span><span class="math notranslate nohighlight">\(-2^p\)</span>$.</p>
+<p>In an 8-bit signed integer, bit 7 represents $<span class="math notranslate nohighlight">\(-(2^7)\)</span><span class="math notranslate nohighlight">\(, or -128. 
+The signed 8-bit number 10000110, therefore, is 
+\)</span><span class="math notranslate nohighlight">\(-(2^7) + 2^2 + 2^1\)</span>$ = -128 + 4 + 2 = -122.</p>
 <p><img alt="-122 = -128 + 4 + 2" src="../_images/twos_comp.svg" /></p>
 <p>We said above that an 8-bit representation of -1 would
 be 11111111.  We can see that this is because the leftmost
@@ -752,7 +754,7 @@ is 1111111111111111.  I do not want to type the representation
 of -1 as a 32-bit signed integer, or as a 64-bit signed integer,
 but you can probably guess what it looks like.</p>
 <p>Suppose we have 3-bit signed integers. Then 101
-represents $$-2^2 + 2^0$$ = -4 + 1 = -3.  Suppose I want to store
+represents $<span class="math notranslate nohighlight">\(-2^2 + 2^0\)</span>$ = -4 + 1 = -3.  Suppose I want to store
 this same value in a 5-bit signed integer. The
 new value will become 11101, that is,
 -16 + 8 + 4 + 1 = -3.</p>
@@ -832,12 +834,12 @@ circuitry.</p>
 <p>When we pack multiple small integers into an integer value,
 we must be careful about whether we intend a field to
 represent a signed value or an unsigned value.  If the
-field represents an unsigned value, then each bit $$p$$
-represents $$2^p$$.  An unsigned value with $$k$$ bits
-ranges from $$0$$ to $$2^k-1$$.<br />
-If the field represents a signed
-value, then the <em>sign bit</em> represents $$-2^p$$
-and all other bits $$p$$ represent $$2^p$$.</p>
+field represents an unsigned value, then each bit $<span class="math notranslate nohighlight">\(p\)</span><span class="math notranslate nohighlight">\( 
+represents \)</span><span class="math notranslate nohighlight">\(2^p\)</span><span class="math notranslate nohighlight">\(.  An unsigned value with \)</span><span class="math notranslate nohighlight">\(k\)</span><span class="math notranslate nohighlight">\( bits 
+ranges from \)</span><span class="math notranslate nohighlight">\(0\)</span><span class="math notranslate nohighlight">\( to \)</span><span class="math notranslate nohighlight">\(2^k-1\)</span><span class="math notranslate nohighlight">\(.  
+ If the field represents a signed 
+value, then the _sign bit_ represents \)</span><span class="math notranslate nohighlight">\(-2^p\)</span><span class="math notranslate nohighlight">\(
+and all other bits \)</span><span class="math notranslate nohighlight">\(p\)</span><span class="math notranslate nohighlight">\( represent \)</span><span class="math notranslate nohighlight">\(2^p\)</span>$.</p>
 <p>When
 we pack a signed value into a smaller field,
 we mask off any extra 1 bits on the left.
