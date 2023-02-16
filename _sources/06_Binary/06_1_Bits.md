@@ -363,7 +363,3 @@ one integer, and unpack them again.
 
 This chapter has dealt only with positive binary numbers and zero. 
 Negative numbers will be treated in a separate chapter. 
-
-## Source Code 
-
-[Sample code for this chapter](../sample_code/06_bits.py)
