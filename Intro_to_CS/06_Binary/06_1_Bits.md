@@ -64,7 +64,8 @@ The `bin` function produces a string.  The string is a representation of how
 we might write the binary number ... but the number was already binary. 
 
 But isn't that string also represented in binary?   OK, you've got me there ... 
-all strings are also represented in binary, so in that sense $$101010_2$$ (which we 
+all strings are also represented in binary, so in that
+sense $101010_2$ (which we 
 write in Python as `0b101010`) is 
 binary, but no more so than `"Hello World"`. 
 
@@ -76,7 +77,7 @@ key on the keyboard, a binary code for the letter 'k' is transmitted to the comp
 When you type the keys '4' and '2',  you are producing the binary codes for the 
 character '4' and the character '2'.  If you typed `x = 42` in your Python program, 
 the Python compiler converted those character codes to the internal representation 
-$$101010_2$$.  
+$101010_2$.  
 
 ### But when I print it, I see '42'
 
@@ -103,14 +104,14 @@ Although _everything_ is represented in binary, in this chapter we will deal onl
 integers, because their representation in binary is simplest.  
 
 When we write a decimal number on paper, we use a place value system:  The 
-digits '42' mean $$4\times{10^1} + 2\times{10^0}$$, and the digits '203' mean 
-$$2\times{10^2} + 0\times{10^1} + 3\times{10^0}$$. 
+digits '42' mean $4\times{10^1} + 2\times{10^0}$, and the digits '203' mean 
+$2\times{10^2} + 0\times{10^1} + 3\times{10^0}$. 
 
 Positive binary numbers are no different, except that the place value system 
-uses powers of 2 instead of powers of 10.  The binary number $$101010_2$$
-means 
-$$1\times 2^5 + 0\times 2^4 + 1\times 2^3 + 0\times 2^2  +
-1\times 2^1 + 0\times 2^0$$, or 32+8+2 = 42. 
+uses powers of 2 instead of powers of 10.  The binary number
+$101010_2$ means
+$1\times 2^5 + 0\times 2^4 + 1\times 2^3 + 0\times 2^2  + 1\times 2^1 + 0\times 2^0$,
+or 32+8+2 = 42. 
 
 ## Treating bits as booleans
 
@@ -163,9 +164,9 @@ Before going on, make sure you understand why `3 & 5 == 1` and `3 | 5 == 7`.
 Then predict the value of `3 & 4`, and check it in the Python console. 
 Also predict and then check the value of `3 | 4`.  
 
-When I write `3 & 5`, you can be sure I mean $$3_{10}$$ & $$5_{10}$$, not 
+When I write `3 & 5`, you can be sure I mean $3_{10}$ & $5_{10}$, not 
 only because I didn't use the `0b` prefix to indicate a binary 
-number, but also because $$3_2$$ & $$5_2$$ doesn't even make sense. 
+number, but also because $3_2$ & $5_2$ doesn't even make sense. 
 Why wouldn't that make sense?  
 
 ## Shifting
@@ -174,8 +175,8 @@ In addition to ordinary arithmetic (addition, subtraction, etc.) and
 bitwise operations (_and_, _or_, _not_), digital computers provide _shift_ 
 operations that move binary digits within a memory word.  These 
 are written in Python as `<<` (shift left) and `>>` (shift right). 
-For example, `3 << 2` means that the value $$3_{10}$$, which is 
-$$11_{2}$$, should be shifted left 2 places, with zeros filling
+For example, `3 << 2` means that the value $3_{10}$, which is 
+$11_{2}$, should be shifted left 2 places, with zeros filling
 in for the last two digits. 
 
 ![3 << 2](img_06_01/shift_left.svg)
@@ -211,7 +212,7 @@ when we combine it with the bitwise boolean operations _and_ (&) and _or_ ( | ).
 
 For what follows, and whenever we refer to the positions of bits, we will 
 number each bit according to the power of 2 it represents.  Thus the low-order 
-bit is bit 0 (representing $$2^0$$, or $$1$$), and bit 3 represents $$2^3$$, or $$8$$).
+bit is bit 0 (representing $2^0$, or $1$), and bit 3 represents $2^3$, or $8$).
 A single _byte_ of memory is 8 bits, numbered from 0 to 7: 
 
 ![Bit numbering](img_06_01/bit-numbering.svg)
@@ -248,7 +249,7 @@ In Python:
 ## Packing
 
 Suppose we had two natural numbers between 0 and 15, inclusive. 
-Since $$15_{10}$$ is $$1111_2$$, each of these numbers 
+Since $15_{10}$ is $1111_2$, each of these numbers 
 can be represented with 4 binary digits.  Suppose we wanted 
 to store them together, "packed" into a single 8-bit word. 
 We can do this by shifting one of them into bits 4..7, leaving 
@@ -307,14 +308,14 @@ its red component, an 8-bit value for its green component, and
 an 8-bit value for its blue component.  Typically you will 
 see these expressed in base 16, known as hexadecimal. 
 The hexadecimal value 
-$$\textrm{ff}00\textrm{ff}_{16}$$,
+$\textrm{ff}00\textrm{ff}_{16}$,
 written as `#ff00ff` in HTML or CSS and written 
 `0xff00ff` in Python, for example, can also be 
 described in CSS as `rgb(255,0,255)`. 
  It is a bright purple  with 
-maximum values of red and blue ($$255_{10}$$ or 
-$$\textrm{ff}_{16}$$) 
-and no green component ($$00_{16}$$). 
+maximum values of red and blue ($255_{10}$ or 
+$\textrm{ff}_{16}$) 
+and no green component ($00_{16}$). 
 
 ```python
 def rgb_pack(r: int, g: int, b: int) -> int:
@@ -362,7 +363,3 @@ one integer, and unpack them again.
 
 This chapter has dealt only with positive binary numbers and zero. 
 Negative numbers will be treated in a separate chapter. 
-
-## Source Code 
-
-[Sample code for this chapter](../sample_code/06_bits.py)

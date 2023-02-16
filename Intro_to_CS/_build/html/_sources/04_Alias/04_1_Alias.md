@@ -205,7 +205,7 @@ row and column.   The logic can be factored easily,
 though, if we alias the same set of tiles from 
 groups for rows, columns, and diagonals. 
 
-![Grouping Tic-Tac-Toe Tiles](img_04_1/TicTac%20Groups.*)
+![Grouping Tic-Tac-Toe Tiles](img_04_1/TicTacGroups.*)
 
 Now it is simple to write a single function to 
 check whether a group is a winner: 
@@ -363,6 +363,3 @@ want.  We illustrated this by accumulating the
 "worth" of game tiles accessed in different 
 orders. 
  
-## Sample code
-
-[Sample code for this chapter](../sample_code/tictac.py)

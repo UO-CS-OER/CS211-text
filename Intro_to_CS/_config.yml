@@ -20,6 +20,10 @@ parse:
   - colon_fence
   - linkify
   - substitution
+  - dollarmath
+  myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
+  myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
+
 
 # Define the name of the latex output file for PDF builds
 latex:

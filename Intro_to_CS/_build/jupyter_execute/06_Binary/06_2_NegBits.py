@@ -29,8 +29,8 @@
 # From the perspective of a computer designer, sign and magnitude 
 # representation adds a lot of 
 # complication to the circuitry needed for arithmetic.  Consider
-# that somehow when we add $$00000001_2$$ (1)  and $$10000001_2$$ (-1) 
-# we should get $$00000000_2$$ (0).  The circuitry that adds 
+# that somehow when we add $00000001_2$ (1)  and $10000001_2$ (-1) 
+# we should get $00000000_2$ (0).  The circuitry that adds 
 # positive integers is not going to do that, so special purpose 
 # circuitry for arithmetic on negative numbers would be required. 
 # Chip designers hate that. 
@@ -54,12 +54,12 @@
 # no special cases for negative numbers. 
 # 
 # The essence of two's complement representation is that, while the
-# value of digit $$p$$ is normally $$2^p$$, the value of the
-# very leftmost digit is $$-2^p$$. 
+# value of digit $p$ is normally $2^p$, the value of the
+# very leftmost digit is $-2^p$. 
 # 
-# In an 8-bit signed integer, bit 7 represents $$-(2^7)$$, or -128. 
+# In an 8-bit signed integer, bit 7 represents $-(2^7)$, or -128. 
 # The signed 8-bit number 10000110, therefore, is 
-# $$-(2^7) + 2^2 + 2^1$$ = -128 + 4 + 2 = -122.  
+# $-(2^7) + 2^2 + 2^1$ = -128 + 4 + 2 = -122.  
 # 
 # ![-122 = -128 + 4 + 2](img_06_02/twos_comp.svg)
 # 
@@ -115,7 +115,7 @@
 # but you can probably guess what it looks like. 
 # 
 # Suppose we have 3-bit signed integers. Then 101 
-# represents $$-2^2 + 2^0$$ = -4 + 1 = -3.  Suppose I want to store 
+# represents $-2^2 + 2^0$ = -4 + 1 = -3.  Suppose I want to store 
 # this same value in a 5-bit signed integer. The 
 # new value will become 11101, that is, 
 # -16 + 8 + 4 + 1 = -3.  
@@ -207,12 +207,12 @@
 # When we pack multiple small integers into an integer value, 
 # we must be careful about whether we intend a field to 
 # represent a signed value or an unsigned value.  If the 
-# field represents an unsigned value, then each bit $$p$$ 
-# represents $$2^p$$.  An unsigned value with $$k$$ bits 
-# ranges from $$0$$ to $$2^k-1$$.  
+# field represents an unsigned value, then each bit $p$ 
+# represents $2^p$.  An unsigned value with $k$ bits 
+# ranges from $0$ to $2^k-1$.  
 #  If the field represents a signed 
-# value, then the _sign bit_ represents $$-2^p$$
-# and all other bits $$p$$ represent $$2^p$$. 
+# value, then the _sign bit_ represents $-2^p$
+# and all other bits $p$ represent $2^p$. 
 # 
 # When 
 # we pack a signed value into a smaller field, 
