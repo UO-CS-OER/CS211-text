@@ -17,16 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-m.move_to(19,23)
-print(f"({m.x}, {m.y})")
+li = RectList()
+li.append(Rect(Point(3,3), Point(5,7)))
+li.append(Rect(Point(2,2), Point(3,3)))
+print(f"Combined area is {li.area()}")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-Input [0;32mIn [10][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [43mm[49m[38;5;241;43m.[39;49m[43mmove_to[49m([38;5;241m19[39m,[38;5;241m23[39m)
-[1;32m      2[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124m([39m[38;5;132;01m{[39;00mm[38;5;241m.[39mx[38;5;132;01m}[39;00m[38;5;124m, [39m[38;5;132;01m{[39;00mm[38;5;241m.[39my[38;5;132;01m}[39;00m[38;5;124m)[39m[38;5;124m"[39m)
+Input [0;32mIn [26][0m, in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m li [38;5;241m=[39m RectList()
+[0;32m----> 2[0m [43mli[49m[38;5;241;43m.[39;49m[43mappend[49m(Rect(Point([38;5;241m3[39m,[38;5;241m3[39m), Point([38;5;241m5[39m,[38;5;241m7[39m)))
+[1;32m      3[0m li[38;5;241m.[39mappend(Rect(Point([38;5;241m2[39m,[38;5;241m2[39m), Point([38;5;241m3[39m,[38;5;241m3[39m)))
+[1;32m      4[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mCombined area is [39m[38;5;132;01m{[39;00mli[38;5;241m.[39marea()[38;5;132;01m}[39;00m[38;5;124m"[39m)
 
-[0;31mAttributeError[0m: 'Point' object has no attribute 'move_to'
-AttributeError: 'Point' object has no attribute 'move_to'
+[0;31mAttributeError[0m: 'RectList' object has no attribute 'append'
+AttributeError: 'RectList' object has no attribute 'append'
 

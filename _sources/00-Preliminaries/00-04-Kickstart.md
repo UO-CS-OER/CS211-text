@@ -452,7 +452,7 @@ of each chapter.
 
 ## Project 1
 
-Our first project is 
+Our first project for part 1 (CS 210 at U. Oregon) is 
 [an anagram solver](https://github.com/UO-CS210/jumbler).
 You will find it on github.  
 
