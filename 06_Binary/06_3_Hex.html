@@ -642,20 +642,20 @@ heads (at least I can’t).  Can we find a number system that
 is both easy to relate to binary and compact?</p>
 <section id="casting-a-hex">
 <h2>Casting a Hex<a class="headerlink" href="#casting-a-hex" title="Permalink to this headline">#</a></h2>
-<p>If we use a number base that is $<span class="math notranslate nohighlight">\(2^k\)</span><span class="math notranslate nohighlight">\(, each digit in 
-that number system will exactly represent \)</span><span class="math notranslate nohighlight">\(k\)</span><span class="math notranslate nohighlight">\( 
-binary digits.  10 is not a power of two, but 8 and 16 
-are.  Two popular bases for representing binary numbers 
-in human-readable form are octal (base 8) and hexadecimal 
-(base 16), often called &quot;hex&quot;.  Octal uses digits 0..7, and hexadecimal 
-uses digits 0..9ABCDEF to represent values from 0 to 15. 
-Hexadecimal, is particularly convenient 
-because each hexadecimal digit represents 4 binary digits.  
-The smallest addressable unit of computer memory is typically 
-the _byte_, which is 8 binary digits, and a byte can 
-be represented by exactly two hexadecimal digits. For 
-example, the binary number \)</span><span class="math notranslate nohighlight">\(01101011_2\)</span><span class="math notranslate nohighlight">\(
-is \)</span><span class="math notranslate nohighlight">\(6B_{16}\)</span>$.</p>
+<p>If we use a number base that is <span class="math notranslate nohighlight">\(2^k\)</span>, each digit in
+that number system will exactly represent <span class="math notranslate nohighlight">\(k\)</span>
+binary digits.  10 is not a power of two, but 8 and 16
+are.  Two popular bases for representing binary numbers
+in human-readable form are octal (base 8) and hexadecimal
+(base 16), often called “hex”.  Octal uses digits 0..7, and hexadecimal
+uses digits 0..9ABCDEF to represent values from 0 to 15.
+Hexadecimal, is particularly convenient
+because each hexadecimal digit represents 4 binary digits.
+The smallest addressable unit of computer memory is typically
+the <em>byte</em>, which is 8 binary digits, and a byte can
+be represented by exactly two hexadecimal digits. For
+example, the binary number <span class="math notranslate nohighlight">\(01101011_2\)</span>
+is <span class="math notranslate nohighlight">\(6B_{16}\)</span>.</p>
 <p><img alt="0x6b == 0b01101011" src="../_images/hex_6B.svg" /></p>
 </section>
 <section id="hex-digit-values">
@@ -664,10 +664,10 @@ is \)</span><span class="math notranslate nohighlight">\(6B_{16}\)</span>$.</p>
 to hex digits and decimal values.  It is <em>not</em>
 necessary to memorize this table, and most
 programmers don’t.  You should, however, remember
-that $<span class="math notranslate nohighlight">\(0_{16}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(0000_2\)</span><span class="math notranslate nohighlight">\( and that \)</span><span class="math notranslate nohighlight">\(\textrm{F}_{16}\)</span><span class="math notranslate nohighlight">\( is 
-\)</span><span class="math notranslate nohighlight">\(1111_2\)</span><span class="math notranslate nohighlight">\(.  Since binary values are often grouped into 
-8-bit _bytes_, it is also useful to remember that 
-\)</span><span class="math notranslate nohighlight">\(\textrm{FF}_{16}\)</span><span class="math notranslate nohighlight">\( is \)</span><span class="math notranslate nohighlight">\(1111\,1111_2\)</span><span class="math notranslate nohighlight">\( or \)</span><span class="math notranslate nohighlight">\(255_{10}\)</span>$.</p>
+that <span class="math notranslate nohighlight">\(0_{16}\)</span> is <span class="math notranslate nohighlight">\(0000_2\)</span> and that <span class="math notranslate nohighlight">\(\textrm{F}_{16}\)</span> is
+<span class="math notranslate nohighlight">\(1111_2\)</span>.  Since binary values are often grouped into
+8-bit <em>bytes</em>, it is also useful to remember that
+<span class="math notranslate nohighlight">\(\textrm{FF}_{16}\)</span> is <span class="math notranslate nohighlight">\(1111\,1111_2\)</span> or <span class="math notranslate nohighlight">\(255_{10}\)</span>.</p>
 <p><img alt="Hex digits" src="../_images/hex-digits.svg" /></p>
 </section>
 <section id="hex-notation-in-python">
@@ -712,7 +712,7 @@ function for objects.</p>
 </pre></div>
 </div>
 <p>This <code class="docutils literal notranslate"><span class="pre">repr</span></code> is telling us that the new object
-is at memory address $<span class="math notranslate nohighlight">\(1077F2F10_{16}\)</span>$.  We
+is at memory address <span class="math notranslate nohighlight">\(1077F2F10_{16}\)</span>.  We
 are unlikely to want to know the decimal value
 of that address.  We might, however, get some
 use of knowing the hexadecimal value.  For example,
