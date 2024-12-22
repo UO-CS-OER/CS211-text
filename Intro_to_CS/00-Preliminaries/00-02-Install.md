@@ -15,7 +15,7 @@ kernelspec:
 # Installing Python and IDLE
 
 This is a project-oriented course.  It is important that you have 
-Python version 3.10 or later installed on the computer you will most 
+Python version 3.11 or later installed on the computer you will most 
 often use for your class projects.   For most students that will be 
 a laptop computer or desktop computer.
 
@@ -49,7 +49,7 @@ installers. You should not have to do anything extra.
 
 ### Windows 10 Install
 
-Press the "Download Python 3.x" (currently 3.10.7) button. 
+Press the "Download Python 3.x" (currently 3.13.1) button. 
 If the [download page](https://www.python.org/downloads/) offers
 you "Latest Python 3 Release" or "Latest Python 2 Release",  Choose 
 the Python 3 release.  This will download an installer.  
@@ -76,7 +76,8 @@ statements directly and to edit and execute program files. (Later we
 will explore additional ways to edit and execute Python programs.)
 
 Once you have 
-[installed Python 3 on your computer](01-0-Ready.md), you 
+[installed Python 3 on your computer](
+https://uo-cs-oer.github.io/CS210-text/01-Intro/01-02-Install.html), you 
 should be able to start _IDLE_ from the command line.  It should look 
 something like this: 
 
@@ -96,8 +97,7 @@ print("Hello")
 If you have trouble with these steps, we can probably help you in 
 class help hours, or a classmate may be able to help. 
 
-If you have gotten this far successfully, it is time to dive into 
-Python programming, or review Python programming if you have done it 
-before. 
-
-* [Python Programming Kickstart](01-03-Kickstart.md)
+If you have not programmed in Python version 3 before, or not 
+recently, review
+[Part I](https://uo-cs-oer.github.io/CS210-text/intro.html)
+of this text before continuing.   

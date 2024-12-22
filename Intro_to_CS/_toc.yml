@@ -8,8 +8,7 @@ parts:
     chapters:
       - file: 00-Preliminaries/00-01-Prospectus.md
       - file: 00-Preliminaries/00-02-Install.md
-      - file: 00-Preliminaries/00-03-Install_PyCharm.md
-      - file: 00-Preliminaries/00-04-Kickstart.md
+      - file: 00-Preliminaries/00-03-Install_IDE.md
   - caption: 01 Objects
     chapters:
       - file: 01-Objects/01-1-Objects.md
