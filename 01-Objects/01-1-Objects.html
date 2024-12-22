@@ -1,110 +1,165 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Objects &#8212; Introduction to Computer Science II</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01-Objects/01-1-Objects';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Class Hierarchies and Inheritance" href="../02_Inheritance/02_1_Inheritance.html" />
-    <link rel="prev" title="Python Programming Kickstart" href="../00-Preliminaries/00-04-Kickstart.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="prev" title="Installing an Interactive Development Environment (IDE)" href="../00-Preliminaries/00-03-Install_IDE.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
     
-    <div class="container-fluid" id="banner"></div>
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-    
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Computer Science II</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo-provisional.png" class="logo__image only-light" alt="Introduction to Computer Science II - Home"/>
+    <img src="../_static/logo-provisional.png" class="logo__image only-dark pst-js-only" alt="Introduction to Computer Science II - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,697 +168,353 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  00 Preliminaries
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">00 Preliminaries</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">
-   A Course in Computational Thinking
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-02-Install.html">
-   Installing Python and IDLE
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-03-Install_PyCharm.html">
-   Installing PyCharm
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-04-Kickstart.html">
-   Python Programming Kickstart
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">A Course in Computational Thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-02-Install.html">Installing Python and IDLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-03-Install_IDE.html">Installing an Interactive Development Environment (IDE)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  01 Objects
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">01 Objects</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Objects
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Objects</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  02 Inheritance
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">02 Inheritance</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">
-   Class Hierarchies and Inheritance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">
-   Notifiers
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">Class Hierarchies and Inheritance</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">Notifiers</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  03 Recursion
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">03 Recursion</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
-   Recursion in Object-Oriented Programs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
-   Refactoring Repetitive Code
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_1_Recursion.html">Recursion in Object-Oriented Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_2_Refactor.html">Refactoring Repetitive Code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  04 Aliasing
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">04 Aliasing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
-   Aliasing on Purpose
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../04_Alias/04_1_Alias.html">Aliasing on Purpose</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  05 Guess and Check
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">05 Guess and Check</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
-   Recursive Guess and Check
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">Recursive Guess and Check</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  06 Binary
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">06 Binary</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
-   Bit Twiddling
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../06_Binary/06_2_NegBits.html">
-   Negative Binary Numbers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
-   What the Hex?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_1_Bits.html">Bit Twiddling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_2_NegBits.html">Negative Binary Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_3_Hex.html">What the Hex?</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  07 Functional
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">07 Functional</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
-   Sometimes Functions are Values
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Functional/07_1_Functional.html">Sometimes Functions are Values</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  08 Assembler
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">08 Assembler</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../08_Assembler/08_1_Twopass.html">
-   Two Pass Algorithms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../08_Assembler/08_2_Regexp.html">
-   Regular expressions
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Assembler/08_1_Twopass.html">Two Pass Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Assembler/08_2_Regexp.html">Regular expressions</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendices
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Appendices/appendix_terms.html">
-   Glossary of Terms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Appendices/appendix_looploop.html">
-   Appendix – What for?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Appendices/appendix_Special.html">
-   Appendix – Magic Methods
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Appendices/appendix_style.html">
-   Style Guide for Python Programs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Appendices/appendix_internals.html">
-   How Python Works
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_terms.html">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_looploop.html">Appendix – What for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_Special.html">Appendix – Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_style.html">Style Guide for Python Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_internals.html">How Python Works</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/01-Objects/01-1-Objects.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/01-Objects/01-1-Objects.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UO-CS-OER/CS210-text" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F01-Objects/01-1-Objects.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/01-Objects/01-1-Objects.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/01-Objects/01-1-Objects.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/UO-CS-OER/CS210-text"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F01-Objects/01-1-Objects.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/01-Objects/01-1-Objects.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../_sources/01-Objects/01-1-Objects.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button>
 
-      </li>
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-points">
-   Example: Points
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#can-we-do-better">
-     Can we do better?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-new-representation">
-     A new representation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#instance-variables">
-     Instance variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#methods">
-     Methods
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#method-calls">
-     Method calls
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-self">
-     What is
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       self
-      </span>
-     </code>
-     ?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#check-your-understanding">
-     <em>
-      Check your understanding
-     </em>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-little-magic">
-   A little magic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#magic-for-printing">
-   Magic for printing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#str-d-not-shaken">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       str()
-      </span>
-     </code>
-     d, not shaken
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-repr-for-debugging">
-     A
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       repr()
-      </span>
-     </code>
-     for debugging
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       <em>
-        Check your understanding
-       </em>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variables-refer-to-objects">
-   Variables
-   <em>
-    refer
-   </em>
-   to objects
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#combining-objects-composing">
-   Combining Objects: Composing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     <em>
-      Check your understanding
-     </em>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wrapping-and-delegation">
-   Wrapping and delegation
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Objects</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-points">
-   Example: Points
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#can-we-do-better">
-     Can we do better?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-new-representation">
-     A new representation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#instance-variables">
-     Instance variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#methods">
-     Methods
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#method-calls">
-     Method calls
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-self">
-     What is
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       self
-      </span>
-     </code>
-     ?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#check-your-understanding">
-     <em>
-      Check your understanding
-     </em>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-little-magic">
-   A little magic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#magic-for-printing">
-   Magic for printing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#str-d-not-shaken">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       str()
-      </span>
-     </code>
-     d, not shaken
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-repr-for-debugging">
-     A
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       repr()
-      </span>
-     </code>
-     for debugging
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       <em>
-        Check your understanding
-       </em>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variables-refer-to-objects">
-   Variables
-   <em>
-    refer
-   </em>
-   to objects
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#combining-objects-composing">
-   Combining Objects: Composing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     <em>
-      Check your understanding
-     </em>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wrapping-and-delegation">
-   Wrapping and delegation
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objects</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-points">Example: Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-do-better">Can we do better?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-new-representation">A new representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-variables">Instance variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-calls">Method calls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-self">What is <code class="docutils literal notranslate"><span class="pre">self</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-understanding"><em>Check your understanding</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-magic">A little magic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-for-printing">Magic for printing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-d-not-shaken"><code class="docutils literal notranslate"><span class="pre">str()</span></code>d, not shaken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-repr-for-debugging">A <code class="docutils literal notranslate"><span class="pre">repr()</span></code> for debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><em>Check your understanding</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-refer-to-objects">Variables <em>refer</em> to objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-objects-composing">Combining Objects: Composing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><em>Check your understanding</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-and-delegation">Wrapping and delegation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="objects">
-<h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">#</a></h1>
+<h1>Objects<a class="headerlink" href="#objects" title="Link to this heading">#</a></h1>
 <p>In Python, objects are used to represent
 information.  Every variable you use in a Python
 program is a reference to an object.
@@ -816,7 +527,7 @@ when you start the Python interpreter.</p>
 You can use them as a foundation to build your
 own.</p>
 <section id="example-points">
-<h2>Example: Points<a class="headerlink" href="#example-points" title="Permalink to this headline">#</a></h2>
+<h2>Example: Points<a class="headerlink" href="#example-points" title="Link to this heading">#</a></h2>
 <p>What if we wanted to define a new kind of value?
 For example, if we wanted to write a program
 to draw a graph, we might want to work with
@@ -874,7 +585,7 @@ changes, we get something like this</p>
 </div>
 </div>
 <section id="can-we-do-better">
-<h3>Can we do better?<a class="headerlink" href="#can-we-do-better" title="Permalink to this headline">#</a></h3>
+<h3>Can we do better?<a class="headerlink" href="#can-we-do-better" title="Link to this heading">#</a></h3>
 <p>We aren’t really satisfied with using tuples to
 represent points.  What we’d really
 like is to express the concept of adding two points
@@ -916,7 +627,7 @@ points as lists?</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span> <span class="o">+</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;dict&#39; and &#39;dict&#39;
@@ -932,7 +643,7 @@ existing representations like lists or tuples or dicts,
 but to define a new representation for points.</p>
 </section>
 <section id="a-new-representation">
-<h3>A new representation<a class="headerlink" href="#a-new-representation" title="Permalink to this headline">#</a></h3>
+<h3>A new representation<a class="headerlink" href="#a-new-representation" title="Link to this heading">#</a></h3>
 <p>Each data type in Python, including list, tuple,
 and dict, is defined as a <em>class</em> from which
 <em>objects</em> can be constructed.  We can also define
@@ -940,7 +651,7 @@ our own classes, to construct new kinds of objects.<br />
 For example, we can make a new class <code class="docutils literal notranslate"><span class="pre">Point</span></code> to
 represent points.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 <p>Inside the class we can define <em>methods</em>, which are like functions
@@ -950,7 +661,7 @@ The constructor describes how to create a new <code class="docutils literal notr
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
@@ -969,7 +680,7 @@ The constructor describes how to create a new <code class="docutils literal notr
 </div>
 </section>
 <section id="instance-variables">
-<h3>Instance variables<a class="headerlink" href="#instance-variables" title="Permalink to this headline">#</a></h3>
+<h3>Instance variables<a class="headerlink" href="#instance-variables" title="Link to this heading">#</a></h3>
 <p>Notice that the first argument to the constructor method is
 <code class="docutils literal notranslate"><span class="pre">self</span></code>, and within the method we refer to <code class="docutils literal notranslate"><span class="pre">self.x</span></code> and <code class="docutils literal notranslate"><span class="pre">self.y</span></code>.
 In a method that operates on some object <em>o</em>, the first argument
@@ -982,7 +693,7 @@ we refer to those elements as <code class="docutils literal notranslate"><span c
 print statement above.</p>
 </section>
 <section id="methods">
-<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h3>
+<h3>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h3>
 <p>What about defining an operation for moving a point?  Instead of
 adding <code class="docutils literal notranslate"><span class="pre">_point</span></code> to the name of a <code class="docutils literal notranslate"><span class="pre">move</span></code> function, we can just
 put the function (now called a <em>method</em>) <em>inside</em> the <code class="docutils literal notranslate"><span class="pre">Point</span></code>
@@ -990,13 +701,13 @@ class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
 
     <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">x</span>
         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">y</span>
         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
@@ -1014,7 +725,7 @@ in the <code class="docutils literal notranslate"><span class="pre">move</span><
 are passed to the <code class="docutils literal notranslate"><span class="pre">move</span></code> method.</p>
 </section>
 <section id="method-calls">
-<h3>Method calls<a class="headerlink" href="#method-calls" title="Permalink to this headline">#</a></h3>
+<h3>Method calls<a class="headerlink" href="#method-calls" title="Link to this heading">#</a></h3>
 <p>Next we’ll create two <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects and call the <code class="docutils literal notranslate"><span class="pre">move</span></code> method
 to create a third <code class="docutils literal notranslate"><span class="pre">Point</span></code> object with the sums of their <em>x</em> and
 <em>y</em> coordinates:</p>
@@ -1046,19 +757,19 @@ method to <code class="docutils literal notranslate"><span class="pre">Point</sp
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
 
     <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">x</span>
         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">y</span>
         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
         
     <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">new_x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">new_y</span>
 
@@ -1092,7 +803,7 @@ return the moved point.  This is a common mistake!</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Attempting to access w.x or w.y will fail: </span>
 <span class="ne">----&gt; </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;w has x coordinate </span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2"> and y coordinate </span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1104,7 +815,7 @@ return the moved point.  This is a common mistake!</p>
 </div>
 </section>
 <section id="what-is-self">
-<h3>What is <code class="docutils literal notranslate"><span class="pre">self</span></code>?<a class="headerlink" href="#what-is-self" title="Permalink to this headline">#</a></h3>
+<h3>What is <code class="docutils literal notranslate"><span class="pre">self</span></code>?<a class="headerlink" href="#what-is-self" title="Link to this heading">#</a></h3>
 <p>Many people are confused by the <code class="docutils literal notranslate"><span class="pre">self</span></code> variable.  The name <code class="docutils literal notranslate"><span class="pre">self</span></code> is
 merely a convention in Python.  Conventions are important for
 readability and avoiding errors, so you should never write code
@@ -1113,7 +824,7 @@ nothing special about <code class="docutils literal notranslate"><span class="pr
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BadExample</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;An example in which we use other names instead of &quot;self&quot;.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An example in which we use other names instead of &quot;self&quot;.</span>
 <span class="sd">    DON&#39;T DO THIS ... but understand it. </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
@@ -1141,7 +852,7 @@ argument <code class="docutils literal notranslate"><span class="pre">self</span
 matters to other programmers who need to read and understand our code.</p>
 </section>
 <section id="check-your-understanding">
-<h3><em>Check your understanding</em><a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">#</a></h3>
+<h3><em>Check your understanding</em><a class="headerlink" href="#check-your-understanding" title="Link to this heading">#</a></h3>
 <p>Consider class <code class="docutils literal notranslate"><span class="pre">Pet</span></code> and object <code class="docutils literal notranslate"><span class="pre">my_pet</span></code>.<br />
 What are the <em>instance variables</em> of <code class="docutils literal notranslate"><span class="pre">my_pet</span></code>?
 What are the values of those instance variables
@@ -1160,7 +871,7 @@ after executing the code below?</p>
 </section>
 </section>
 <section id="a-little-magic">
-<h2>A little magic<a class="headerlink" href="#a-little-magic" title="Permalink to this headline">#</a></h2>
+<h2>A little magic<a class="headerlink" href="#a-little-magic" title="Link to this heading">#</a></h2>
 <p>We said above that what we really wanted was to express
 movement of points very compactly, as addition.  We
 saw that addition of tuples or lists did not act as we
@@ -1171,24 +882,24 @@ defining a <em>special method</em> <code class="docutils literal notranslate"><s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
     
     <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">x</span>
         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">y</span>
         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
         
     <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">new_x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">new_y</span>
         
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1217,10 +928,10 @@ readable notation:</p>
 </div>
 </div>
 </div>
-<p>More: <a class="reference internal" href="../Appendices/appendix_Special.html"><span class="doc std std-doc">Appendix on magic methods</span></a></p>
+<p>More: <a class="reference internal" href="../Appendices/appendix_Special.html"><span class="std std-doc">Appendix on magic methods</span></a></p>
 </section>
 <section id="magic-for-printing">
-<h2>Magic for printing<a class="headerlink" href="#magic-for-printing" title="Permalink to this headline">#</a></h2>
+<h2>Magic for printing<a class="headerlink" href="#magic-for-printing" title="Link to this heading">#</a></h2>
 <p>Suppose we wanted to print a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object.  We
 could do it with an f-string, as we have above:</p>
 <div class="cell docutils container">
@@ -1245,14 +956,14 @@ get wrong.  What if we just wrote</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p is &lt;__main__.Point object at 0x104a2db70&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p is &lt;__main__.Point object at 0x103f2eba0&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <p>That isn’t a very useful way to print an object!</p>
 <section id="str-d-not-shaken">
-<h3><code class="docutils literal notranslate"><span class="pre">str()</span></code>d, not shaken<a class="headerlink" href="#str-d-not-shaken" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">str()</span></code>d, not shaken<a class="headerlink" href="#str-d-not-shaken" title="Link to this heading">#</a></h3>
 <p>If we want to print <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects as simply
 as we print strings and numbers, but we want the
 printed representation to be readable, we will need
@@ -1269,37 +980,37 @@ to print as “(3, 2)”. We would then write a
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
     
     <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">x</span>
         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">y</span>
         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
         
     <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">new_x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">new_y</span>
         
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 
     <span class="c1"># Two new methods, used by the &quot;str&quot; and &quot;repr&quot;</span>
     <span class="c1"># functions. </span>
   
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Printed representation.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Printed representation.</span>
 <span class="sd">        str(p) is an implicit call to p.__str__()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
       
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Debugging representation.  This is what</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Debugging representation.  This is what</span>
 <span class="sd">        we see if we type a point name at the console.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Point(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
@@ -1324,7 +1035,7 @@ to print as “(3, 2)”. We would then write a
 <p>we get a more useful result.</p>
 </section>
 <section id="a-repr-for-debugging">
-<h3>A <code class="docutils literal notranslate"><span class="pre">repr()</span></code> for debugging<a class="headerlink" href="#a-repr-for-debugging" title="Permalink to this headline">#</a></h3>
+<h3>A <code class="docutils literal notranslate"><span class="pre">repr()</span></code> for debugging<a class="headerlink" href="#a-repr-for-debugging" title="Link to this heading">#</a></h3>
 <p>Usually we will also want to provide a different
 string representation that is useful in debugging
 and at the Python command line interface.  The
@@ -1396,7 +1107,7 @@ to each of its arguments, which we can see by writing</p>
 </div>
 </div>
 <section id="id1">
-<h4><em>Check your understanding</em><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<h4><em>Check your understanding</em><a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <p>Which of the following are legal, and what
 values do they return?</p>
 <ul class="simple">
@@ -1428,7 +1139,7 @@ values do they return?</p>
 </section>
 </section>
 <section id="variables-refer-to-objects">
-<h2>Variables <em>refer</em> to objects<a class="headerlink" href="#variables-refer-to-objects" title="Permalink to this headline">#</a></h2>
+<h2>Variables <em>refer</em> to objects<a class="headerlink" href="#variables-refer-to-objects" title="Link to this heading">#</a></h2>
 <p>Before reading on, try to predict what the following
 little program will print.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -1488,7 +1199,7 @@ modified coordinates:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
@@ -1531,7 +1242,7 @@ Later we will intentionally created aliases to access
 mutable objects.  The important thing is to be aware of it.</p>
 </section>
 <section id="combining-objects-composing">
-<h2>Combining Objects: Composing<a class="headerlink" href="#combining-objects-composing" title="Permalink to this headline">#</a></h2>
+<h2>Combining Objects: Composing<a class="headerlink" href="#combining-objects-composing" title="Link to this heading">#</a></h2>
 <p>The <em>instance variables</em> defined in a class and stored
 in the objects of that class can themselves be objects.
 We can make lists of objects, tuples of objects, etc.</p>
@@ -1542,47 +1253,53 @@ new class <code class="docutils literal notranslate"><span class="pre">Rect</spa
 to use <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects to represent two corners of
 the rectangle:</p>
 <div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
     
     <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">x</span>
         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">y</span>
         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
         
     <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">new_x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">new_y</span>
         
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Printed representation.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Printed representation.</span>
 <span class="sd">        str(p) is an implicit call to p.__str__()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
       
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Debugging representation.  This is what</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Debugging representation.  This is what</span>
 <span class="sd">        we see if we type a point name at the console.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Point(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rect</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;A rectangle is represented by a pair of points</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A rectangle is represented by a pair of points</span>
 <span class="sd">    (x_min, y_min), (x_max, y_max) at opposite corners.</span>
 <span class="sd">    Whether (x_min, y_min) is lower left or upper left</span>
 <span class="sd">    depends on the coordinate system.</span>
@@ -1592,13 +1309,13 @@ the rectangle:</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">=</span> <span class="n">xy_max</span>
     
     <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Area is height * width&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Area is height * width&quot;&quot;&quot;</span>
         <span class="n">height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="o">.</span><span class="n">x</span>
         <span class="n">width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span><span class="o">.</span><span class="n">y</span>
         <span class="k">return</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span>
 
     <span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Rect&quot;</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;New rectangle offset from this one by delta as movement vector&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;New rectangle offset from this one by delta as movement vector&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_pt</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -1630,7 +1347,7 @@ that exist only while method <code class="docutils literal notranslate"><span cl
 <em>instance variables</em> that are stored within the
 <code class="docutils literal notranslate"><span class="pre">Rect</span></code> object.</p>
 <section id="id2">
-<h3><em>Check your understanding</em><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3><em>Check your understanding</em><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Suppose we ran the above code in PythonTutor.
 (PythonTutor cannot import <code class="docutils literal notranslate"><span class="pre">Number</span></code>, but for the examples we could
 replace it with <code class="docutils literal notranslate"><span class="pre">int</span></code>.)  What picture would it draw
@@ -1640,13 +1357,13 @@ why not?</p>
 </section>
 </section>
 <section id="wrapping-and-delegation">
-<h2>Wrapping and delegation<a class="headerlink" href="#wrapping-and-delegation" title="Permalink to this headline">#</a></h2>
+<h2>Wrapping and delegation<a class="headerlink" href="#wrapping-and-delegation" title="Link to this heading">#</a></h2>
 <p>Sometimes we want a class of objects that is almost
 like an existing class, but with a little extra
 information or a few new methods.  One way to do this
 is to build a new class that <em>wraps</em> an existing class,
 often a built-in class like <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">dict</span></code>.  (In
-<span class="xref myst">the next chapter</span> we will
+<a class="reference internal" href="#02_Inheritance/02_1_Inheritance.md"><span class="xref myst">the next chapter</span></a> we will
 see another approach.)</p>
 <p>Suppose we wanted objects that provide some of the same
 functionality as <code class="docutils literal notranslate"><span class="pre">list</span></code> objects, and also some new
@@ -1656,7 +1373,7 @@ the areas of all the <code class="docutils literal notranslate"><span class="pre
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RectList</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;A collection of Rects.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A collection of Rects.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
@@ -1694,20 +1411,25 @@ it’s own <code class="docutils literal notranslate"><span class="pre">append</
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">append</span></code> method can be very simple!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">Rect</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Delegate to elements&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Delegate to elements&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RectList</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;A collection of Rects.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A collection of Rects.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
         
     <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">Rect</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Delegate to elements&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Delegate to elements&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
@@ -1718,6 +1440,7 @@ it’s own <code class="docutils literal notranslate"><span class="pre">append</
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1759,7 +1482,7 @@ next chapter is more appropriate.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./01-Objects"
         },
         predefinedOutput: true
@@ -1767,50 +1490,128 @@ next chapter is more appropriate.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../00-Preliminaries/00-04-Kickstart.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python Programming Kickstart</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../00-Preliminaries/00-03-Install_IDE.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Installing an Interactive Development Environment (IDE)</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../02_Inheritance/02_1_Inheritance.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../02_Inheritance/02_1_Inheritance.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Class Hierarchies and Inheritance</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-points">Example: Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-we-do-better">Can we do better?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-new-representation">A new representation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-variables">Instance variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-calls">Method calls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-self">What is <code class="docutils literal notranslate"><span class="pre">self</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-understanding"><em>Check your understanding</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-magic">A little magic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-for-printing">Magic for printing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-d-not-shaken"><code class="docutils literal notranslate"><span class="pre">str()</span></code>d, not shaken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-repr-for-debugging">A <code class="docutils literal notranslate"><span class="pre">repr()</span></code> for debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><em>Check your understanding</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-refer-to-objects">Variables <em>refer</em> to objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-objects-composing">Combining Objects: Composing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><em>Check your understanding</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-and-delegation">Wrapping and delegation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Michal Young, Boyana Norris, and Ram Durairajan<br/>
-  
-      &copy; Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Michal Young, Boyana Norris, and Ram Durairajan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

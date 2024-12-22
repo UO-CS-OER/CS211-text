@@ -720,7 +720,7 @@ like an existing class, but with a little extra
 information or a few new methods.  One way to do this 
 is to build a new class that _wraps_ an existing class, 
 often a built-in class like `list` or `dict`.  (In
-[the next chapter](02_1_Inheritance.md) we will 
+[the next chapter](02_Inheritance/02_1_Inheritance.md) we will 
 see another approach.)
 
 Suppose we wanted objects that provide some of the same 

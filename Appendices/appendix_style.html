@@ -1,110 +1,165 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Style Guide for Python Programs &#8212; Introduction to Computer Science II</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Appendices/appendix_style';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="How Python Works" href="appendix_internals.html" />
     <link rel="prev" title="Appendix – Magic Methods" href="appendix_Special.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
     
-    <div class="container-fluid" id="banner"></div>
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-    
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo-provisional.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Computer Science II</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo-provisional.png" class="logo__image only-light" alt="Introduction to Computer Science II - Home"/>
+    <img src="../_static/logo-provisional.png" class="logo__image only-dark pst-js-only" alt="Introduction to Computer Science II - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,617 +168,344 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  00 Preliminaries
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">00 Preliminaries</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">
-   A Course in Computational Thinking
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-02-Install.html">
-   Installing Python and IDLE
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-03-Install_PyCharm.html">
-   Installing PyCharm
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../00-Preliminaries/00-04-Kickstart.html">
-   Python Programming Kickstart
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">A Course in Computational Thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-02-Install.html">Installing Python and IDLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-03-Install_IDE.html">Installing an Interactive Development Environment (IDE)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  01 Objects
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">01 Objects</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-Objects/01-1-Objects.html">
-   Objects
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01-1-Objects.html">Objects</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  02 Inheritance
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">02 Inheritance</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">
-   Class Hierarchies and Inheritance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">
-   Notifiers
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">Class Hierarchies and Inheritance</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">Notifiers</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  03 Recursion
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">03 Recursion</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../03_Recursion/03_1_Recursion.html">
-   Recursion in Object-Oriented Programs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03_Recursion/03_2_Refactor.html">
-   Refactoring Repetitive Code
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_1_Recursion.html">Recursion in Object-Oriented Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_2_Refactor.html">Refactoring Repetitive Code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  04 Aliasing
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">04 Aliasing</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../04_Alias/04_1_Alias.html">
-   Aliasing on Purpose
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../04_Alias/04_1_Alias.html">Aliasing on Purpose</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  05 Guess and Check
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">05 Guess and Check</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">
-   Recursive Guess and Check
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">Recursive Guess and Check</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  06 Binary
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">06 Binary</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../06_Binary/06_1_Bits.html">
-   Bit Twiddling
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../06_Binary/06_2_NegBits.html">
-   Negative Binary Numbers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../06_Binary/06_3_Hex.html">
-   What the Hex?
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_1_Bits.html">Bit Twiddling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_2_NegBits.html">Negative Binary Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_3_Hex.html">What the Hex?</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  07 Functional
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">07 Functional</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../07_Functional/07_1_Functional.html">
-   Sometimes Functions are Values
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Functional/07_1_Functional.html">Sometimes Functions are Values</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  08 Assembler
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">08 Assembler</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../08_Assembler/08_1_Twopass.html">
-   Two Pass Algorithms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../08_Assembler/08_2_Regexp.html">
-   Regular expressions
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Assembler/08_1_Twopass.html">Two Pass Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Assembler/08_2_Regexp.html">Regular expressions</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Appendices
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="appendix_terms.html">
-   Glossary of Terms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="appendix_looploop.html">
-   Appendix – What for?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="appendix_Special.html">
-   Appendix – Magic Methods
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Style Guide for Python Programs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="appendix_internals.html">
-   How Python Works
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_terms.html">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_looploop.html">Appendix – What for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_Special.html">Appendix – Magic Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Style Guide for Python Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_internals.html">How Python Works</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/Appendices/appendix_style.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/Appendices/appendix_style.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UO-CS-OER/CS210-text" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2FAppendices/appendix_style.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Appendices/appendix_style.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/Appendices/appendix_style.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/UO-CS-OER/CS210-text"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2FAppendices/appendix_style.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Appendices/appendix_style.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../_sources/Appendices/appendix_style.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button>
 
-      </li>
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#living-document">
-   Living Document
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basics-when-in-doubt-follow-pep-8">
-   Basics: When in doubt, follow PEP 8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#function-and-method-headers">
-   Function and method headers
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mutation">
-     Mutation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#forward-type-annotations">
-     Forward type annotations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#composite-type-annotations">
-     Composite type annotations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#docstrings-for-functions-and-methods">
-     Docstrings for functions and methods
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#classes-public-and-quasi-private-attributes">
-   Classes: Public and quasi-private attributes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#avoid-type-and-isinstance">
-   Avoid
-   <em>
-    type
-   </em>
-   and
-   <em>
-    isinstance
-   </em>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exception-type-comparison-in-eq">
-     Exception:
-     <em>
-      type
-     </em>
-     comparison in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       __eq__
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#symbolic-constants-vs-magic-values">
-   Symbolic Constants vs Magic Values
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tests">
-   Tests
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Style Guide for Python Programs</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#living-document">
-   Living Document
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basics-when-in-doubt-follow-pep-8">
-   Basics: When in doubt, follow PEP 8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#function-and-method-headers">
-   Function and method headers
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mutation">
-     Mutation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#forward-type-annotations">
-     Forward type annotations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#composite-type-annotations">
-     Composite type annotations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#docstrings-for-functions-and-methods">
-     Docstrings for functions and methods
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#classes-public-and-quasi-private-attributes">
-   Classes: Public and quasi-private attributes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#avoid-type-and-isinstance">
-   Avoid
-   <em>
-    type
-   </em>
-   and
-   <em>
-    isinstance
-   </em>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exception-type-comparison-in-eq">
-     Exception:
-     <em>
-      type
-     </em>
-     comparison in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       __eq__
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#symbolic-constants-vs-magic-values">
-   Symbolic Constants vs Magic Values
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tests">
-   Tests
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Style Guide for Python Programs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#living-document">Living Document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-when-in-doubt-follow-pep-8">Basics: When in doubt, follow PEP 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-and-method-headers">Function and method headers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutation">Mutation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-type-annotations">Forward type annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composite-type-annotations">Composite type annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings-for-functions-and-methods">Docstrings for functions and methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-public-and-quasi-private-attributes">Classes: Public and quasi-private attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-type-and-isinstance">Avoid <em>type</em> and <em>isinstance</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-type-comparison-in-eq">Exception: <em>type</em> comparison in <code class="docutils literal notranslate"><span class="pre">__eq__</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolic-constants-vs-magic-values">Symbolic Constants vs Magic Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="style-guide-for-python-programs">
-<h1>Style Guide for Python Programs<a class="headerlink" href="#style-guide-for-python-programs" title="Permalink to this headline">#</a></h1>
+<h1>Style Guide for Python Programs<a class="headerlink" href="#style-guide-for-python-programs" title="Link to this heading">#</a></h1>
 <p>Most software development organizations have coding guidelines that
 constitute a <em>house style</em>. These may be based on some more widely used
 standard, but often they will also incorporate norms and preferences
@@ -736,7 +518,7 @@ some additional rules suited to an introductory course.</p>
 some ways from those used in CIS 210. The key differences are that CIS
 211 style is designed to be more concise.</p>
 <section id="living-document">
-<h2>Living Document<a class="headerlink" href="#living-document" title="Permalink to this headline">#</a></h2>
+<h2>Living Document<a class="headerlink" href="#living-document" title="Link to this heading">#</a></h2>
 <p>This document represents my best effort at defining style guidelines for
 CIS 211, but like many software documents it requires regular revision.
 We may find that we need some additional rules, or that some existing
@@ -750,7 +532,7 @@ and to the extent possible I will avoid making you revise projects that
 have already been started.</p>
 </section>
 <section id="basics-when-in-doubt-follow-pep-8">
-<h2>Basics: When in doubt, follow PEP 8<a class="headerlink" href="#basics-when-in-doubt-follow-pep-8" title="Permalink to this headline">#</a></h2>
+<h2>Basics: When in doubt, follow PEP 8<a class="headerlink" href="#basics-when-in-doubt-follow-pep-8" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>
 is a widely used standard for Python code. It provides guidelines for
 all variety of matters from indentation to spacing in expressions.</p>
@@ -772,7 +554,7 @@ the alternative), but when appropriate we may use docstring comments to
 say more about arguments and return values.</p>
 </section>
 <section id="function-and-method-headers">
-<h2>Function and method headers<a class="headerlink" href="#function-and-method-headers" title="Permalink to this headline">#</a></h2>
+<h2>Function and method headers<a class="headerlink" href="#function-and-method-headers" title="Link to this heading">#</a></h2>
 <p>We will use Python
 <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">type annotations</a>
 (also known as <em>type hints</em>) to specify the signature (argument and
@@ -783,7 +565,7 @@ PyCharm.</p>
 <em>signature</em> of a function very compactly, compared to describing
 argument types in a docstring. Instead of this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">frobnaz</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;frob the naz.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;frob the naz.</span>
 <span class="sd">    :n:  integer, frob it this many times</span>
 <span class="sd">    :s:  string from which we extract the naz</span>
 <span class="sd">    :returns: string in which the naz has been frobbed</span>
@@ -792,7 +574,7 @@ argument types in a docstring. Instead of this:</p>
 </div>
 <p>we will write</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">frobnaz</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;returns copy s with its frob nazzed n times&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;returns copy s with its frob nazzed n times&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 <p>An absent return type is equivalent to specifying that the function or
@@ -800,14 +582,14 @@ method returns <code class="docutils literal notranslate"><span class="pre">None
 <p>Method headers follow the same rules as function signatures  <code class="docutils literal notranslate"><span class="pre">self</span></code>
 argument, as it is implied by the class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-  <span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair of integers&quot;&quot;&quot;</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair of integers&quot;&quot;&quot;</span>
 
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
 
   <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">new_y</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">new_x</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">new_y</span>
 </pre></div>
@@ -818,7 +600,7 @@ mutators*, i.e., it may be assumed that they modify the value of
 the <code class="docutils literal notranslate"><span class="pre">self</span></code> object, like the
 <code class="docutils literal notranslate"><span class="pre">move_to</span></code> method above.</p>
 <section id="mutation">
-<h3>Mutation<a class="headerlink" href="#mutation" title="Permalink to this headline">#</a></h3>
+<h3>Mutation<a class="headerlink" href="#mutation" title="Link to this heading">#</a></h3>
 <p>Methods that return a value other than <code class="docutils literal notranslate"><span class="pre">None</span></code> (and which therefore have
 the <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">T</span></code>
 annotation for some type <code class="docutils literal notranslate"><span class="pre">T</span></code>) should typically <em>not</em> modify the value of
@@ -839,18 +621,18 @@ function name should suggest that it modifies its input.</p>
 also removed it from the list, the function header and docstring might
 look like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pull_jazziest</span><span class="p">(</span><span class="n">musicians</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Musician</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Musician</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Remove and return jazziest musician from musicians&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove and return jazziest musician from musicians&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </section>
 <section id="forward-type-annotations">
-<h3>Forward type annotations<a class="headerlink" href="#forward-type-annotations" title="Permalink to this headline">#</a></h3>
+<h3>Forward type annotations<a class="headerlink" href="#forward-type-annotations" title="Link to this heading">#</a></h3>
 <p>The second case in which we cannot simply write the type of an argument
 or return value is when that type is the class we are defining.<br />
 The type is considered undefined until the class is complete.<br />
 Thus we cannot write</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Point</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Point</span><span class="p">:</span>
-      <span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">      </span><span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
       <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -859,13 +641,13 @@ quotes around the type name to indicate that it is a <em>forward reference</em>
 , i.e., a reference to a type that we promise will exist soon even
 though it does not exist quite yet.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
-      <span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+<span class="w">      </span><span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
       <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="composite-type-annotations">
-<h3>Composite type annotations<a class="headerlink" href="#composite-type-annotations" title="Permalink to this headline">#</a></h3>
+<h3>Composite type annotations<a class="headerlink" href="#composite-type-annotations" title="Link to this heading">#</a></h3>
 <p>Types like <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">str</span></code> can be used directly in type annotations.
 Types like <code class="docutils literal notranslate"><span class="pre">tuple</span></code> and <code class="docutils literal notranslate"><span class="pre">list</span></code> can also be used in type annotations, but
 typically we will prefer to be more specific, e.g., not just a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>
@@ -890,7 +672,7 @@ constructors from the <code class="docutils literal notranslate"><span class="pr
 </div>
 </section>
 <section id="docstrings-for-functions-and-methods">
-<h3>Docstrings for functions and methods<a class="headerlink" href="#docstrings-for-functions-and-methods" title="Permalink to this headline">#</a></h3>
+<h3>Docstrings for functions and methods<a class="headerlink" href="#docstrings-for-functions-and-methods" title="Link to this heading">#</a></h3>
 <p>A docstring should provide information that is <em>useful to a developer</em>.
 In particular, consider a developer who is building a new module that
 uses the functions or classes in your module, or who has been asked to
@@ -919,7 +701,7 @@ constructor.</p></li>
 </section>
 </section>
 <section id="classes-public-and-quasi-private-attributes">
-<h2>Classes: Public and quasi-private attributes<a class="headerlink" href="#classes-public-and-quasi-private-attributes" title="Permalink to this headline">#</a></h2>
+<h2>Classes: Public and quasi-private attributes<a class="headerlink" href="#classes-public-and-quasi-private-attributes" title="Link to this heading">#</a></h2>
 <p>In accordance with PEP 8, object fields and methods that are meant to be
 public (that is, accessed from code outside the class or its subclasses)
 should begin with a lowercase letter. Names of fields and methods that
@@ -939,7 +721,7 @@ directly change them.</p></li>
 </ul>
 </section>
 <section id="avoid-type-and-isinstance">
-<h2>Avoid <em>type</em> and <em>isinstance</em><a class="headerlink" href="#avoid-type-and-isinstance" title="Permalink to this headline">#</a></h2>
+<h2>Avoid <em>type</em> and <em>isinstance</em><a class="headerlink" href="#avoid-type-and-isinstance" title="Link to this heading">#</a></h2>
 <p>CIS 211 is a course in <em>object-oriented</em> programming. It emphasizes
 making use of <em>dynamic dispatch</em>. Students who are not yet comfortable
 with dynamic dispatch (method calls that may have different behavior
@@ -951,13 +733,13 @@ question specifically allow
 Inappropriate uses of <em>isinstance</em>
 or <em>type</em> will be marked as errors.</p>
 <section id="exception-type-comparison-in-eq">
-<h3>Exception: <em>type</em> comparison in <code class="docutils literal notranslate"><span class="pre">__eq__</span></code><a class="headerlink" href="#exception-type-comparison-in-eq" title="Permalink to this headline">#</a></h3>
+<h3>Exception: <em>type</em> comparison in <code class="docutils literal notranslate"><span class="pre">__eq__</span></code><a class="headerlink" href="#exception-type-comparison-in-eq" title="Link to this heading">#</a></h3>
 <p>There is one blanket exception to the above rule about avoiding
 <code class="docutils literal notranslate"><span class="pre">type</span></code>:  It is allowed and often a good idea to make an object
 equivalence test (the <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> magic method) include a type equality
 check. For example, consider a simple <code class="docutils literal notranslate"><span class="pre">Point</span></code> class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-  <span class="sd">&quot;&quot;&quot;2D cartesian point&quot;&quot;&quot;</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;2D cartesian point&quot;&quot;&quot;</span>
 
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
@@ -976,7 +758,7 @@ equal.</p>
 </section>
 </section>
 <section id="symbolic-constants-vs-magic-values">
-<h2>Symbolic Constants vs Magic Values<a class="headerlink" href="#symbolic-constants-vs-magic-values" title="Permalink to this headline">#</a></h2>
+<h2>Symbolic Constants vs Magic Values<a class="headerlink" href="#symbolic-constants-vs-magic-values" title="Link to this heading">#</a></h2>
 <p>A <em>magic number</em> is a constant other than 0, 1, <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, or
 <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">[]</span></code> that appears literally in code. For example, this snippet
 contains a magic number:</p>
@@ -1024,7 +806,7 @@ constructing a board game with multiple source files, the size of the
 game board probably belongs in a separate source file.</p>
 </section>
 <section id="tests">
-<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">#</a></h2>
+<h2>Tests<a class="headerlink" href="#tests" title="Link to this heading">#</a></h2>
 <p>We will not use doctests in CIS 211, and in most cases our docstrings
 will not include examples of use. Instead, we will use unit tests
 separate from the module code.</p>
@@ -1059,7 +841,7 @@ may be part of the project requirements).</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Appendices"
         },
         predefinedOutput: true
@@ -1067,50 +849,119 @@ may be part of the project requirements).</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="appendix_Special.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Appendix – Magic Methods</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="appendix_Special.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Appendix – Magic Methods</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="appendix_internals.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="appendix_internals.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">How Python Works</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#living-document">Living Document</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-when-in-doubt-follow-pep-8">Basics: When in doubt, follow PEP 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-and-method-headers">Function and method headers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutation">Mutation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-type-annotations">Forward type annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composite-type-annotations">Composite type annotations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings-for-functions-and-methods">Docstrings for functions and methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-public-and-quasi-private-attributes">Classes: Public and quasi-private attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-type-and-isinstance">Avoid <em>type</em> and <em>isinstance</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-type-comparison-in-eq">Exception: <em>type</em> comparison in <code class="docutils literal notranslate"><span class="pre">__eq__</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolic-constants-vs-magic-values">Symbolic Constants vs Magic Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Michal Young, Boyana Norris, and Ram Durairajan<br/>
-  
-      &copy; Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Michal Young, Boyana Norris, and Ram Durairajan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -15,7 +15,7 @@ kernelspec:
 # A Course in Computational Thinking
 
 ```{note}
-This chapter repeats the introduction from
+This chapter repeats much of the introduction from
 [_Introduction to Computer Science Part I_](
 https://uo-cs-oer.github.io/CS210-text/intro.html)
 for convenience of students who did not use that text.
@@ -115,7 +115,7 @@ practice using it.
 ### Why Python
 
 In this course we will use Python, 
-specifically Python version 3.10 or higher. 
+specifically Python version 3.11 or higher. 
 Python is widely used in data science and scientific
 computing, in cartography, in web development,
 in machine learning, and in many other domains, but
@@ -134,7 +134,7 @@ we believe it is a good language for _learning to program_.   Python
 
 That is not to say that Python is a perfect language.  It is 
 certainly not the only programming language you will ever want or 
-need to learn.   But among the programming langauges available to us 
+need to learn.   But among the programming languages available to us 
 today, we believe it is an excellent starting point. 
 
 ## Getting a Start
