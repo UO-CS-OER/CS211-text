@@ -221,10 +221,8 @@ class Point:
         """Change the coordinates of this Point"""
         self.x = new_x
         self.y = new_y
-```
 
-
-```{code-cell} python3
+m = Point(3,4)
 m.move_to(19,23)
 print(f"({m.x}, {m.y})")
 ```
@@ -256,13 +254,21 @@ class BadExample():
     DON'T DO THIS ... but understand it. 
     """
     
-    def __init__(x: int): 
-        self.v = x    # Might as well be consistently inconsistent
+    def __init__(elephant, x: int): 
+        elephant.v = x    # Might as well be consistently inconsistent
         
-    def change
-    
-    
+    def increase(zebra, y: int): 
+        zebra.v += y
+        
+wacky = BadExample(17)
+wacky.increase(13)
+print(wacky.v)
 ```
+
+As you can see, when we make a method call like `wacky.increase(13)`,
+the first argument is the object `wacky`.  We ordinarily call that 
+argument `self`, not because it matters to Python, but because it 
+matters to other programmers who need to read and understand our code. 
 
 ### *Check your understanding*
 
@@ -294,12 +300,26 @@ how we want `+` to act on `Point` objects.  We do this by
 defining a *special method* `__add__`: 
 
 ```{code-cell} python3
-
-  # This code is inside the Point class
-
-  def __add__(self, other: "Point"):
-    """(x,y) + (dx, dy) = (x+dx, y+dy)"""
-    return Point(self.x + other.x, self.y + other.y)
+class Point:
+    """An (x,y) coordinate pair"""
+    def __init__(self, x: Number, y: Number):
+        self.x = x
+        self.y = y
+    
+    def move(self, d: "Point") -> "Point":
+        """(x,y).move(dx,dy) = (x+dx, y+dy)"""
+        x = self.x + d.x
+        y = self.y + d.y
+        return Point(x,y)
+        
+    def move_to(self, new_x, new_y):
+        """Change the coordinates of this Point"""
+        self.x = new_x
+        self.y = new_y
+        
+    def __add__(self, other: "Point"):
+        """(x,y) + (dx, dy) = (x+dx, y+dy)"""
+        return Point(self.x + other.x, self.y + other.y)
 ```
 
 Special methods are more commonly known as *magic methods*. 
@@ -358,12 +378,11 @@ to print as "(3, 2)". We would then write a
 
 ```{code-cell} python3
 class Point:
-    """An (x,y) coordinate pair (as before)"""
-
+    """An (x,y) coordinate pair"""
     def __init__(self, x: Number, y: Number):
         self.x = x
         self.y = y
-
+    
     def move(self, d: "Point") -> "Point":
         """(x,y).move(dx,dy) = (x+dx, y+dy)"""
         x = self.x + d.x
@@ -374,6 +393,10 @@ class Point:
         """Change the coordinates of this Point"""
         self.x = new_x
         self.y = new_y
+        
+    def __add__(self, other: "Point"):
+        """(x,y) + (dx, dy) = (x+dx, y+dy)"""
+        return Point(self.x + other.x, self.y + other.y)
 
     # Two new methods, used by the "str" and "repr"
     # functions. 
@@ -394,6 +417,7 @@ class Point:
 Now if we again execute 
 
 ```{code-cell} python3
+p = Point(17,13)
 print(f"p is {p}")
 ```
 we get a more useful result. 
@@ -439,9 +463,11 @@ The `print` function automatically applies the `str` function to its
 arguments, so defining a good `__str__` method will ensure it 
 is printed as you like in most cases.  Oddly, though, 
 the `__str__` method for `list` applies the `__repr__` method
-to each of its arguments, so if we write
+to each of its arguments, which we can see by writing 
 
 ```{code-cell} python3
+p = Point(22, 17)
+v = Point(18, 13)
 print(p)
 print(v)
 print([p, v])
@@ -523,21 +549,11 @@ It is essential to remember that variables hold *references* to objects, and
 there may be more than one reference to the same object.  We can observe the 
 same phenomenon with classes we add to Python.  Consider this program: 
 
-```python
-class Point:
-    """An (x,y) coordinate pair"""
-    def __init__(self, x: int, y: int):
-        self.x = x
-        self.y = y
-
-    def move(self, dx: int, dy: int):
-        self.x += dx
-        self.y += dy
-
+```{code-cell} python3
 p1 = Point(3,5)
 p2 = p1
-p1.move(4,4)
-print(p2.x, p2.y)
+p1.move_to(7, 9)
+print(p2)
 ```
 
 Once again we have created two variables that are *aliases*, i.e., they 
@@ -554,7 +570,7 @@ Instead of *mutating* the object (changing the values of its *fields*
 `x` and `y`), we could have created a new Point object at the 
 modified coordinates: 
 
-```python
+```{code-cell} python3
 class Point:
     """An (x,y) coordinate pair"""
     def __init__(self, x: int, y: int):
@@ -608,7 +624,44 @@ new class `Rect` to represent rectangles, we might want
 to use `Point` objects to represent two corners of 
 the rectangle: 
 
-```python
+```{code-cell} python3
+:tags:  [  "hide-cell" ]
+
+class Point:
+    """An (x,y) coordinate pair"""
+    def __init__(self, x: Number, y: Number):
+        self.x = x
+        self.y = y
+    
+    def move(self, d: "Point") -> "Point":
+        """(x,y).move(dx,dy) = (x+dx, y+dy)"""
+        x = self.x + d.x
+        y = self.y + d.y
+        return Point(x,y)
+        
+    def move_to(self, new_x, new_y):
+        """Change the coordinates of this Point"""
+        self.x = new_x
+        self.y = new_y
+        
+    def __add__(self, other: "Point"):
+        """(x,y) + (dx, dy) = (x+dx, y+dy)"""
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __str__(self) -> str:
+        """Printed representation.
+        str(p) is an implicit call to p.__str__()
+        """
+        return f"({self.x}, {self.y})"
+      
+    def __repr__(self) -> str:
+        """Debugging representation.  This is what
+        we see if we type a point name at the console.
+        """
+        return f"Point({self.x}, {self.y})"
+```  
+
+```{code-cell} python3
 class Rect:
     """A rectangle is represented by a pair of points
     (x_min, y_min), (x_max, y_max) at opposite corners.
@@ -653,8 +706,7 @@ that exist only while method `area` is executing.
 ### *Check your understanding*
 
 Suppose we ran the above code in PythonTutor. 
-(PythonTutor
-cannot import `Number`, but for the examples we could 
+(PythonTutor cannot import `Number`, but for the examples we could 
 replace it with `int`.)  What picture would it draw 
 of `r1`?   Would `height` and `width` in method 
 `area` be included as instance variables?  Why or 
@@ -668,7 +720,7 @@ like an existing class, but with a little extra
 information or a few new methods.  One way to do this 
 is to build a new class that _wraps_ an existing class, 
 often a built-in class like `list` or `dict`.  (In
-[the next chapter](02_1_Inheritance.md) we will 
+[the next chapter](02_Inheritance/02_1_Inheritance.md) we will 
 see another approach.)
 
 Suppose we wanted objects that provide some of the same 
@@ -677,7 +729,7 @@ functionality or some restrictions.  For example, we
 might want a method `area` that returns the sum of 
 the areas of all the `Rect` objects in the `RectList`: 
 
-```python
+```{code-cell} python3
 class RectList:
     """A collection of Rects."""
 
@@ -696,7 +748,7 @@ That seems reasonable, but how do we add `Rect` objects to the
 
 We do *not* want to do it this way: 
 
-```python
+```python3
 li = RectList()
 # DON'T DO THIS
 li.elements.append(Rect(Point(3,3), Point(5,7)))
@@ -711,7 +763,7 @@ above calling the `append` method of the `elements` instance variable, is
 difficult to read and maintain. So we want instead to give `RectList`
 it's own `append` method, so that we can write 
 
-```python
+```python3
 li = RectList()
 li.append(Rect(Point(3,3), Point(5,7)))
 li.append(Rect(Point(2,2), Point(3,3)))
@@ -724,6 +776,32 @@ The `append` method can be very simple!
     def append(self, item: Rect):
         """Delegate to elements"""
         self.elements.append(item)
+```
+
+```{code-cell} python3
+:tags: [hide-cell]
+class RectList:
+    """A collection of Rects."""
+
+    def __init__(self):
+        self.elements = [ ]
+        
+    def append(self, item: Rect):
+        """Delegate to elements"""
+        self.elements.append(item)
+
+    def area(self) -> Number:
+        total = 0
+        for el in self.elements:
+            total += el.area()
+        return total
+```
+
+```{code-cell} python3
+li = RectList()
+li.append(Rect(Point(3,3), Point(5,7)))
+li.append(Rect(Point(2,2), Point(3,3)))
+print(f"Combined area is {li.area()}")
 ```
 
 We call this *delegation* because `append` method of `RectList` method  
