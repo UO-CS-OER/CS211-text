@@ -78,7 +78,7 @@ projects for visually impaired students.
 
 Here are instructions for installing the professional version of 
 PyCharm.  If you are installing VS Code instead,
-[skip to the VS Code instructions](#nstalling VS Code).
+[skip to the VS Code instructions](#vs-code-installation).
 
 ### Obtain a license
 
@@ -103,7 +103,7 @@ from [this download page](https://www.jetbrains.com/pycharm/download/).
 
 Install PyCharm as you would other applications.  
 
-## VS Code installation
+## VS Code Installation
 
 You will find installation packages on the
 [VS Code downloads page](https://code.visualstudio.com/download).
