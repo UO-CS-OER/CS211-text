@@ -2,9 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Introduction to Computer Science II
-author: Michal Young, Boyana Norris, and Ram Durairajan
+author: Michal Young
 logo: img/logo-provisional.png
-copyright: "2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license"
+copyright: "2022-2025 University of Oregon.  Creative Commons Share-Alike Attribution license"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -23,6 +23,7 @@ parse:
   - dollarmath
   myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
   myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
+  myst_heading_anchors: 3
 
 
 # Define the name of the latex output file for PDF builds
