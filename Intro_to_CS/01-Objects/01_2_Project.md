@@ -60,4 +60,5 @@ you can avoid comparing _every_ `Appt` in `ag1` with _every_ `Appt`
 in `ag2`, which would take time proportional to the product of their 
 lengths.  
 
-You will turn in one file, `appt.py`. 
+You will turn in one file, `appt.py`, containing both class `Appt` 
+and class `Agenda`. 
