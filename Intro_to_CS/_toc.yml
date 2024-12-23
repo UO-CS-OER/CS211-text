@@ -11,7 +11,8 @@ parts:
       - file: 00-Preliminaries/00-03-Install_IDE.md
   - caption: 01 Objects
     chapters:
-      - file: 01-Objects/01-1-Objects.md
+      - file: 01-Objects/01_1_Objects.md
+      - file: 01-Objects/01_2_Project.md
   - caption: 02 Inheritance
     chapters:
       - file: 02_Inheritance/02_1_Inheritance.md
