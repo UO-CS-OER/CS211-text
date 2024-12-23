@@ -184,19 +184,19 @@ it a *flexible* array because the list has a capacity that may be
 greater than the number of elements currently in the list.  For
  example, if we had a list with two elements  
 
-![List object](img_internals/list-concept-2elem.*)
+![List object](img_internals/list-concept-2elem.png)
 
 the `append` method would use the next available space in the array
 and update information in the list headers part of the structure.  
 
-![Appending one more](img_internals/list-concept-3elem.*)
+![Appending one more](img_internals/list-concept-3elem.png)
 
 This makes the `append` and `pop` methods very efficient if you always
 append and pop at the end of the list.  If the capacity of the list 
 is exhausted, appending a new element requires allocating a larger 
 flexible array. 
 
-![Grow the array](img_internals/list-concept-4elem.*)
+![Grow the array](img_internals/list-concept-4elem.png)
 
 The details are a little more complicated.  First, a `list` object, 
 like all Python objects, starts with a header that identifies the 
