@@ -44,8 +44,9 @@ A more general guide for understanding Python's internals, even if you do not
 want to contribute to Python's development, can be found 
 at [`https://devguide.python.org/exploring/`](https://devguide.python.org/exploring/). 
 
-Philip Guo, creator of the wonderful [PythonTutor](http://pythontutor
-.com/), has recorded lectures of a class he taught on on internals 
+Philip Guo, creator of the wonderful 
+[PythonTutor](http://pythontutor.com/), 
+has recorded lectures of a class he taught on on internals 
  of CPython 2.7.  I have watched only parts.  They are very good, as
   I would expect, but move a little slowly because they are
    recordings of actual class interactions. You can find them at 
