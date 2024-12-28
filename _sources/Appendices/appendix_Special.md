@@ -91,6 +91,11 @@ it is possible that `a.__lt__(b)` and
 `b.__lt__(a)` both return True, although 
 this is likely to be a very bad idea. 
 
+Although Python does not assume any relationships among comparisons 
+like `<=`, `<`, and `==`, you don't need to implement each 
+independently.  Suppose, for example, that you are defining a class 
+of objects that are ordered by size.  You might have 
+
 ## Built-in Functions
 
 Although listed in Python documentation 

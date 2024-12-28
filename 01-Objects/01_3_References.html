@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Negative Binary Numbers &#8212; Introduction to Computer Science II</title>
+    <title>References to Objects &#8212; Introduction to Computer Science II</title>
   
   
   
@@ -60,13 +60,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '06_Binary/06_2_NegBits';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01-Objects/01_3_References';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="What the Hex?" href="06_3_Hex.html" />
-    <link rel="prev" title="Bit Twiddling" href="06_1_Bits.html" />
+    <link rel="next" title="Project: Overlapping Appointments" href="01_4_Project.html" />
+    <link rel="prev" title="Magic Methods" href="01_2_Magic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -177,9 +175,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-03-Install_IDE.html">Installing an Interactive Development Environment (IDE)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">01 Objects</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_1_Objects.html">Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_2_Project.html">Project:  Overlapping Appointments</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_1_Objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_2_Magic.html">Magic Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">References to Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_4_Project.html">Project:  Overlapping Appointments</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">02 Inheritance</span></p>
 <ul class="nav bd-sidenav">
@@ -201,10 +201,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">Recursive Guess and Check</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">06 Binary</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="06_1_Bits.html">Bit Twiddling</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Negative Binary Numbers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_3_Hex.html">What the Hex?</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_1_Bits.html">Bit Twiddling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_2_NegBits.html">Negative Binary Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_3_Hex.html">What the Hex?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">07 Functional</span></p>
 <ul class="nav bd-sidenav">
@@ -281,7 +281,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/06_Binary/06_2_NegBits.md" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/01-Objects/01_3_References.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +347,7 @@
       
       
       
-      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F06_Binary/06_2_NegBits.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F01-Objects/01_3_References.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +377,7 @@
       
       
       
-      <li><a href="../_sources/06_Binary/06_2_NegBits.ipynb" target="_blank"
+      <li><a href="../_sources/01-Objects/01_3_References.ipynb" target="_blank"
    class="btn btn-sm btn-download-notebook-button dropdown-item"
    title="Download notebook file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +394,7 @@
       
       
       
-      <li><a href="../_sources/06_Binary/06_2_NegBits.md" target="_blank"
+      <li><a href="../_sources/01-Objects/01_3_References.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -470,7 +470,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Negative Binary Numbers</h1>
+    <h1>References to Objects</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -480,18 +480,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-a-negative-integer">Representing a negative integer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time">Sign and magnitude: Seemed like a good idea at the time</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-s-complement-a-better-way">Two’s complement: A better way</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-understanding">Check your understanding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-bin-lies-about-negative-numbers">Python ‘bin’ lies about negative numbers</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sign-extension">Sign extension</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packing-and-extracting-bit-fields">Packing and extracting bit fields</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-refer-to-objects">Variables <em>refer</em> to objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutable-and-immutable">Mutable and Immutable</a></li>
 </ul>
             </nav>
         </div>
@@ -503,205 +493,125 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="negative-binary-numbers">
-<h1>Negative Binary Numbers<a class="headerlink" href="#negative-binary-numbers" title="Link to this heading">#</a></h1>
-<p>In <a class="reference internal" href="06_1_Bits.html"><span class="doc std std-doc">the prior section</span></a>
-on binary representation and manipulation we
-discussed only positive integers and zero.
-Negative numbers complicate things slightly.</p>
-<section id="representing-a-negative-integer">
-<h2>Representing a negative integer<a class="headerlink" href="#representing-a-negative-integer" title="Link to this heading">#</a></h2>
-<p>How should we represent -1 in binary?
-How about -42?</p>
-<section id="sign-and-magnitude-seemed-like-a-good-idea-at-the-time">
-<h3>Sign and magnitude: Seemed like a good idea at the time<a class="headerlink" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time" title="Link to this heading">#</a></h3>
-<p>A simple approach would be to reserve one binary
-digit as a <em>sign bit</em>.  For example, in an 8-bit integer,
-10000001 could represent -1, and 10000101 could represent -5.<br />
-That is called <em>sign and magnitude</em> representation.  It is
-simple, but it has some problems.</p>
-<p>In sign and magnitude representation we end up with 00000000
-for positive zero and 10000000 for negative zero.  But … really,
-negative zero? This is a pretty clear indication that sign and magnitude
-representation is going to have other problems.  And it does.</p>
-<p>From the perspective of a computer designer, sign and magnitude
-representation adds a lot of
-complication to the circuitry needed for arithmetic.  Consider
-that somehow when we add <span class="math notranslate nohighlight">\(00000001_2\)</span> (1)  and <span class="math notranslate nohighlight">\(10000001_2\)</span> (-1)
-we should get <span class="math notranslate nohighlight">\(00000000_2\)</span> (0).  The circuitry that adds
-positive integers is not going to do that, so special purpose
-circuitry for arithmetic on negative numbers would be required.
-Chip designers hate that.</p>
-<p>A representation that chip designers can be happy with should
-add as little complication as possible to CPU circuitry. Adding
-a negative number to a positive number, or a negative number
-to a negative number, should work exactly the same as adding
-two positive numbers.  Which brings us to two’s complement
-notation.</p>
-</section>
-</section>
-<section id="two-s-complement-a-better-way">
-<h2>Two’s complement: A better way<a class="headerlink" href="#two-s-complement-a-better-way" title="Link to this heading">#</a></h2>
-<p>The representation for negative numbers actually used in virtually all modern
-digital computers is
-<a class="reference external" href="https://en.wikipedia.org/wiki/Two%27s_complement">two’s complement</a>.   In this notation, the 8-bit representation of
--1 is 11111111 and the 8-bit representation of 1 is,
-of course, 00000001.  If we add them, we “carry the one” all the way
-into the 9th (non-existant) digit, where it is lost,
-and we get 00000000.  Addition and subtraction can work in the ordinary way, with
-no special cases for negative numbers.</p>
-<p>The essence of two’s complement representation is that, while the
-value of digit <span class="math notranslate nohighlight">\(p\)</span> is normally <span class="math notranslate nohighlight">\(2^p\)</span>, the value of the
-very leftmost digit is <span class="math notranslate nohighlight">\(-2^p\)</span>.</p>
-<p>In an 8-bit signed integer, bit 7 represents <span class="math notranslate nohighlight">\(-(2^7)\)</span>, or -128.
-The signed 8-bit number 10000110, therefore, is
-<span class="math notranslate nohighlight">\(-(2^7) + 2^2 + 2^1\)</span> = -128 + 4 + 2 = -122.</p>
-<p><img alt="-122 = -128 + 4 + 2" src="../_images/twos_comp.svg" /></p>
-<p>We said above that an 8-bit representation of -1 would
-be 11111111.  We can see that this is because the leftmost
-bit (still called the <em>sign bit</em>) represents -128, and the
-remaining bits represent 127, so that together they represent
--1.</p>
-<section id="check-your-understanding">
-<h3>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Link to this heading">#</a></h3>
-<p>If 11111111 is -1, what is the representation of -2?</p>
-<p>What range of values can be represented by by an 8-bit
-integer using the two’s complement notation?</p>
-</section>
-<section id="python-bin-lies-about-negative-numbers">
-<h3>Python ‘bin’ lies about negative numbers<a class="headerlink" href="#python-bin-lies-about-negative-numbers" title="Link to this heading">#</a></h3>
-<p>If you count on the Python <code class="docutils literal notranslate"><span class="pre">bin</span></code> function to check
-the binary representation of integers, you will
-encounter a problem:  Python’s <code class="docutils literal notranslate"><span class="pre">bin</span></code> function uses
-sign and magnitude notation, not two’s complement,
-to represent a negative integer as a string of
-<code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> characters.  In this way the Python
-<code class="docutils literal notranslate"><span class="pre">bin</span></code> function can always produce a string that starts
-with the character <code class="docutils literal notranslate"><span class="pre">1</span></code>, except for the binary value 0.
-It does not need to show the leading zeros on a positive
-integer, and it does not need to show a long string of <code class="docutils literal notranslate"><span class="pre">1</span></code>
-characters for a small negative integer.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">bin</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="go">&#39;-0b1&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">bin</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<span class="go">&#39;-0b10&#39;</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="references-to-objects">
+<h1>References to Objects<a class="headerlink" href="#references-to-objects" title="Link to this heading">#</a></h1>
+<section id="variables-refer-to-objects">
+<h2>Variables <em>refer</em> to objects<a class="headerlink" href="#variables-refer-to-objects" title="Link to this heading">#</a></h2>
+<p>Before reading on, try to predict what the following
+little program will print.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This is usually convenient, especially considering the real internal
-representation of negative one in Python is likely to
-start with at least 31 1 bits. It can be misleading,
-however, when you are trying to reason carefully about
-the actual representation of negative numbers.</p>
-</section>
-</section>
-<section id="sign-extension">
-<h2>Sign extension<a class="headerlink" href="#sign-extension" title="Link to this heading">#</a></h2>
-<p>Note that when we describe the representation of a negative
-binary number, we need to say how many bits are in the
-representation.  The representation of -1 as an
-8-bit signed integer is 11111111, but the representation
-of -1 as a 16-bit signed integer
-is 1111111111111111.  I do not want to type the representation
-of -1 as a 32-bit signed integer, or as a 64-bit signed integer,
-but you can probably guess what it looks like.</p>
-<p>Suppose we have 3-bit signed integers. Then 101
-represents <span class="math notranslate nohighlight">\(-2^2 + 2^0\)</span> = -4 + 1 = -3.  Suppose I want to store
-this same value in a 5-bit signed integer. The
-new value will become 11101, that is,
--16 + 8 + 4 + 1 = -3.</p>
-<p><img alt="Sign extending 3-bit negative integer to 5 bits" src="../_images/sign-extend-neg.svg" /></p>
-<p>You can likely see the pattern:  If we want to store a
-signed n-bit value in a larger m-bit field, we must
-pad with 1 digits on the left.
-More generally, what we pad with is the sign bit.
-Thus the 3-bit negative number 101 is padded out
-to the 5-bit negative 11101, while the 3-bit
-positive number 011 is padded out to the
-5-bit positive number 00011.</p>
-<p><img alt="Sign-extending 3-bit positive integer to 5 bits" src="../_images/sign-extend-pos.svg" /></p>
-<p>This is called
-<em>sign extension</em>.</p>
-<p>If we go the other way, we simply chop off bits on the
-left, whether they are 0 or 1.  If the bits we chop off
-are not all the same, and the same as the remaining sign
-bit, then the number does not fit in the smaller field!</p>
-</section>
-<section id="packing-and-extracting-bit-fields">
-<h2>Packing and extracting bit fields<a class="headerlink" href="#packing-and-extracting-bit-fields" title="Link to this heading">#</a></h2>
-<p>When we pack multiple values
-into an integer, we must be careful to
-determine whether that value should
-be interpreted as a <em>signed</em> integer
-in which the leftmost bit is the sign bit,
-representing a negative power of 2, or
-an <em>unsigned</em> integer in which all the bits
-represent positive powers of two.</p>
-<p>Suppose we use four bits, bits 0..3, to
-represent an integer.  We might treat that field as an
-<em>unsigned</em> integer that can range from 0 to 15, or we might
-treat it as a <em>signed</em> integer that can range from -8 to 7.
-If we treat it as an unsigned integer, the masking and shifting
-can work exactly as described in the
-<a class="reference internal" href="06_1_Bits.html"><span class="std std-doc">the prior chapter</span></a>, but we cannot represent
-negative values.  If we treat it as a signed
-integer, then we must add a sign extension step when we
-extract it.</p>
-<p>To pack a signed value into a field, we don’t need to do
-anything special except be sure to mask the value to
-chop off any extra 1 bits on the left. For example, if we
-want to store a signed 3-bit value <code class="docutils literal notranslate"><span class="pre">x</span></code> in bits 3..5 of
-<code class="docutils literal notranslate"><span class="pre">w</span></code>, assuming those bits of <code class="docutils literal notranslate"><span class="pre">w</span></code> are initially zero,
-we would need to mask off any high bits, like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x_masked</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="mb">0b111</span>
-<span class="n">x_shifted</span> <span class="o">=</span> <span class="n">x_masked</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">|</span> <span class="n">x_shifted</span>
+<p>Now execute that program.  Did you get the result you
+expected?  If it surprised you, try visualizing it in
+PythonTutor (<a class="reference external" href="http://pythontutor.com/">http://pythontutor.com/</a>).  You should get a
+diagram that looks like this:</p>
+<p><img alt="Python tutor illustrating alias references" src="../_images/pythontutor-list-alias.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are distinct variables, but they are both references to
+the same list.   When we change <code class="docutils literal notranslate"><span class="pre">y</span></code> by appending 4, we are changing the
+same object that <code class="docutils literal notranslate"><span class="pre">x</span></code> refers to.   We say that <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are <em>aliases</em>,
+two names for the same object.</p>
+<p>Note this is very different from the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>It is only on extraction that we must perform
-sign extension.  For example, if <code class="docutils literal notranslate"><span class="pre">x</span></code> in the
-preceding line was -1, and <code class="docutils literal notranslate"><span class="pre">w</span></code> is an 8-bit
-value 0, then <code class="docutils literal notranslate"><span class="pre">w</span></code> after the code
-above will contain <code class="docutils literal notranslate"><span class="pre">00111000</span></code>.  We want to extract
-the field in bits 3..5, holding value <code class="docutils literal notranslate"><span class="pre">111</span></code>,
-interpret it again as -1.  To do that, we must
-extend the sign bit (the initial 1) however
-far it takes to fill the word into which we are
-extracting that field.</p>
-<p>Implementing sign extension in Python is slightly odd.
-You must understand why and
-when to perform sign extension, but I will provide a
-sign extension function that you can call.</p>
+<p>Each time we create a list like <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, we are creating a distinct
+list.  In this seocond version of the program, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are not
+aliases.</p>
+<p><img alt="Distinct lists in Python Tutor" src="../_images/pythontutor-list-noalias.png" /></p>
+<p>It is essential to remember that variables hold <em>references</em> to objects, and
+there may be more than one reference to the same object.  We can observe the
+same phenomenon with classes we add to Python.  Consider this program:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">p1</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;Point&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once again we have created two variables that are <em>aliases</em>, i.e., they
+refer to the same object.   PythonTutor illustrates:</p>
+<p><img alt="Aliased point in Python Tutor" src="../_images/pythontutor-aliased-point.png" /></p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">Point</span></code> is a reference to the <em>class</em>, while <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> are
+references to the Point <em>object</em> we created from the Point class.  When
+we call <code class="docutils literal notranslate"><span class="pre">p1.move</span></code>, the <code class="docutils literal notranslate"><span class="pre">move</span></code> method of class <code class="docutils literal notranslate"><span class="pre">Point</span></code> makes a change to
+the object that is referenced by both <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>.  We often say that
+a method like <code class="docutils literal notranslate"><span class="pre">move</span></code> <em>mutates</em> an object.</p>
 </section>
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
-<p>In all modern digital computers, negative integers are
-represented with the <em>two’s complement</em> system.  In this
-system, the <em>sign bit</em> represents a negative power of two,
-and all other bits represent positive powers of two.</p>
-<p>Two’s complement notation is very convenient and efficient
-for chip designers, because arithmetic with negative and
-positive numbers work exactly the same, with no extra
-circuitry.</p>
-<p>When we pack multiple small integers into an integer value,
-we must be careful about whether we intend a field to
-represent a signed value or an unsigned value.  If the
-field represents an unsigned value, then each bit <span class="math notranslate nohighlight">\(p\)</span>
-represents <span class="math notranslate nohighlight">\(2^p\)</span>.  An unsigned value with <span class="math notranslate nohighlight">\(k\)</span> bits
-ranges from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(2^k-1\)</span>.<br />
-If the field represents a signed
-value, then the <em>sign bit</em> represents <span class="math notranslate nohighlight">\(-2^p\)</span>
-and all other bits <span class="math notranslate nohighlight">\(p\)</span> represent <span class="math notranslate nohighlight">\(2^p\)</span>.</p>
-<p>When
-we pack a signed value into a smaller field,
-we mask off any extra 1 bits on the left.
-When we
-extract a signed value into a larger memory word,
-we must <em>sign extend</em> it, filling all bits to the left of
-the sign bit of the smaller field with duplicates of the sign bit.</p>
-<p>When we use the Python <code class="docutils literal notranslate"><span class="pre">bin</span></code> function, we get a string
-representation based on sign and magnitude notation,
-and not an accurate representation of the actual
-internal two’s-complement representation.</p>
+<section id="mutable-and-immutable">
+<h2>Mutable and Immutable<a class="headerlink" href="#mutable-and-immutable" title="Link to this heading">#</a></h2>
+<p>There is another way we could have written a method like <code class="docutils literal notranslate"><span class="pre">move</span></code>.<br />
+Instead of <em>mutating</em> the object (changing the values of its <em>fields</em>
+<code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>), we could have created a new Point object at the
+modified coordinates:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">moved</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dy</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">moved</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that method <code class="docutils literal notranslate"><span class="pre">moved</span></code>, unlike method <code class="docutils literal notranslate"><span class="pre">move</span></code> in the prior example,
+return a new Point object that is distinct from the Point object that
+was aliased.  Initially <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> may be aliases, after <code class="docutils literal notranslate"><span class="pre">p2</span> <span class="pre">=</span> <span class="pre">p1</span></code>:</p>
+<p><img alt="Points aliased" src="../_images/pythontutor-point-unaliased-step1.png" /></p>
+<p>But after <code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">=</span> <span class="pre">p1.moved(4,4)</span></code>, <code class="docutils literal notranslate"><span class="pre">p1</span></code> refers to a new, distinct object:</p>
+<p><img alt="New distinct point" src="../_images/pythontutor-point-unaliased-step2.png" /></p>
+<p>As we saw with the <code class="docutils literal notranslate"><span class="pre">list</span></code> example, aiasing applies to objects
+from the built-in Python classes as well as to objects
+from the classes that you will write.  It just hasn’t been
+apparent until now, because many of the built-in classes
+are <em>immutable</em>:  They do not have any methods that
+change the values stored in an object.  For example, when
+we write <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">5</span></code>, we are actually calling <code class="docutils literal notranslate"><span class="pre">(3).__add__(5)</span></code>;
+The <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method does not change the value of <code class="docutils literal notranslate"><span class="pre">3</span></code> (that
+would be confusing!) but instead returns a new object <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+<p>We will write both <em>immutable</em> classes and <em>mutable</em> classes.<br />
+It is typically easier to reason about the behavior of <em>immutable</em>
+classes (which is why so many of Python’s basic classes are
+immutable).  On the other hand, it may be more efficient to <em>mutate</em>
+an object than to return a new object with a small change (which is
+why most of Python’s built-in collection classes, like <code class="docutils literal notranslate"><span class="pre">list</span></code> and
+<code class="docutils literal notranslate"><span class="pre">dict</span></code>, are mutabble).<br />
+Aliasing of mutable objects is often a mistake, but not always.
+Later we will intentionally create aliases to access
+mutable objects.  The important thing is to be aware of it.</p>
 </section>
 </section>
 
@@ -718,7 +628,7 @@ internal two’s-complement representation.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./06_Binary"
+            path: "./01-Objects"
         },
         predefinedOutput: true
     }
@@ -736,20 +646,20 @@ internal two’s-complement representation.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="06_1_Bits.html"
+       href="01_2_Magic.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Bit Twiddling</p>
+        <p class="prev-next-title">Magic Methods</p>
       </div>
     </a>
     <a class="right-next"
-       href="06_3_Hex.html"
+       href="01_4_Project.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">What the Hex?</p>
+        <p class="prev-next-title">Project:  Overlapping Appointments</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -770,18 +680,8 @@ internal two’s-complement representation.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-a-negative-integer">Representing a negative integer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sign-and-magnitude-seemed-like-a-good-idea-at-the-time">Sign and magnitude: Seemed like a good idea at the time</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-s-complement-a-better-way">Two’s complement: A better way</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-understanding">Check your understanding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-bin-lies-about-negative-numbers">Python ‘bin’ lies about negative numbers</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sign-extension">Sign extension</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packing-and-extracting-bit-fields">Packing and extracting bit fields</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-refer-to-objects">Variables <em>refer</em> to objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutable-and-immutable">Mutable and Immutable</a></li>
 </ul>
   </nav></div>
 

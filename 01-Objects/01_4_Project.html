@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>A Course in Computational Thinking &#8212; Introduction to Computer Science II</title>
+    <title>Project: Overlapping Appointments &#8212; Introduction to Computer Science II</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '00-Preliminaries/00-01-Prospectus';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01-Objects/01_4_Project';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installing Python and IDLE" href="00-02-Install.html" />
-    <link rel="prev" title="Introduction to Computer Science, part 2" href="../intro.html" />
+    <link rel="next" title="Class Hierarchies and Inheritance" href="../02_Inheritance/02_1_Inheritance.html" />
+    <link rel="prev" title="References to Objects" href="01_3_References.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -169,15 +169,17 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">00 Preliminaries</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">A Course in Computational Thinking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-02-Install.html">Installing Python and IDLE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="00-03-Install_IDE.html">Installing an Interactive Development Environment (IDE)</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">A Course in Computational Thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-02-Install.html">Installing Python and IDLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-03-Install_IDE.html">Installing an Interactive Development Environment (IDE)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">01 Objects</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_1_Objects.html">Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_2_Project.html">Project:  Overlapping Appointments</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_1_Objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_2_Magic.html">Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_3_References.html">References to Objects</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project:  Overlapping Appointments</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">02 Inheritance</span></p>
 <ul class="nav bd-sidenav">
@@ -271,55 +273,6 @@
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/00-Preliminaries/00-01-Prospectus.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Binder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -345,7 +298,7 @@
       
       
       
-      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F00-Preliminaries/00-01-Prospectus.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F01-Objects/01_4_Project.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,24 +328,7 @@
       
       
       
-      <li><a href="../_sources/00-Preliminaries/00-01-Prospectus.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="../_sources/00-Preliminaries/00-01-Prospectus.md" target="_blank"
+      <li><a href="../_sources/01-Objects/01_4_Project.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -468,7 +404,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>A Course in Computational Thinking</h1>
+    <h1>Project:  Overlapping Appointments</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -478,11 +414,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-to-program">Learning to Program</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-a-start">Getting a Start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 </ul>
             </nav>
         </div>
@@ -494,142 +426,73 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="a-course-in-computational-thinking">
-<h1>A Course in Computational Thinking<a class="headerlink" href="#a-course-in-computational-thinking" title="Link to this heading">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This chapter repeats much of the introduction from
-<a class="reference external" href="https://uo-cs-oer.github.io/CS210-text/intro.html"><em>Introduction to Computer Science Part I</em></a>
-for convenience of students who did not use that text.
-Feel free to skim or skip this chapter or parts that
-you are already familiar with.</p>
-</div>
-<p><em>Introduction to Computer Science</em> is a foundational course in
-computer science.  It is a course in programming, but more than that,
-it is a course in computational thinking.</p>
-<p>What’s so special about <em>computational</em> thinking and problem solving?
-Is it a branch of engineering, or math, or is it a science?
-Computing certainly draws from all of those fields, and also
-contributes to them, but in some ways it is unique.</p>
-<p>Computing and computer science do not seek to characterize the
-natural world, although many computer programs (e.g., environmental
-models, computer aided design and numerical control) incorporate
-models of the natural world.  Computing is increasingly a core tool
-used in the natural sciences, and computational thinking can be
-useful to scientists, but core concerns of the natural sciences and
-computing are distinct.</p>
-<p>Some areas of computing (particularly usability and user interface
-design, and software engineering) draw heavily from the social
-sciences, especially psychology but also fields as diverse as
-anthropology, linguistics, and economics.  Despite some overlap,
-though (e.g., economic game theory in the design of computer network
-protocols, visual attention in user interface design), the core
-concerns of computing are mostly distinct from the core concerns of
-the social sciences.</p>
-<p>Like mathematics, computing requires
-rigorous reasoning about formal, abstract systems.<br />
-Some areas of computer science produce mathematical proofs, as you
-will be required to do if you continue with computer science through
-courses in data structures and algorithms.<br />
-However, computer scientists are more concerned than mathematicians
-with the <em>things</em> their formal systems represent.</p>
-<p>Like engineers, computer scientists and software developers
-construct abstract
-representations of <em>things</em> to
-reason  effectively about them.
-There is an important difference in the kinds of <em>thing</em> that
-computing produces, relative to conventional engineering.
-The design of a bridge or an automobile is
-complex and expensive, but the main expense of building a bridge is
-in the physical construction, and not the design.
-The cost of building cars at industrial scale is likewise much larger
-than the cost of designing a car.</p>
-<p>The <em>things</em> designed (but not constructed) by
-software developers are <em>computations</em>.
-The computations are
-constructed by computers, following our designs.
-Computations
-are weightless and cheap.<br />
-The designs of those computations, which we call
-<em>programs</em> or <em>software</em> or perhaps <em>software systems</em>, are complex
-and expensive. Any part of the construction that can be fully
-automated becomes cheap, but there always remains some part of the
-design that is necessarily human, complex, and demanding.<br />
-Computing exposes the expense of design by removing the
-limits of engineering physical things.</p>
-<p>All these things that computing is <em>not</em> may shed some light on what
-computing and computer science <em>are</em>.  Computer science is concerned
-with
-<em>design</em> of computations, and like other design disciplines it
-requires creative problem-solving. It requires forming and using
-abstract, often mathematical models, without losing track of their
-relation to concrete artifacts.  It especially requires
-careful control of complexity, decomposing problems into smaller
-sub-problems and organizing them to maintain intellectual control.
-Many disciplines incorporate these concerns to some extent, but they
-are the very core of computing.</p>
-<p>In tackling a core, rigorous course in computing, you should
-certainly become a better programmer.  But if skill in programming
-is the only thing you gain from this course, then we have failed.
-If you as a learner and we as your teachers are successful, a
-rigorous course in computational thinking will make you a better and
-more creative problem solver.</p>
-<section id="learning-to-program">
-<h2>Learning to Program<a class="headerlink" href="#learning-to-program" title="Link to this heading">#</a></h2>
-<p>The principles and techniques
-you will learn in <em>Introduction to Computer Science</em>
-are not limited to a single programming
-language, let alone a particular computer or operating system.
-But we have to start somewhere.  That <em>somewhere</em>
-requires us to choose a programming language, and to
-practice using it.</p>
-<section id="why-python">
-<h3>Why Python<a class="headerlink" href="#why-python" title="Link to this heading">#</a></h3>
-<p>In this course we will use Python,
-specifically Python version 3.11 or higher.
-Python is widely used in data science and scientific
-computing, in cartography, in web development,
-in machine learning, and in many other domains, but
-that is not why we have chosen it. We have chosen Python 3 because
-we believe it is a good language for <em>learning to program</em>.   Python
-3 is</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="project-overlapping-appointments">
+<h1>Project:  Overlapping Appointments<a class="headerlink" href="#project-overlapping-appointments" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://github.com/UO-CIS211/Agenda">Agenda</a> is our
+first project with user-written classes.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>In this project you will</p>
 <ul class="simple">
-<li><p>Consistent.  There are few “special cases” to remember in Python,
-which makes it easier to remember how things work and to build on
-what you know.</p></li>
-<li><p>Concise.  Python does not require a lot of boilerplate, which
-makes it easier to read example code.</p></li>
-<li><p>Well-provisioned.  Although there are many extras that you <em>could</em>
-add, a standard and straightforward installation of Python is
-enough to build many interesting projects.</p></li>
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Appt</span></code> (short for “appointment”) that represents
+a single appointment with a start time, an end time, and a
+description.  For example, you might create an <code class="docutils literal notranslate"><span class="pre">Appt</span></code> object to
+represent CS 210 lecture from 10am to 11:20am on January 7, 2025.</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Appt</span></code> class will make use of the
+<code class="docutils literal notranslate"><span class="pre">datetime</span></code> class from the Python library, which you will import.</p></li>
+<li><p>Each <code class="docutils literal notranslate"><span class="pre">Appt</span></code> object will contain three <em>instance variables</em>, also
+known as <em>fields</em>.  Two of these,
+the start time (e.g., 10:00am on January 7, 2025) and end time
+(e.g., 11:20am on January 7) will be represented by
+<code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects. The third instance variable will be a
+description represented as a <code class="docutils literal notranslate"><span class="pre">str</span></code> object.</p></li>
+<li><p>You will write several methods for the <code class="docutils literal notranslate"><span class="pre">Appt</span></code> class.  These
+include <em>magic methods</em> for comparing <code class="docutils literal notranslate"><span class="pre">Appt</span></code> objects.  We will
+interpret <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> as <em>before</em>, so that <code class="docutils literal notranslate"><span class="pre">app1</span> <span class="pre">&lt;</span> <span class="pre">app2</span></code> will mean
+“the end of app1 is no later than the beginning of app2”.</p></li>
+<li><p>You will write an <code class="docutils literal notranslate"><span class="pre">overlaps</span></code> method.  <code class="docutils literal notranslate"><span class="pre">app1.overlaps(app2)</span></code> will
+mean that there is a non-zero overlap in the periods represented
+by <code class="docutils literal notranslate"><span class="pre">app1</span></code> and <code class="docutils literal notranslate"><span class="pre">app2</span></code>.</p></li>
+<li><p>You will write an <code class="docutils literal notranslate"><span class="pre">intersect</span></code> method, which creates a new <code class="docutils literal notranslate"><span class="pre">Appt</span></code>
+object representing the overlapping portion of two appointments.</p></li>
+<li><p>You will write additional methods for creating and
+printing <code class="docutils literal notranslate"><span class="pre">Appt</span></code> objects.</p></li>
 </ul>
-<p>That is not to say that Python is a perfect language.  It is
-certainly not the only programming language you will ever want or
-need to learn.   But among the programming languages available to us
-today, we believe it is an excellent starting point.</p>
-</section>
-</section>
-<section id="getting-a-start">
-<h2>Getting a Start<a class="headerlink" href="#getting-a-start" title="Link to this heading">#</a></h2>
-<p>The pre-requisites for <em>Introduction to Computer Science</em> include
-a basic familiarity with programming.  That familiarity may
-take many forms (not necessarily programming in Python).  Also,
-student knowledge from a course some time ago or from self study may
-be rusty or incomplete.</p>
-<p>If you have not programmed at all, but want to tackle this very
-demanding course, we can recommend the
-<a class="reference external" href="https://cscircles.cemc.uwaterloo.ca/">Computer Science Circles</a>
-online lessons as a good and thorough introduction.  Even if
-you have programmed in Python before, you may find the CS Circles
-materials valuable as a refresher.
-You may also be interested in
-<a class="reference external" href="https://uo-cs-oer.github.io/CS210-text/intro.html">part 1 of this series</a>.</p>
-<p>The remaining sections of this chapter provide brief instructions
-for installing Python 3 on the computer you will use for your
-projects, along with an interactive development environment,
-and then <em>just enough</em>
-introduction to Python programming
-to tackle an initial project.</p>
+</li>
+<li><p>Create a class <code class="docutils literal notranslate"><span class="pre">Agenda</span></code> representing a collection of <code class="docutils literal notranslate"><span class="pre">Appt</span></code>
+objects. An <code class="docutils literal notranslate"><span class="pre">Agenda</span></code> object will be a <em>wrapper</em> for a <code class="docutils literal notranslate"><span class="pre">list</span></code>
+object.  It will have a single instance variable, a <code class="docutils literal notranslate"><span class="pre">list</span></code> of
+<code class="docutils literal notranslate"><span class="pre">Appt</span></code> objects.  Many of its methods, like <code class="docutils literal notranslate"><span class="pre">append</span></code>, will be
+delegated to corresponding methods of the <code class="docutils literal notranslate"><span class="pre">list</span></code> it wraps.  The
+point of creating an <code class="docutils literal notranslate"><span class="pre">Agenda</span></code> class is to alter the behavior of
+some methods (e.g., customizing the way a list of appointments is
+printed) and add some new methods.</p>
+<ul>
+<li><p>You will write a <code class="docutils literal notranslate"><span class="pre">conflicts</span></code> method to detect <em>any</em> overlap in
+two <code class="docutils literal notranslate"><span class="pre">Agenda</span></code> objects.  The result of <code class="docutils literal notranslate"><span class="pre">ag1.conflicts(ag2)</span></code> will be
+another  <code class="docutils literal notranslate"><span class="pre">Agenda</span></code> object, containing an <code class="docutils literal notranslate"><span class="pre">Appt</span></code> object for
+overlap between any <code class="docutils literal notranslate"><span class="pre">Appt</span></code> object in <code class="docutils literal notranslate"><span class="pre">ag1</span></code> and some <code class="docutils literal notranslate"><span class="pre">Appt</span></code> object
+in <code class="docutils literal notranslate"><span class="pre">ag2</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Most of the <em>Agenda</em> project is not complicated
+or difficult, but you can
+expect some frustration and time spent because you are using
+unfamiliar language features.  Be sure to correctly use
+the methods you have defined to simplify other parts of the program
+(the <em>DRY</em> principle, <em>don’t repeat yourself</em>).  For example, when
+you write the <code class="docutils literal notranslate"><span class="pre">overlaps</span></code> method of <code class="docutils literal notranslate"><span class="pre">Appt</span></code>, make use of the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> magic
+method by noting that if <code class="docutils literal notranslate"><span class="pre">app1.overlaps(app2)</span></code>, then neither
+<code class="docutils literal notranslate"><span class="pre">app1</span> <span class="pre">&lt;</span> <span class="pre">app2</span></code> nor <code class="docutils literal notranslate"><span class="pre">app2</span> <span class="pre">&lt;</span> <span class="pre">app1</span></code>.</p>
+<p>The only tricky bit in the project is making the <code class="docutils literal notranslate"><span class="pre">intersect</span></code>
+method efficient.  By sorting both <code class="docutils literal notranslate"><span class="pre">Agenda</span></code> objects <code class="docutils literal notranslate"><span class="pre">ag1</span></code> and <code class="docutils literal notranslate"><span class="pre">ag2</span></code>,
+you can avoid comparing <em>every</em> <code class="docutils literal notranslate"><span class="pre">Appt</span></code> in <code class="docutils literal notranslate"><span class="pre">ag1</span></code> with <em>every</em> <code class="docutils literal notranslate"><span class="pre">Appt</span></code>
+in <code class="docutils literal notranslate"><span class="pre">ag2</span></code>, which would take time proportional to the product of their
+lengths.</p>
+<p>You will turn in one file, <code class="docutils literal notranslate"><span class="pre">appt.py</span></code>, containing both class <code class="docutils literal notranslate"><span class="pre">Appt</span></code>
+and class <code class="docutils literal notranslate"><span class="pre">Agenda</span></code>.</p>
 </section>
 </section>
 
@@ -646,7 +509,7 @@ to tackle an initial project.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./00-Preliminaries"
+            path: "./01-Objects"
         },
         predefinedOutput: true
     }
@@ -664,20 +527,20 @@ to tackle an initial project.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="01_3_References.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to Computer Science, part 2</p>
+        <p class="prev-next-title">References to Objects</p>
       </div>
     </a>
     <a class="right-next"
-       href="00-02-Install.html"
+       href="../02_Inheritance/02_1_Inheritance.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installing Python and IDLE</p>
+        <p class="prev-next-title">Class Hierarchies and Inheritance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -698,11 +561,7 @@ to tackle an initial project.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-to-program">Learning to Program</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-a-start">Getting a Start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 </ul>
   </nav></div>
 

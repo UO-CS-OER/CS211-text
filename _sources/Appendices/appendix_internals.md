@@ -44,8 +44,9 @@ A more general guide for understanding Python's internals, even if you do not
 want to contribute to Python's development, can be found 
 at [`https://devguide.python.org/exploring/`](https://devguide.python.org/exploring/). 
 
-Philip Guo, creator of the wonderful [PythonTutor](http://pythontutor
-.com/), has recorded lectures of a class he taught on on internals 
+Philip Guo, creator of the wonderful 
+[PythonTutor](http://pythontutor.com/), 
+has recorded lectures of a class he taught on on internals 
  of CPython 2.7.  I have watched only parts.  They are very good, as
   I would expect, but move a little slowly because they are
    recordings of actual class interactions. You can find them at 
@@ -184,19 +185,19 @@ it a *flexible* array because the list has a capacity that may be
 greater than the number of elements currently in the list.  For
  example, if we had a list with two elements  
 
-![List object](img_internals/list-concept-2elem.*)
+![List object](img_internals/list-concept-2elem.png)
 
 the `append` method would use the next available space in the array
 and update information in the list headers part of the structure.  
 
-![Appending one more](img_internals/list-concept-3elem.*)
+![Appending one more](img_internals/list-concept-3elem.png)
 
 This makes the `append` and `pop` methods very efficient if you always
 append and pop at the end of the list.  If the capacity of the list 
 is exhausted, appending a new element requires allocating a larger 
 flexible array. 
 
-![Grow the array](img_internals/list-concept-4elem.*)
+![Grow the array](img_internals/list-concept-4elem.png)
 
 The details are a little more complicated.  First, a `list` object, 
 like all Python objects, starts with a header that identifies the 

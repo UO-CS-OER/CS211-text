@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -55,7 +55,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -177,7 +177,10 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">01 Objects</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01-1-Objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_1_Objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_2_Magic.html">Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_3_References.html">References to Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_4_Project.html">Project:  Overlapping Appointments</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">02 Inheritance</span></p>
 <ul class="nav bd-sidenav">
@@ -529,8 +532,9 @@ to the Python project can be found at
 A more general guide for understanding Python’s internals, even if you do not
 want to contribute to Python’s development, can be found
 at <a class="reference external" href="https://devguide.python.org/exploring/"><code class="docutils literal notranslate"><span class="pre">https://devguide.python.org/exploring/</span></code></a>.</p>
-<p>Philip Guo, creator of the wonderful [PythonTutor](<a class="reference external" href="http://pythontutor">http://pythontutor</a>
-.com/), has recorded lectures of a class he taught on on internals
+<p>Philip Guo, creator of the wonderful
+<a class="reference external" href="http://pythontutor.com/">PythonTutor</a>,
+has recorded lectures of a class he taught on on internals
 of CPython 2.7.  I have watched only parts.  They are very good, as
 I would expect, but move a little slowly because they are
 recordings of actual class interactions. You can find them at
@@ -653,15 +657,15 @@ always references to other objects) are stored in an array.  We call
 it a <em>flexible</em> array because the list has a capacity that may be
 greater than the number of elements currently in the list.  For
 example, if we had a list with two elements</p>
-<p><img alt="List object" src="Appendices/img_internals/list-concept-2elem.*" /></p>
+<p><img alt="List object" src="../_images/list-concept-2elem.png" /></p>
 <p>the <code class="docutils literal notranslate"><span class="pre">append</span></code> method would use the next available space in the array
 and update information in the list headers part of the structure.</p>
-<p><img alt="Appending one more" src="Appendices/img_internals/list-concept-3elem.*" /></p>
+<p><img alt="Appending one more" src="../_images/list-concept-3elem.png" /></p>
 <p>This makes the <code class="docutils literal notranslate"><span class="pre">append</span></code> and <code class="docutils literal notranslate"><span class="pre">pop</span></code> methods very efficient if you always
 append and pop at the end of the list.  If the capacity of the list
 is exhausted, appending a new element requires allocating a larger
 flexible array.</p>
-<p><img alt="Grow the array" src="Appendices/img_internals/list-concept-4elem.*" /></p>
+<p><img alt="Grow the array" src="../_images/list-concept-4elem.png" /></p>
 <p>The details are a little more complicated.  First, a <code class="docutils literal notranslate"><span class="pre">list</span></code> object,
 like all Python objects, starts with a header that identifies the
 type of the object and holds some bookkeeping information for the
@@ -672,7 +676,7 @@ expand it when its capacity is exhausted.  So, instead, the header
 contains a pointer to the variable part.  When we expand the capacity
 of the flexible array, we discard the old area (allowing the garbage
 collector to recycle it) and allocate a new one.</p>
-<p><img alt="Expanding the flexible array representation" src="Appendices/img_internals/list-object-append.*" /></p>
+<p><img alt="Expanding the flexible array representation" src="../_images/list-object-append.svg" /></p>
 <p>Python never moves object headers.  This is so that an object reference
 in Python can be represented simply as a memory address.  If object
 headers
@@ -721,7 +725,7 @@ example, a very large negative integer might have a size field
 of <span class="math notranslate nohighlight">\(-3\)</span>, indicating that it requires three 30-bit digits (each
 of which is represented as a non-negative integer) and that the value
 is negative.</p>
-<p><img alt="A negative integer with 3 30-bit digits" src="Appendices/img_internals/int-neg-3digits.*" /></p>
+<p><img alt="A negative integer with 3 30-bit digits" src="../_images/int-neg-3digits.svg" /></p>
 <p>The sign and magnitude representation and variable length
 complicate every arithmetic operation,
 but the interpreter uses some clever tricks to make arithmetic
@@ -755,7 +759,7 @@ capacity.</p>
 storage”.   Let’s consider the dict <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;dog&quot;:</span> <span class="pre">22,</span> <span class="pre">&quot;cat&quot;:</span> <span class="pre">13</span> <span class="pre">}</span></code>,
 and assume the <code class="docutils literal notranslate"><span class="pre">dict</span></code> structure initially has room for 5 (key, value)
 pairs.</p>
-<p><img alt="" src="Appendices/img_internals/dict-2elem.*" /></p>
+<p><img alt="" src="../_images/dict-2elem.svg" /></p>
 <p>The <em>items</em> part of the structure
 holds the (key, value) pairs (which are
 actually references to other objects).
@@ -792,7 +796,7 @@ number, maybe 197.  (197 + 1) mod 8 is 6, so it tries
 slot 6.  That slot is empty, so it stores 2 in that slot to
 indicate that slot 2 in the items part is where (“lizard”, 18)
 can be found.</p>
-<p><img alt="Adding a lizard" src="Appendices/img_internals/dict-3elem.*" /></p>
+<p><img alt="Adding a lizard" src="../_images/dict-3elem.svg" /></p>
 <p>If we write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">d[&quot;lizard&quot;]</span></code>, the same set of <em>probes</em> occurs:
 We hash “lizard” and get 36 % 8, and looking in slot 4 of
 the indexes we find 0.  We check slot 0 of the items part, but
@@ -910,7 +914,7 @@ implementation”, 2017.
   <div class="footer-item">
     
 <p class="component-author">
-By Michal Young, Boyana Norris, and Ram Durairajan
+By Michal Young
 </p>
 
   </div>
@@ -920,7 +924,7 @@ By Michal Young, Boyana Norris, and Ram Durairajan
 
   <p class="copyright">
     
-      © Copyright 2022, 2023 University of Oregon.  Creative Commons Share-Alike Attribution license.
+      © Copyright 2022-2025 University of Oregon.  Creative Commons Share-Alike Attribution license.
       <br/>
     
   </p>

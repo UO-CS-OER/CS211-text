@@ -103,7 +103,7 @@ from [this download page](https://www.jetbrains.com/pycharm/download/).
 
 Install PyCharm as you would other applications.  
 
-## VS Code Installation
+## VS Code installation
 
 You will find installation packages on the
 [VS Code downloads page](https://code.visualstudio.com/download).
