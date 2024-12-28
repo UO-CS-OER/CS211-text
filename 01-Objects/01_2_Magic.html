@@ -489,6 +489,7 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparisons">Comparisons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-magic">More Magic</a></li>
 </ul>
             </nav>
         </div>
@@ -560,7 +561,6 @@ readable notation:</p>
 </div>
 </div>
 </div>
-<p>More: <a class="reference internal" href="../Appendices/appendix_Special.html"><span class="std std-doc">Appendix on magic methods</span></a></p>
 <section id="magic-for-printing">
 <h2>Magic for printing<a class="headerlink" href="#magic-for-printing" title="Link to this heading">#</a></h2>
 <p>Suppose we wanted to print a <code class="docutils literal notranslate"><span class="pre">Point</span></code> object.  We
@@ -587,7 +587,7 @@ get wrong.  What if we just wrote</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p is &lt;__main__.Point object at 0x1079ac6e0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p is &lt;__main__.Point object at 0x1055446e0&gt;
 </pre></div>
 </div>
 </div>
@@ -907,6 +907,22 @@ we could even have gotten away with a single root comparison and
 derived <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code> as <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">((a</span> <span class="pre">&lt;</span> <span class="pre">b)</span> <span class="pre">or</span> <span class="pre">(a</span> <span class="pre">&gt;</span> <span class="pre">b))</span></code>, but it would not
 have simplified our code.</p>
 </section>
+<section id="more-magic">
+<h2>More Magic<a class="headerlink" href="#more-magic" title="Link to this heading">#</a></h2>
+<p>A more complete list of operations and built-in functions
+that are delegated to special (magic) methods is provided
+in <a class="reference internal" href="../Appendices/appendix_Special.html"><span class="std std-doc">an appendix</span></a>.</p>
+<p>A <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#special-method-names">comprehensive description of special methods</a>
+can be found in the Python language reference.  The comprehensive
+description is dense reading and assumes familiarity with many
+concepts that will not typically be within the experience of
+beginning Python programmers.  You may want to glance at it now, but
+don’t expect to understand much of it yet.
+It is the definitive reference to
+use sometime later in your career when you are building
+infrastructure for your developer community, or perhaps considering
+how to incorporate similar facilities in a new programming language.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -983,6 +999,7 @@ have simplified our code.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparisons">Comparisons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-magic">More Magic</a></li>
 </ul>
   </nav></div>
 

@@ -28,19 +28,54 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-p1 = Point(3,5)
-p2 = p1
-p1.move_to(7, 9)
-print(p2)
+class Point:
+    """An (x,y) coordinate pair"""
+    def __init__(self, x: Number, y: Number):
+        self.x = x
+        self.y = y
+    
+    def move(self, d: "Point") -> "Point":
+        """(x,y).move(dx,dy) = (x+dx, y+dy)"""
+        x = self.x + d.x
+        y = self.y + d.y
+        return Point(x,y)
+        
+    def move_to(self, new_x, new_y):
+        """Change the coordinates of this Point"""
+        self.x = new_x
+        self.y = new_y
+        
+    def __add__(self, other: "Point"):
+        """(x,y) + (dx, dy) = (x+dx, y+dy)"""
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __str__(self) -> str:
+        """Printed representation.
+        str(p) is an implicit call to p.__str__()
+        """
+        return f"({self.x}, {self.y})"
+      
+    def __repr__(self) -> str:
+        """Debugging representation.  This is what
+        we see if we type a point name at the console.
+        """
+        return f"Point({self.x}, {self.y})"
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
 Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m p1 [38;5;241m=[39m [43mPoint[49m([38;5;241m3[39m,[38;5;241m5[39m)
-[1;32m      2[0m p2 [38;5;241m=[39m p1
-[1;32m      3[0m p1[38;5;241m.[39mmove_to([38;5;241m7[39m, [38;5;241m9[39m)
+[0;32m----> 1[0m [38;5;28;43;01mclass[39;49;00m[43m [49m[38;5;21;43;01mPoint[39;49;00m[43m:[49m
+[1;32m      2[0m [38;5;250;43m    [39;49m[38;5;124;43;03m"""An (x,y) coordinate pair"""[39;49;00m
+[1;32m      3[0m [43m    [49m[38;5;28;43;01mdef[39;49;00m[43m [49m[38;5;21;43m__init__[39;49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mx[49m[43m:[49m[43m [49m[43mNumber[49m[43m,[49m[43m [49m[43my[49m[43m:[49m[43m [49m[43mNumber[49m[43m)[49m[43m:[49m
 
-[0;31mNameError[0m: name 'Point' is not defined
+Cell [0;32mIn[1], line 3[0m, in [0;36mPoint[0;34m()[0m
+[1;32m      1[0m [38;5;28;01mclass[39;00m [38;5;21;01mPoint[39;00m:
+[1;32m      2[0m [38;5;250m    [39m[38;5;124;03m"""An (x,y) coordinate pair"""[39;00m
+[0;32m----> 3[0m     [38;5;28;01mdef[39;00m [38;5;21m__init__[39m([38;5;28mself[39m, x: [43mNumber[49m, y: Number):
+[1;32m      4[0m         [38;5;28mself[39m[38;5;241m.[39mx [38;5;241m=[39m x
+[1;32m      5[0m         [38;5;28mself[39m[38;5;241m.[39my [38;5;241m=[39m y
+
+[0;31mNameError[0m: name 'Number' is not defined
 

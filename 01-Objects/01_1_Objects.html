@@ -529,7 +529,8 @@ point as an (x,y) pair.  We might represent the
 point as a tuple like <code class="docutils literal notranslate"><span class="pre">(5,7)</span></code>, or we could represent
 it as the list <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">7]</span></code>, or we could represent
 it as a dict <code class="docutils literal notranslate"><span class="pre">{&quot;x&quot;:</span> <span class="pre">5,</span> <span class="pre">&quot;y&quot;:</span> <span class="pre">7}</span></code>, and that
-might be satisfactory.   If we wanted to represent moving a point (x,y) by some distance (dx, dy), we could define a a function like</p>
+might be satisfactory.   If we wanted to represent moving a point (x,y)
+by some distance (dx, dy), we could define a a function like</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
@@ -549,7 +550,7 @@ might be satisfactory.   If we wanted to represent moving a point (x,y) by some 
 </div>
 </div>
 </div>
-<p>But if we are making a graphics program, we’ll need to <em>move</em>
+<p>But if we are making a graphics program, we’ll need  <em>move</em>
 functions for other graphical objects like rectangles and ovals,
 so instead of naming it <code class="docutils literal notranslate"><span class="pre">move</span></code> we’ll need a more descriptive name
 like <code class="docutils literal notranslate"><span class="pre">move_point</span></code>.  Also we should give the type contract for
@@ -557,12 +558,11 @@ the function, which we can do with Python type hints.  With these
 changes, we get something like this</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
-<span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
 
-<span class="k">def</span> <span class="nf">move_point</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
-               <span class="n">d</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">])</span> \
-        <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">]:</span>
+<span class="k">def</span> <span class="nf">move_point</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
+               <span class="n">d</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">])</span> \
+        <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Number</span><span class="p">,</span> <span class="n">Number</span><span class="p">]:</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span>
     <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">d</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">dy</span><span class="p">)</span>
@@ -683,7 +683,8 @@ variables</em>, like <code class="docutils literal notranslate"><span class="pre
 for the <em>x</em> and <em>y</em> coordinates of a point.
 When we use the Point object <code class="docutils literal notranslate"><span class="pre">p</span></code> from outside the class,
 we refer to those elements as <code class="docutils literal notranslate"><span class="pre">p.x</span></code> and <code class="docutils literal notranslate"><span class="pre">p.y</span></code>, as in the
-print statement above.</p>
+print statement above.   Sometimes we’ll save a few
+syllables by referring to <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> as <em>fields</em> of <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p>
 </section>
 <section id="methods">
 <h3>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h3>
@@ -708,7 +709,7 @@ class:</p>
 </div>
 </div>
 </div>
-<p>Notice that the <em>instance variables</em>
+<p>Notice that the <em>instance variables</em> (or <em>fields</em>)
 <code class="docutils literal notranslate"><span class="pre">self.x</span></code> and <code class="docutils literal notranslate"><span class="pre">self.y</span></code> we created in the constructor
 can be used in the <code class="docutils literal notranslate"><span class="pre">move</span></code> method.  They are part of
 the object, and can be used by any method in the class.
@@ -738,10 +739,13 @@ to create a third <code class="docutils literal notranslate"><span class="pre">P
 </div>
 </div>
 </div>
-<p>At first it may seem confusing that we defined the <code class="docutils literal notranslate"><span class="pre">move</span></code> method with two arguments, <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code>, but
-it looks like we passed it only one argument, <code class="docutils literal notranslate"><span class="pre">v</span></code>.  In fact
-we passed it both points:  <code class="docutils literal notranslate"><span class="pre">p.move(v)</span></code> passes <code class="docutils literal notranslate"><span class="pre">p</span></code> as the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument and <code class="docutils literal notranslate"><span class="pre">v</span></code> as the <code class="docutils literal notranslate"><span class="pre">d</span></code> argument.  We use the variable
-before the <code class="docutils literal notranslate"><span class="pre">.</span></code>, like <code class="docutils literal notranslate"><span class="pre">p</span></code> in this case, in two different ways: To find the right method (function) to call, by looking inside the <em>class</em> to
+<p>At first it may seem confusing that we defined the <code class="docutils literal notranslate"><span class="pre">move</span></code> method
+with two arguments, <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code>, but
+it looks like we passed it only one argument, <code class="docutils literal notranslate"><span class="pre">v</span></code>. In fact
+we passed it both points:  <code class="docutils literal notranslate"><span class="pre">p.move(v)</span></code> passes <code class="docutils literal notranslate"><span class="pre">p</span></code> as the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument
+and <code class="docutils literal notranslate"><span class="pre">v</span></code> as the <code class="docutils literal notranslate"><span class="pre">d</span></code> argument.   Python uses the variable
+before the <code class="docutils literal notranslate"><span class="pre">.</span></code>, like <code class="docutils literal notranslate"><span class="pre">p</span></code> in this case, in two different ways: To find
+the right method (function) to call, by looking inside the <em>class</em> to
 which <code class="docutils literal notranslate"><span class="pre">p</span></code> belongs, and to pass as the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument to the method.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">move</span></code> method above returns a new <code class="docutils literal notranslate"><span class="pre">Point</span></code> object at the
 computed coordinates.  A method can also change the values of

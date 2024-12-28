@@ -495,6 +495,55 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="references-to-objects">
 <h1>References to Objects<a class="headerlink" href="#references-to-objects" title="Link to this heading">#</a></h1>
+<p>In this section we will continue to refer to the <code class="docutils literal notranslate"><span class="pre">Point</span></code>
+class created in
+<a class="reference internal" href="01_1_Objects.html"><span class="std std-doc">the introductory section</span></a>.</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An (x,y) coordinate pair&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Number</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+    
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y).move(dx,dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">move_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Change the coordinates of this Point&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">new_x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">new_y</span>
+        
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(x,y) + (dx, dy) = (x+dx, y+dy)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Printed representation.</span>
+<span class="sd">        str(p) is an implicit call to p.__str__()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+      
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Debugging representation.  This is what</span>
+<span class="sd">        we see if we type a point name at the console.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Point(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
 <section id="variables-refer-to-objects">
 <h2>Variables <em>refer</em> to objects<a class="headerlink" href="#variables-refer-to-objects" title="Link to this heading">#</a></h2>
 <p>Before reading on, try to predict what the following
@@ -540,14 +589,7 @@ same phenomenon with classes we add to Python.  Consider this program:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">p1</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;Point&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7, 9)
 </pre></div>
 </div>
 </div>
@@ -558,15 +600,15 @@ refer to the same object.   PythonTutor illustrates:</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">Point</span></code> is a reference to the <em>class</em>, while <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> are
 references to the Point <em>object</em> we created from the Point class.  When
 we call <code class="docutils literal notranslate"><span class="pre">p1.move</span></code>, the <code class="docutils literal notranslate"><span class="pre">move</span></code> method of class <code class="docutils literal notranslate"><span class="pre">Point</span></code> makes a change to
-the object that is referenced by both <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>.  We often say that
+the object that is referenced by both <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>.  We say that
 a method like <code class="docutils literal notranslate"><span class="pre">move</span></code> <em>mutates</em> an object.</p>
 </section>
 <section id="mutable-and-immutable">
 <h2>Mutable and Immutable<a class="headerlink" href="#mutable-and-immutable" title="Link to this heading">#</a></h2>
-<p>There is another way we could have written a method like <code class="docutils literal notranslate"><span class="pre">move</span></code>.<br />
+<p>There is another way we could have written a method like <code class="docutils literal notranslate"><span class="pre">move</span></code>.
 Instead of <em>mutating</em> the object (changing the values of its <em>fields</em>
-<code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>), we could have created a new Point object at the
-modified coordinates:</p>
+<code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>), we could have created a new <code class="docutils literal notranslate"><span class="pre">Point</span></code> object at the
+adjusted coordinates:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
@@ -586,14 +628,20 @@ modified coordinates:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7 9
+3 5
+</pre></div>
+</div>
+</div>
 </div>
 <p>Notice that method <code class="docutils literal notranslate"><span class="pre">moved</span></code>, unlike method <code class="docutils literal notranslate"><span class="pre">move</span></code> in the prior example,
-return a new Point object that is distinct from the Point object that
+return a new <code class="docutils literal notranslate"><span class="pre">Point</span></code> object that is distinct from the <code class="docutils literal notranslate"><span class="pre">Point</span></code> object that
 was aliased.  Initially <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code> may be aliases, after <code class="docutils literal notranslate"><span class="pre">p2</span> <span class="pre">=</span> <span class="pre">p1</span></code>:</p>
 <p><img alt="Points aliased" src="../_images/pythontutor-point-unaliased-step1.png" /></p>
 <p>But after <code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">=</span> <span class="pre">p1.moved(4,4)</span></code>, <code class="docutils literal notranslate"><span class="pre">p1</span></code> refers to a new, distinct object:</p>
 <p><img alt="New distinct point" src="../_images/pythontutor-point-unaliased-step2.png" /></p>
-<p>As we saw with the <code class="docutils literal notranslate"><span class="pre">list</span></code> example, aiasing applies to objects
+<p>As we saw with the <code class="docutils literal notranslate"><span class="pre">list</span></code> example, aliasing applies to objects
 from the built-in Python classes as well as to objects
 from the classes that you will write.  It just hasn’t been
 apparent until now, because many of the built-in classes
@@ -602,16 +650,20 @@ change the values stored in an object.  For example, when
 we write <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">5</span></code>, we are actually calling <code class="docutils literal notranslate"><span class="pre">(3).__add__(5)</span></code>;
 The <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method does not change the value of <code class="docutils literal notranslate"><span class="pre">3</span></code> (that
 would be confusing!) but instead returns a new object <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
-<p>We will write both <em>immutable</em> classes and <em>mutable</em> classes.<br />
-It is typically easier to reason about the behavior of <em>immutable</em>
-classes (which is why so many of Python’s basic classes are
-immutable).  On the other hand, it may be more efficient to <em>mutate</em>
-an object than to return a new object with a small change (which is
-why most of Python’s built-in collection classes, like <code class="docutils literal notranslate"><span class="pre">list</span></code> and
-<code class="docutils literal notranslate"><span class="pre">dict</span></code>, are mutabble).<br />
-Aliasing of mutable objects is often a mistake, but not always.
+<p>It is typically easier to reason about the behavior of <em>immutable</em>
+classes. On the other hand, it may be more efficient to <em>mutate</em>
+an object than to return a new object with a small change.
+Many of Python’s built-in classes, like <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span></code>, are
+<em>immutable</em> to make reasoning easier.
+Most of Python’s built-in collection classes, like <code class="docutils literal notranslate"><span class="pre">list</span></code> and
+<code class="docutils literal notranslate"><span class="pre">dict</span></code>, are <em>mutable</em> for the sake of efficiency.
+We will write both <em>immutable</em> classes and <em>mutable</em> classes,
+depending on our needs, with a preference for <em>immutable</em> classes
+where extra cost is inconsequential.</p>
+<p>Aliasing mutable objects is often a mistake, but not always.
 Later we will intentionally create aliases to access
-mutable objects.  The important thing is to be aware of it.</p>
+mutable objects.  The important thing is to be aware of aliasing and
+mutation.</p>
 </section>
 </section>
 
