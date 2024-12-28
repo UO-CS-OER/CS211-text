@@ -3,13 +3,12 @@ Code samples for background reading with
 motivation for classes and objects
 """
 
-from typing import Tuple
 from numbers import Number
 import math
 
-def move_point(p: Tuple[Number, Number],
-               d: Tuple[Number, Number]) \
-        -> Tuple[Number, Number]:
+def move_point(p: tuple[Number, Number],
+               d: tuple[Number, Number]) \
+        -> tuple[Number, Number]:
     x, y = p
     dx, dy = d
     return (x+dx, y+dy)

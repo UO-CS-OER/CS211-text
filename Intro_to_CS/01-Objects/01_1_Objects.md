@@ -59,12 +59,11 @@ the function, which we can do with Python type hints.  With these
 changes, we get something like this
 
 ```{code-cell} python3
-from typing import Tuple
 from numbers import Number
 
-def move_point(p: Tuple[Number, Number],
-               d: Tuple[Number, Number]) \
-        -> Tuple[Number, Number]:
+def move_point(p: tuple[Number, Number],
+               d: tuple[Number, Number]) \
+        -> tuple[Number, Number]:
     x, y = p
     dx, dy = d
     return (x+dx, y+dy)
@@ -148,7 +147,8 @@ variables*, like `self.x` and `self.y`
 for the *x* and *y* coordinates of a point.
 When we use the Point object `p` from outside the class,
 we refer to those elements as `p.x` and `p.y`, as in the
-print statement above. 
+print statement above.   Sometimes we'll save a few
+syllables by referring to `x` and `y` as _fields_ of `p`. 
 
 ### Methods
 
@@ -171,7 +171,7 @@ class Point:
         return Point(x,y)
 ```
 
-Notice that the *instance variables* 
+Notice that the *instance variables* (or *fields*)
 `self.x` and `self.y` we created in the constructor 
 can be used in the `move` method.  They are part of 
 the object, and can be used by any method in the class.
@@ -194,10 +194,13 @@ m = p.move(v)
 print(f"m has x coordinate {m.x} and y coordinate {m.y}")
 ```
 
-At first it may seem confusing that we defined the ```move``` method with two arguments, `self` and `d`, but 
-it looks like we passed it only one argument, `v`.  In fact 
-we passed it both points:  `p.move(v)` passes `p` as the `self` argument and `v` as the `d` argument.  We use the variable 
-before the `.`, like `p` in this case, in two different ways: To find the right method (function) to call, by looking inside the *class* to 
+At first it may seem confusing that we defined the ```move``` method
+with two arguments, `self` and `d`, but
+it looks like we passed it only one argument, `v`. In fact
+we passed it both points:  `p.move(v)` passes `p` as the `self` argument
+and `v` as the `d` argument.   Python uses the variable
+before the `.`, like `p` in this case, in two different ways: To find
+the right method (function) to call, by looking inside the *class* to
 which `p` belongs, and to pass as the `self` argument to the method.
 
 The `move` method above returns a new `Point` object at the 

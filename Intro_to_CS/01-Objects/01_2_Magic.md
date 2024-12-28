@@ -63,8 +63,6 @@ m = p + v
 print(f"({m.x}, {m.y})")
 ```
 
-More: [Appendix on magic methods](../Appendices/appendix_Special.md)
-
 ## Magic for printing
 
 Suppose we wanted to print a `Point` object.  We 
@@ -364,4 +362,23 @@ is either less than, greater than, or equal to any other rectangle
 we could even have gotten away with a single root comparison and 
 derived `a == b` as `not ((a < b) or (a > b))`, but it would not 
 have simplified our code.  
+
+## More Magic
+
+A more complete list of operations and built-in functions
+that are delegated to special (magic) methods is provided
+in [an appendix](../Appendices/appendix_Special.md). 
+
+A [comprehensive description of special methods](
+https://docs.python.org/3/reference/datamodel.html#special-method-names)
+can be found in the Python language reference.  The comprehensive
+description is dense reading and assumes familiarity with many
+concepts that will not typically be within the experience of 
+beginning Python programmers.  You may want to glance at it now, but 
+don't expect to understand much of it yet.
+It is the definitive reference to 
+use sometime later in your career when you are building
+infrastructure for your developer community, or perhaps considering 
+how to incorporate similar facilities in a new programming language. 
+
 
