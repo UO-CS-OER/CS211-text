@@ -12,7 +12,9 @@ parts:
   - caption: 01 Objects
     chapters:
       - file: 01-Objects/01_1_Objects.md
-      - file: 01-Objects/01_2_Project.md
+      - file: 01-Objects/01_2_Magic.md
+      - file: 01-Objects/01_3_References.md
+      - file: 01-Objects/01_4_Project.md
   - caption: 02 Inheritance
     chapters:
       - file: 02_Inheritance/02_1_Inheritance.md
