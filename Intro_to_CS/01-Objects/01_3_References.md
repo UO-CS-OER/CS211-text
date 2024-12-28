@@ -12,7 +12,52 @@ kernelspec:
   name: python3
 ---
 
+
 # References to Objects
+
+In this section we will continue to refer to the `Point`
+class created in
+[the introductory section](
+01_1_Objects.md
+).
+
+```{code-cell} python3
+:tags:  [  "hide-cell" ]
+from numbers import Number
+
+class Point:
+    """An (x,y) coordinate pair"""
+    def __init__(self, x: Number, y: Number):
+        self.x = x
+        self.y = y
+    
+    def move(self, d: "Point") -> "Point":
+        """(x,y).move(dx,dy) = (x+dx, y+dy)"""
+        x = self.x + d.x
+        y = self.y + d.y
+        return Point(x,y)
+        
+    def move_to(self, new_x, new_y):
+        """Change the coordinates of this Point"""
+        self.x = new_x
+        self.y = new_y
+        
+    def __add__(self, other: "Point"):
+        """(x,y) + (dx, dy) = (x+dx, y+dy)"""
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __str__(self) -> str:
+        """Printed representation.
+        str(p) is an implicit call to p.__str__()
+        """
+        return f"({self.x}, {self.y})"
+      
+    def __repr__(self) -> str:
+        """Debugging representation.  This is what
+        we see if we type a point name at the console.
+        """
+        return f"Point({self.x}, {self.y})"
+```  
 
 ## Variables *refer* to objects
 
@@ -76,7 +121,7 @@ refer to the same object.   PythonTutor illustrates:
 Note that `Point` is a reference to the *class*, while `p1` and `p2` are
 references to the Point *object* we created from the Point class.  When
 we call `p1.move`, the `move` method of class `Point` makes a change to 
-the object that is referenced by both `p1` and `p2`.  We often say that 
+the object that is referenced by both `p1` and `p2`.  We say that 
 a method like `move` *mutates* an object. 
 
 ## Mutable and Immutable
@@ -113,7 +158,7 @@ But after `p1 = p1.moved(4,4)`, `p1` refers to a new, distinct object:
 
 ![New distinct point](img/pythontutor-point-unaliased-step2.png)
 
-As we saw with the `list` example, aiasing applies to objects 
+As we saw with the `list` example, aliasing applies to objects 
 from the built-in Python classes as well as to objects 
 from the classes that you will write.  It just hasn't been 
 apparent until now, because many of the built-in classes 
@@ -125,16 +170,17 @@ would be confusing!) but instead returns a new object `8`.
 
 
 It is typically easier to reason about the behavior of *immutable* 
-classes (which is why so many of Python's basic classes are
-immutable).  On the other hand, it may be more efficient to *mutate* 
-an object than to return a new object with a small change (which is 
-why most of Python's built-in collection classes, like `list` and 
-`dict`, are mutabble).  
+classes. On the other hand, it may be more efficient to *mutate* 
+an object than to return a new object with a small change. 
+Many of Python's built-in classes, like `str` and `int`, are
+_immutable_ to make reasoning easier. 
+Most of Python's built-in collection classes, like `list` and 
+`dict`, are _mutable_ for the sake of efficiency. 
 We will write both *immutable* classes and *mutable* classes, 
 depending on our needs, with a preference for *immutable* classes
-where any extra cost is inconsequential. 
+where extra cost is inconsequential. 
 
-Aliasing of mutable objects is often a mistake, but not always.
+Aliasing mutable objects is often a mistake, but not always.
 Later we will intentionally create aliases to access 
 mutable objects.  The important thing is to be aware of aliasing and
 mutation. 
