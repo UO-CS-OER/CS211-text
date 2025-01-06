@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Running Python code in an IDE or at the command line &#8212; Introduction to Computer Science II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Appendices/appendix_ide_running';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How Python Works" href="appendix_internals.html" />
+    <link rel="prev" title="Style Guide for Python Programs" href="appendix_style.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-provisional.png" class="logo__image only-light" alt="Introduction to Computer Science II - Home"/>
+    <img src="../_static/logo-provisional.png" class="logo__image only-dark pst-js-only" alt="Introduction to Computer Science II - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction to Computer Science, part 2
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">00 Preliminaries</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">A Course in Computational Thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-02-Install.html">Installing Python and IDLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-03-Install_IDE.html">Installing an Interactive Development Environment (IDE)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">01 Objects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_1_Objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_2_Magic.html">Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_3_References.html">References to Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_4_Project.html">Project:  Overlapping Appointments</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">02 Inheritance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">Class Hierarchies and Inheritance</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">Notifiers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">03 Recursion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_1_Recursion.html">Recursion in Object-Oriented Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_2_Refactor.html">Refactoring Repetitive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">04 Aliasing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04_Alias/04_1_Alias.html">Aliasing on Purpose</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">05 Guess and Check</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">Recursive Guess and Check</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">06 Binary</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_1_Bits.html">Bit Twiddling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_2_NegBits.html">Negative Binary Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_3_Hex.html">What the Hex?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">07 Functional</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07_Functional/07_1_Functional.html">Sometimes Functions are Values</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">08 Assembler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08_Assembler/08_1_Twopass.html">Two Pass Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Assembler/08_2_Regexp.html">Regular expressions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_terms.html">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_looploop.html">Appendix – What for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_Special.html">Appendix – Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_style.html">Style Guide for Python Programs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Running Python code in an IDE or at the command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_internals.html">How Python Works</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/Appendices/appendix_ide_running.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UO-CS-OER/CS210-text" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2FAppendices/appendix_ide_running.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Appendices/appendix_ide_running.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/Appendices/appendix_ide_running.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Running Python code in an IDE or at the command line</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-from-the-command-line">Python from the command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-run-button-in-pycharm">Configuring the run button in PyCharm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-run-button-in-vs-code">Configuring the run button in VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-was-this-necessary">Why was this necessary?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="running-python-code-in-an-ide-or-at-the-command-line">
+<h1>Running Python code in an IDE or at the command line<a class="headerlink" href="#running-python-code-in-an-ide-or-at-the-command-line" title="Link to this heading">#</a></h1>
+<p>I presume you’ve already run Python programs either from the command
+line or from the basic IDLE interactive development environment (IDE).
+When we needed to specify an input file or other options to our running
+program, we supplied the necessary information on the command line,
+something like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python3</span>
+<span class="n">my_program</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span> <span class="n">pleasedontcrash</span>
+<span class="n">my_input</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>The exact syntax, including the prompt (<code class="docutils literal notranslate"><span class="pre">$</span></code> in my example above), the
+name of the Python interpreter (<code class="docutils literal notranslate"><span class="pre">python3</span></code> in my example), and the way
+options are identified (with a leading <code class="docutils literal notranslate"><span class="pre">-</span></code> in my example) can depend on
+your operating system and configuration.</p>
+<p>While we are developing a program, we need to run our code or a test
+script that exercises our code again and again to check progress and
+catch new bugs as quickly as possible. If we have to type out the entire
+command line each time we run it, we will be discouraged from running
+the many incremental tests that are crucial for efficient development.
+We’ll be tempted to write or edit too much new code between test runs,
+which sooner or later will leave us with a difficult debugging task that
+could have been avoided.</p>
+<p>Interactive development environments (IDEs) like PyCharm and VS Code
+provide ways of running a program by pressing a button. The default “run
+the code you’re editing” action is sufficient if you don’t need extra
+arguments on the command line. When you do need extra arguments or other
+adjustments to run your tests, these IDEs can be configured to
+automatically provide those arguments and adjustments. They do so by
+building a command line internally, and then executing it just as you
+would in a terminal window.</p>
+<p>Let’s look first at the parts of a command line, then at how to
+configure PyCharm or VS Code to build and execute the command line we
+need when we push a “run” button.</p>
+<section id="python-from-the-command-line">
+<h2>Python from the command line<a class="headerlink" href="#python-from-the-command-line" title="Link to this heading">#</a></h2>
+<p>When we run a Python program, we are actually running another program,
+the Python <em>interpreter</em>, which translates our Python code into an
+internal <em>byte code</em> representation of instructions for an imaginary
+Python computer (a <em>virtual machine</em>), then simulates execution of that
+imaginary computer.  (We’ll build our own simulator for a simpler
+<em>virtual machine</em>  in the
+<a class="reference external" href="https://github.com/UO-CIS211/duck-stack">Duck Machine project</a>.)</p>
+<p>Because we’re really running the Python interpreter, there are actually
+two sets of command line arguments:  Arguments for the Python
+interpreter, and arguments for our Python program.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; python3 -pyarg1 program.py -our_arg1  input.txt
+</pre></div>
+</div>
+<p>I the example above, <code class="docutils literal notranslate"><span class="pre">-pyarg1</span></code> is an argument to the Python
+interpreter (which in the example is <code class="docutils literal notranslate"><span class="pre">python3</span></code> but might be <code class="docutils literal notranslate"><span class="pre">py</span></code> or
+<code class="docutils literal notranslate"><span class="pre">python</span></code> depending on how Python is installed on your operating system).
+<code class="docutils literal notranslate"><span class="pre">-our_arg1</span></code>, which appears <em>after</em> the file name of our Python program,
+is an argument to our Python program <code class="docutils literal notranslate"><span class="pre">program.py</span></code>.  <code class="docutils literal notranslate"><span class="pre">program.py</span></code> is
+actually the input file for <code class="docutils literal notranslate"><span class="pre">python3</span></code>, and <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> is the input file
+for <code class="docutils literal notranslate"><span class="pre">program.py</span></code>.</p>
+<p>When we configure PyCharm or VS Code to run test cases, there will be a
+place to specify each of these. In PyCharm we’ll place them in slots in
+a form. In VS Code we’ll code them textually in a <code class="docutils literal notranslate"><span class="pre">json</span></code> format file,
+<code class="docutils literal notranslate"><span class="pre">launch.json</span></code>.</p>
+<p><a class="reference internal" href="#vs-code-config">Skip to VS Code configuration</a></p>
+</section>
+<section id="configuring-the-run-button-in-pycharm">
+<h2>Configuring the run button in PyCharm<a class="headerlink" href="#configuring-the-run-button-in-pycharm" title="Link to this heading">#</a></h2>
+<p>In PyCharm we create a <em>configuration</em> using the <em>edit configurations</em>
+menu selection</p>
+<p><img alt="Pycharm option: edit configurations" src="../_images/pycharm-edit-configurations.png" /></p>
+<p>then add a new configuration for running a Python program. PyCharm will
+offer several other options, including some specialized for testing. You
+might find some of these useful later, but for now we want a
+straightforward “Python” configuration whether we are running our Python
+program or a test program for exercising our code.</p>
+<p><img alt="Pycharm add Python run configuration" src="../_images/pycharm-add-configuration.png" /></p>
+<p><img alt="Pycharm configure test script" src="../_images/config-unittests.png" /></p>
+<p>The “name” field is how the run configuration will be identified in
+PyCharm’s title bar (in place of “run current file”). The “script path”
+is where it should find the Python source code we want to run. The “
+Parameters” field is for command line arguments to your Python program,
+with a separate “interpreter” option for arguments to the Python
+interpreter itself. There are additional settings you can alter, but
+these should be enough for now.</p>
+<p>If we add a <code class="docutils literal notranslate"><span class="pre">-v</span></code> option for a test program that uses the <code class="docutils literal notranslate"><span class="pre">unittest</span></code>
+framework, as our <code class="docutils literal notranslate"><span class="pre">test_appt.py</span></code> program does,
+we can see a list of the passing and failing
+test cases before details of the (many) errors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">michal</span><span class="o">/</span><span class="n">Dropbox</span><span class="o">/</span><span class="mi">20</span><span class="n">W</span><span class="o">-</span><span class="mi">211</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">dist</span><span class="o">/</span><span class="n">agenda</span><span class="o">/</span><span class="n">test_appt</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">v</span>
+<span class="n">test_00_equality</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestAppt</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_01_order</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestAppt</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_02_overlap</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestAppt</span><span class="p">)</span> <span class="o">...</span> <span class="n">ERROR</span>
+<span class="n">test_03_intersect</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestAppt</span><span class="p">)</span> <span class="o">...</span> <span class="n">ERROR</span>
+</pre></div>
+</div>
+</section>
+<section id="configuring-the-run-button-in-vs-code">
+<span id="vs-code-config"></span><h2>Configuring the run button in VS Code<a class="headerlink" href="#configuring-the-run-button-in-vs-code" title="Link to this heading">#</a></h2>
+<p>VS Code provides a way of configuring its “run and debug” button that is
+conceptually similar to creating a run configuration in PyCharm, but
+instead of a graphical interface form you will edit a text file
+<code class="docutils literal notranslate"><span class="pre">launch.json</span></code> in Javascript Object Notation (JSON) format.</p>
+<p>You can create or edit a <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> document with run/debug button on
+the left margin.  Choose the “create launch configuration” link and
+choose “Python Debugger” when asked to select a debugger.</p>
+<p><img alt="Use the debug button to create a launch configuration" src="../_images/launch-config-1.png" /></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> configuration file will be created in a hidden folder
+called <code class="docutils literal notranslate"><span class="pre">.vscode</span></code>. It describes a data structure that is a <code class="docutils literal notranslate"><span class="pre">list</span></code> of
+<code class="docutils literal notranslate"><span class="pre">dicts</span></code>. Initially the list contains a single <code class="docutils literal notranslate"><span class="pre">dict</span></code> for a
+configuration that runs the
+current file from the editor in a Python debugger.</p>
+<p><img alt="Default  file contents" src="../_images/launch-json-default.png" /></p>
+<p>We can edit this configuration or create a new one. Let’s edit it with
+essentially the same information we provided to PyCharm above.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unit tests for Appt class&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test_appt.py&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integratedTerminal&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;-v&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">program</span></code> element is the path to source code file (what PyCharm
+called the <code class="docutils literal notranslate"><span class="pre">script</span></code>). Just as PyCharm offered many more specialized
+configuration types, but we chose a plain “Python” configuration, here
+we choose “python” as the <code class="docutils literal notranslate"><span class="pre">type</span></code>. The <code class="docutils literal notranslate"><span class="pre">-v</span></code> in the example will be an
+argument provided to our Python program, in this case an option for the
+<code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework executed by <code class="docutils literal notranslate"><span class="pre">test_appt.py</span></code>.<br />
+The <code class="docutils literal notranslate"><span class="pre">name</span></code> element is how this launch configuration will appear
+when we press the run button.</p>
+<p>After we have edited this launch configuration in
+<code class="docutils literal notranslate"><span class="pre">.vscode/launch.json</span></code>, it is available to run from VS Code. Press
+the run/debug button (triangle with a insect), then in the “Run and
+Debug” line, choose the launch configuration name from the menu and
+press the green triangle.</p>
+<p><img alt="Select and launch in VS Code" src="../_images/vscode-run-named-config.png" /></p>
+</section>
+<section id="why-was-this-necessary">
+<h2>Why was this necessary?<a class="headerlink" href="#why-was-this-necessary" title="Link to this heading">#</a></h2>
+<p>You might be wondering why the configurations for running the
+project from PyCharm or VS Code were not provided in the project
+repository.   The project repository is where we keep artifacts that
+are the same for everyone who will work on that project.
+Configurations are specific to the environment in which you will run
+your code, which includes at least your operating system and, in
+many cases, also the location of the project in your file system.</p>
+<p>In a research or professional development environment, each
+developer on the development team might have their own unique
+configuration files, and the team might in addition have multiple
+configurations for test servers and the production environment,
+whether that be on a server “in the cloud” or on a client’s
+dedicated computers.  These configurations might be maintained in
+their own repositories and combined with project repositories in an
+automated build process.  The tools and processes to manage such a
+build process are overkill for a beginning course in computer science.<br />
+You are likely to encounter them later in an internship, project
+course, or research project.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UO-CS-OER/CS210-text",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Appendices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="appendix_style.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Style Guide for Python Programs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendix_internals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How Python Works</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-from-the-command-line">Python from the command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-run-button-in-pycharm">Configuring the run button in PyCharm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-run-button-in-vs-code">Configuring the run button in VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-was-this-necessary">Why was this necessary?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michal Young
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022-2025 University of Oregon.  Creative Commons Share-Alike Attribution license.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
