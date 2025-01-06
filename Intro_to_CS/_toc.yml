@@ -47,5 +47,6 @@ parts:
       - file: Appendices/appendix_looploop.md
       - file: Appendices/appendix_Special.md
       - file: Appendices/appendix_style.md
+      - file: Appendices/appendix_ide_running.md
       - file: Appendices/appendix_internals.md
 

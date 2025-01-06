@@ -67,8 +67,8 @@ Because we're really running the Python interpreter, there are actually
 two sets of command line arguments:  Arguments for the Python
 interpreter, and arguments for our Python program.
 
-```
-$ python3 -pyarg1 program.py -our_arg1  input.txt
+```text
+> python3 -pyarg1 program.py -our_arg1  input.txt
 ```
 
 I the example above, `-pyarg1` is an argument to the Python
@@ -85,7 +85,7 @@ a form. In VS Code we'll code them textually in a `json` format file,
 `launch.json`.
 
 [Skip to VS Code configuration](
-#configuring-the-run-button-in-vs-code)
+#vs-code-config)
 
 ## Configuring the run button in PyCharm
 
@@ -127,6 +127,7 @@ test_02_overlap (__main__.TestAppt) ... ERROR
 test_03_intersect (__main__.TestAppt) ... ERROR
 ```
 
+(vs-code-config)=
 ## Configuring the run button in VS Code
 
 VS Code provides a way of configuring its "run and debug" button that is
