@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>File paths &#8212; Introduction to Computer Science II</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Appendices/appendix_paths';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How Python Works" href="appendix_internals.html" />
+    <link rel="prev" title="Running Python code in an IDE or at the command line" href="appendix_ide_running.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-provisional.png" class="logo__image only-light" alt="Introduction to Computer Science II - Home"/>
+    <img src="../_static/logo-provisional.png" class="logo__image only-dark pst-js-only" alt="Introduction to Computer Science II - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction to Computer Science, part 2
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">00 Preliminaries</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-01-Prospectus.html">A Course in Computational Thinking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-02-Install.html">Installing Python and IDLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00-Preliminaries/00-03-Install_IDE.html">Installing an Interactive Development Environment (IDE)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">01 Objects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_1_Objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_2_Magic.html">Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_3_References.html">References to Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_4_Project.html">Project:  Overlapping Appointments</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">02 Inheritance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">Class Hierarchies and Inheritance</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">Notifiers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">03 Recursion</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_1_Recursion.html">Recursion in Object-Oriented Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_2_Refactor.html">Refactoring Repetitive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">04 Aliasing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04_Alias/04_1_Alias.html">Aliasing on Purpose</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">05 Guess and Check</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05_GuessCheck/05_1_GuessCheck.html">Recursive Guess and Check</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">06 Binary</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_1_Bits.html">Bit Twiddling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_2_NegBits.html">Negative Binary Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_Binary/06_3_Hex.html">What the Hex?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">07 Functional</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07_Functional/07_1_Functional.html">Sometimes Functions are Values</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">08 Assembler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08_Assembler/08_1_Twopass.html">Two Pass Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_Assembler/08_2_Regexp.html">Regular expressions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendix_terms.html">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_looploop.html">Appendix – What for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_Special.html">Appendix – Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_style.html">Style Guide for Python Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_ide_running.html">Running Python code in an IDE or at the command line</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">File paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_internals.html">How Python Works</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/Appendices/appendix_paths.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UO-CS-OER/CS210-text" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2FAppendices/appendix_paths.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Appendices/appendix_paths.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../_sources/Appendices/appendix_paths.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>File paths</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-memory-hierarchy">The memory hierarchy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-systems">File systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structures-and-paths">Directory structures and paths</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-paths">Relative paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-start">Where do we start?</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="file-paths">
+<h1>File paths<a class="headerlink" href="#file-paths" title="Link to this heading">#</a></h1>
+<p>Why is Python saying it can’t find my file?</p>
+<p>You can skip to the section on <a class="reference internal" href="#relative">relative paths</a> if you
+are in a hurry, but the background material on memory hierarchy and
+file systems are useful in understanding what relative paths are and
+why you should be using them.</p>
+<section id="the-memory-hierarchy">
+<h2>The memory hierarchy<a class="headerlink" href="#the-memory-hierarchy" title="Link to this heading">#</a></h2>
+<p>Memory technologies over time have varied from
+<a class="reference external" href="https://en.wikipedia.org/wiki/Delay-line_memory">ripples in tubs of mercury</a>
+to tiny <a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_random-access_memory">capacitors</a>
+to differences in reflectivity or magnetic orientation in spinning
+disks.  Through decades of evolution, computers have used different
+memory technologies together, combining small amounts of very
+expensive, very fast memory with much larger amounts of cheaper,
+slower memory. This is called the <em>memory hierarchy</em>.</p>
+<p>While the memory hierarchy may include several layers, a key
+division is between faster <em>volatile</em> memory, which lasts only while
+a program is executing, and slower <em>persistent</em> memory that can last
+not only between program executions but even when the computer is
+powered down. Persistent memory is also called <em>mass storage</em>.  For
+historical reasons, persistent mass storage may also be referred to
+as <em>disk</em>, despite physical disk drives having been replaced with
+other technology such as flash RAM in thumb drives.</p>
+<p>If one program stores information in mass storage and another
+program is to use it, we must have a naming scheme that
+both programs can share.  Thus mass storage is typically organized
+as named <em>files</em>.  And since there can be thousands or millions of
+files, we need an organizing structure for those files.  That is the
+job of a <em>file system</em>.</p>
+</section>
+<section id="file-systems">
+<h2>File systems<a class="headerlink" href="#file-systems" title="Link to this heading">#</a></h2>
+<p>A <em>file system</em> is a component of a computer operating system,
+bridging between the <em>logical</em> view of file access presented to
+users and programs and the <em>physical</em> interface provided by mass
+storage devices.  File systems vary among operating systems, and may
+be replaced over time.  For example, the original
+<a class="reference external" href="https://learn.microsoft.com/en-us/troubleshoot/windows-client/backup-and-storage/fat-hpfs-and-ntfs-file-systems"><em>FAT</em> file system</a> of Windows and DOS is still sometimes used on portable drives, but
+has largely been replaced by HPFS and then by NTFS.  Apple operating
+systems likewise support the FAT file system but mostly use APFS.
+The file system is not entirely hidden from the user (e.g.,
+a file system
+can restrict the lengths and characters permitted in file names).
+But aside from these restrictions, we can mostly ignore the underlying
+file system implementation except when we are initializing
+(formatting and partitioning) a new drive.  We can focus just on
+the abstract, logical view of the file system that our operating
+system presents us.</p>
+<p>Most modern operating systems provide a logical view of the
+underlying file system that complies with the
+<a class="reference external" href="https://en.wikipedia.org/wiki/POSIX">POSIX standard</a>.
+Originally POSIX was designed to support compatibility among
+various flavors of the Unix operating system.  Today not only Linux
+and MacOS (both flavors of Unix) but also Windows file systems are
+POSIX compliant.  POSIX compliance allows us to write Python
+programs that can access file systems in a manner that is mostly
+independent of operating system.</p>
+</section>
+<section id="directory-structures-and-paths">
+<h2>Directory structures and paths<a class="headerlink" href="#directory-structures-and-paths" title="Link to this heading">#</a></h2>
+<p>A POSIX-compliant file system is organized as a hierarchy of
+directories containing other directories and files.  Directories are
+also called “folders”. The top level
+of the hierarchy might be a “drive” like “C:” in Windows. On Unix
+systems including Linux and MacOS it is the “root directory” with the
+single character name “/”.</p>
+<p>The full, unambiguous name of a directory or file is called an
+<em>absolute path</em>.
+It is a sequence of directions for traversing the
+hierarchy of directories from the very top.  For example, there is a
+file on this computer with the path:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>/Users/michal/Dropbox/25W-211/projects/dist/Anagrams/anagram.py
+</pre></div>
+</div>
+<p>This is literally a “path” in the sense of a sequence of directions:
+“Starting at the root, look in Users, and from there look in
+“michal”, and from there look in “Dropbox”, and …” all the way
+down to the file named <code class="docutils literal notranslate"><span class="pre">anagram.py</span></code>.</p>
+<p>Absolute paths are unwieldy.  You wouldn’t want to write <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">m</span></code>
+with <code class="docutils literal notranslate"><span class="pre">m</span></code> being such a long name.  Absolute paths are also
+not <em>portable</em>:
+If you
+download the Anagrams project from Github, the absolute path from
+the root of your file system to your copy of <code class="docutils literal notranslate"><span class="pre">anagram.py</span></code> will not
+not be the same.  You probably don’t even have a directory with the
+path <code class="docutils literal notranslate"><span class="pre">/Users/michal/</span></code>.  If you are using MacOS, you might have one
+named <code class="docutils literal notranslate"><span class="pre">/Users/yournamehere</span></code>, and if you are using Windows even the
+very first part of any absolute path will be different.  Problem!</p>
+<section id="relative-paths">
+<span id="relative"></span><h3>Relative paths<a class="headerlink" href="#relative-paths" title="Link to this heading">#</a></h3>
+<p>The solution to the problem of long, non-portable absolute paths to
+files is to use <em>relative paths</em>.</p>
+<p>If someone asked you for
+directions to the library, you would start those directions
+from where <em>you</em> are,<br />
+where <em>they</em> are, or some designated starting point (“from the
+bookstore, cross Kincaid street to campus”).  It’s the same with
+file paths:  We give paths relative to an agreed starting point.
+While the <em>absolute</em> path to <code class="docutils literal notranslate"><span class="pre">anagrams.py</span></code> on my computer will be
+different from the <em>absolute</em> path on your computer, the steps
+starting from the project directory are the same.  A <em>relative path</em>
+from a known starting point can be shorter and independent of the
+<em>absolute path</em> to the project.</p>
+</section>
+<section id="where-do-we-start">
+<h3>Where do we start?<a class="headerlink" href="#where-do-we-start" title="Link to this heading">#</a></h3>
+<p>There are two kinds of files we might look for in a Python program,
+with different
+conventions for the start of a path.</p>
+<ul class="simple">
+<li><p>Modules to import.  Python tries starting the path in multiple
+places, including system libraries where standard Python modules
+are installed.  The first place it looks is the directory that
+contains the program you are running.  If the path starting there
+leads to the module you tried to import, it is satisfied and stops
+looking elsewhere.</p></li>
+<li><p>Data files, which you access with the <code class="docutils literal notranslate"><span class="pre">open</span></code> function.  The
+relative paths you specify with open start at the <em>current working
+directory</em>, which may be different from the project directory
+containing your source file.</p></li>
+</ul>
+<p>Beginning students often encounter problems opening
+data files with Python.
+When students encounter a “File not found” error while opening a
+file, the typical problem is that the <em>current
+working directory</em> is not the project directory.  This especially
+happens when they first move from using the simple IDLE development
+environment to a more complex IDE like PyCharm or VS Code.  IDLE
+sets the current working directory to be the same as the directory
+containing the program being executed.  PyCharm and VS Code do not.</p>
+<p>Consider the following diagram which shows the parts of the my file
+system including the path from the root (“/”) directory to the
+Anagrams project directory.  Suppose my corrent working directory
+is <code class="docutils literal notranslate"><span class="pre">Anagrams</span></code>.  If my main program <code class="docutils literal notranslate"><span class="pre">anagram.py</span></code>
+attempts to open the relative path <code class="docutils literal notranslate"><span class="pre">data/dict.txt</span></code>, the search will
+start at <code class="docutils literal notranslate"><span class="pre">Anagrams</span></code>, proceed to <code class="docutils literal notranslate"><span class="pre">data</span></code>, and find <code class="docutils literal notranslate"><span class="pre">dict.txt</span></code>, as it
+should.</p>
+<p><img alt="Path from root to dict.txt" src="../_images/full-path.svg" /></p>
+<p>I can tell that VS Code is open on the right directory by looking at
+the “explorer” section:</p>
+<p><img alt="VS Code explorer says we have Anagrams open" src="../_images/vscode-correct.png" /></p>
+<p>Suppose, on the other hand, that I have VS Code open on <code class="docutils literal notranslate"><span class="pre">dist</span></code>, the
+directory that contains <code class="docutils literal notranslate"><span class="pre">Agenda</span></code>.</p>
+<p><img alt="VS Code explorer says we have  open" src="../_images/vscode-wrong.png" /></p>
+<p>Now <code class="docutils literal notranslate"><span class="pre">open(&quot;data/dict.txt&quot;,</span> <span class="pre">&quot;r&quot;)</span></code> <em>will not work</em>,
+because it
+will try to
+start the path at <code class="docutils literal notranslate"><span class="pre">dist</span></code> and not at <code class="docutils literal notranslate"><span class="pre">Anagrams</span></code>.  It will look within
+<code class="docutils literal notranslate"><span class="pre">dist</span></code> for a directory called <code class="docutils literal notranslate"><span class="pre">data</span></code>, and will not find it.  It does
+not search further to find it.  I will get a “File not found”
+exception.</p>
+<p>This is a common problem we see when students begin using an IDE
+like PyCharm or VS Code.  Some students create a one directory for
+all their class projects, and open that directory in their IDE.<br />
+Some students accidentally create two levels of directory, e.g.,
+<code class="docutils literal notranslate"><span class="pre">Agenda/Agenda-master</span></code>.  This is an easy mistake to make if you
+create a folder like <code class="docutils literal notranslate"><span class="pre">Agenda</span></code> and then expand a project zip file
+within it.  It can be confusing because VS Code or PyCharm appears
+to be open on a folder with the right name, but it is actually still
+on an enclosing folder.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UO-CS-OER/CS210-text",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Appendices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="appendix_ide_running.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Running Python code in an IDE or at the command line</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appendix_internals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How Python Works</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-memory-hierarchy">The memory hierarchy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-systems">File systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structures-and-paths">Directory structures and paths</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-paths">Relative paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-we-start">Where do we start?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michal Young
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022-2025 University of Oregon.  Creative Commons Share-Alike Attribution license.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
