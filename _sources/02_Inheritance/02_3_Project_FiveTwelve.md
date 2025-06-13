@@ -34,10 +34,10 @@ inspired by the more challenging sliding tile game Threes.
   components (display and interaction) without modifying the model 
   component (game logic and internal representations). 
 
-While quite a bit of code is provided in the
+Quite a bit of code is provided in the
 [HOWTO document](
 https://github.com/UO-CIS211/FiveTwelve/blob/master/doc/HOWTO.md),
-there is still a lot to understand and build.  Even if you have 
+but there is still a lot to understand and build.  Even if you have 
 gotten away with building some prior projects in a single 
 programming session, you will almost certainly need to spread this 
 project over multiple sessions and multiple days with breaks to 

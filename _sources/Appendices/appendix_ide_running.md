@@ -20,7 +20,7 @@ When we needed to specify an input file or other options to our running
 program, we supplied the necessary information on the command line,
 something like
 
-```python
+```shell
 $ python3
 my_program.py - pleasedontcrash
 my_input.csv

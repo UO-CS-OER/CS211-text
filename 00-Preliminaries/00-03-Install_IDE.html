@@ -177,13 +177,17 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">01 Objects</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_1_Objects.html">Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_2_Project.html">Project:  Overlapping Appointments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_2_Magic.html">Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_3_References.html">References to Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_4_Project_Appointments.html">Project:  Overlapping Appointments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-Objects/01_5_Project_Anagrams.html">Project:  Multi-Word Anagrams</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">02 Inheritance</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">02 Inheritance and the Model-View-Controller Design Pattern</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_1_Inheritance.html">Class Hierarchies and Inheritance</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_2_Notifiers.html">Notifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_3_Project_FiveTwelve.html">Project: A Sliding Tile Game</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">03 Recursion</span></p>
 <ul class="nav bd-sidenav">
@@ -219,6 +223,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_looploop.html">Appendix – What for?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_Special.html">Appendix – Magic Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_style.html">Style Guide for Python Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_ide_running.html">Running Python code in an IDE or at the command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_paths.html">File paths</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_internals.html">How Python Works</a></li>
 </ul>
 
@@ -529,7 +535,7 @@ neither is clearly superior to the other.</p>
 <ul class="simple">
 <li><p>Your instructor may standardize on one or the other.  It is
 impractical to repeat each example in both systems, or to offer
-expert advice in using both, so for maximum support you may wish
+expert advice on using both, so for maximum support you may wish
 to use the IDE your instructor chooses.</p></li>
 <li><p>Your classmates may already have familiarity with one or the other.<br />
 Especially if you have a study group that discusses and works on
@@ -544,7 +550,7 @@ PyCharm, judging by messages on the
 <a class="reference external" href="https://www.freelists.org/list/program-l">visually impaired programmers mailing list</a>.</p></li>
 <li><p>Although VS Code and PyCharm are at rough parity in features, in
 our view the Python customization in PyCharm is currently (as of
-late 2024) a little better than VS Code with its plugin system.<br />
+late 2024) just a little better than VS Code with its plugin system.<br />
 We notice this in particular in the interactive debugging support
 and in creating custom run configurations.</p></li>
 </ul>
@@ -558,7 +564,7 @@ projects for visually impaired students.</p>
 <h2>PyCharm installation<a class="headerlink" href="#pycharm-installation" title="Link to this heading">#</a></h2>
 <p>Here are instructions for installing the professional version of
 PyCharm.  If you are installing VS Code instead,
-<a class="reference internal" href="#vs-code-installation"><span class="xref myst">skip to the VS Code instructions</span></a>.</p>
+<a class="reference internal" href="#vs-code-installation"><span class="std std-ref">skip to the VS Code instructions</span></a>.</p>
 <section id="obtain-a-license">
 <h3>Obtain a license<a class="headerlink" href="#obtain-a-license" title="Link to this heading">#</a></h3>
 <p>PyCharm is provided in two versions, a free “community edition” and
@@ -581,7 +587,7 @@ from <a class="reference external" href="https://www.jetbrains.com/pycharm/downl
 </section>
 </section>
 <section id="vs-code-installation">
-<h2>VS Code installation<a class="headerlink" href="#vs-code-installation" title="Link to this heading">#</a></h2>
+<span id="id1"></span><h2>VS Code installation<a class="headerlink" href="#vs-code-installation" title="Link to this heading">#</a></h2>
 <p>You will find installation packages on the
 <a class="reference external" href="https://code.visualstudio.com/download">VS Code downloads page</a>.
 Then follow <a class="reference external" href="https://code.visualstudio.com/docs/setup/setup-overview">VS Code setup instructions</a>.

@@ -48,7 +48,7 @@ How can you choose?
 
 - Your instructor may standardize on one or the other.  It is 
   impractical to repeat each example in both systems, or to offer 
-  expert advice in using both, so for maximum support you may wish 
+  expert advice on using both, so for maximum support you may wish 
   to use the IDE your instructor chooses. 
 - Your classmates may already have familiarity with one or the other.  
   Especially if you have a study group that discusses and works on 
@@ -64,7 +64,7 @@ How can you choose?
   https://www.freelists.org/list/program-l).
 - Although VS Code and PyCharm are at rough parity in features, in 
   our view the Python customization in PyCharm is currently (as of 
-  late 2024) a little better than VS Code with its plugin system.  
+  late 2024) just a little better than VS Code with its plugin system.  
   We notice this in particular in the interactive debugging support 
   and in creating custom run configurations.  
 
@@ -78,7 +78,7 @@ projects for visually impaired students.
 
 Here are instructions for installing the professional version of 
 PyCharm.  If you are installing VS Code instead,
-[skip to the VS Code instructions](#vs-code-installation).
+[skip to the VS Code instructions](vs-code-installation).
 
 ### Obtain a license
 
@@ -103,6 +103,7 @@ from [this download page](https://www.jetbrains.com/pycharm/download/).
 
 Install PyCharm as you would other applications.  
 
+(vs-code-installation)=
 ## VS Code installation
 
 You will find installation packages on the
