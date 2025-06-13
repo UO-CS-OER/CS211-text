@@ -14,11 +14,13 @@ parts:
       - file: 01-Objects/01_1_Objects.md
       - file: 01-Objects/01_2_Magic.md
       - file: 01-Objects/01_3_References.md
-      - file: 01-Objects/01_4_Project.md
-  - caption: 02 Inheritance
+      - file: 01-Objects/01_4_Project_Appointments.md
+      - file: 01-Objects/01_5_Project_Anagrams.md
+  - caption: 02 Inheritance and the Model-View-Controller Design Pattern
     chapters:
       - file: 02_Inheritance/02_1_Inheritance.md
       - file: 02_Inheritance/02_2_Notifiers.md
+      - file: 02_Inheritance/02_3_Project_FiveTwelve.md
   - caption: 03 Recursion
     chapters:
       - file: 03_Recursion/03_1_Recursion.md
