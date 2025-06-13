@@ -7,7 +7,7 @@ and some supporting software to build
 the book from sources. 
 
 These instructions were tested on a MacOS
-12.4 (Monterrey) system.  There will be some
+13.5 (Ventura) system.  There will be some
 minor differences if you use Linux, Windows, 
 or a future version of MacOS.  _If you build in a different 
 environment, please consider adding notes on differences
