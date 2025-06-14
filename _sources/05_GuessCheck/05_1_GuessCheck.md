@@ -288,6 +288,10 @@ of strings from which the board can be restored.  We don't have to
 save *everything* about it as long as the missing information is 
 easily restored. 
 
+With this background, you should now be ready to tackle the final 
+stage of our [Sudoku solver project](
+https://github.com/UO-CIS211/Duck_Sudoku).
+
 ## Example source code
  
 [Magic square solver](../sample_code/magic_square.py)
