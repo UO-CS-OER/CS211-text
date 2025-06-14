@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Running Python code in an IDE or at the command line &#8212; Introduction to Computer Science II</title>
+    <title>Project: A Calculator &#8212; Introduction to Computer Science II</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Appendices/appendix_ide_running';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_Recursion/03_3_Project_Calculator';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="File paths" href="appendix_paths.html" />
-    <link rel="prev" title="Style Guide for Python Programs" href="appendix_style.html" />
+    <link rel="next" title="Aliasing on Purpose" href="../04_Alias/04_1_Alias.html" />
+    <link rel="prev" title="Refactoring Repetitive Code" href="03_2_Refactor.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -190,9 +190,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_Inheritance/02_3_Project_FiveTwelve.html">Project: A Sliding Tile Game</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">03 Recursion</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_1_Recursion.html">Recursion in Object-Oriented Programs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_Recursion/03_2_Refactor.html">Refactoring Repetitive Code</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_1_Recursion.html">Recursion in Object-Oriented Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_2_Refactor.html">Refactoring Repetitive Code</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project:  A Calculator</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">04 Aliasing</span></p>
 <ul class="nav bd-sidenav">
@@ -218,14 +219,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../08_Assembler/08_2_Regexp.html">Regular expressions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="appendix_terms.html">Glossary of Terms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix_looploop.html">Appendix – What for?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix_Special.html">Appendix – Magic Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix_style.html">Style Guide for Python Programs</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Running Python code in an IDE or at the command line</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix_paths.html">File paths</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix_internals.html">How Python Works</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_terms.html">Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_looploop.html">Appendix – What for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_Special.html">Appendix – Magic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_style.html">Style Guide for Python Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_ide_running.html">Running Python code in an IDE or at the command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_paths.html">File paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendices/appendix_internals.html">How Python Works</a></li>
 </ul>
 
     </div>
@@ -285,7 +286,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/Appendices/appendix_ide_running.md" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/UO-CS-OER/CS210-text/main?urlpath=tree/Intro_to_CS/03_Recursion/03_3_Project_Calculator.md" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,7 +352,7 @@
       
       
       
-      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2FAppendices/appendix_ide_running.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/UO-CS-OER/CS210-text/issues/new?title=Issue%20on%20page%20%2F03_Recursion/03_3_Project_Calculator.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +382,7 @@
       
       
       
-      <li><a href="../_sources/Appendices/appendix_ide_running.ipynb" target="_blank"
+      <li><a href="../_sources/03_Recursion/03_3_Project_Calculator.ipynb" target="_blank"
    class="btn btn-sm btn-download-notebook-button dropdown-item"
    title="Download notebook file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +399,7 @@
       
       
       
-      <li><a href="../_sources/Appendices/appendix_ide_running.md" target="_blank"
+      <li><a href="../_sources/03_Recursion/03_3_Project_Calculator.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -474,7 +475,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Running Python code in an IDE or at the command line</h1>
+    <h1>Project:  A Calculator</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -484,10 +485,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-from-the-command-line">Python from the command line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-run-button-in-pycharm">Configuring the run button in PyCharm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-run-button-in-vs-code">Configuring the run button in VS Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-was-this-necessary">Why was this necessary?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
 </ul>
             </nav>
         </div>
@@ -499,170 +497,53 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="running-python-code-in-an-ide-or-at-the-command-line">
-<h1>Running Python code in an IDE or at the command line<a class="headerlink" href="#running-python-code-in-an-ide-or-at-the-command-line" title="Link to this heading">#</a></h1>
-<p>I presume you’ve already run Python programs either from the command
-line or from the basic IDLE interactive development environment (IDE).
-When we needed to specify an input file or other options to our running
-program, we supplied the necessary information on the command line,
-something like</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python3
-my_program.py - pleasedontcrash
-my_input.csv
+  <section class="tex2jax_ignore mathjax_ignore" id="project-a-calculator">
+<h1>Project:  A Calculator<a class="headerlink" href="#project-a-calculator" title="Link to this heading">#</a></h1>
+<p>You will find starting files for
+<a class="reference external" href="https://github.com/UO-CIS211/calculator">the calculator project</a> on
+github as usual.</p>
+<p>You will build a simple interactive calculator that uses only
+integers (not floating point numbers).  You will work primarily on a
+postfix (a.k.a. “reverse Polish notation”, or RPN) interface that
+you can use from the command line like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Expression (return to quit):3 5 * x =
+x = (3 * 5) =&gt; 15
+Expression (return to quit):x 2 *
+(x * 2) =&gt; 30
+Expression (return to quit):
+Bye! Thanks for the math!
 </pre></div>
 </div>
-<p>The exact syntax, including the prompt (<code class="docutils literal notranslate"><span class="pre">$</span></code> in my example above), the
-name of the Python interpreter (<code class="docutils literal notranslate"><span class="pre">python3</span></code> in my example), and the way
-options are identified (with a leading <code class="docutils literal notranslate"><span class="pre">-</span></code> in my example) can depend on
-your operating system and configuration.</p>
-<p>While we are developing a program, we need to run our code or a test
-script that exercises our code again and again to check progress and
-catch new bugs as quickly as possible. If we have to type out the entire
-command line each time we run it, we will be discouraged from running
-the many incremental tests that are crucial for efficient development.
-We’ll be tempted to write or edit too much new code between test runs,
-which sooner or later will leave us with a difficult debugging task that
-could have been avoided.</p>
-<p>Interactive development environments (IDEs) like PyCharm and VS Code
-provide ways of running a program by pressing a button. The default “run
-the code you’re editing” action is sufficient if you don’t need extra
-arguments on the command line. When you do need extra arguments or other
-adjustments to run your tests, these IDEs can be configured to
-automatically provide those arguments and adjustments. They do so by
-building a command line internally, and then executing it just as you
-would in a terminal window.</p>
-<p>Let’s look first at the parts of a command line, then at how to
-configure PyCharm or VS Code to build and execute the command line we
-need when we push a “run” button.</p>
-<section id="python-from-the-command-line">
-<h2>Python from the command line<a class="headerlink" href="#python-from-the-command-line" title="Link to this heading">#</a></h2>
-<p>When we run a Python program, we are actually running another program,
-the Python <em>interpreter</em>, which translates our Python code into an
-internal <em>byte code</em> representation of instructions for an imaginary
-Python computer (a <em>virtual machine</em>), then simulates execution of that
-imaginary computer.  (We’ll build our own simulator for a simpler
-<em>virtual machine</em>  in the
-<a class="reference external" href="https://github.com/UO-CIS211/duck-stack">Duck Machine project</a>.)</p>
-<p>Because we’re really running the Python interpreter, there are actually
-two sets of command line arguments:  Arguments for the Python
-interpreter, and arguments for our Python program.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&gt; python3 -pyarg1 program.py -our_arg1  input.txt
-</pre></div>
-</div>
-<p>I the example above, <code class="docutils literal notranslate"><span class="pre">-pyarg1</span></code> is an argument to the Python
-interpreter (which in the example is <code class="docutils literal notranslate"><span class="pre">python3</span></code> but might be <code class="docutils literal notranslate"><span class="pre">py</span></code> or
-<code class="docutils literal notranslate"><span class="pre">python</span></code> depending on how Python is installed on your operating system).
-<code class="docutils literal notranslate"><span class="pre">-our_arg1</span></code>, which appears <em>after</em> the file name of our Python program,
-is an argument to our Python program <code class="docutils literal notranslate"><span class="pre">program.py</span></code>.  <code class="docutils literal notranslate"><span class="pre">program.py</span></code> is
-actually the input file for <code class="docutils literal notranslate"><span class="pre">python3</span></code>, and <code class="docutils literal notranslate"><span class="pre">input.txt</span></code> is the input file
-for <code class="docutils literal notranslate"><span class="pre">program.py</span></code>.</p>
-<p>When we configure PyCharm or VS Code to run test cases, there will be a
-place to specify each of these. In PyCharm we’ll place them in slots in
-a form. In VS Code we’ll code them textually in a <code class="docutils literal notranslate"><span class="pre">json</span></code> format file,
-<code class="docutils literal notranslate"><span class="pre">launch.json</span></code>.</p>
-<p><a class="reference internal" href="#vs-code-config">Skip to VS Code configuration</a></p>
-</section>
-<section id="configuring-the-run-button-in-pycharm">
-<h2>Configuring the run button in PyCharm<a class="headerlink" href="#configuring-the-run-button-in-pycharm" title="Link to this heading">#</a></h2>
-<p>In PyCharm we create a <em>configuration</em> using the <em>edit configurations</em>
-menu selection</p>
-<p><img alt="Pycharm option: edit configurations" src="../_images/pycharm-edit-configurations.png" /></p>
-<p>then add a new configuration for running a Python program. PyCharm will
-offer several other options, including some specialized for testing. You
-might find some of these useful later, but for now we want a
-straightforward “Python” configuration whether we are running our Python
-program or a test program for exercising our code.</p>
-<p><img alt="Pycharm add Python run configuration" src="../_images/pycharm-add-configuration.png" /></p>
-<p><img alt="Pycharm configure test script" src="../_images/config-unittests.png" /></p>
-<p>The “name” field is how the run configuration will be identified in
-PyCharm’s title bar (in place of “run current file”). The “script path”
-is where it should find the Python source code we want to run. The “
-Parameters” field is for command line arguments to your Python program,
-with a separate “interpreter” option for arguments to the Python
-interpreter itself. There are additional settings you can alter, but
-these should be enough for now.</p>
-<p>If we add a <code class="docutils literal notranslate"><span class="pre">-v</span></code> option for a test program that uses the <code class="docutils literal notranslate"><span class="pre">unittest</span></code>
-framework, as our <code class="docutils literal notranslate"><span class="pre">test_appt.py</span></code> program does,
-we can see a list of the passing and failing
-test cases before details of the (many) errors:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">michal</span><span class="o">/</span><span class="n">Dropbox</span><span class="o">/</span><span class="mi">20</span><span class="n">W</span><span class="o">-</span><span class="mi">211</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">dist</span><span class="o">/</span><span class="n">agenda</span><span class="o">/</span><span class="n">test_appt</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">v</span>
-<span class="n">test_00_equality</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestAppt</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
-<span class="n">test_01_order</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestAppt</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
-<span class="n">test_02_overlap</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestAppt</span><span class="p">)</span> <span class="o">...</span> <span class="n">ERROR</span>
-<span class="n">test_03_intersect</span> <span class="p">(</span><span class="n">__main__</span><span class="o">.</span><span class="n">TestAppt</span><span class="p">)</span> <span class="o">...</span> <span class="n">ERROR</span>
-</pre></div>
-</div>
-</section>
-<section id="configuring-the-run-button-in-vs-code">
-<span id="vs-code-config"></span><h2>Configuring the run button in VS Code<a class="headerlink" href="#configuring-the-run-button-in-vs-code" title="Link to this heading">#</a></h2>
-<p>VS Code provides a way of configuring its “run and debug” button that is
-conceptually similar to creating a run configuration in PyCharm, but
-instead of a graphical interface form you will edit a text file
-<code class="docutils literal notranslate"><span class="pre">launch.json</span></code> in Javascript Object Notation (JSON) format.</p>
-<p>You can create or edit a <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> document with run/debug button on
-the left margin.  Choose the “create launch configuration” link and
-choose “Python Debugger” when asked to select a debugger.</p>
-<p><img alt="Use the debug button to create a launch configuration" src="../_images/launch-config-1.png" /></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> configuration file will be created in a hidden folder
-called <code class="docutils literal notranslate"><span class="pre">.vscode</span></code>. It describes a data structure that is a <code class="docutils literal notranslate"><span class="pre">list</span></code> of
-<code class="docutils literal notranslate"><span class="pre">dicts</span></code>. Initially the list contains a single <code class="docutils literal notranslate"><span class="pre">dict</span></code> for a
-configuration that runs the
-current file from the editor in a Python debugger.</p>
-<p><img alt="Default  file contents" src="../_images/launch-json-default.png" /></p>
-<p>We can edit this configuration or create a new one. Let’s edit it with
-essentially the same information we provided to PyCharm above.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unit tests for Appt class&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test_appt.py&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integratedTerminal&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;-v&quot;</span>
-<span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">program</span></code> element is the path to source code file (what PyCharm
-called the <code class="docutils literal notranslate"><span class="pre">script</span></code>). Just as PyCharm offered many more specialized
-configuration types, but we chose a plain “Python” configuration, here
-we choose “python” as the <code class="docutils literal notranslate"><span class="pre">type</span></code>. The <code class="docutils literal notranslate"><span class="pre">-v</span></code> in the example will be an
-argument provided to our Python program, in this case an option for the
-<code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework executed by <code class="docutils literal notranslate"><span class="pre">test_appt.py</span></code>.<br />
-The <code class="docutils literal notranslate"><span class="pre">name</span></code> element is how this launch configuration will appear
-when we press the run button.</p>
-<p>After we have edited this launch configuration in
-<code class="docutils literal notranslate"><span class="pre">.vscode/launch.json</span></code>, it is available to run from VS Code. Press
-the run/debug button (triangle with a insect), then in the “Run and
-Debug” line, choose the launch configuration name from the menu and
-press the green triangle.</p>
-<p><img alt="Select and launch in VS Code" src="../_images/vscode-run-named-config.png" /></p>
-</section>
-<section id="why-was-this-necessary">
-<h2>Why was this necessary?<a class="headerlink" href="#why-was-this-necessary" title="Link to this heading">#</a></h2>
-<p>You might be wondering why the configurations for running the
-project from PyCharm or VS Code were not provided in the project
-repository.   The project repository is where we keep artifacts that
-are the same for everyone who will work on that project.
-Configurations are specific to the environment in which you will run
-your code, which includes at least your operating system and, in
-many cases, also the location of the project in your file system.</p>
-<p>In a research or professional development environment, each
-developer on the development team might have their own unique
-configuration files, and the team might in addition have multiple
-configurations for test servers and the production environment,
-whether that be on a server “in the cloud” or on a client’s
-dedicated computers.  These configurations might be maintained in
-their own repositories and combined with project repositories in an
-automated build process.  The tools and processes to manage such a
-build process are overkill for a beginning course in computer science.<br />
-You are likely to encounter them later in an internship, project
-course, or research project.</p>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>The key learning objective for this project is becoming familiar
+with the way dynamic method dispatch can be used to organize a
+recursive algorithm for a recursive data structure. (It’s not as
+scary as that might sound.)</p>
+<p>You have written recursive functions before, typically with an <code class="docutils literal notranslate"><span class="pre">if</span></code>
+statement that distinguishes between the base case(s) and recursive
+case(s).   An expression will be represented by a recursive data
+structure, a tree in which <em>leaves</em> are the base case and <em>internal
+nodes</em> are the recursive case.  Instead of an <em>if</em> statement
+determining whether to apply the base case or recursive case of an
+algorithm for expression evaluation, you will use dynamic
+dispatch.  You will implement the base
+case of the algorithm in the leaves of the data structure and the
+recursive case of the algorithm in the internal nodes, using the
+same method name.  When you call the method, either a base case or
+recursive case is selected automatically.</p>
+<p>Additional learning objectives include:</p>
+<ul class="simple">
+<li><p>“Refactoring” redundant code from concrete subclasses into a shared
+abstract base class.</p></li>
+<li><p>Using dynamic dispatch to tie together refactored code.
+Specifically, abstract base classes <code class="docutils literal notranslate"><span class="pre">BinOp</span></code> and <code class="docutils literal notranslate"><span class="pre">UnOp</span></code> will refer to
+methods and fields that exist only in the concrete subclasses like
+<code class="docutils literal notranslate"><span class="pre">Plus</span></code> and <code class="docutils literal notranslate"><span class="pre">Neg</span></code>.</p></li>
+<li><p>Recursive traversal of object structures. <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">eval</span></code> will make recursive calls in a style that is a little different
+from recursive functions you have written before.</p></li>
+</ul>
 </section>
 </section>
 
@@ -679,7 +560,7 @@ course, or research project.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./Appendices"
+            path: "./03_Recursion"
         },
         predefinedOutput: true
     }
@@ -697,20 +578,20 @@ course, or research project.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="appendix_style.html"
+       href="03_2_Refactor.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Style Guide for Python Programs</p>
+        <p class="prev-next-title">Refactoring Repetitive Code</p>
       </div>
     </a>
     <a class="right-next"
-       href="appendix_paths.html"
+       href="../04_Alias/04_1_Alias.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">File paths</p>
+        <p class="prev-next-title">Aliasing on Purpose</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -731,10 +612,7 @@ course, or research project.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-from-the-command-line">Python from the command line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-run-button-in-pycharm">Configuring the run button in PyCharm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-the-run-button-in-vs-code">Configuring the run button in VS Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-was-this-necessary">Why was this necessary?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives</a></li>
 </ul>
   </nav></div>
 
