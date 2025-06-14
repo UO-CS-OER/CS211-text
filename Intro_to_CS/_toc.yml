@@ -25,6 +25,7 @@ parts:
     chapters:
       - file: 03_Recursion/03_1_Recursion.md
       - file: 03_Recursion/03_2_Refactor.md
+      - file: 03_Recursion/03_3_Project_Calculator.md
   - caption: 04 Aliasing
     chapters:
       - file: 04_Alias/04_1_Alias.md
